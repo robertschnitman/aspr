@@ -1,0 +1,7 @@
+"0","my_agg <- aggregate(mpg ~ gear, mtcars, mean)"
+"0","with(my_agg, "
+"0","     barplot(mpg ~ gear, beside = TRUE,"
+"0","             ylab = 'Mean MPG',"
+"0","             xlab = 'Number of Gears',"
+"0","             main = 'Mean MPG by Number of Gears',"
+"0","             col  = 'lavender'))"

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Prerequisites | A Short Introduction to Applied Statistical Programming in R</title>
+  <meta name="description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Prerequisites | A Short Introduction to Applied Statistical Programming in R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://robertschnitman.netlify.com/" />
+  <meta property="og:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+  <meta property="og:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Prerequisites | A Short Introduction to Applied Statistical Programming in R" />
+  
+  <meta name="twitter:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="twitter:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+
+<meta name="author" content="Robert Schnitman" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="the-paradigms-of-r.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html"><i class="fa fa-check"></i><b>1</b> The Paradigms of R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a></li>
+<li class="chapter" data-level="1.2" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#functional"><i class="fa fa-check"></i><b>1.2</b> Functional</a></li>
+<li class="chapter" data-level="1.3" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#object-oriented"><i class="fa fa-check"></i><b>1.3</b> Object Oriented</a></li>
+<li class="chapter" data-level="1.4" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#summary"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#r-as-a-calculator"><i class="fa fa-check"></i><b>2.1</b> R as a calculator</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="basics.html"><a href="basics.html#operators"><i class="fa fa-check"></i><b>2.1.1</b> Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#data-types-and-classes"><i class="fa fa-check"></i><b>2.2</b> Data Types and Classes</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="basics.html"><a href="basics.html#classes"><i class="fa fa-check"></i><b>2.2.1</b> Classes</a></li>
+<li class="chapter" data-level="2.2.2" data-path="basics.html"><a href="basics.html#types"><i class="fa fa-check"></i><b>2.2.2</b> Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#assignments"><i class="fa fa-check"></i><b>2.3</b> Assignments</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#addingremoving-variables"><i class="fa fa-check"></i><b>2.3.1</b> Adding/Removing Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#viewing-data"><i class="fa fa-check"></i><b>2.4</b> Viewing Data</a></li>
+<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>2.5</b> Getting Help</a></li>
+<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#summary-1"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-management.html"><a href="data-management.html#replacing-values"><i class="fa fa-check"></i><b>3.1</b> Replacing Values</a></li>
+<li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#switching-values"><i class="fa fa-check"></i><b>3.2</b> Switching Values</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#scalar-case"><i class="fa fa-check"></i><b>3.2.1</b> Scalar Case</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#vector-case"><i class="fa fa-check"></i><b>3.2.2</b> Vector Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#importing-data"><i class="fa fa-check"></i><b>3.3</b> Importing Data</a></li>
+<li class="chapter" data-level="3.4" data-path="data-management.html"><a href="data-management.html#combining-data"><i class="fa fa-check"></i><b>3.4</b> Combining Data</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-management.html"><a href="data-management.html#cbindrbind"><i class="fa fa-check"></i><b>3.4.1</b> <code>cbind()</code>/<code>rbind()</code></a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-management.html"><a href="data-management.html#merge"><i class="fa fa-check"></i><b>3.4.2</b> <code>merge()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-management.html"><a href="data-management.html#subsetting-data"><i class="fa fa-check"></i><b>3.5</b> Subsetting Data</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="data-management.html"><a href="data-management.html#vector-case-1"><i class="fa fa-check"></i><b>3.5.1</b> Vector Case</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-management.html"><a href="data-management.html#data-frame-case"><i class="fa fa-check"></i><b>3.5.2</b> Data Frame Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-management.html"><a href="data-management.html#splitting-data"><i class="fa fa-check"></i><b>3.6</b> Splitting Data</a></li>
+<li class="chapter" data-level="3.7" data-path="data-management.html"><a href="data-management.html#summary-2"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="string-functions.html"><a href="string-functions.html"><i class="fa fa-check"></i><b>4</b> String Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="string-functions.html"><a href="string-functions.html#concatenate-strings"><i class="fa fa-check"></i><b>4.1</b> Concatenate Strings</a></li>
+<li class="chapter" data-level="4.2" data-path="string-functions.html"><a href="string-functions.html#subset-strings"><i class="fa fa-check"></i><b>4.2</b> Subset Strings</a></li>
+<li class="chapter" data-level="4.3" data-path="string-functions.html"><a href="string-functions.html#split-strings"><i class="fa fa-check"></i><b>4.3</b> Split Strings</a></li>
+<li class="chapter" data-level="4.4" data-path="string-functions.html"><a href="string-functions.html#substitute-strings"><i class="fa fa-check"></i><b>4.4</b> Substitute Strings</a></li>
+<li class="chapter" data-level="4.5" data-path="string-functions.html"><a href="string-functions.html#match-string-patterns"><i class="fa fa-check"></i><b>4.5</b> Match String Patterns</a></li>
+<li class="chapter" data-level="4.6" data-path="string-functions.html"><a href="string-functions.html#summary-3"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-flow.html"><a href="control-flow.html#if-and-ifelse"><i class="fa fa-check"></i><b>5.1</b> <code>if</code> and <code>ifelse()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="control-flow.html"><a href="control-flow.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="control-flow.html"><a href="control-flow.html#for-loop"><i class="fa fa-check"></i><b>5.2.1</b> <code>for</code> loop</a></li>
+<li class="chapter" data-level="5.2.2" data-path="control-flow.html"><a href="control-flow.html#while-loop"><i class="fa fa-check"></i><b>5.2.2</b> <code>while</code> loop</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="control-flow.html"><a href="control-flow.html#summary-4"><i class="fa fa-check"></i><b>5.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="7" data-path="probability-functions.html"><a href="probability-functions.html"><i class="fa fa-check"></i><b>7</b> Probability Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="probability-functions.html"><a href="probability-functions.html#generating-random-numbers"><i class="fa fa-check"></i><b>7.1</b> Generating Random Numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-functions.html"><a href="probability-functions.html#sampling"><i class="fa fa-check"></i><b>7.2</b> Sampling</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-functions.html"><a href="probability-functions.html#others"><i class="fa fa-check"></i><b>7.3</b> Others</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-functions.html"><a href="probability-functions.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="function-writing.html"><a href="function-writing.html"><i class="fa fa-check"></i><b>8</b> Function Writing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="function-writing.html"><a href="function-writing.html#univariate-case"><i class="fa fa-check"></i><b>8.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="8.2" data-path="function-writing.html"><a href="function-writing.html#multivariate-case"><i class="fa fa-check"></i><b>8.2</b> Multivariate Case</a></li>
+<li class="chapter" data-level="8.3" data-path="function-writing.html"><a href="function-writing.html#summary-6"><i class="fa fa-check"></i><b>8.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="functionals.html"><a href="functionals.html#lapply"><i class="fa fa-check"></i><b>9.1</b> <code>lapply()</code></a></li>
+<li class="chapter" data-level="9.2" data-path="functionals.html"><a href="functionals.html#sapply"><i class="fa fa-check"></i><b>9.2</b> <code>sapply()</code></a></li>
+<li class="chapter" data-level="9.3" data-path="functionals.html"><a href="functionals.html#apply"><i class="fa fa-check"></i><b>9.3</b> <code>apply()</code></a></li>
+<li class="chapter" data-level="9.4" data-path="functionals.html"><a href="functionals.html#vapply"><i class="fa fa-check"></i><b>9.4</b> <code>vapply()</code></a></li>
+<li class="chapter" data-level="9.5" data-path="functionals.html"><a href="functionals.html#mapplymap"><i class="fa fa-check"></i><b>9.5</b> <code>mapply()</code>/<code>Map()</code></a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="functionals.html"><a href="functionals.html#univariate-case-1"><i class="fa fa-check"></i><b>9.5.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
+<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.7</b> <code>aggregate()</code></a></li>
+<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>11.1</b> t-test</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>11.1.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="11.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-t-test"><i class="fa fa-check"></i><b>11.1.2</b> Two-sample t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>11.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#summary-9"><i class="fa fa-check"></i><b>11.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="linear-modeling.html"><a href="linear-modeling.html"><i class="fa fa-check"></i><b>12</b> Linear Modeling</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="linear-modeling.html"><a href="linear-modeling.html#pearson-correlations"><i class="fa fa-check"></i><b>12.1</b> Pearson Correlations</a></li>
+<li class="chapter" data-level="12.2" data-path="linear-modeling.html"><a href="linear-modeling.html#anova"><i class="fa fa-check"></i><b>12.2</b> ANOVA</a></li>
+<li class="chapter" data-level="12.3" data-path="linear-modeling.html"><a href="linear-modeling.html#ordinary-least-squares"><i class="fa fa-check"></i><b>12.3</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="linear-modeling.html"><a href="linear-modeling.html#residual-diagnostics-with-ols"><i class="fa fa-check"></i><b>12.3.1</b> Residual diagnostics with OLS</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="linear-modeling.html"><a href="linear-modeling.html#logistic-regression"><i class="fa fa-check"></i><b>12.4</b> Logistic Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="linear-modeling.html"><a href="linear-modeling.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html"><i class="fa fa-check"></i><b>13</b> Recommended R Libraries</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyverse"><i class="fa fa-check"></i><b>13.1</b> <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#ggplot2"><i class="fa fa-check"></i><b>13.1.1</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="13.1.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#dplyr"><i class="fa fa-check"></i><b>13.1.2</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="13.1.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyr"><i class="fa fa-check"></i><b>13.1.3</b> <code>tidyr</code></a></li>
+<li class="chapter" data-level="13.1.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#purrr"><i class="fa fa-check"></i><b>13.1.4</b> <code>purrr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#knitr"><i class="fa fa-check"></i><b>13.2</b> <code>knitr</code></a></li>
+<li class="chapter" data-level="13.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#stargazer"><i class="fa fa-check"></i><b>13.3</b> <code>stargazer</code></a></li>
+<li class="chapter" data-level="13.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#summary-11"><i class="fa fa-check"></i><b>13.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>14</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Short Introduction to Applied Statistical Programming in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prerequisites" class="section level1 unnumbered" number="">
+<h1>Prerequisites</h1>
+<p>This book assumes that you have installed at least R version 3.6 at minimum (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>). Installing the R Studio IDE afterward is strongly recommended (<a href="https://rstudio.com/products/rstudio/" class="uri">https://rstudio.com/products/rstudio/</a>). Additionally, the focus of this book is more on programming in R rather than going in depth with the statistics–please consult your statistics textbook for the latter purpose instead.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-paradigms-of-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

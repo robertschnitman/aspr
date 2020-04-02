@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 Linear Modeling | A Short Introduction to Applied Statistical Programming in R</title>
+  <meta name="description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 Linear Modeling | A Short Introduction to Applied Statistical Programming in R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://robertschnitman.netlify.com/" />
+  <meta property="og:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+  <meta property="og:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Linear Modeling | A Short Introduction to Applied Statistical Programming in R" />
+  
+  <meta name="twitter:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="twitter:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+
+<meta name="author" content="Robert Schnitman" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hypothesis-testing.html"/>
+<link rel="next" href="recommended-r-libraries.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html"><i class="fa fa-check"></i><b>1</b> The Paradigms of R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a></li>
+<li class="chapter" data-level="1.2" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#functional"><i class="fa fa-check"></i><b>1.2</b> Functional</a></li>
+<li class="chapter" data-level="1.3" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#object-oriented"><i class="fa fa-check"></i><b>1.3</b> Object Oriented</a></li>
+<li class="chapter" data-level="1.4" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#summary"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#r-as-a-calculator"><i class="fa fa-check"></i><b>2.1</b> R as a calculator</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="basics.html"><a href="basics.html#operators"><i class="fa fa-check"></i><b>2.1.1</b> Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#data-types-and-classes"><i class="fa fa-check"></i><b>2.2</b> Data Types and Classes</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="basics.html"><a href="basics.html#classes"><i class="fa fa-check"></i><b>2.2.1</b> Classes</a></li>
+<li class="chapter" data-level="2.2.2" data-path="basics.html"><a href="basics.html#types"><i class="fa fa-check"></i><b>2.2.2</b> Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#assignments"><i class="fa fa-check"></i><b>2.3</b> Assignments</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#addingremoving-variables"><i class="fa fa-check"></i><b>2.3.1</b> Adding/Removing Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#viewing-data"><i class="fa fa-check"></i><b>2.4</b> Viewing Data</a></li>
+<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>2.5</b> Getting Help</a></li>
+<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#summary-1"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-management.html"><a href="data-management.html#replacing-values"><i class="fa fa-check"></i><b>3.1</b> Replacing Values</a></li>
+<li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#switching-values"><i class="fa fa-check"></i><b>3.2</b> Switching Values</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#scalar-case"><i class="fa fa-check"></i><b>3.2.1</b> Scalar Case</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#vector-case"><i class="fa fa-check"></i><b>3.2.2</b> Vector Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#importing-data"><i class="fa fa-check"></i><b>3.3</b> Importing Data</a></li>
+<li class="chapter" data-level="3.4" data-path="data-management.html"><a href="data-management.html#combining-data"><i class="fa fa-check"></i><b>3.4</b> Combining Data</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-management.html"><a href="data-management.html#cbindrbind"><i class="fa fa-check"></i><b>3.4.1</b> <code>cbind()</code>/<code>rbind()</code></a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-management.html"><a href="data-management.html#merge"><i class="fa fa-check"></i><b>3.4.2</b> <code>merge()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-management.html"><a href="data-management.html#subsetting-data"><i class="fa fa-check"></i><b>3.5</b> Subsetting Data</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="data-management.html"><a href="data-management.html#vector-case-1"><i class="fa fa-check"></i><b>3.5.1</b> Vector Case</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-management.html"><a href="data-management.html#data-frame-case"><i class="fa fa-check"></i><b>3.5.2</b> Data Frame Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-management.html"><a href="data-management.html#splitting-data"><i class="fa fa-check"></i><b>3.6</b> Splitting Data</a></li>
+<li class="chapter" data-level="3.7" data-path="data-management.html"><a href="data-management.html#summary-2"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="string-functions.html"><a href="string-functions.html"><i class="fa fa-check"></i><b>4</b> String Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="string-functions.html"><a href="string-functions.html#concatenate-strings"><i class="fa fa-check"></i><b>4.1</b> Concatenate Strings</a></li>
+<li class="chapter" data-level="4.2" data-path="string-functions.html"><a href="string-functions.html#subset-strings"><i class="fa fa-check"></i><b>4.2</b> Subset Strings</a></li>
+<li class="chapter" data-level="4.3" data-path="string-functions.html"><a href="string-functions.html#split-strings"><i class="fa fa-check"></i><b>4.3</b> Split Strings</a></li>
+<li class="chapter" data-level="4.4" data-path="string-functions.html"><a href="string-functions.html#substitute-strings"><i class="fa fa-check"></i><b>4.4</b> Substitute Strings</a></li>
+<li class="chapter" data-level="4.5" data-path="string-functions.html"><a href="string-functions.html#match-string-patterns"><i class="fa fa-check"></i><b>4.5</b> Match String Patterns</a></li>
+<li class="chapter" data-level="4.6" data-path="string-functions.html"><a href="string-functions.html#summary-3"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-flow.html"><a href="control-flow.html#if-and-ifelse"><i class="fa fa-check"></i><b>5.1</b> <code>if</code> and <code>ifelse()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="control-flow.html"><a href="control-flow.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="control-flow.html"><a href="control-flow.html#for-loop"><i class="fa fa-check"></i><b>5.2.1</b> <code>for</code> loop</a></li>
+<li class="chapter" data-level="5.2.2" data-path="control-flow.html"><a href="control-flow.html#while-loop"><i class="fa fa-check"></i><b>5.2.2</b> <code>while</code> loop</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="control-flow.html"><a href="control-flow.html#summary-4"><i class="fa fa-check"></i><b>5.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="7" data-path="probability-functions.html"><a href="probability-functions.html"><i class="fa fa-check"></i><b>7</b> Probability Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="probability-functions.html"><a href="probability-functions.html#generating-random-numbers"><i class="fa fa-check"></i><b>7.1</b> Generating Random Numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-functions.html"><a href="probability-functions.html#sampling"><i class="fa fa-check"></i><b>7.2</b> Sampling</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-functions.html"><a href="probability-functions.html#others"><i class="fa fa-check"></i><b>7.3</b> Others</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-functions.html"><a href="probability-functions.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="function-writing.html"><a href="function-writing.html"><i class="fa fa-check"></i><b>8</b> Function Writing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="function-writing.html"><a href="function-writing.html#univariate-case"><i class="fa fa-check"></i><b>8.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="8.2" data-path="function-writing.html"><a href="function-writing.html#multivariate-case"><i class="fa fa-check"></i><b>8.2</b> Multivariate Case</a></li>
+<li class="chapter" data-level="8.3" data-path="function-writing.html"><a href="function-writing.html#summary-6"><i class="fa fa-check"></i><b>8.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="functionals.html"><a href="functionals.html#lapply"><i class="fa fa-check"></i><b>9.1</b> <code>lapply()</code></a></li>
+<li class="chapter" data-level="9.2" data-path="functionals.html"><a href="functionals.html#sapply"><i class="fa fa-check"></i><b>9.2</b> <code>sapply()</code></a></li>
+<li class="chapter" data-level="9.3" data-path="functionals.html"><a href="functionals.html#apply"><i class="fa fa-check"></i><b>9.3</b> <code>apply()</code></a></li>
+<li class="chapter" data-level="9.4" data-path="functionals.html"><a href="functionals.html#vapply"><i class="fa fa-check"></i><b>9.4</b> <code>vapply()</code></a></li>
+<li class="chapter" data-level="9.5" data-path="functionals.html"><a href="functionals.html#mapplymap"><i class="fa fa-check"></i><b>9.5</b> <code>mapply()</code>/<code>Map()</code></a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="functionals.html"><a href="functionals.html#univariate-case-1"><i class="fa fa-check"></i><b>9.5.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
+<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.7</b> <code>aggregate()</code></a></li>
+<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>11.1</b> t-test</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>11.1.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="11.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-t-test"><i class="fa fa-check"></i><b>11.1.2</b> Two-sample t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>11.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#summary-9"><i class="fa fa-check"></i><b>11.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="linear-modeling.html"><a href="linear-modeling.html"><i class="fa fa-check"></i><b>12</b> Linear Modeling</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="linear-modeling.html"><a href="linear-modeling.html#pearson-correlations"><i class="fa fa-check"></i><b>12.1</b> Pearson Correlations</a></li>
+<li class="chapter" data-level="12.2" data-path="linear-modeling.html"><a href="linear-modeling.html#anova"><i class="fa fa-check"></i><b>12.2</b> ANOVA</a></li>
+<li class="chapter" data-level="12.3" data-path="linear-modeling.html"><a href="linear-modeling.html#ordinary-least-squares"><i class="fa fa-check"></i><b>12.3</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="linear-modeling.html"><a href="linear-modeling.html#residual-diagnostics-with-ols"><i class="fa fa-check"></i><b>12.3.1</b> Residual diagnostics with OLS</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="linear-modeling.html"><a href="linear-modeling.html#logistic-regression"><i class="fa fa-check"></i><b>12.4</b> Logistic Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="linear-modeling.html"><a href="linear-modeling.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html"><i class="fa fa-check"></i><b>13</b> Recommended R Libraries</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyverse"><i class="fa fa-check"></i><b>13.1</b> <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#ggplot2"><i class="fa fa-check"></i><b>13.1.1</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="13.1.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#dplyr"><i class="fa fa-check"></i><b>13.1.2</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="13.1.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyr"><i class="fa fa-check"></i><b>13.1.3</b> <code>tidyr</code></a></li>
+<li class="chapter" data-level="13.1.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#purrr"><i class="fa fa-check"></i><b>13.1.4</b> <code>purrr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#knitr"><i class="fa fa-check"></i><b>13.2</b> <code>knitr</code></a></li>
+<li class="chapter" data-level="13.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#stargazer"><i class="fa fa-check"></i><b>13.3</b> <code>stargazer</code></a></li>
+<li class="chapter" data-level="13.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#summary-11"><i class="fa fa-check"></i><b>13.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>14</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Short Introduction to Applied Statistical Programming in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="linear-modeling" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Linear Modeling</h1>
+<p>In this chapter, we will examine Pearson correlations, ANOVA, Ordinary Least Squares, and logistic regression.</p>
+<div id="pearson-correlations" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Pearson Correlations</h2>
+<p>To estimate a Pearson correlation for all variables in a dataset, we pass a <code>matrix</code> or <code>data frame</code> into the <code>cor()</code> function.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="linear-modeling.html#cb160-1"></a><span class="co"># Pearson correlation coefficient matrix</span></span>
+<span id="cb160-2"><a href="linear-modeling.html#cb160-2"></a><span class="kw">cor</span>(mtcars)</span></code></pre></div>
+<pre><code>##             mpg        cyl       disp         hp        drat         wt
+## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.68117191 -0.8676594
+## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.69993811  0.7824958
+## disp -0.8475514  0.9020329  1.0000000  0.7909486 -0.71021393  0.8879799
+## hp   -0.7761684  0.8324475  0.7909486  1.0000000 -0.44875912  0.6587479
+## drat  0.6811719 -0.6999381 -0.7102139 -0.4487591  1.00000000 -0.7124406
+## wt   -0.8676594  0.7824958  0.8879799  0.6587479 -0.71244065  1.0000000
+## qsec  0.4186840 -0.5912421 -0.4336979 -0.7082234  0.09120476 -0.1747159
+## vs    0.6640389 -0.8108118 -0.7104159 -0.7230967  0.44027846 -0.5549157
+## am    0.5998324 -0.5226070 -0.5912270 -0.2432043  0.71271113 -0.6924953
+## gear  0.4802848 -0.4926866 -0.5555692 -0.1257043  0.69961013 -0.5832870
+## carb -0.5509251  0.5269883  0.3949769  0.7498125 -0.09078980  0.4276059
+##             qsec         vs          am       gear        carb
+## mpg   0.41868403  0.6640389  0.59983243  0.4802848 -0.55092507
+## cyl  -0.59124207 -0.8108118 -0.52260705 -0.4926866  0.52698829
+## disp -0.43369788 -0.7104159 -0.59122704 -0.5555692  0.39497686
+## hp   -0.70822339 -0.7230967 -0.24320426 -0.1257043  0.74981247
+## drat  0.09120476  0.4402785  0.71271113  0.6996101 -0.09078980
+## wt   -0.17471588 -0.5549157 -0.69249526 -0.5832870  0.42760594
+## qsec  1.00000000  0.7445354 -0.22986086 -0.2126822 -0.65624923
+## vs    0.74453544  1.0000000  0.16834512  0.2060233 -0.56960714
+## am   -0.22986086  0.1683451  1.00000000  0.7940588  0.05753435
+## gear -0.21268223  0.2060233  0.79405876  1.0000000  0.27407284
+## carb -0.65624923 -0.5696071  0.05753435  0.2740728  1.00000000</code></pre>
+<p>To perform a correlation test in which we produce a p-value, we pass two vectors into the <code>cor.test()</code> function.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="linear-modeling.html#cb162-1"></a><span class="co"># Pearson correlation coefficient test</span></span>
+<span id="cb162-2"><a href="linear-modeling.html#cb162-2"></a><span class="kw">with</span>(mtcars, <span class="kw">cor.test</span>(mpg, wt))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  mpg and wt
+## t = -9.559, df = 30, p-value = 1.294e-10
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.9338264 -0.7440872
+## sample estimates:
+##        cor 
+## -0.8676594</code></pre>
+<p>To get p-values from a correlation matrix for all variables, we will use the <code>Hmisc</code> package. We install it with <code>install.packages()</code> and then load it with <code>library()</code>. We use the library’s <code>rcorr()</code> function to calculate the correlation and p-values matrices.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="linear-modeling.html#cb164-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;Hmisc&#39;</span>) <span class="co"># Install first.</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="linear-modeling.html#cb165-1"></a><span class="co"># Load the library into the environment.</span></span>
+<span id="cb165-2"><a href="linear-modeling.html#cb165-2"></a><span class="kw">library</span>(Hmisc)</span>
+<span id="cb165-3"><a href="linear-modeling.html#cb165-3"></a></span>
+<span id="cb165-4"><a href="linear-modeling.html#cb165-4"></a>my_corr &lt;-<span class="st"> </span><span class="kw">rcorr</span>(<span class="kw">as.matrix</span>(mtcars), <span class="dt">type =</span> <span class="st">&#39;pearson&#39;</span>)</span>
+<span id="cb165-5"><a href="linear-modeling.html#cb165-5"></a></span>
+<span id="cb165-6"><a href="linear-modeling.html#cb165-6"></a><span class="co"># Pearson correlation coefficients</span></span>
+<span id="cb165-7"><a href="linear-modeling.html#cb165-7"></a>my_corr<span class="op">$</span>r</span></code></pre></div>
+<pre><code>##             mpg        cyl       disp         hp        drat         wt
+## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.68117191 -0.8676594
+## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.69993811  0.7824958
+## disp -0.8475514  0.9020329  1.0000000  0.7909486 -0.71021393  0.8879799
+## hp   -0.7761684  0.8324475  0.7909486  1.0000000 -0.44875912  0.6587479
+## drat  0.6811719 -0.6999381 -0.7102139 -0.4487591  1.00000000 -0.7124406
+## wt   -0.8676594  0.7824958  0.8879799  0.6587479 -0.71244065  1.0000000
+## qsec  0.4186840 -0.5912421 -0.4336979 -0.7082234  0.09120476 -0.1747159
+## vs    0.6640389 -0.8108118 -0.7104159 -0.7230967  0.44027846 -0.5549157
+## am    0.5998324 -0.5226070 -0.5912270 -0.2432043  0.71271113 -0.6924953
+## gear  0.4802848 -0.4926866 -0.5555692 -0.1257043  0.69961013 -0.5832870
+## carb -0.5509251  0.5269883  0.3949769  0.7498125 -0.09078980  0.4276059
+##             qsec         vs          am       gear        carb
+## mpg   0.41868403  0.6640389  0.59983243  0.4802848 -0.55092507
+## cyl  -0.59124207 -0.8108118 -0.52260705 -0.4926866  0.52698829
+## disp -0.43369788 -0.7104159 -0.59122704 -0.5555692  0.39497686
+## hp   -0.70822339 -0.7230967 -0.24320426 -0.1257043  0.74981247
+## drat  0.09120476  0.4402785  0.71271113  0.6996101 -0.09078980
+## wt   -0.17471588 -0.5549157 -0.69249526 -0.5832870  0.42760594
+## qsec  1.00000000  0.7445354 -0.22986086 -0.2126822 -0.65624923
+## vs    0.74453544  1.0000000  0.16834512  0.2060233 -0.56960714
+## am   -0.22986086  0.1683451  1.00000000  0.7940588  0.05753435
+## gear -0.21268223  0.2060233  0.79405876  1.0000000  0.27407284
+## carb -0.65624923 -0.5696071  0.05753435  0.2740728  1.00000000</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="linear-modeling.html#cb167-1"></a><span class="co"># p-values of the coefficients.</span></span>
+<span id="cb167-2"><a href="linear-modeling.html#cb167-2"></a>my_corr<span class="op">$</span>P</span></code></pre></div>
+<pre><code>##               mpg          cyl         disp           hp         drat
+## mpg            NA 6.112688e-10 9.380328e-10 1.787835e-07 1.776240e-05
+## cyl  6.112688e-10           NA 1.803002e-12 3.477861e-09 8.244636e-06
+## disp 9.380328e-10 1.803002e-12           NA 7.142679e-08 5.282022e-06
+## hp   1.787835e-07 3.477861e-09 7.142679e-08           NA 9.988772e-03
+## drat 1.776240e-05 8.244636e-06 5.282022e-06 9.988772e-03           NA
+## wt   1.293958e-10 1.217567e-07 1.222311e-11 4.145827e-05 4.784260e-06
+## qsec 1.708199e-02 3.660533e-04 1.314404e-02 5.766253e-06 6.195826e-01
+## vs   3.415937e-05 1.843018e-08 5.235012e-06 2.940896e-06 1.167553e-02
+## am   2.850207e-04 2.151207e-03 3.662114e-04 1.798309e-01 4.726790e-06
+## gear 5.400948e-03 4.173297e-03 9.635921e-04 4.930119e-01 8.360110e-06
+## carb 1.084446e-03 1.942340e-03 2.526789e-02 7.827810e-07 6.211834e-01
+##                wt         qsec           vs           am         gear
+## mpg  1.293958e-10 1.708199e-02 3.415937e-05 2.850207e-04 5.400948e-03
+## cyl  1.217567e-07 3.660533e-04 1.843018e-08 2.151207e-03 4.173297e-03
+## disp 1.222311e-11 1.314404e-02 5.235012e-06 3.662114e-04 9.635921e-04
+## hp   4.145827e-05 5.766253e-06 2.940896e-06 1.798309e-01 4.930119e-01
+## drat 4.784260e-06 6.195826e-01 1.167553e-02 4.726790e-06 8.360110e-06
+## wt             NA 3.388683e-01 9.798492e-04 1.125440e-05 4.586601e-04
+## qsec 3.388683e-01           NA 1.029669e-06 2.056621e-01 2.425344e-01
+## vs   9.798492e-04 1.029669e-06           NA 3.570439e-01 2.579439e-01
+## am   1.125440e-05 2.056621e-01 3.570439e-01           NA 5.834043e-08
+## gear 4.586601e-04 2.425344e-01 2.579439e-01 5.834043e-08           NA
+## carb 1.463861e-02 4.536949e-05 6.670496e-04 7.544526e-01 1.290291e-01
+##              carb
+## mpg  1.084446e-03
+## cyl  1.942340e-03
+## disp 2.526789e-02
+## hp   7.827810e-07
+## drat 6.211834e-01
+## wt   1.463861e-02
+## qsec 4.536949e-05
+## vs   6.670496e-04
+## am   7.544526e-01
+## gear 1.290291e-01
+## carb           NA</code></pre>
+</div>
+<div id="anova" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> ANOVA</h2>
+<p>To conduct ANOVA, we pass a formula and dataset into the <code>aov()</code> function. Note that the independent variables must be <code>factor</code> variables, so we must use the <code>factor()</code> function on our independent variables if they are not already factors.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="linear-modeling.html#cb169-1"></a>my_anova &lt;-<span class="st"> </span><span class="kw">aov</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(gear) <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(am), mtcars)</span>
+<span id="cb169-2"><a href="linear-modeling.html#cb169-2"></a></span>
+<span id="cb169-3"><a href="linear-modeling.html#cb169-3"></a>my_anova</span></code></pre></div>
+<pre><code>## Call:
+##    aov(formula = mpg ~ factor(gear) + factor(am), data = mtcars)
+## 
+## Terms:
+##                 factor(gear) factor(am) Residuals
+## Sum of Squares      483.2432    72.8017  570.0023
+## Deg. of Freedom            2          1        28
+## 
+## Residual standard error: 4.511898
+## Estimated effects may be unbalanced</code></pre>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="linear-modeling.html#cb171-1"></a><span class="kw">summary</span>(my_anova)</span></code></pre></div>
+<pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## factor(gear)  2  483.2  241.62  11.869 0.000185 ***
+## factor(am)    1   72.8   72.80   3.576 0.069001 .  
+## Residuals    28  570.0   20.36                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>To compare pairwise means, we use <code>TukeyHSD()</code> on our ANOVA model.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="linear-modeling.html#cb173-1"></a><span class="kw">TukeyHSD</span>(my_anova)</span></code></pre></div>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = mpg ~ factor(gear) + factor(am), data = mtcars)
+## 
+## $`factor(gear)`
+##          diff        lwr       upr     p adj
+## 4-3  8.426667  4.1028616 12.750472 0.0001301
+## 5-3  5.273333 -0.4917401 11.038407 0.0779791
+## 5-4 -3.153333 -9.0958350  2.789168 0.3999532
+## 
+## $`factor(am)`
+##         diff       lwr     upr     p adj
+## 1-0 1.805128 -1.521483 5.13174 0.2757926</code></pre>
+</div>
+<div id="ordinary-least-squares" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> Ordinary Least Squares</h2>
+<p>To estimate a regression model, we pass a formula and a dataset into the <code>lm()</code> function.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="linear-modeling.html#cb175-1"></a><span class="co"># SYNTAX OF lm(): lm(y ~ x1 + x2 + ... xn, data)</span></span>
+<span id="cb175-2"><a href="linear-modeling.html#cb175-2"></a>my_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars)</span>
+<span id="cb175-3"><a href="linear-modeling.html#cb175-3"></a></span>
+<span id="cb175-4"><a href="linear-modeling.html#cb175-4"></a><span class="co"># Return the coefficients</span></span>
+<span id="cb175-5"><a href="linear-modeling.html#cb175-5"></a>my_ols</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ wt + hp + gear + am, data = mtcars)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         gear           am  
+##    32.55626     -2.79996     -0.03837      0.40299      1.68739</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="linear-modeling.html#cb177-1"></a><span class="co"># Produce a summary table of the results.</span></span>
+<span id="cb177-2"><a href="linear-modeling.html#cb177-2"></a><span class="kw">summary</span>(my_ols)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ wt + hp + gear + am, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.2986 -1.9652 -0.4584  1.1434  5.6766 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 32.55626    4.67171   6.969 1.72e-07 ***
+## wt          -2.79996    0.94234  -2.971 0.006164 ** 
+## hp          -0.03837    0.01004  -3.823 0.000706 ***
+## gear         0.40299    1.06519   0.378 0.708145    
+## am           1.68739    1.74691   0.966 0.342651    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.577 on 27 degrees of freedom
+## Multiple R-squared:  0.8407, Adjusted R-squared:  0.8171 
+## F-statistic: 35.63 on 4 and 27 DF,  p-value: 2.091e-10</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="linear-modeling.html#cb179-1"></a><span class="co"># Return the coefficient table from the summary regression table.</span></span>
+<span id="cb179-2"><a href="linear-modeling.html#cb179-2"></a><span class="kw">coef</span>(<span class="kw">summary</span>(my_ols))</span></code></pre></div>
+<pre><code>##                Estimate Std. Error    t value     Pr(&gt;|t|)
+## (Intercept) 32.55625619 4.67170949  6.9688101 1.723405e-07
+## wt          -2.79995626 0.94234225 -2.9712732 6.164196e-03
+## hp          -0.03837417 0.01003886 -3.8225618 7.063674e-04
+## gear         0.40299281 1.06519249  0.3783286 7.081449e-01
+## am           1.68739402 1.74690861  0.9659315 3.426513e-01</code></pre>
+<div id="residual-diagnostics-with-ols" class="section level3" number="12.3.1">
+<h3><span class="header-section-number">12.3.1</span> Residual diagnostics with OLS</h3>
+<p>To analyze the performance of our models with respect to our residuals, we can calculate the predicted values with <code>predict()</code> and residuals with <code>resid()</code>. We can then plot them to see whether the residuals behave in a homoskedastic manner.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="linear-modeling.html#cb181-1"></a>fit &lt;-<span class="st"> </span><span class="kw">predict</span>(my_ols)</span>
+<span id="cb181-2"><a href="linear-modeling.html#cb181-2"></a>res &lt;-<span class="st"> </span><span class="kw">resid</span>(my_ols)</span>
+<span id="cb181-3"><a href="linear-modeling.html#cb181-3"></a></span>
+<span id="cb181-4"><a href="linear-modeling.html#cb181-4"></a><span class="kw">plot</span>(res <span class="op">~</span><span class="st"> </span>fit)</span>
+<span id="cb181-5"><a href="linear-modeling.html#cb181-5"></a><span class="kw">abline</span>(<span class="kw">lm</span>(res <span class="op">~</span><span class="st"> </span>fit), <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p>Alternatively, we can directly plot our model. Make sure to set a 2-by-2 canvas beforehand so that all the plots from <code>plot()</code> will generate simultaneously.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="linear-modeling.html#cb182-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># Set 2x2 canvas</span></span>
+<span id="cb182-2"><a href="linear-modeling.html#cb182-2"></a></span>
+<span id="cb182-3"><a href="linear-modeling.html#cb182-3"></a><span class="kw">plot</span>(my_ols)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+</div>
+</div>
+<div id="logistic-regression" class="section level2" number="12.4">
+<h2><span class="header-section-number">12.4</span> Logistic Regression</h2>
+<p>Estimating a logistic regression is similar to estimating a model with OLS; however, we add an additional input in which we set the distribution family–in this case, it is the binomial one.</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="linear-modeling.html#cb183-1"></a>my_logit &lt;-<span class="st"> </span><span class="kw">glm</span>(am <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>gear, </span>
+<span id="cb183-2"><a href="linear-modeling.html#cb183-2"></a>                mtcars, </span>
+<span id="cb183-3"><a href="linear-modeling.html#cb183-3"></a>                <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span></code></pre></div>
+<pre><code>## Warning: glm.fit: algorithm did not converge</code></pre>
+<pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="linear-modeling.html#cb186-1"></a>my_logit</span></code></pre></div>
+<pre><code>## 
+## Call:  glm(formula = am ~ mpg + wt + gear, family = binomial(link = &quot;logit&quot;), 
+##     data = mtcars)
+## 
+## Coefficients:
+## (Intercept)          mpg           wt         gear  
+##     137.764       -6.548     -113.946       87.125  
+## 
+## Degrees of Freedom: 31 Total (i.e. Null);  28 Residual
+## Null Deviance:       43.23 
+## Residual Deviance: 2.765e-09     AIC: 8</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="linear-modeling.html#cb188-1"></a><span class="kw">summary</span>(my_logit)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = am ~ mpg + wt + gear, family = binomial(link = &quot;logit&quot;), 
+##     data = mtcars)
+## 
+## Deviance Residuals: 
+##        Min          1Q      Median          3Q         Max  
+## -2.415e-05  -2.100e-08  -2.100e-08   2.100e-08   3.585e-05  
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(&gt;|z|)
+## (Intercept)    137.764 324199.947   0.000    1.000
+## mpg             -6.548   8893.588  -0.001    0.999
+## wt            -113.946  95316.944  -0.001    0.999
+## gear            87.125  71730.620   0.001    0.999
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 4.3230e+01  on 31  degrees of freedom
+## Residual deviance: 2.7646e-09  on 28  degrees of freedom
+## AIC: 8
+## 
+## Number of Fisher Scoring iterations: 25</code></pre>
+</div>
+<div id="summary-10" class="section level2" number="12.5">
+<h2><span class="header-section-number">12.5</span> Summary</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-95">Table 12.1: </span>Summary of Linear Modeling
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Function
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Example
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+cor(data)
+</td>
+<td style="text-align:left;">
+Correlation matrix.
+</td>
+<td style="text-align:left;">
+cor(mtcars)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rcorr(data)
+</td>
+<td style="text-align:left;">
+Correlation matrix with p-values.
+</td>
+<td style="text-align:left;">
+library(Hmisc);
+rcorr(as.matrix(mtcars), type = ‘pearson’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aov(y ~ x, data)
+</td>
+<td style="text-align:left;">
+ANOVA.
+</td>
+<td style="text-align:left;">
+aov(mpg ~ factor(gear), mtcars)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TukeyHSD(anova)
+</td>
+<td style="text-align:left;">
+Tukey HSD pairwise means.
+</td>
+<td style="text-align:left;">
+TukeyHSD(aov(mpg ~ factor(gear), mtcars))
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lm(y ~ x, data)
+</td>
+<td style="text-align:left;">
+Linear Modeling / Ordinary Least Squares modeling.
+</td>
+<td style="text-align:left;">
+lm(mpg ~ wt + gear, mtcars)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+glm(y ~ x, data, family)
+</td>
+<td style="text-align:left;">
+Generalized Linear Model.
+</td>
+<td style="text-align:left;">
+glm(am ~ mpg + gear, mtcars, family = binomial(link = ‘logit’))
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hypothesis-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="recommended-r-libraries.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

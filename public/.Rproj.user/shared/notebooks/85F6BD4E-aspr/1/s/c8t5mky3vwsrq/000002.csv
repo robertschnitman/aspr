@@ -1,0 +1,6 @@
+"0","with(mtcars,"
+"0","     boxplot(mpg ~ gear,"
+"0","             ylab = 'MPG',"
+"0","             xlab = 'Number of Gears',"
+"0","             main = 'Box Plot of MPG vs. Number of Gears',"
+"0","             col  = 'grey'))"

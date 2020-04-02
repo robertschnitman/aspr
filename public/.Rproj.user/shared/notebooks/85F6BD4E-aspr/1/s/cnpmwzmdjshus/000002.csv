@@ -1,0 +1,74 @@
+"0","funs <- data.frame(Function = c('mean(x)',"
+"0","                                'median(x)',"
+"0","                                'min(x)',"
+"0","                                'max(x)',"
+"0","                                'nrow(x)/NROW(x)',"
+"0","                                'ncol(x)/NCOL(x)',"
+"0","                                'dim(x)',"
+"0","                                'summary(x)'),"
+"0","                   Output      = c(rep('vector', 7),"
+"0","                                   'summary class'),"
+"0","                   Example     = c('mean(mtcars\\$mpg)',"
+"0","                                   'median(mtcars\\$mpg)',"
+"0","                                   'min(mtcars\\$mpg)',"
+"0","                                   'max(mtcars\\$mpg)',"
+"0","                                   'nrow(mtcars); NROW(mtcars)',"
+"0","                                   'ncol(mtcars); NCOL(mtcars)',"
+"0","                                   'dim(mtcars)',"
+"0","                                   'summary(mtcars)'))"
+"0","summ_funs <- summ(funs, caption = 'Summary of Descriptive Statistics Functions')"
+"0","summ_funs"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of Descriptive Statistics Functions</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Function </th>
+   <th style=""text-align:left;""> Output </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> mean(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> mean(mtcars\$mpg) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> median(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> median(mtcars\$mpg) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> min(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> min(mtcars\$mpg) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> max(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> max(mtcars\$mpg) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> nrow(x)/NROW(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> nrow(mtcars); NROW(mtcars) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> ncol(x)/NCOL(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> ncol(mtcars); NCOL(mtcars) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> dim(x) </td>
+   <td style=""text-align:left;""> vector </td>
+   <td style=""text-align:left;""> dim(mtcars) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> summary(x) </td>
+   <td style=""text-align:left;""> summary class </td>
+   <td style=""text-align:left;""> summary(mtcars) </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

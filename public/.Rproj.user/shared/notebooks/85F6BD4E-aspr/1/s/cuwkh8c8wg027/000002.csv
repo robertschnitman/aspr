@@ -1,0 +1,5 @@
+"0","hist(mtcars$mpg, "
+"0","     col = 'cyan4',"
+"0","     xlab = 'MPG',"
+"0","     ylab = 'Frequency',"
+"0","     main = 'MPG Distribution')"

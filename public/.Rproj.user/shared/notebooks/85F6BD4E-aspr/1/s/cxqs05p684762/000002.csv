@@ -1,0 +1,47 @@
+"0","summ_types <- data.frame(Type = c('numeric',"
+"0","                                  'character',"
+"0","                                  'logical',"
+"0","                                  'factor'),"
+"0","                         Decsription = c('A vector of numbers.',"
+"0","                                         'A vector of strings (i.e. characters encased in quotes.',"
+"0","                                         'Value of TRUE or FALSE.',"
+"0","                                         'A categorical vector with specified levels.'),"
+"0","                         Example     = c('2',"
+"0","                                         '""String""',"
+"0","                                         'TRUE',"
+"0","                                         'factor(mtcars$am)'))"
+"0","summ(summ_types, 'Summary of Types')"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of Types</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Type </th>
+   <th style=""text-align:left;""> Decsription </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> numeric </td>
+   <td style=""text-align:left;""> A vector of numbers. </td>
+   <td style=""text-align:left;""> 2 </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> character </td>
+   <td style=""text-align:left;""> A vector of strings (i.e. characters encased in quotes. </td>
+   <td style=""text-align:left;""> ""String"" </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> logical </td>
+   <td style=""text-align:left;""> Value of TRUE or FALSE. </td>
+   <td style=""text-align:left;""> TRUE </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> factor </td>
+   <td style=""text-align:left;""> A categorical vector with specified levels. </td>
+   <td style=""text-align:left;""> factor(mtcars$am) </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

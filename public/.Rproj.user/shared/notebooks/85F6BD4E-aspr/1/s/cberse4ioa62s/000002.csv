@@ -1,0 +1,88 @@
+"0","funs <- data.frame(Function = c('lapply(X, FUN)',"
+"0","                                'sapply(X, FUN)',"
+"0","                                'apply(X, MARGIN, FUN)',"
+"0","                                'vapply(X, FUN, FUN.VALUE)',"
+"0","                                'mapply(FUN, ...)',"
+"0","                                'Map(f, ...)',"
+"0","                                'eapply(env, FUN)',"
+"0","                                'rapply(object, f, classes)',"
+"0","                                'aggregate(formula, data, FUN'),"
+"0","                   Output      = c('list',"
+"0","                                   'matrix OR list',"
+"0","                                   'matrix',"
+"0","                                   'matrix',"
+"0","                                   'matrix',"
+"0","                                   'list',"
+"0","                                   'list',"
+"0","                                   'vector OR list',"
+"0","                                   'data frame'),"
+"0","                   Example     = c('lapply(mtcars, mean)',"
+"0","                                   'sapply(mtcars, mean)',"
+"0","                                   'apply(mtcars, 1, mean); apply(mtcars, 2, mean)',"
+"0","                                   'vapply(mtcars, mean, numeric(1))',"
+"0","                                   'mapply(rbind, mtcars\\$mpg, mtcars\\$wt)',"
+"0","                                   'Map(rbind, mtcars\\$mpg, mtcars\\$wt)',"
+"0","                                   'See ?eapply',"
+"0","                                   'rapply(iris, mean, classes = ""numeric"")',"
+"0","                                   'aggregate(mpg ~ gear, mtcars, mean)'))"
+"0","summ_funs <- summ(funs, caption = 'Summary of Functionals')"
+"0","summ_funs"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of Functionals</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Function </th>
+   <th style=""text-align:left;""> Output </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> lapply(X, FUN) </td>
+   <td style=""text-align:left;""> list </td>
+   <td style=""text-align:left;""> lapply(mtcars, mean) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> sapply(X, FUN) </td>
+   <td style=""text-align:left;""> matrix OR list </td>
+   <td style=""text-align:left;""> sapply(mtcars, mean) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> apply(X, MARGIN, FUN) </td>
+   <td style=""text-align:left;""> matrix </td>
+   <td style=""text-align:left;""> apply(mtcars, 1, mean); apply(mtcars, 2, mean) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> vapply(X, FUN, FUN.VALUE) </td>
+   <td style=""text-align:left;""> matrix </td>
+   <td style=""text-align:left;""> vapply(mtcars, mean, numeric(1)) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> mapply(FUN, ...) </td>
+   <td style=""text-align:left;""> matrix </td>
+   <td style=""text-align:left;""> mapply(rbind, mtcars\$mpg, mtcars\$wt) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> Map(f, ...) </td>
+   <td style=""text-align:left;""> list </td>
+   <td style=""text-align:left;""> Map(rbind, mtcars\$mpg, mtcars\$wt) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> eapply(env, FUN) </td>
+   <td style=""text-align:left;""> list </td>
+   <td style=""text-align:left;""> See ?eapply </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> rapply(object, f, classes) </td>
+   <td style=""text-align:left;""> vector OR list </td>
+   <td style=""text-align:left;""> rapply(iris, mean, classes = ""numeric"") </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> aggregate(formula, data, FUN </td>
+   <td style=""text-align:left;""> data frame </td>
+   <td style=""text-align:left;""> aggregate(mpg ~ gear, mtcars, mean) </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

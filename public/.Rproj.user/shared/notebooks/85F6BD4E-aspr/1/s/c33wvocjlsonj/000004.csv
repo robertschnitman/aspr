@@ -1,0 +1,7 @@
+"0","# Plot the labels on the graph."
+"0","with(mtcars, text(mpg, # x coordinate for words"
+"0","                  wt,  # y coordinate for words"
+"0","                  row.names(mtcars), # Words to use."
+"0","                  pos = 3, "
+"0","                  cex = 0.0, "
+"0","                  col = 'cyan4'))"

@@ -1,0 +1,23 @@
+"0","summ_fun <- data.frame(Function = c(""function(x)""),"
+"0","                       Description = c(""Write a function, which consists of arguments and the body.""),"
+"0","                       Example = c(""index <- function(x) x/mean(x)""))"
+"0","summ(summ_fun, ""Summary of Function Writing"")"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of Function Writing</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Function </th>
+   <th style=""text-align:left;""> Description </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> function(x) </td>
+   <td style=""text-align:left;""> Write a function, which consists of arguments and the body. </td>
+   <td style=""text-align:left;""> index &lt;- function(x) x/mean(x) </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

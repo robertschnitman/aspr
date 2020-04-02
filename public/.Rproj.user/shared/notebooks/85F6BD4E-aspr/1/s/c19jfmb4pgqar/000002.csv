@@ -1,0 +1,39 @@
+"0","summ_pd <- data.frame(Function = c(""rnorm(x)"","
+"0","                                   ""sample(x, size)"","
+"0","                                   ""Other probability functions.""),"
+"0","                      Description = c(""x random numbers based on a normal distribution."","
+"0","                                   ""Sample a vector with a specified size."","
+"0","                                   ""See `?rnorm`, `?rchisq`, and `?rpois`""),"
+"0","                      Example = c(""rnorm(10)"","
+"0","                                   ""sample(1:100, size = 10)"","
+"0","                                   """"))"
+"0","summ(summ_pd, 'Summary of Probability Distributions')"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of Probability Distributions</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Function </th>
+   <th style=""text-align:left;""> Description </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> rnorm(x) </td>
+   <td style=""text-align:left;""> x random numbers based on a normal distribution. </td>
+   <td style=""text-align:left;""> rnorm(10) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> sample(x, size) </td>
+   <td style=""text-align:left;""> Sample a vector with a specified size. </td>
+   <td style=""text-align:left;""> sample(1:100, size = 10) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> Other probability functions. </td>
+   <td style=""text-align:left;""> See `?rnorm`, `?rchisq`, and `?rpois` </td>
+   <td style=""text-align:left;"">  </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

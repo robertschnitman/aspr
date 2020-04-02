@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Recommended R Libraries | A Short Introduction to Applied Statistical Programming in R</title>
+  <meta name="description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Recommended R Libraries | A Short Introduction to Applied Statistical Programming in R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://robertschnitman.netlify.com/" />
+  <meta property="og:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+  <meta property="og:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Recommended R Libraries | A Short Introduction to Applied Statistical Programming in R" />
+  
+  <meta name="twitter:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="twitter:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+
+<meta name="author" content="Robert Schnitman" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="linear-modeling.html"/>
+<link rel="next" href="conclusion.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html"><i class="fa fa-check"></i><b>1</b> The Paradigms of R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a></li>
+<li class="chapter" data-level="1.2" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#functional"><i class="fa fa-check"></i><b>1.2</b> Functional</a></li>
+<li class="chapter" data-level="1.3" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#object-oriented"><i class="fa fa-check"></i><b>1.3</b> Object Oriented</a></li>
+<li class="chapter" data-level="1.4" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#summary"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#r-as-a-calculator"><i class="fa fa-check"></i><b>2.1</b> R as a calculator</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="basics.html"><a href="basics.html#operators"><i class="fa fa-check"></i><b>2.1.1</b> Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#data-types-and-classes"><i class="fa fa-check"></i><b>2.2</b> Data Types and Classes</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="basics.html"><a href="basics.html#classes"><i class="fa fa-check"></i><b>2.2.1</b> Classes</a></li>
+<li class="chapter" data-level="2.2.2" data-path="basics.html"><a href="basics.html#types"><i class="fa fa-check"></i><b>2.2.2</b> Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#assignments"><i class="fa fa-check"></i><b>2.3</b> Assignments</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#addingremoving-variables"><i class="fa fa-check"></i><b>2.3.1</b> Adding/Removing Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#viewing-data"><i class="fa fa-check"></i><b>2.4</b> Viewing Data</a></li>
+<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>2.5</b> Getting Help</a></li>
+<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#summary-1"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-management.html"><a href="data-management.html#replacing-values"><i class="fa fa-check"></i><b>3.1</b> Replacing Values</a></li>
+<li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#switching-values"><i class="fa fa-check"></i><b>3.2</b> Switching Values</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#scalar-case"><i class="fa fa-check"></i><b>3.2.1</b> Scalar Case</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#vector-case"><i class="fa fa-check"></i><b>3.2.2</b> Vector Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#importing-data"><i class="fa fa-check"></i><b>3.3</b> Importing Data</a></li>
+<li class="chapter" data-level="3.4" data-path="data-management.html"><a href="data-management.html#combining-data"><i class="fa fa-check"></i><b>3.4</b> Combining Data</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-management.html"><a href="data-management.html#cbindrbind"><i class="fa fa-check"></i><b>3.4.1</b> <code>cbind()</code>/<code>rbind()</code></a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-management.html"><a href="data-management.html#merge"><i class="fa fa-check"></i><b>3.4.2</b> <code>merge()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-management.html"><a href="data-management.html#subsetting-data"><i class="fa fa-check"></i><b>3.5</b> Subsetting Data</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="data-management.html"><a href="data-management.html#vector-case-1"><i class="fa fa-check"></i><b>3.5.1</b> Vector Case</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-management.html"><a href="data-management.html#data-frame-case"><i class="fa fa-check"></i><b>3.5.2</b> Data Frame Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-management.html"><a href="data-management.html#splitting-data"><i class="fa fa-check"></i><b>3.6</b> Splitting Data</a></li>
+<li class="chapter" data-level="3.7" data-path="data-management.html"><a href="data-management.html#summary-2"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="string-functions.html"><a href="string-functions.html"><i class="fa fa-check"></i><b>4</b> String Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="string-functions.html"><a href="string-functions.html#concatenate-strings"><i class="fa fa-check"></i><b>4.1</b> Concatenate Strings</a></li>
+<li class="chapter" data-level="4.2" data-path="string-functions.html"><a href="string-functions.html#subset-strings"><i class="fa fa-check"></i><b>4.2</b> Subset Strings</a></li>
+<li class="chapter" data-level="4.3" data-path="string-functions.html"><a href="string-functions.html#split-strings"><i class="fa fa-check"></i><b>4.3</b> Split Strings</a></li>
+<li class="chapter" data-level="4.4" data-path="string-functions.html"><a href="string-functions.html#substitute-strings"><i class="fa fa-check"></i><b>4.4</b> Substitute Strings</a></li>
+<li class="chapter" data-level="4.5" data-path="string-functions.html"><a href="string-functions.html#match-string-patterns"><i class="fa fa-check"></i><b>4.5</b> Match String Patterns</a></li>
+<li class="chapter" data-level="4.6" data-path="string-functions.html"><a href="string-functions.html#summary-3"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-flow.html"><a href="control-flow.html#if-and-ifelse"><i class="fa fa-check"></i><b>5.1</b> <code>if</code> and <code>ifelse()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="control-flow.html"><a href="control-flow.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="control-flow.html"><a href="control-flow.html#for-loop"><i class="fa fa-check"></i><b>5.2.1</b> <code>for</code> loop</a></li>
+<li class="chapter" data-level="5.2.2" data-path="control-flow.html"><a href="control-flow.html#while-loop"><i class="fa fa-check"></i><b>5.2.2</b> <code>while</code> loop</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="control-flow.html"><a href="control-flow.html#summary-4"><i class="fa fa-check"></i><b>5.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="7" data-path="probability-functions.html"><a href="probability-functions.html"><i class="fa fa-check"></i><b>7</b> Probability Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="probability-functions.html"><a href="probability-functions.html#generating-random-numbers"><i class="fa fa-check"></i><b>7.1</b> Generating Random Numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-functions.html"><a href="probability-functions.html#sampling"><i class="fa fa-check"></i><b>7.2</b> Sampling</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-functions.html"><a href="probability-functions.html#others"><i class="fa fa-check"></i><b>7.3</b> Others</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-functions.html"><a href="probability-functions.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="function-writing.html"><a href="function-writing.html"><i class="fa fa-check"></i><b>8</b> Function Writing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="function-writing.html"><a href="function-writing.html#univariate-case"><i class="fa fa-check"></i><b>8.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="8.2" data-path="function-writing.html"><a href="function-writing.html#multivariate-case"><i class="fa fa-check"></i><b>8.2</b> Multivariate Case</a></li>
+<li class="chapter" data-level="8.3" data-path="function-writing.html"><a href="function-writing.html#summary-6"><i class="fa fa-check"></i><b>8.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="functionals.html"><a href="functionals.html#lapply"><i class="fa fa-check"></i><b>9.1</b> <code>lapply()</code></a></li>
+<li class="chapter" data-level="9.2" data-path="functionals.html"><a href="functionals.html#sapply"><i class="fa fa-check"></i><b>9.2</b> <code>sapply()</code></a></li>
+<li class="chapter" data-level="9.3" data-path="functionals.html"><a href="functionals.html#apply"><i class="fa fa-check"></i><b>9.3</b> <code>apply()</code></a></li>
+<li class="chapter" data-level="9.4" data-path="functionals.html"><a href="functionals.html#vapply"><i class="fa fa-check"></i><b>9.4</b> <code>vapply()</code></a></li>
+<li class="chapter" data-level="9.5" data-path="functionals.html"><a href="functionals.html#mapplymap"><i class="fa fa-check"></i><b>9.5</b> <code>mapply()</code>/<code>Map()</code></a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="functionals.html"><a href="functionals.html#univariate-case-1"><i class="fa fa-check"></i><b>9.5.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
+<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.7</b> <code>aggregate()</code></a></li>
+<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>11.1</b> t-test</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>11.1.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="11.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-t-test"><i class="fa fa-check"></i><b>11.1.2</b> Two-sample t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>11.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#summary-9"><i class="fa fa-check"></i><b>11.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="linear-modeling.html"><a href="linear-modeling.html"><i class="fa fa-check"></i><b>12</b> Linear Modeling</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="linear-modeling.html"><a href="linear-modeling.html#pearson-correlations"><i class="fa fa-check"></i><b>12.1</b> Pearson Correlations</a></li>
+<li class="chapter" data-level="12.2" data-path="linear-modeling.html"><a href="linear-modeling.html#anova"><i class="fa fa-check"></i><b>12.2</b> ANOVA</a></li>
+<li class="chapter" data-level="12.3" data-path="linear-modeling.html"><a href="linear-modeling.html#ordinary-least-squares"><i class="fa fa-check"></i><b>12.3</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="linear-modeling.html"><a href="linear-modeling.html#residual-diagnostics-with-ols"><i class="fa fa-check"></i><b>12.3.1</b> Residual diagnostics with OLS</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="linear-modeling.html"><a href="linear-modeling.html#logistic-regression"><i class="fa fa-check"></i><b>12.4</b> Logistic Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="linear-modeling.html"><a href="linear-modeling.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html"><i class="fa fa-check"></i><b>13</b> Recommended R Libraries</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyverse"><i class="fa fa-check"></i><b>13.1</b> <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#ggplot2"><i class="fa fa-check"></i><b>13.1.1</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="13.1.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#dplyr"><i class="fa fa-check"></i><b>13.1.2</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="13.1.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyr"><i class="fa fa-check"></i><b>13.1.3</b> <code>tidyr</code></a></li>
+<li class="chapter" data-level="13.1.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#purrr"><i class="fa fa-check"></i><b>13.1.4</b> <code>purrr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#knitr"><i class="fa fa-check"></i><b>13.2</b> <code>knitr</code></a></li>
+<li class="chapter" data-level="13.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#stargazer"><i class="fa fa-check"></i><b>13.3</b> <code>stargazer</code></a></li>
+<li class="chapter" data-level="13.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#summary-11"><i class="fa fa-check"></i><b>13.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>14</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Short Introduction to Applied Statistical Programming in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="recommended-r-libraries" class="section level1" number="13">
+<h1><span class="header-section-number">13</span> Recommended R Libraries</h1>
+<p>The following is a list of recommended R libraries to install–they can be helpful for data management, graphing, and formatting.</p>
+<div id="tidyverse" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> <code>tidyverse</code></h2>
+<p>The <code>tidyverse</code> package is a metapackage consisting of other libraries. The most useful ones for a beginner, I believe, are <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>, and <code>purrr</code>.</p>
+<p>For more information, see the <a href="https://www.tidyverse.org/"><code>tidyverse</code> website</a>.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="recommended-r-libraries.html#cb190-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="recommended-r-libraries.html#cb191-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div id="ggplot2" class="section level3" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> <code>ggplot2</code></h3>
+<p>The library <code>ggplot2</code> offers visualization tools with a modern aesthetic. The following is an example of a small-multiples<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> scatter plot. For more information, see the <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code> website</a>.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="recommended-r-libraries.html#cb192-1"></a><span class="kw">ggplot</span>(mtcars) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb192-2"><a href="recommended-r-libraries.html#cb192-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">col =</span> <span class="kw">factor</span>(am), <span class="dt">size =</span> hp) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb192-3"><a href="recommended-r-libraries.html#cb192-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb192-4"><a href="recommended-r-libraries.html#cb192-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y     =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb192-5"><a href="recommended-r-libraries.html#cb192-5"></a>       <span class="dt">x     =</span> <span class="st">&#39;Weight&#39;</span>,</span>
+<span id="cb192-6"><a href="recommended-r-libraries.html#cb192-6"></a>       <span class="dt">col   =</span> <span class="st">&#39;Transmission&#39;</span>,</span>
+<span id="cb192-7"><a href="recommended-r-libraries.html#cb192-7"></a>       <span class="dt">size  =</span> <span class="st">&#39;Horsepower&#39;</span>,</span>
+<span id="cb192-8"><a href="recommended-r-libraries.html#cb192-8"></a>       <span class="dt">title =</span> <span class="st">&#39;MPG vs. Weight&#39;</span>) <span class="op">+</span></span>
+<span id="cb192-9"><a href="recommended-r-libraries.html#cb192-9"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>gear) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb192-10"><a href="recommended-r-libraries.html#cb192-10"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb192-11"><a href="recommended-r-libraries.html#cb192-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor   =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb192-12"><a href="recommended-r-libraries.html#cb192-12"></a>        <span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-98-1.png" width="672" /></p>
+</div>
+<div id="dplyr" class="section level3" number="13.1.2">
+<h3><span class="header-section-number">13.1.2</span> <code>dplyr</code></h3>
+<p>The <code>dplyr</code> library provides aggregation tools for data management. The following is an example of calculating the mean and median MPG by gear.</p>
+<p>For more information, see the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code> website</a>.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="recommended-r-libraries.html#cb193-1"></a>my_agg &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb193-2"><a href="recommended-r-libraries.html#cb193-2"></a><span class="st">  </span><span class="kw">select</span>(mpg, gear) <span class="op">%&gt;%</span></span>
+<span id="cb193-3"><a href="recommended-r-libraries.html#cb193-3"></a><span class="st">  </span><span class="kw">group_by</span>(gear) <span class="op">%&gt;%</span></span>
+<span id="cb193-4"><a href="recommended-r-libraries.html#cb193-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg),</span>
+<span id="cb193-5"><a href="recommended-r-libraries.html#cb193-5"></a>            <span class="dt">median_mpg =</span> <span class="kw">median</span>(mpg))</span>
+<span id="cb193-6"><a href="recommended-r-libraries.html#cb193-6"></a></span>
+<span id="cb193-7"><a href="recommended-r-libraries.html#cb193-7"></a>my_agg</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 3
+##    gear mean_mpg median_mpg
+##   &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+## 1     3     16.1       15.5
+## 2     4     24.5       22.8
+## 3     5     21.4       19.7</code></pre>
+</div>
+<div id="tidyr" class="section level3" number="13.1.3">
+<h3><span class="header-section-number">13.1.3</span> <code>tidyr</code></h3>
+<p>The <code>tidyr</code> library provides pivoting tools to reshape your dataset. The following are examples of how to reformat an aggregation from <code>dplyr</code>’s functions.</p>
+<p>For more information, see the <a href="https://tidyr.tidyverse.org/"><code>tidyr</code> website</a>.</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="recommended-r-libraries.html#cb195-1"></a><span class="co"># Aggregation</span></span>
+<span id="cb195-2"><a href="recommended-r-libraries.html#cb195-2"></a>my_agg &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
+<span id="cb195-3"><a href="recommended-r-libraries.html#cb195-3"></a><span class="st">  </span><span class="kw">select</span>(mpg, gear, am) <span class="op">%&gt;%</span></span>
+<span id="cb195-4"><a href="recommended-r-libraries.html#cb195-4"></a><span class="st">  </span><span class="kw">group_by</span>(gear, am) <span class="op">%&gt;%</span></span>
+<span id="cb195-5"><a href="recommended-r-libraries.html#cb195-5"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg))</span>
+<span id="cb195-6"><a href="recommended-r-libraries.html#cb195-6"></a></span>
+<span id="cb195-7"><a href="recommended-r-libraries.html#cb195-7"></a><span class="co"># Pivot wide</span></span>
+<span id="cb195-8"><a href="recommended-r-libraries.html#cb195-8"></a>my_agg2 &lt;-<span class="st"> </span>my_agg <span class="op">%&gt;%</span></span>
+<span id="cb195-9"><a href="recommended-r-libraries.html#cb195-9"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols     =</span> gear, <span class="co"># rows</span></span>
+<span id="cb195-10"><a href="recommended-r-libraries.html#cb195-10"></a>              <span class="dt">names_from  =</span> am, <span class="co"># columns</span></span>
+<span id="cb195-11"><a href="recommended-r-libraries.html#cb195-11"></a>              <span class="dt">values_from =</span> mean_mpg) <span class="co"># values</span></span>
+<span id="cb195-12"><a href="recommended-r-libraries.html#cb195-12"></a></span>
+<span id="cb195-13"><a href="recommended-r-libraries.html#cb195-13"></a>my_agg2</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 3
+## # Groups:   gear [3]
+##    gear   `0`   `1`
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     3  16.1  NA  
+## 2     4  21.0  26.3
+## 3     5  NA    21.4</code></pre>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="recommended-r-libraries.html#cb197-1"></a><span class="co"># Pivot long</span></span>
+<span id="cb197-2"><a href="recommended-r-libraries.html#cb197-2"></a>my_agg2 <span class="op">%&gt;%</span></span>
+<span id="cb197-3"><a href="recommended-r-libraries.html#cb197-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>,</span>
+<span id="cb197-4"><a href="recommended-r-libraries.html#cb197-4"></a>               <span class="dt">names_to  =</span> <span class="st">&#39;am&#39;</span>,</span>
+<span id="cb197-5"><a href="recommended-r-libraries.html#cb197-5"></a>               <span class="dt">values_to =</span> <span class="st">&#39;mpg&#39;</span>,</span>
+<span id="cb197-6"><a href="recommended-r-libraries.html#cb197-6"></a>               <span class="dt">values_drop_na =</span> <span class="ot">TRUE</span>) <span class="co"># drop NA values</span></span></code></pre></div>
+<pre><code>## # A tibble: 4 x 3
+## # Groups:   gear [3]
+##    gear am      mpg
+##   &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;
+## 1     3 0      16.1
+## 2     4 0      21.0
+## 3     4 1      26.3
+## 4     5 1      21.4</code></pre>
+</div>
+<div id="purrr" class="section level3" number="13.1.4">
+<h3><span class="header-section-number">13.1.4</span> <code>purrr</code></h3>
+<p>The <code>purrr</code> library offers functionals similar to the <code>*apply()</code> functions (the former’s <code>map()</code> operates similarly as the latter’s <code>lapply()</code>); however, the former contains functions that maintain type consistency. For example, there is a function called <code>map_dbl()</code> that throws an error if the output is not a double vector (i.e., a numeric vector), which is useful when you want to catch your program’s errors.</p>
+<p>The following are some examples from <code>purrr</code>. For more information on how to use these and other functions within the library, see the <a href="https://purrr.tidyverse.org/"><code>purrr</code> website</a>.</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="recommended-r-libraries.html#cb199-1"></a><span class="kw">map</span>(mtcars, mean) <span class="co"># == lapply(mtcars, mean)</span></span></code></pre></div>
+<pre><code>## $mpg
+## [1] 20.09062
+## 
+## $cyl
+## [1] 6.1875
+## 
+## $disp
+## [1] 230.7219
+## 
+## $hp
+## [1] 146.6875
+## 
+## $drat
+## [1] 3.596563
+## 
+## $wt
+## [1] 3.21725
+## 
+## $qsec
+## [1] 17.84875
+## 
+## $vs
+## [1] 0.4375
+## 
+## $am
+## [1] 0.40625
+## 
+## $gear
+## [1] 3.6875
+## 
+## $carb
+## [1] 2.8125</code></pre>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="recommended-r-libraries.html#cb201-1"></a><span class="kw">map_dbl</span>(mtcars, mean) <span class="co"># == sapply(mtcars, mean)</span></span></code></pre></div>
+<pre><code>##        mpg        cyl       disp         hp       drat         wt       qsec 
+##  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+##         vs         am       gear       carb 
+##   0.437500   0.406250   3.687500   2.812500</code></pre>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="recommended-r-libraries.html#cb203-1"></a><span class="kw">map_df</span>(mtcars, mean) <span class="co"># Maintains data frame class.</span></span></code></pre></div>
+<pre><code>## # A tibble: 1 x 11
+##     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  20.1  6.19  231.  147.  3.60  3.22  17.8 0.438 0.406  3.69  2.81</code></pre>
+</div>
+</div>
+<div id="knitr" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> <code>knitr</code></h2>
+<p>The <code>knitr</code> library is an “engine for dynamic report generation,” which allows for better formatted tables and documentation capabilities when using R Markdown.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> The following example demonstrates <code>kable()</code> to format a table.</p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="recommended-r-libraries.html#cb205-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;knitr&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="recommended-r-libraries.html#cb206-1"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb206-2"><a href="recommended-r-libraries.html#cb206-2"></a></span>
+<span id="cb206-3"><a href="recommended-r-libraries.html#cb206-3"></a>my_table &lt;-<span class="st"> </span><span class="kw">with</span>(mtcars, <span class="kw">table</span>(gear, am))</span>
+<span id="cb206-4"><a href="recommended-r-libraries.html#cb206-4"></a></span>
+<span id="cb206-5"><a href="recommended-r-libraries.html#cb206-5"></a><span class="kw">kable</span>(my_table)</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+0
+</th>
+<th style="text-align:right;">
+1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="stargazer" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> <code>stargazer</code></h2>
+<p>The <code>stargazer</code> library allows one to format a regression model to be closer to journal-quality guidelines.</p>
+<p>For more information, see <a href="https://CRAN.R-project.org/package=stargazer">its documentation on CRAN</a>.</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="recommended-r-libraries.html#cb207-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;stargazer&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="recommended-r-libraries.html#cb208-1"></a><span class="kw">library</span>(stargazer)</span></code></pre></div>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="recommended-r-libraries.html#cb212-1"></a>my_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars)</span></code></pre></div>
+<p>If you are using RGui or R Studio and not R Markdown, I recommend to set <code>type = 'text'</code> so that only textual output will be produced instead of LaTeX or HTML code.</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="recommended-r-libraries.html#cb213-1"></a><span class="co"># If NOT using R Markdown...</span></span>
+<span id="cb213-2"><a href="recommended-r-libraries.html#cb213-2"></a><span class="kw">stargazer</span>(my_ols, <span class="dt">type =</span> <span class="st">&#39;text&#39;</span>)</span></code></pre></div>
+<pre><code>## 
+## ===============================================
+##                         Dependent variable:    
+##                     ---------------------------
+##                                 mpg            
+## -----------------------------------------------
+## wt                           -3.113**          
+##                               (1.179)          
+##                                                
+## hp                           -0.043***         
+##                               (0.014)          
+##                                                
+## disp                           0.005           
+##                               (0.012)          
+##                                                
+## gear                           0.652           
+##                               (1.212)          
+##                                                
+## am                             1.605           
+##                               (1.782)          
+##                                                
+## Constant                     32.108***         
+##                               (4.844)          
+##                                                
+## -----------------------------------------------
+## Observations                    32             
+## R2                             0.842           
+## Adjusted R2                    0.812           
+## Residual Std. Error       2.616 (df = 26)      
+## F Statistic           27.709*** (df = 5; 26)   
+## ===============================================
+## Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
+<p>If you happen to use R Markdown, then set <code>type = 'html'</code> for HTML documents and omit <code>type</code> for PDF documents.</p>
+<p>For more on R Markdown, see <a href="https://bookdown.org/yihui/rmarkdown/">the R Markdown book by Yihui Xie, J. J. Allaire, and Garrett Grolemund</a>.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="recommended-r-libraries.html#cb215-1"></a><span class="co"># If using RMarkdown...</span></span>
+<span id="cb215-2"><a href="recommended-r-libraries.html#cb215-2"></a><span class="kw">stargazer</span>(my_ols, <span class="dt">type =</span> <span class="st">&#39;html&#39;</span>) <span class="co"># for html documents.</span></span></code></pre></div>
+<table style="text-align:center">
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+<em>Dependent variable:</em>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="1" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+mpg
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+wt
+</td>
+<td>
+-3.113<sup>**</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1.179)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+hp
+</td>
+<td>
+-0.043<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.014)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+disp
+</td>
+<td>
+0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(0.012)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+gear
+</td>
+<td>
+0.652
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1.212)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+am
+</td>
+<td>
+1.605
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(1.782)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Constant
+</td>
+<td>
+32.108<sup>***</sup>
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+(4.844)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Observations
+</td>
+<td>
+32
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+R<sup>2</sup>
+</td>
+<td>
+0.842
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Adjusted R<sup>2</sup>
+</td>
+<td>
+0.812
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+Residual Std. Error
+</td>
+<td>
+2.616 (df = 26)
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+F Statistic
+</td>
+<td>
+27.709<sup>***</sup> (df = 5; 26)
+</td>
+</tr>
+<tr>
+<td colspan="2" style="border-bottom: 1px solid black">
+</td>
+</tr>
+<tr>
+<td style="text-align:left">
+<em>Note:</em>
+</td>
+<td style="text-align:right">
+<sup><em></sup>p&lt;0.1; <sup><strong></sup>p&lt;0.05; <sup></strong></em></sup>p&lt;0.01
+</td>
+</tr>
+</table>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="recommended-r-libraries.html#cb216-1"></a><span class="co">#stargazer(my_ols) # for PDF documents.</span></span></code></pre></div>
+</div>
+<div id="summary-11" class="section level2" number="13.4">
+<h2><span class="header-section-number">13.4</span> Summary</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-109">Table 13.1: </span>Summary of Recommended Libraries
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Library
+</th>
+<th style="text-align:left;">
+Function
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Example
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ggplot2
+</td>
+<td style="text-align:left;">
+ggplot(data) + aes(y, x, …) + geom_point()
+</td>
+<td style="text-align:left;">
+Scatter plot with ggplot2.
+</td>
+<td style="text-align:left;">
+ggplot(mtcars) +
+aes(y = mpg, x = wt, col = factor(am), size = hp) +
+geom_point(alpha = 0.5)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dplyr
+</td>
+<td style="text-align:left;">
+select(), group_by(), summarise()
+</td>
+<td style="text-align:left;">
+Select, group by, and summarise data.
+</td>
+<td style="text-align:left;">
+mtcars %&gt;%
+select(mpg, gear) %&gt;%
+group_by(gear) %&gt;%
+summarise(mean_mpg = mean(mpg),
+median_mpg = median(mpg))
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyr
+</td>
+<td style="text-align:left;">
+pivot_wider(), pivot_longer()
+</td>
+<td style="text-align:left;">
+Pivot data long or wide.
+</td>
+<td style="text-align:left;">
+<p>my_agg &lt;- mtcars %&gt;%
+select(mpg, gear, am) %&gt;%
+group_by(gear, am) %&gt;%
+summarise(mean_mpg = mean(mpg))</p>
+my_agg2 &lt;- my_agg %&gt;%
+pivot_wider(id_cols = gear,
+names_from = am,
+values_from = mean_mpg)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+purrr
+</td>
+<td style="text-align:left;">
+map(.x, .f)
+</td>
+<td style="text-align:left;">
+Apply a function over a data’s elements iteratively.
+</td>
+<td style="text-align:left;">
+map(mtcars, mean)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+knitr
+</td>
+<td style="text-align:left;">
+kable(x)
+</td>
+<td style="text-align:left;">
+Format a table.
+</td>
+<td style="text-align:left;">
+<p>my_table &lt;- with(mtcars, table(gear, am))</p>
+kable(my_table)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stargazer
+</td>
+<td style="text-align:left;">
+stargazer(x)
+</td>
+<td style="text-align:left;">
+Format a regression.
+</td>
+<td style="text-align:left;">
+<p>my_ols &lt;- lm(mpg ~ wt + hp + disp + gear + am, mtcars)</p>
+stargazer(my_ols, type = ‘text’)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Small_multiple" class="uri">https://en.wikipedia.org/wiki/Small_multiple</a><a href="recommended-r-libraries.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a><a href="recommended-r-libraries.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="linear-modeling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

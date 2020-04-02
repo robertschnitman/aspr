@@ -1,0 +1,39 @@
+"0","summ_class <- data.frame(Type = c('matrix',"
+"0","                                  'list',"
+"0","                                  'data frame'),"
+"0","                         Decsription = c('A 2-dimensional array of elements, where each column is of the same type.',"
+"0","                                         'A collection of elements, where each one can be a different type or class.',"
+"0","                                         'A 2-dimensional set of elements, where each column can be a different type.'),"
+"0","                         Example     = c('matrix(1:9, 3, 3)',"
+"0","                                         'list(1, ""a"", matrix(1:9, 3, 3)',"
+"0","                                         'mtcars'))"
+"0","summ(summ_class, 'Summary of Classes')"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of Classes</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Type </th>
+   <th style=""text-align:left;""> Decsription </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> matrix </td>
+   <td style=""text-align:left;""> A 2-dimensional array of elements, where each column is of the same type. </td>
+   <td style=""text-align:left;""> matrix(1:9, 3, 3) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> list </td>
+   <td style=""text-align:left;""> A collection of elements, where each one can be a different type or class. </td>
+   <td style=""text-align:left;""> list(1, ""a"", matrix(1:9, 3, 3) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> data frame </td>
+   <td style=""text-align:left;""> A 2-dimensional set of elements, where each column can be a different type. </td>
+   <td style=""text-align:left;""> mtcars </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

@@ -1,0 +1,54 @@
+"0","summ_strings <- data.frame(Function = c('paste(x, y)/paste0(x, y)',"
+"0","                                        ""strsplit(x, split = ' ')"","
+"0","                                        'gsub(pattern, replacement, x)',"
+"0","                                        'grep/grepl(pattern, vector)'),"
+"0","                           Description = c('Concatenation of x and y.',"
+"0","                                           'Split a string by a splitting character.',"
+"0","                                           'Substitute a portion of a string vector based on a given pattern.',"
+"0","                                           'Pattern match a string and output its position OR Boolean (i.e. TRUE/FALSE).'),"
+"0","                           Example = c(""paste('a', 'b'); paste0('a', 'b')"","
+"0","                                       ""x <- c('This is a sentence.', "
+"0","       'This is another sentence.',"
+"0","       'This is yet another sentence.')"
+"0","\n strsplit(x, split = ' ')"","
+"0","""gsub('sentence', 'drink', x)"","
+"0","""grep('^M', rownames(mtcars), value = TRUE)""))"
+"0","summ(summ_strings, 'Summary of String Functions')"
+"1","<table class=""table"" style=""margin-left: auto; margin-right: auto;"">
+<caption>Summary of String Functions</caption>
+ <thead>
+  <tr>
+   <th style=""text-align:left;""> Function </th>
+   <th style=""text-align:left;""> Description </th>
+   <th style=""text-align:left;""> Example </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style=""text-align:left;""> paste(x, y)/paste0(x, y) </td>
+   <td style=""text-align:left;""> Concatenation of x and y. </td>
+   <td style=""text-align:left;""> paste('a', 'b'); paste0('a', 'b') </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> strsplit(x, split = ' ') </td>
+   <td style=""text-align:left;""> Split a string by a splitting character. </td>
+   <td style=""text-align:left;""> x &lt;- c('This is a sentence.', 
+       'This is another sentence.',
+       'This is yet another sentence.')
+
+ strsplit(x, split = ' ') </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> gsub(pattern, replacement, x) </td>
+   <td style=""text-align:left;""> Substitute a portion of a string vector based on a given pattern. </td>
+   <td style=""text-align:left;""> gsub('sentence', 'drink', x) </td>
+  </tr>
+  <tr>
+   <td style=""text-align:left;""> grep/grepl(pattern, vector) </td>
+   <td style=""text-align:left;""> Pattern match a string and output its position OR Boolean (i.e. TRUE/FALSE). </td>
+   <td style=""text-align:left;""> grep('^M', rownames(mtcars), value = TRUE) </td>
+  </tr>
+</tbody>
+</table>"
+"1","
+"

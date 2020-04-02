@@ -1,0 +1,5 @@
+"0","     "
+"0","# Draw a trend line over the scatter plot"
+"0","abline(lm(mpg ~ wt, mtcars), "
+"0","       col = 'salmon',"
+"0","       lwd = 2) # line width"

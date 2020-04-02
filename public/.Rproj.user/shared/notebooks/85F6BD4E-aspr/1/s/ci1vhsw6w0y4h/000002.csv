@@ -1,0 +1,8 @@
+"0","# Draw the scatter plot"
+"0","with(mtcars,"
+"0","     plot(mpg ~ wt,"
+"0","          ylab = 'MPG',"
+"0","          xlab = 'Weight',"
+"0","          main = 'MPG vs. Weight',"
+"0","          col = 'cyan4',"
+"0","          pch = 16)) # pch determines point type."

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Data Management | A Short Introduction to Applied Statistical Programming in R</title>
+  <meta name="description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Data Management | A Short Introduction to Applied Statistical Programming in R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://robertschnitman.netlify.com/" />
+  <meta property="og:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+  <meta property="og:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Data Management | A Short Introduction to Applied Statistical Programming in R" />
+  
+  <meta name="twitter:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
+  <meta name="twitter:image" content="https://robertschnitman.netlify.com/img/cover_image.jpg" />
+
+<meta name="author" content="Robert Schnitman" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basics.html"/>
+<link rel="next" href="string-functions.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html"><i class="fa fa-check"></i><b>1</b> The Paradigms of R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a></li>
+<li class="chapter" data-level="1.2" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#functional"><i class="fa fa-check"></i><b>1.2</b> Functional</a></li>
+<li class="chapter" data-level="1.3" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#object-oriented"><i class="fa fa-check"></i><b>1.3</b> Object Oriented</a></li>
+<li class="chapter" data-level="1.4" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#summary"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#r-as-a-calculator"><i class="fa fa-check"></i><b>2.1</b> R as a calculator</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="basics.html"><a href="basics.html#operators"><i class="fa fa-check"></i><b>2.1.1</b> Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#data-types-and-classes"><i class="fa fa-check"></i><b>2.2</b> Data Types and Classes</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="basics.html"><a href="basics.html#classes"><i class="fa fa-check"></i><b>2.2.1</b> Classes</a></li>
+<li class="chapter" data-level="2.2.2" data-path="basics.html"><a href="basics.html#types"><i class="fa fa-check"></i><b>2.2.2</b> Types</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#assignments"><i class="fa fa-check"></i><b>2.3</b> Assignments</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#addingremoving-variables"><i class="fa fa-check"></i><b>2.3.1</b> Adding/Removing Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#viewing-data"><i class="fa fa-check"></i><b>2.4</b> Viewing Data</a></li>
+<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>2.5</b> Getting Help</a></li>
+<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#summary-1"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-management.html"><a href="data-management.html#replacing-values"><i class="fa fa-check"></i><b>3.1</b> Replacing Values</a></li>
+<li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#switching-values"><i class="fa fa-check"></i><b>3.2</b> Switching Values</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#scalar-case"><i class="fa fa-check"></i><b>3.2.1</b> Scalar Case</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#vector-case"><i class="fa fa-check"></i><b>3.2.2</b> Vector Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#importing-data"><i class="fa fa-check"></i><b>3.3</b> Importing Data</a></li>
+<li class="chapter" data-level="3.4" data-path="data-management.html"><a href="data-management.html#combining-data"><i class="fa fa-check"></i><b>3.4</b> Combining Data</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="data-management.html"><a href="data-management.html#cbindrbind"><i class="fa fa-check"></i><b>3.4.1</b> <code>cbind()</code>/<code>rbind()</code></a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-management.html"><a href="data-management.html#merge"><i class="fa fa-check"></i><b>3.4.2</b> <code>merge()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-management.html"><a href="data-management.html#subsetting-data"><i class="fa fa-check"></i><b>3.5</b> Subsetting Data</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="data-management.html"><a href="data-management.html#vector-case-1"><i class="fa fa-check"></i><b>3.5.1</b> Vector Case</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-management.html"><a href="data-management.html#data-frame-case"><i class="fa fa-check"></i><b>3.5.2</b> Data Frame Case</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-management.html"><a href="data-management.html#splitting-data"><i class="fa fa-check"></i><b>3.6</b> Splitting Data</a></li>
+<li class="chapter" data-level="3.7" data-path="data-management.html"><a href="data-management.html#summary-2"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="string-functions.html"><a href="string-functions.html"><i class="fa fa-check"></i><b>4</b> String Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="string-functions.html"><a href="string-functions.html#concatenate-strings"><i class="fa fa-check"></i><b>4.1</b> Concatenate Strings</a></li>
+<li class="chapter" data-level="4.2" data-path="string-functions.html"><a href="string-functions.html#subset-strings"><i class="fa fa-check"></i><b>4.2</b> Subset Strings</a></li>
+<li class="chapter" data-level="4.3" data-path="string-functions.html"><a href="string-functions.html#split-strings"><i class="fa fa-check"></i><b>4.3</b> Split Strings</a></li>
+<li class="chapter" data-level="4.4" data-path="string-functions.html"><a href="string-functions.html#substitute-strings"><i class="fa fa-check"></i><b>4.4</b> Substitute Strings</a></li>
+<li class="chapter" data-level="4.5" data-path="string-functions.html"><a href="string-functions.html#match-string-patterns"><i class="fa fa-check"></i><b>4.5</b> Match String Patterns</a></li>
+<li class="chapter" data-level="4.6" data-path="string-functions.html"><a href="string-functions.html#summary-3"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="control-flow.html"><a href="control-flow.html#if-and-ifelse"><i class="fa fa-check"></i><b>5.1</b> <code>if</code> and <code>ifelse()</code></a></li>
+<li class="chapter" data-level="5.2" data-path="control-flow.html"><a href="control-flow.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="control-flow.html"><a href="control-flow.html#for-loop"><i class="fa fa-check"></i><b>5.2.1</b> <code>for</code> loop</a></li>
+<li class="chapter" data-level="5.2.2" data-path="control-flow.html"><a href="control-flow.html#while-loop"><i class="fa fa-check"></i><b>5.2.2</b> <code>while</code> loop</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="control-flow.html"><a href="control-flow.html#summary-4"><i class="fa fa-check"></i><b>5.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics</a></li>
+<li class="chapter" data-level="7" data-path="probability-functions.html"><a href="probability-functions.html"><i class="fa fa-check"></i><b>7</b> Probability Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="probability-functions.html"><a href="probability-functions.html#generating-random-numbers"><i class="fa fa-check"></i><b>7.1</b> Generating Random Numbers</a></li>
+<li class="chapter" data-level="7.2" data-path="probability-functions.html"><a href="probability-functions.html#sampling"><i class="fa fa-check"></i><b>7.2</b> Sampling</a></li>
+<li class="chapter" data-level="7.3" data-path="probability-functions.html"><a href="probability-functions.html#others"><i class="fa fa-check"></i><b>7.3</b> Others</a></li>
+<li class="chapter" data-level="7.4" data-path="probability-functions.html"><a href="probability-functions.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="function-writing.html"><a href="function-writing.html"><i class="fa fa-check"></i><b>8</b> Function Writing</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="function-writing.html"><a href="function-writing.html#univariate-case"><i class="fa fa-check"></i><b>8.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="8.2" data-path="function-writing.html"><a href="function-writing.html#multivariate-case"><i class="fa fa-check"></i><b>8.2</b> Multivariate Case</a></li>
+<li class="chapter" data-level="8.3" data-path="function-writing.html"><a href="function-writing.html#summary-6"><i class="fa fa-check"></i><b>8.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="functionals.html"><a href="functionals.html#lapply"><i class="fa fa-check"></i><b>9.1</b> <code>lapply()</code></a></li>
+<li class="chapter" data-level="9.2" data-path="functionals.html"><a href="functionals.html#sapply"><i class="fa fa-check"></i><b>9.2</b> <code>sapply()</code></a></li>
+<li class="chapter" data-level="9.3" data-path="functionals.html"><a href="functionals.html#apply"><i class="fa fa-check"></i><b>9.3</b> <code>apply()</code></a></li>
+<li class="chapter" data-level="9.4" data-path="functionals.html"><a href="functionals.html#vapply"><i class="fa fa-check"></i><b>9.4</b> <code>vapply()</code></a></li>
+<li class="chapter" data-level="9.5" data-path="functionals.html"><a href="functionals.html#mapplymap"><i class="fa fa-check"></i><b>9.5</b> <code>mapply()</code>/<code>Map()</code></a>
+<ul>
+<li class="chapter" data-level="9.5.1" data-path="functionals.html"><a href="functionals.html#univariate-case-1"><i class="fa fa-check"></i><b>9.5.1</b> Univariate Case</a></li>
+<li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
+<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.7</b> <code>aggregate()</code></a></li>
+<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<ul>
+<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-8"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>11.1</b> t-test</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>11.1.1</b> One-sample t-test</a></li>
+<li class="chapter" data-level="11.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-t-test"><i class="fa fa-check"></i><b>11.1.2</b> Two-sample t-test</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>11.2</b> Chi-square test</a></li>
+<li class="chapter" data-level="11.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#summary-9"><i class="fa fa-check"></i><b>11.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="linear-modeling.html"><a href="linear-modeling.html"><i class="fa fa-check"></i><b>12</b> Linear Modeling</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="linear-modeling.html"><a href="linear-modeling.html#pearson-correlations"><i class="fa fa-check"></i><b>12.1</b> Pearson Correlations</a></li>
+<li class="chapter" data-level="12.2" data-path="linear-modeling.html"><a href="linear-modeling.html#anova"><i class="fa fa-check"></i><b>12.2</b> ANOVA</a></li>
+<li class="chapter" data-level="12.3" data-path="linear-modeling.html"><a href="linear-modeling.html#ordinary-least-squares"><i class="fa fa-check"></i><b>12.3</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="linear-modeling.html"><a href="linear-modeling.html#residual-diagnostics-with-ols"><i class="fa fa-check"></i><b>12.3.1</b> Residual diagnostics with OLS</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="linear-modeling.html"><a href="linear-modeling.html#logistic-regression"><i class="fa fa-check"></i><b>12.4</b> Logistic Regression</a></li>
+<li class="chapter" data-level="12.5" data-path="linear-modeling.html"><a href="linear-modeling.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html"><i class="fa fa-check"></i><b>13</b> Recommended R Libraries</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyverse"><i class="fa fa-check"></i><b>13.1</b> <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#ggplot2"><i class="fa fa-check"></i><b>13.1.1</b> <code>ggplot2</code></a></li>
+<li class="chapter" data-level="13.1.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#dplyr"><i class="fa fa-check"></i><b>13.1.2</b> <code>dplyr</code></a></li>
+<li class="chapter" data-level="13.1.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyr"><i class="fa fa-check"></i><b>13.1.3</b> <code>tidyr</code></a></li>
+<li class="chapter" data-level="13.1.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#purrr"><i class="fa fa-check"></i><b>13.1.4</b> <code>purrr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#knitr"><i class="fa fa-check"></i><b>13.2</b> <code>knitr</code></a></li>
+<li class="chapter" data-level="13.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#stargazer"><i class="fa fa-check"></i><b>13.3</b> <code>stargazer</code></a></li>
+<li class="chapter" data-level="13.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#summary-11"><i class="fa fa-check"></i><b>13.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>14</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>Resources</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Short Introduction to Applied Statistical Programming in R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-management" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Data Management</h1>
+<p>In this chapter, we will learn how to replace values, switch values, import data, combine data, subset data, and split data.</p>
+<div id="replacing-values" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Replacing Values</h2>
+<p>We can replace values with the <code>replace()</code> function.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-management.html#cb38-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="co"># 1 through 10.</span></span>
+<span id="cb38-2"><a href="data-management.html#cb38-2"></a></span>
+<span id="cb38-3"><a href="data-management.html#cb38-3"></a><span class="co"># If x equals 2, 5, or 7, replace with 0.</span></span>
+<span id="cb38-4"><a href="data-management.html#cb38-4"></a><span class="co">## replace(vector, condition, replacement value).</span></span>
+<span id="cb38-5"><a href="data-management.html#cb38-5"></a><span class="kw">replace</span>(x, x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>), <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  0  3  4  0  6  0  8  9 10</code></pre>
+</div>
+<div id="switching-values" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Switching Values</h2>
+<p>We can switch–or recode–values with the <code>switch()</code> function. By default, <code>switch()</code> is a “scalar” function in that it only produces a single value. To produce a vector of values, we combine it with <code>sapply()</code>–see the <em>Functionals</em> chapter for more details on <code>sapply()</code>.</p>
+<div id="scalar-case" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Scalar Case</h3>
+<p>In the case of a single value, all we need to pass into <code>switch()</code> are (1) the data object and (2) an expression stating what the old value should become (i.e, provide the old value and the replacement value).</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-management.html#cb40-1"></a><span class="co"># SYNTAX OF switch():</span></span>
+<span id="cb40-2"><a href="data-management.html#cb40-2"></a><span class="co">## switch(x, old_value = new_value)</span></span>
+<span id="cb40-3"><a href="data-management.html#cb40-3"></a></span>
+<span id="cb40-4"><a href="data-management.html#cb40-4"></a>x &lt;-<span class="st"> &quot;a&quot;</span></span>
+<span id="cb40-5"><a href="data-management.html#cb40-5"></a></span>
+<span id="cb40-6"><a href="data-management.html#cb40-6"></a>xs &lt;-<span class="st"> </span><span class="cf">switch</span>(x, <span class="dt">a =</span> <span class="dv">1</span>)</span>
+<span id="cb40-7"><a href="data-management.html#cb40-7"></a></span>
+<span id="cb40-8"><a href="data-management.html#cb40-8"></a>xs</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="vector-case" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Vector Case</h3>
+<p>For the case of applying <code>switch()</code> to vectors, we make use of <code>sapply()</code>.</p>
+<p>To take a case in point, let’s first generate some random data of racial groups.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-management.html#cb42-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random sampling</span></span>
+<span id="cb42-2"><a href="data-management.html#cb42-2"></a></span>
+<span id="cb42-3"><a href="data-management.html#cb42-3"></a><span class="co"># Generate vector of unique values.</span></span>
+<span id="cb42-4"><a href="data-management.html#cb42-4"></a>my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Asian&#39;</span>, <span class="st">&#39;African American&#39;</span>, <span class="st">&#39;White&#39;</span>, <span class="st">&#39;Other&#39;</span>)</span>
+<span id="cb42-5"><a href="data-management.html#cb42-5"></a></span>
+<span id="cb42-6"><a href="data-management.html#cb42-6"></a><span class="co"># Conduct repeat sampling of my_vector</span></span>
+<span id="cb42-7"><a href="data-management.html#cb42-7"></a><span class="co">## See the Probability Functions chapter for more details on sample().</span></span>
+<span id="cb42-8"><a href="data-management.html#cb42-8"></a>my_vector2 &lt;-<span class="st"> </span><span class="kw">sample</span>(my_vector, <span class="dv">20</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb42-9"><a href="data-management.html#cb42-9"></a></span>
+<span id="cb42-10"><a href="data-management.html#cb42-10"></a><span class="co"># Print the new vector.</span></span>
+<span id="cb42-11"><a href="data-management.html#cb42-11"></a>my_vector2</span></code></pre></div>
+<pre><code>##  [1] &quot;Asian&quot;            &quot;Other&quot;            &quot;White&quot;            &quot;Asian&quot;           
+##  [5] &quot;African American&quot; &quot;Asian&quot;            &quot;White&quot;            &quot;White&quot;           
+##  [9] &quot;African American&quot; &quot;African American&quot; &quot;White&quot;            &quot;White&quot;           
+## [13] &quot;Asian&quot;            &quot;Asian&quot;            &quot;Asian&quot;            &quot;African American&quot;
+## [17] &quot;African American&quot; &quot;African American&quot; &quot;African American&quot; &quot;White&quot;</code></pre>
+<p>Let’s say that we want to recode these values: 0 for <em>White</em>, 1 for <em>African American</em>, 2 for <em>Asian</em>, and 3 for <em>Other</em>. To do so, we first define a function and pass it through <code>sapply()</code>–see the <em>Function Writing</em> and <em>Functionals</em> chapters respectively for more information.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-management.html#cb44-1"></a><span class="co"># First, define a function that recodes the races into integers.</span></span>
+<span id="cb44-2"><a href="data-management.html#cb44-2"></a>my_switch &lt;-<span class="st"> </span><span class="cf">function</span>(v) {</span>
+<span id="cb44-3"><a href="data-management.html#cb44-3"></a>  </span>
+<span id="cb44-4"><a href="data-management.html#cb44-4"></a>  <span class="cf">switch</span>(v, <span class="dt">White =</span> <span class="dv">0</span>, <span class="st">`</span><span class="dt">African American</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>, <span class="dt">Asian =</span> <span class="dv">2</span>, <span class="dt">Other =</span> <span class="dv">3</span>)</span>
+<span id="cb44-5"><a href="data-management.html#cb44-5"></a>  <span class="co"># We use back quotes for &quot;African American&quot; because of the space.</span></span>
+<span id="cb44-6"><a href="data-management.html#cb44-6"></a>  </span>
+<span id="cb44-7"><a href="data-management.html#cb44-7"></a>}</span>
+<span id="cb44-8"><a href="data-management.html#cb44-8"></a></span>
+<span id="cb44-9"><a href="data-management.html#cb44-9"></a><span class="co"># Now we can pass my_switch to sapply() to execute the recoding.</span></span>
+<span id="cb44-10"><a href="data-management.html#cb44-10"></a><span class="kw">sapply</span>(my_vector2, my_switch)</span></code></pre></div>
+<pre><code>##            Asian            Other            White            Asian 
+##                2                3                0                2 
+## African American            Asian            White            White 
+##                1                2                0                0 
+## African American African American            White            White 
+##                1                1                0                0 
+##            Asian            Asian            Asian African American 
+##                2                2                2                1 
+## African American African American African American            White 
+##                1                1                1                0</code></pre>
+</div>
+</div>
+<div id="importing-data" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Importing Data</h2>
+<p>We can import datasets with <code>read.table()</code>–this method is the most general.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-management.html#cb46-1"></a><span class="co"># Set path to dataset</span></span>
+<span id="cb46-2"><a href="data-management.html#cb46-2"></a><span class="co"># For this example, our data is in the data folder</span></span>
+<span id="cb46-3"><a href="data-management.html#cb46-3"></a><span class="co">#  and our data are separated by commas.</span></span>
+<span id="cb46-4"><a href="data-management.html#cb46-4"></a>my_data &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;data/mtcars.csv&#39;</span>, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb46-5"><a href="data-management.html#cb46-5"></a></span>
+<span id="cb46-6"><a href="data-management.html#cb46-6"></a><span class="co"># Setting stringsAsFactors = FALSE maintains strings as strings.</span></span>
+<span id="cb46-7"><a href="data-management.html#cb46-7"></a><span class="co">## See the Basics chapter for more detail on classes and types.</span></span></code></pre></div>
+<p>In the case of files with comma-separated values, we can use <code>read.csv()</code> to import them more easily.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-management.html#cb47-1"></a><span class="co"># Set path to dataset</span></span>
+<span id="cb47-2"><a href="data-management.html#cb47-2"></a>my_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;data/mtcars.csv&#39;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="combining-data" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Combining Data</h2>
+<p>There are three main ways to combine data: (1) <code>cbind()</code>, (2) <code>rbind()</code>, and (3) <code>merge()</code>.</p>
+<div id="cbindrbind" class="section level3" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> <code>cbind()</code>/<code>rbind()</code></h3>
+<p>The function <code>cbind()</code> combines vectors or datasets column-wise, while <code>rbind()</code> does so row-wise.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-management.html#cb48-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb48-2"><a href="data-management.html#cb48-2"></a>y &lt;-<span class="st"> </span><span class="dv">6</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb48-3"><a href="data-management.html#cb48-3"></a></span>
+<span id="cb48-4"><a href="data-management.html#cb48-4"></a><span class="kw">cbind</span>(x, y)</span></code></pre></div>
+<pre><code>##      x  y
+## [1,] 1  6
+## [2,] 2  7
+## [3,] 3  8
+## [4,] 4  9
+## [5,] 5 10</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-management.html#cb50-1"></a><span class="kw">rbind</span>(x, y)</span></code></pre></div>
+<pre><code>##   [,1] [,2] [,3] [,4] [,5]
+## x    1    2    3    4    5
+## y    6    7    8    9   10</code></pre>
+</div>
+<div id="merge" class="section level3" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> <code>merge()</code></h3>
+<p>Merging data with <code>merge()</code> (AKA “joining data”) is powerful, as we can combine disparate datasets that have a common linking variable between them.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-management.html#cb52-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># remember our random numbers from rnorm().</span></span>
+<span id="cb52-2"><a href="data-management.html#cb52-2"></a></span>
+<span id="cb52-3"><a href="data-management.html#cb52-3"></a>data1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">survey_id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
+<span id="cb52-4"><a href="data-management.html#cb52-4"></a>                    <span class="dt">wage      =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb52-5"><a href="data-management.html#cb52-5"></a></span>
+<span id="cb52-6"><a href="data-management.html#cb52-6"></a>data2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">survey_id  =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">1</span>,</span>
+<span id="cb52-7"><a href="data-management.html#cb52-7"></a>                    <span class="dt">experience =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">3</span>))</span>
+<span id="cb52-8"><a href="data-management.html#cb52-8"></a></span>
+<span id="cb52-9"><a href="data-management.html#cb52-9"></a><span class="co"># merge(first data, second data, by = &#39;a common variable&#39;).</span></span>
+<span id="cb52-10"><a href="data-management.html#cb52-10"></a>data_merge &lt;-<span class="st"> </span><span class="kw">merge</span>(data1, data2, <span class="dt">by =</span> <span class="st">&#39;survey_id&#39;</span>)</span>
+<span id="cb52-11"><a href="data-management.html#cb52-11"></a></span>
+<span id="cb52-12"><a href="data-management.html#cb52-12"></a>data_merge <span class="co"># An &quot;inner-join&quot; of datasets</span></span></code></pre></div>
+<pre><code>##   survey_id     wage experience
+## 1         1 11.86773   4.083835
+## 2         2 15.91822   6.727344
+## 3         3 10.82186   7.214974
+## 4         4 22.97640   6.462287
+## 5         5 16.64754   2.538595</code></pre>
+<p>What we accomplished here is an <em>inner join</em>: a join in which two datasets overlap. See the documentation file for <code>merge()</code> for more information on different types of joins (i.e., type <code>?merge</code> into the R console).</p>
+</div>
+</div>
+<div id="subsetting-data" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Subsetting Data</h2>
+<p>To subset data, we can pass data and relational/logic operators<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> into the <code>subset()</code> function, or we can use the bracket syntax and use the operators there.</p>
+<p>The relational operators are the following:</p>
+<ul>
+<li><p><code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code> (less than or equal to), <code>&gt;=</code> (greater than or equal to)</p></li>
+<li><p><code>==</code> (equal to), <code>!=</code> (not equal to)</p></li>
+</ul>
+<p>The main logic operators are the following:</p>
+<ul>
+<li><p><code>&amp;</code> (and)</p></li>
+<li><p><code>|</code> (or)</p></li>
+</ul>
+<div id="vector-case-1" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Vector Case</h3>
+<p>Suppose we have the following vector:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-management.html#cb54-1"></a>x &lt;-<span class="st"> </span><span class="dv">-10</span><span class="op">:</span><span class="dv">10</span> <span class="co"># integers from -10 to 10.</span></span>
+<span id="cb54-2"><a href="data-management.html#cb54-2"></a>x</span></code></pre></div>
+<pre><code>##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1   2   3   4   5   6   7   8
+## [20]   9  10</code></pre>
+<p>Then we can subset like the following:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-management.html#cb56-1"></a>x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] <span class="co"># same as subset(x, x &lt; 0)</span></span></code></pre></div>
+<pre><code>##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-management.html#cb58-1"></a>x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] 3 4</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-management.html#cb60-1"></a><span class="co"># We can use functions inside the brackets.</span></span>
+<span id="cb60-2"><a href="data-management.html#cb60-2"></a><span class="co">## For example, %in% is a matching function:</span></span>
+<span id="cb60-3"><a href="data-management.html#cb60-3"></a><span class="co">##   let&#39;s use it to subset for only 1 through 5.</span></span>
+<span id="cb60-4"><a href="data-management.html#cb60-4"></a>x[x <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] </span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+</div>
+<div id="data-frame-case" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Data Frame Case</h3>
+<p>Suppose the dataset <code>mtcars</code>. Then we can subset like the following:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-management.html#cb62-1"></a><span class="kw">subset</span>(mtcars, mpg <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>) <span class="co"># Same as mtcars[mtcars$mpg &gt; 30, ]</span></span></code></pre></div>
+<pre><code>##                 mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Fiat 128       32.4   4 78.7  66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4 75.7  52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4 71.1  65 4.22 1.835 19.90  1  1    4    1
+## Lotus Europa   30.4   4 95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-management.html#cb64-1"></a><span class="kw">subset</span>(mtcars, mpg <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span> <span class="op">&amp;</span><span class="st"> </span>wt <span class="op">&gt;</span><span class="st"> </span><span class="fl">1.7</span>)</span></code></pre></div>
+<pre><code>##                 mpg cyl disp hp drat    wt  qsec vs am gear carb
+## Fiat 128       32.4   4 78.7 66 4.08 2.200 19.47  1  1    4    1
+## Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.90  1  1    4    1</code></pre>
+</div>
+</div>
+<div id="splitting-data" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Splitting Data</h2>
+<p>To split data, we pass a data frame and a variable into the <code>split()</code> function.</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-management.html#cb66-1"></a><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear) <span class="co"># Splits into 3 subsets.</span></span></code></pre></div>
+<pre><code>## $`3`
+##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## 
+## $`4`
+##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280       19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Merc 280C      17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## 
+## $`5`
+##                 mpg cyl  disp  hp drat    wt qsec vs am gear carb
+## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
+## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
+## Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
+## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
+## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8</code></pre>
+<p>Splitting can be useful when you want to apply a function that’s contingent on subsets of data. For example, we can split the data and perform a regression model on each of them.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-management.html#cb68-1"></a><span class="co"># 1. Split dataset by a splitting variable.</span></span>
+<span id="cb68-2"><a href="data-management.html#cb68-2"></a>my_split &lt;-<span class="st"> </span><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear)</span>
+<span id="cb68-3"><a href="data-management.html#cb68-3"></a></span>
+<span id="cb68-4"><a href="data-management.html#cb68-4"></a><span class="co"># 2. Estimate a regression model based on each subset.</span></span>
+<span id="cb68-5"><a href="data-management.html#cb68-5"></a>my_models &lt;-<span class="st"> </span><span class="kw">lapply</span>(my_split, <span class="cf">function</span>(data) <span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, data))</span>
+<span id="cb68-6"><a href="data-management.html#cb68-6"></a></span>
+<span id="cb68-7"><a href="data-management.html#cb68-7"></a><span class="co"># 3. Print the coefficients in a matrix form.</span></span>
+<span id="cb68-8"><a href="data-management.html#cb68-8"></a><span class="kw">sapply</span>(my_models, coef)</span></code></pre></div>
+<pre><code>##                     3         4         5
+## (Intercept) 28.395036 42.492769 42.562784
+## wt          -3.156854 -6.863478 -8.046336</code></pre>
+<p>For more information about <code>lapply()</code> and <code>sapply()</code>, see the <em>Functionals</em> chapter; for more information about <code>lm()</code>, see the <em>Linear Modeling</em> chapter.</p>
+</div>
+<div id="summary-2" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Summary</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-33">Table 3.1: </span>Summary of Data Management Functions
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Function
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Example
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+replace(x, condition, replacement)
+</td>
+<td style="text-align:left;">
+Replace a value in a vector based on a condition.
+</td>
+<td style="text-align:left;">
+x &lt;- 1:10; replace(x, x %in% c(2, 5, 7), 0)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+switch(x, expression)
+</td>
+<td style="text-align:left;">
+Switch (recode) values.
+</td>
+<td style="text-align:left;">
+x &lt;- ‘a’; switch(x, a = 1)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+read.table(‘path/to/file.csv’, sep = ‘,’)
+</td>
+<td style="text-align:left;">
+Import a dataset.
+</td>
+<td style="text-align:left;">
+my_data &lt;- read.table(‘data/mtcars.csv’, sep = ‘,’)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cbind(x,y)/rbind(x,y)
+</td>
+<td style="text-align:left;">
+Combine data column- or row-wise.
+</td>
+<td style="text-align:left;">
+x &lt;- 1:5;
+y &lt;- 6:10;
+cbind(x, y);
+rbind(x,y)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+merge(x, y, by = ‘linking_var’)
+</td>
+<td style="text-align:left;">
+Join data by a linking variable.
+</td>
+<td style="text-align:left;">
+<p>data1 &lt;- data.frame(survey_id = 1:5,
+wage = rnorm(5, mean = 15, sd = 5))</p>
+<p>data2 &lt;- data.frame(survey_id = 5:1,
+experience = rnorm(5, mean = 5, sd = 3))</p>
+data_merge &lt;- merge(data1, data2, by = ‘survey_id’)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+subset(data, condition); x[condition]
+</td>
+<td style="text-align:left;">
+Subset data via relational and logic operators.
+</td>
+<td style="text-align:left;">
+subset(mtcars, mpg &gt; 30 &amp; wt &gt; 1.7)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+split(data, grouping_variable)
+</td>
+<td style="text-align:left;">
+Split data by a grouping variable
+</td>
+<td style="text-align:left;">
+split(mtcars, mtcars$gear)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>“binary operators” that compare values (R Documentation, Comparison). See <code>?Comparison</code> for more information. For logic operators, see <code>?Logic</code>.<a href="data-management.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="string-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "sepia",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>
