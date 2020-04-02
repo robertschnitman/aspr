@@ -3,7 +3,7 @@ title: "A Short Introduction to Applied Statistical Programming in R"
 author: "Robert Schnitman"
 date: "`r paste0('March 29, 2020 (Last updated: ', format(Sys.Date(), '%B %d, %Y'), ')')`"
 site: bookdown::bookdown_site
-url: 'https\://robertschnitman.netlify.com/'
+url: 'https\://rs-aspr.netlify.com/'
 output: 
   bookdown::gitbook: 
     config:
