@@ -17,7 +17,7 @@ output:
 documentclass: book
 biblio-style: apalike
 link-citations: yes
-#github-repo: rstudio/bookdown-demo
+github-repo: robertschnitman/aspr
 description: "The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis."
 cover-image: "img/cover_image.jpg"
 ---
