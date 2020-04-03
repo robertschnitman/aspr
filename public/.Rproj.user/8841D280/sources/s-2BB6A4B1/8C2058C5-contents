@@ -55,13 +55,13 @@ summ <- function(data, caption) {
 
 # Introduction {-#index}
 
-![](img/cover_image.jpg)
-
 The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis. Primarily focusing on Base R, this book will teach R "from the ground up," teaching the fundamentals without using external packages unless necessary or for quick demonstrations on the programming language's extensions. Overall, I hope that students will learn enough from this book to conduct data analysis in R independently.
 
 Because I know people live busy lives, please feel free to skip chapters or simply only review the *Summary* subsections at the end of them--they are for your benefit!
 
 Also, please feel free to email me at robertschnitman@gmail.com if you have any suggestions on improving this book!
+
+![](img/cover_image.jpg)
 
 # Prerequisites {-}
 
