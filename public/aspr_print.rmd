@@ -3,16 +3,8 @@ title: "A Short Introduction to Applied Statistical Programming in R"
 author: "Robert Schnitman"
 date: "`r paste0('March 29, 2020 (Last updated: ', format(Sys.Date(), '%B %d, %Y'), ')')`"
 site: bookdown::bookdown_site
-url: 'https\://rs-aspr.netlify.com/'
+url: 'https\://rs-aspr.netlify.app/'
 output: 
-  bookdown::gitbook: 
-    config:
-      toc:
-        collapse: section
-      search: yes
-      fontsettings:
-        theme: sepia
-      download: ["PDF"]
   bookdown::pdf_book: default
 documentclass: book
 biblio-style: apalike
@@ -1819,8 +1811,8 @@ For more on R Markdown, see [the R Markdown book by Yihui Xie, J. J. Allaire, an
 
 ```{r, results = 'asis'}
 # If using RMarkdown...
-stargazer(my_ols, type = 'html') # for html documents.
-#stargazer(my_ols) # for PDF documents.
+# stargazer(my_ols, type = 'html') # for html documents.
+stargazer(my_ols) # for PDF documents.
 ```
 
 ## Summary
