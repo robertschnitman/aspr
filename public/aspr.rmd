@@ -829,7 +829,7 @@ summ_funs
 
 # Descriptive Statistics
 
-There are various functions for descriptive statistics in R. The below subsections are a selected sample.
+There are various functions for descriptive statistics in R. The below subsections show a selected sample.
 
 ## Centrality and Spread
 
