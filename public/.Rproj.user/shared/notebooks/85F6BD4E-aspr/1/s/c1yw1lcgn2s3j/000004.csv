@@ -11,4 +11,4 @@
 "1","     6.588 "
 "1","
 "
-"0","barplot(means, col = 'cyan4')"
+"0","barplot(means, col = 'cyan4', ylab = 'Mean Sepal Length', xlab = 'Species')"

@@ -1,6 +1,0 @@
-"0","my_table <- table(mtcars$gear)"
-"0","barplot(my_table,"
-"0","        ylab = 'Frequency',"
-"0","        xlab = 'Number of Gears',"
-"0","        col  = 'lavender',"
-"0","        main = 'Frequencies by Number of Gears')"

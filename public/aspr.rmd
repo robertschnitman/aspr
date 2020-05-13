@@ -412,6 +412,16 @@ cbind(x, y)
 rbind(x, y)
 ```
 
+If we have a list of values we want to combine, we can use `do.call()` and `cbind()/rbind()` together. The former iteratively calls a function on a list, which can be useful for combining multiple datasets together. `do.call()` is a special case of a function called a *functional*, which is a function that takes other functions as inputs--this concept is discussed more in the *Functionals* chapter.
+
+```{r}
+my_list <- list(x = 1:5, y = 6:10, z = 11:15)
+
+do.call(cbind, my_list)
+do.call(rbind, my_list)
+```
+
+
 ### `merge()`
 
 Merging data with `merge()` (AKA "joining data") is powerful, as we can combine disparate datasets that have a common linking variable between them.
@@ -449,7 +459,7 @@ The main logic operators are the following:
 
 * `|` (or)
 
-[^1]: "binary operators" that compare values (R Documentation, Comparison). See `?Comparison` for more information. For logic operators, see `?Logic`.
+[^1]: These operators are "binary operators," which compare values (R Documentation, Comparison). See `?Comparison` for more information. For logic operators, see `?Logic`.
 
 ### Vector Case
 
@@ -513,6 +523,7 @@ summ_dm <- data.frame(Function    = c('replace(x, condition, replacement)',
                                       'switch(x, expression)',
                                       "read.table('path/to/file.csv', sep = ',')",
                                       'cbind(x,y)/rbind(x,y)',
+                                      'do.call(function, list)',
                                       "merge(x, y, by = 'linking_var')",
                                       "subset(data, condition); x[condition]",
                                       "split(data, grouping_variable)"),
@@ -520,6 +531,7 @@ summ_dm <- data.frame(Function    = c('replace(x, condition, replacement)',
                                       "Switch (recode) values.",
                                       "Import a dataset.",
                                       "Combine data column- or row-wise.",
+                                      'Iteratively call a function on a list',
                                       "Join data by a linking variable.",
                                       "Subset data via relational and logic operators.",
                                       "Split data by a grouping variable"),
@@ -530,8 +542,10 @@ summ_dm <- data.frame(Function    = c('replace(x, condition, replacement)',
                                       y <- 6:10;
                                       cbind(x, y); 
                                       rbind(x,y)",
+                                      "my_list <- list(x = 1:5, y = 6:10, z = 11:15);
+                                      do.call(cbind, my_list)",
                                       "data1 <- data.frame(survey_id = 1:5, 
-                    wage      = rnorm(5, mean = 15, sd = 5))
+                    wage = rnorm(5, mean = 15, sd = 5))
 
 data2 <- data.frame(survey_id  = 5:1,
                     experience = rnorm(5, mean = 5, sd = 3)) \n
@@ -545,7 +559,7 @@ summ(summ_dm, "Summary of Data Management Functions")
 
 # String Functions
 
-String functions allow us to combine, pattern-match, and substitute character vectors.
+String functions allow us to combine, pattern-match, and substitute character vectors. These functions are useful for detecting and recoding specific values.
 
 ## Concatenate Strings
 
@@ -572,12 +586,14 @@ substring(x, 5) # Goes to the end by default
 
 ## Split Strings
 
-We can split strings with the `strsplit()` function.
+We can split strings with the `strsplit()` function. The output is a list, where each list element is a character vector.
 
 ```{r}
 x <- c('This is a sentence.', 
        'This is another sentence.',
        'This is yet another sentence.')
+
+x
 
 # Split vector elements by space
 my_split <- strsplit(x, split = ' ') 
@@ -813,7 +829,110 @@ summ_funs
 
 # Descriptive Statistics
 
-The following is a list of summary statistics functions. Try them out in your console!
+There are various functions for descriptive statistics in R. The below subsections are a selected sample.
+
+## Centrality and Spread
+
+Like in Microsoft Excel, we can cast centrality and spread functions on a variable.
+
+```{r}
+k <- c(1, 5, 7, 9)
+mean(k)
+
+# Use the $ operator for columns in a dataset
+mean(mtcars$mpg)
+```
+
+
+If you want to use multiple functions on a single variable, the `with()` function can be useful, as it lets you define the local environment to be the desired dataset so that you do not have to use the `$` operator repeatedly.
+
+```{r}
+with(mtcars, c(mean = mean(mpg), median = median(mpg), sd = sd(mpg)))
+```
+
+## Minimum and Maximum
+
+To compute the minimum and maximum of a variable, we can use the `min()` and `max()` functions respectively.
+
+```{r}
+x <- 1:10 # 1 through 10.
+
+min(x)
+max(x)
+```
+
+## Data Dimensions
+
+To know the dimensions of an object in R, we can use `nrow()/NROW` for the number of rows; `ncol()/NCOL()` for the number of columns; and `dim()` for number of both rows and columns simultaneously.
+
+```{r}
+NROW(mtcars)
+NCOL(mtcars)
+dim(mtcars)
+```
+
+## Data Summary
+
+We can cast `summary()` on an object to capture summary information on an object. This function is useful following `str()`, as you can get a sense of what your dataset is like.
+
+```{r}
+# Preview the dataset
+str(iris)
+
+# Summarize the dataset.
+summary(iris)
+```
+
+Note that because `Species` is a factor variable, we obtain counts by category for that column instead of quantiles and means like the others.
+
+## Frequency Tables
+
+To get counts by groups, we can use the `table()` function, while using `prop.table()` on a `table()` computation produces proportions. The input of `table()` can be one to two columns and the output is a `table` class.
+
+### Single-variable Case
+```{r}
+my_table <- table(iris$Species)
+
+my_table
+
+prop.table(my_table)
+```
+
+### Multi-variable Case
+```{r}
+my_table2 <- with(mtcars, table(am, gear))
+
+my_table2
+
+my_table3 <- with(mtcars, table(am, gear, cyl))
+
+my_table3
+```
+
+
+### Converting to a  Data Frame
+If we apply the `as.data.frame()` function to an object of a `table` class, the output would be structured in a way such that we have a column (or columns) containing the group(s) and a column for the frequency. The structure is useful, as it is in a format that is acceptable for CSV output, for example.
+
+```{r}
+freq <- table(iris$Species)
+prop <- prop.table(freq)
+
+as.data.frame(freq)
+as.data.frame(prop)
+
+my_table_df <- merge(as.data.frame(freq), as.data.frame(prop), by = 'Var1')
+
+names(my_table_df) <- c('Species', 'Frequency', 'Percent')
+
+my_table_df
+```
+
+```{r, eval = FALSE}
+write.csv(my_table_df, 'my_example_table.csv')
+```
+
+
+## Summary
 
 ```{r, echo = FALSE}
 funs <- data.frame(Function = c('mean(x)',
@@ -1086,7 +1205,7 @@ rapply(my_list, # For this list...
 
 ## `tapply()`
 
-The function `tapply()` makes group-wise computations, outputting a vector as a result. The output being a vector can be useful when passing to other functions, such as `barplot()`.
+The function `tapply()` makes group-wise computations, outputting a vector as a result. The output being a vector can be useful when passing to other functions, such as `barplot()`. As such, you may want to use `tapply()` when (1) you want your grouped-computation output to be a vector of values and (2) you want to interact the output values with another function.
 
 ```{r}
 # Let's use iris, a pre-loaded dataset in R.
@@ -1094,13 +1213,13 @@ means <- with(iris, tapply(Sepal.Length, Species, mean))
 
 means
 
-barplot(means, col = 'cyan4')
+barplot(means, col = 'cyan4', ylab = 'Mean Sepal Length', xlab = 'Species')
 ```
 
 
 ## `aggregate()`
 
-Similar to `tapply()`, the function `aggregate()` allows you to make group-wise calculations. However, the output is a data frame rather than a vector. Additionally, you can input multiple independent variables (i.e. variables on the right-hand side of the formula syntax, `y ~ x`).
+Similar to `tapply()`, the function `aggregate()` allows you to make group-wise calculations; however, the output is a data frame rather than a vector. Additionally, you can input multiple independent variables (i.e. variables on the right-hand side of the formula syntax, `y ~ x`). This function may be preferred over `tapply()` when (1) you want multiple grouping variables and (2) you want your output to be in a 2-dimensional format.
 
 ```{r}
 # Ge thte mean MPG by gear and am.
@@ -1297,7 +1416,7 @@ with(mtcars,
 
 ## Bar Plots
 
-For a bar plot, we pass a vector (usually one of counts) or aggregation to `barplot().
+For a bar plot, we pass a vector (usually one of counts) or aggregation to `barplot()`.
 
 ### Frequency Chart
 For a frequency chart, we have to calculate a table of frequencies with the `table()` function before passing it to `barplot()`.
@@ -1319,7 +1438,8 @@ For grouped mean comparisons, we have to aggregate data with `aggregate()` (see 
 my_agg <- aggregate(mpg ~ gear, mtcars, mean)
 
 with(my_agg, 
-     barplot(mpg ~ gear, beside = TRUE,
+     barplot(mpg ~ gear, 
+             beside = TRUE, # Set to FALSE to stack bars.
              ylab = 'Mean MPG',
              xlab = 'Number of Gears',
              main = 'Mean MPG by Number of Gears',
@@ -1756,12 +1876,12 @@ summ(summ_libs, 'Summary of Recommended Libraries')
 
 # Conclusion
 
-I hope that these chapters were helpful in teaching you the concepts and syntax structure of R functions. This book is the first time I am writing something akin to a textbook: most of my writing have been academic papers, documentation for my packages[^5], and blog posts[^6], so I hope you have learned at least as much on R as I have on writing this book!
+I hope that these chapters were helpful in teaching you the concepts and syntax structure of R functions. This book is the first time I am writing something akin to a textbook: most of my writing have been academic papers, documentation for my packages,[^5] and blog posts,[^6] so I hope you have learned at least as much on R as I have on writing this book!
 
 For further reading, I recommend reviewing the *References* and *Resources* sections, as they provide packages, data, and a book for practicing with and learning about R.
 
 [^5]: https://github.com/robertschnitman
-[^6]: https://robertschnitman.netlify.com/
+[^6]: https://robertschnitman.netlify.app/
 
 # References {-}
 
@@ -1820,7 +1940,7 @@ Bookdown.org is a site containing free online books about R. Notably, the *bookd
 
 # About the Author {-}
 
-Hello, I'm Robert Schnitman! I am an independent contractor providing statistical consulting and data analysis services to organizations and individuals. My services include preparing statistical reports, restructuring datasets, and creating visualizations. On the side, I blog primarily about R and data analysis on my website at https://robertschnitman.netlify.com/.
+Hello, I'm Robert Schnitman! I am an independent contractor providing statistical consulting and data analysis services to organizations and individuals. My services include preparing statistical reports, restructuring datasets, and creating visualizations. On the side, I blog primarily about R and data analysis on my website at https://robertschnitman.netlify.app/.
 
 Feel free to contact me using the following links!
 
