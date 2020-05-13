@@ -5,7 +5,6 @@ date: "`r paste0('March 29, 2020 (Last updated: ', format(Sys.Date(), '%B %d, %Y
 site: bookdown::bookdown_site
 url: 'https\://rs-aspr.netlify.com/'
 output: 
-  bookdown::pdf_book: default
   bookdown::gitbook: 
     config:
       toc:
@@ -14,6 +13,7 @@ output:
       fontsettings:
         theme: sepia
       download: ["PDF"]
+  bookdown::pdf_book: default
 documentclass: book
 biblio-style: apalike
 link-citations: yes
@@ -1084,9 +1084,23 @@ rapply(my_list, # For this list...
        classes = 'numeric') 
 ```
 
+## `tapply()`
+
+The function `tapply()` makes group-wise computations, outputting a vector as a result. The output being a vector can be useful when passing to other functions, such as `barplot()`.
+
+```{r}
+# Let's use iris, a pre-loaded dataset in R.
+means <- with(iris, tapply(Sepal.Length, Species, mean))
+
+means
+
+barplot(means, col = 'cyan4')
+```
+
+
 ## `aggregate()`
 
-The function `aggregate()` allows you to make group-wise calculations.
+Similar to `tapply()`, the function `aggregate()` allows you to make group-wise calculations. However, the output is a data frame rather than a vector. Additionally, you can input multiple independent variables (i.e. variables on the right-hand side of the formula syntax, `y ~ x`).
 
 ```{r}
 # Ge thte mean MPG by gear and am.
@@ -1106,6 +1120,7 @@ funs <- data.frame(Function = c('lapply(X, FUN)',
                                 'mapply(FUN, ...)',
                                 'Map(f, ...)',
                                 'rapply(object, f, classes)',
+                                'tapply(X, INDEX, FUN)',
                                 'aggregate(formula, data, FUN)'),
                    Description = c('Compute a function over data and output a list.',
                                    'Compute a function over data and output a matrix (sometimes a list, depending on the function being passed).',
@@ -1114,6 +1129,7 @@ funs <- data.frame(Function = c('lapply(X, FUN)',
                                    'Compute a function over one or more data inputs and output an array (vector or matrix).',
                                    'Compute a function over one or more data inputs and output a list.',
                                    'Recursively compute a function over data and output a vector or list.',
+                                   'Generate grouped computations and output a vector.',
                                    'Generate grouped computations and output a data frame.'),
                    Example     = c('lapply(mtcars, mean)',
                                    'sapply(mtcars, mean)',
@@ -1122,6 +1138,7 @@ funs <- data.frame(Function = c('lapply(X, FUN)',
                                    'mapply(rbind, mtcars\\$mpg, mtcars\\$wt)',
                                    'Map(rbind, mtcars\\$mpg, mtcars\\$wt)',
                                    'rapply(iris, mean, classes = "numeric")',
+                                   'with(iris, tapply(Sepal.Length, Species, mean))',
                                    'aggregate(mpg ~ gear, mtcars, mean)'))
 
 

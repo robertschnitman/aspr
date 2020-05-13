@@ -224,8 +224,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
-<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.7</b> <code>aggregate()</code></a></li>
-<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.8</b> Summary</a></li>
+<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#tapply"><i class="fa fa-check"></i><b>9.7</b> <code>tapply()</code></a></li>
+<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.8</b> <code>aggregate()</code></a></li>
+<li class="chapter" data-level="9.9" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.9</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
 <ul>
@@ -478,24 +479,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Sepal.Length  Sepal.Width Petal.Length  Petal.Width 
 ##     5.843333     3.057333     3.758000     1.199333</code></pre>
 </div>
-<div id="aggregate" class="section level2" number="9.7">
-<h2><span class="header-section-number">9.7</span> <code>aggregate()</code></h2>
-<p>The function <code>aggregate()</code> allows you to make group-wise calculations.</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="functionals.html#cb140-1"></a><span class="co"># Ge thte mean MPG by gear and am.</span></span>
-<span id="cb140-2"><a href="functionals.html#cb140-2"></a>my_agg &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mpg <span class="op">~</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars, mean)</span>
+<div id="tapply" class="section level2" number="9.7">
+<h2><span class="header-section-number">9.7</span> <code>tapply()</code></h2>
+<p>The function <code>tapply()</code> makes group-wise computations, outputting a vector as a result. The output being a vector can be useful when passing to other functions, such as <code>barplot()</code>.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="functionals.html#cb140-1"></a><span class="co"># Let&#39;s use iris, a pre-loaded dataset in R.</span></span>
+<span id="cb140-2"><a href="functionals.html#cb140-2"></a>means &lt;-<span class="st"> </span><span class="kw">with</span>(iris, <span class="kw">tapply</span>(Sepal.Length, Species, mean))</span>
 <span id="cb140-3"><a href="functionals.html#cb140-3"></a></span>
-<span id="cb140-4"><a href="functionals.html#cb140-4"></a>my_agg</span></code></pre></div>
+<span id="cb140-4"><a href="functionals.html#cb140-4"></a>means</span></code></pre></div>
+<pre><code>##     setosa versicolor  virginica 
+##      5.006      5.936      6.588</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="functionals.html#cb142-1"></a><span class="kw">barplot</span>(means, <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+</div>
+<div id="aggregate" class="section level2" number="9.8">
+<h2><span class="header-section-number">9.8</span> <code>aggregate()</code></h2>
+<p>Similar to <code>tapply()</code>, the function <code>aggregate()</code> allows you to make group-wise calculations. However, the output is a data frame rather than a vector. Additionally, you can input multiple independent variables (i.e. variables on the right-hand side of the formula syntax, <code>y ~ x</code>).</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="functionals.html#cb143-1"></a><span class="co"># Ge thte mean MPG by gear and am.</span></span>
+<span id="cb143-2"><a href="functionals.html#cb143-2"></a>my_agg &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mpg <span class="op">~</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars, mean)</span>
+<span id="cb143-3"><a href="functionals.html#cb143-3"></a></span>
+<span id="cb143-4"><a href="functionals.html#cb143-4"></a>my_agg</span></code></pre></div>
 <pre><code>##   gear am      mpg
 ## 1    3  0 16.10667
 ## 2    4  0 21.05000
 ## 3    4  1 26.27500
 ## 4    5  1 21.38000</code></pre>
 </div>
-<div id="summary-7" class="section level2" number="9.8">
-<h2><span class="header-section-number">9.8</span> Summary</h2>
+<div id="summary-7" class="section level2" number="9.9">
+<h2><span class="header-section-number">9.9</span> Summary</h2>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-70">Table 9.1: </span>Summary of Functionals
+<span id="tab:unnamed-chunk-71">Table 9.1: </span>Summary of Functionals
 </caption>
 <thead>
 <tr>
@@ -586,6 +599,17 @@ Recursively compute a function over data and output a vector or list.
 </td>
 <td style="text-align:left;">
 rapply(iris, mean, classes = “numeric”)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tapply(X, INDEX, FUN)
+</td>
+<td style="text-align:left;">
+Generate grouped computations and output a vector.
+</td>
+<td style="text-align:left;">
+with(iris, tapply(Sepal.Length, Species, mean))
 </td>
 </tr>
 <tr>

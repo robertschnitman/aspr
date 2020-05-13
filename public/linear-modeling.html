@@ -224,8 +224,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
 </ul></li>
 <li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
-<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.7</b> <code>aggregate()</code></a></li>
-<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.8</b> Summary</a></li>
+<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#tapply"><i class="fa fa-check"></i><b>9.7</b> <code>tapply()</code></a></li>
+<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.8</b> <code>aggregate()</code></a></li>
+<li class="chapter" data-level="9.9" data-path="functionals.html"><a href="functionals.html#summary-7"><i class="fa fa-check"></i><b>9.9</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
 <ul>
@@ -307,8 +308,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="pearson-correlations" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> Pearson Correlations</h2>
 <p>To estimate a Pearson correlation for all variables in a dataset, we pass a <code>matrix</code> or <code>data frame</code> into the <code>cor()</code> function.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="linear-modeling.html#cb160-1"></a><span class="co"># Pearson correlation coefficient matrix</span></span>
-<span id="cb160-2"><a href="linear-modeling.html#cb160-2"></a><span class="kw">cor</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="linear-modeling.html#cb163-1"></a><span class="co"># Pearson correlation coefficient matrix</span></span>
+<span id="cb163-2"><a href="linear-modeling.html#cb163-2"></a><span class="kw">cor</span>(mtcars)</span></code></pre></div>
 <pre><code>##             mpg        cyl       disp         hp        drat         wt
 ## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.68117191 -0.8676594
 ## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.69993811  0.7824958
@@ -334,8 +335,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## gear -0.21268223  0.2060233  0.79405876  1.0000000  0.27407284
 ## carb -0.65624923 -0.5696071  0.05753435  0.2740728  1.00000000</code></pre>
 <p>To perform a correlation test in which we produce a p-value, we pass two vectors into the <code>cor.test()</code> function.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="linear-modeling.html#cb162-1"></a><span class="co"># Pearson correlation coefficient test</span></span>
-<span id="cb162-2"><a href="linear-modeling.html#cb162-2"></a><span class="kw">with</span>(mtcars, <span class="kw">cor.test</span>(mpg, wt))</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="linear-modeling.html#cb165-1"></a><span class="co"># Pearson correlation coefficient test</span></span>
+<span id="cb165-2"><a href="linear-modeling.html#cb165-2"></a><span class="kw">with</span>(mtcars, <span class="kw">cor.test</span>(mpg, wt))</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -348,14 +349,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##        cor 
 ## -0.8676594</code></pre>
 <p>To get p-values from a correlation matrix for all variables, we will use the <code>Hmisc</code> package. We install it with <code>install.packages()</code> and then load it with <code>library()</code>. We use the library’s <code>rcorr()</code> function to calculate the correlation and p-values matrices.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="linear-modeling.html#cb164-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;Hmisc&#39;</span>) <span class="co"># Install first.</span></span></code></pre></div>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="linear-modeling.html#cb165-1"></a><span class="co"># Load the library into the environment.</span></span>
-<span id="cb165-2"><a href="linear-modeling.html#cb165-2"></a><span class="kw">library</span>(Hmisc)</span>
-<span id="cb165-3"><a href="linear-modeling.html#cb165-3"></a></span>
-<span id="cb165-4"><a href="linear-modeling.html#cb165-4"></a>my_corr &lt;-<span class="st"> </span><span class="kw">rcorr</span>(<span class="kw">as.matrix</span>(mtcars), <span class="dt">type =</span> <span class="st">&#39;pearson&#39;</span>)</span>
-<span id="cb165-5"><a href="linear-modeling.html#cb165-5"></a></span>
-<span id="cb165-6"><a href="linear-modeling.html#cb165-6"></a><span class="co"># Pearson correlation coefficients</span></span>
-<span id="cb165-7"><a href="linear-modeling.html#cb165-7"></a>my_corr<span class="op">$</span>r</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="linear-modeling.html#cb167-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;Hmisc&#39;</span>) <span class="co"># Install first.</span></span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="linear-modeling.html#cb168-1"></a><span class="co"># Load the library into the environment.</span></span>
+<span id="cb168-2"><a href="linear-modeling.html#cb168-2"></a><span class="kw">library</span>(Hmisc)</span>
+<span id="cb168-3"><a href="linear-modeling.html#cb168-3"></a></span>
+<span id="cb168-4"><a href="linear-modeling.html#cb168-4"></a>my_corr &lt;-<span class="st"> </span><span class="kw">rcorr</span>(<span class="kw">as.matrix</span>(mtcars), <span class="dt">type =</span> <span class="st">&#39;pearson&#39;</span>)</span>
+<span id="cb168-5"><a href="linear-modeling.html#cb168-5"></a></span>
+<span id="cb168-6"><a href="linear-modeling.html#cb168-6"></a><span class="co"># Pearson correlation coefficients</span></span>
+<span id="cb168-7"><a href="linear-modeling.html#cb168-7"></a>my_corr<span class="op">$</span>r</span></code></pre></div>
 <pre><code>##             mpg        cyl       disp         hp        drat         wt
 ## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.68117191 -0.8676594
 ## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.69993811  0.7824958
@@ -380,8 +381,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## am   -0.22986086  0.1683451  1.00000000  0.7940588  0.05753435
 ## gear -0.21268223  0.2060233  0.79405876  1.0000000  0.27407284
 ## carb -0.65624923 -0.5696071  0.05753435  0.2740728  1.00000000</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="linear-modeling.html#cb167-1"></a><span class="co"># p-values of the coefficients.</span></span>
-<span id="cb167-2"><a href="linear-modeling.html#cb167-2"></a>my_corr<span class="op">$</span>P</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="linear-modeling.html#cb170-1"></a><span class="co"># p-values of the coefficients.</span></span>
+<span id="cb170-2"><a href="linear-modeling.html#cb170-2"></a>my_corr<span class="op">$</span>P</span></code></pre></div>
 <pre><code>##               mpg          cyl         disp           hp         drat
 ## mpg            NA 6.112688e-10 9.380328e-10 1.787835e-07 1.776240e-05
 ## cyl  6.112688e-10           NA 1.803002e-12 3.477861e-09 8.244636e-06
@@ -422,9 +423,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="anova" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> ANOVA</h2>
 <p>To conduct ANOVA, we pass a formula and dataset into the <code>aov()</code> function. Note that the independent variables must be <code>factor</code> variables, so we must use the <code>factor()</code> function on our independent variables if they are not already factors.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="linear-modeling.html#cb169-1"></a>my_anova &lt;-<span class="st"> </span><span class="kw">aov</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(gear) <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(am), mtcars)</span>
-<span id="cb169-2"><a href="linear-modeling.html#cb169-2"></a></span>
-<span id="cb169-3"><a href="linear-modeling.html#cb169-3"></a>my_anova</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="linear-modeling.html#cb172-1"></a>my_anova &lt;-<span class="st"> </span><span class="kw">aov</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(gear) <span class="op">+</span><span class="st"> </span><span class="kw">factor</span>(am), mtcars)</span>
+<span id="cb172-2"><a href="linear-modeling.html#cb172-2"></a></span>
+<span id="cb172-3"><a href="linear-modeling.html#cb172-3"></a>my_anova</span></code></pre></div>
 <pre><code>## Call:
 ##    aov(formula = mpg ~ factor(gear) + factor(am), data = mtcars)
 ## 
@@ -435,7 +436,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Residual standard error: 4.511898
 ## Estimated effects may be unbalanced</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="linear-modeling.html#cb171-1"></a><span class="kw">summary</span>(my_anova)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="linear-modeling.html#cb174-1"></a><span class="kw">summary</span>(my_anova)</span></code></pre></div>
 <pre><code>##              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## factor(gear)  2  483.2  241.62  11.869 0.000185 ***
 ## factor(am)    1   72.8   72.80   3.576 0.069001 .  
@@ -443,7 +444,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <p>To compare pairwise means, we use <code>TukeyHSD()</code> on our ANOVA model.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="linear-modeling.html#cb173-1"></a><span class="kw">TukeyHSD</span>(my_anova)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="linear-modeling.html#cb176-1"></a><span class="kw">TukeyHSD</span>(my_anova)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -462,11 +463,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ordinary-least-squares" class="section level2" number="12.3">
 <h2><span class="header-section-number">12.3</span> Ordinary Least Squares</h2>
 <p>To estimate a regression model, we pass a formula and a dataset into the <code>lm()</code> function.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="linear-modeling.html#cb175-1"></a><span class="co"># SYNTAX OF lm(): lm(y ~ x1 + x2 + ... xn, data)</span></span>
-<span id="cb175-2"><a href="linear-modeling.html#cb175-2"></a>my_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars)</span>
-<span id="cb175-3"><a href="linear-modeling.html#cb175-3"></a></span>
-<span id="cb175-4"><a href="linear-modeling.html#cb175-4"></a><span class="co"># Return the coefficients</span></span>
-<span id="cb175-5"><a href="linear-modeling.html#cb175-5"></a>my_ols</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="linear-modeling.html#cb178-1"></a><span class="co"># SYNTAX OF lm(): lm(y ~ x1 + x2 + ... xn, data)</span></span>
+<span id="cb178-2"><a href="linear-modeling.html#cb178-2"></a>my_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars)</span>
+<span id="cb178-3"><a href="linear-modeling.html#cb178-3"></a></span>
+<span id="cb178-4"><a href="linear-modeling.html#cb178-4"></a><span class="co"># Return the coefficients</span></span>
+<span id="cb178-5"><a href="linear-modeling.html#cb178-5"></a>my_ols</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ wt + hp + gear + am, data = mtcars)
@@ -474,8 +475,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Coefficients:
 ## (Intercept)           wt           hp         gear           am  
 ##    32.55626     -2.79996     -0.03837      0.40299      1.68739</code></pre>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="linear-modeling.html#cb177-1"></a><span class="co"># Produce a summary table of the results.</span></span>
-<span id="cb177-2"><a href="linear-modeling.html#cb177-2"></a><span class="kw">summary</span>(my_ols)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="linear-modeling.html#cb180-1"></a><span class="co"># Produce a summary table of the results.</span></span>
+<span id="cb180-2"><a href="linear-modeling.html#cb180-2"></a><span class="kw">summary</span>(my_ols)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ wt + hp + gear + am, data = mtcars)
@@ -497,8 +498,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 2.577 on 27 degrees of freedom
 ## Multiple R-squared:  0.8407, Adjusted R-squared:  0.8171 
 ## F-statistic: 35.63 on 4 and 27 DF,  p-value: 2.091e-10</code></pre>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="linear-modeling.html#cb179-1"></a><span class="co"># Return the coefficient table from the summary regression table.</span></span>
-<span id="cb179-2"><a href="linear-modeling.html#cb179-2"></a><span class="kw">coef</span>(<span class="kw">summary</span>(my_ols))</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="linear-modeling.html#cb182-1"></a><span class="co"># Return the coefficient table from the summary regression table.</span></span>
+<span id="cb182-2"><a href="linear-modeling.html#cb182-2"></a><span class="kw">coef</span>(<span class="kw">summary</span>(my_ols))</span></code></pre></div>
 <pre><code>##                Estimate Std. Error    t value     Pr(&gt;|t|)
 ## (Intercept) 32.55625619 4.67170949  6.9688101 1.723405e-07
 ## wt          -2.79995626 0.94234225 -2.9712732 6.164196e-03
@@ -508,28 +509,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="residual-diagnostics-with-ols" class="section level3" number="12.3.1">
 <h3><span class="header-section-number">12.3.1</span> Residual diagnostics with OLS</h3>
 <p>To analyze the performance of our models with respect to our residuals, we can calculate the predicted values with <code>predict()</code> and residuals with <code>resid()</code>. We can then plot them to see whether the residuals behave in a homoskedastic manner.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="linear-modeling.html#cb181-1"></a>fit &lt;-<span class="st"> </span><span class="kw">predict</span>(my_ols)</span>
-<span id="cb181-2"><a href="linear-modeling.html#cb181-2"></a>res &lt;-<span class="st"> </span><span class="kw">resid</span>(my_ols)</span>
-<span id="cb181-3"><a href="linear-modeling.html#cb181-3"></a></span>
-<span id="cb181-4"><a href="linear-modeling.html#cb181-4"></a><span class="kw">plot</span>(res <span class="op">~</span><span class="st"> </span>fit)</span>
-<span id="cb181-5"><a href="linear-modeling.html#cb181-5"></a><span class="kw">abline</span>(<span class="kw">lm</span>(res <span class="op">~</span><span class="st"> </span>fit), <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
-<p>Alternatively, we can directly plot our model. Make sure to set a 2-by-2 canvas beforehand so that all the plots from <code>plot()</code> will generate simultaneously.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="linear-modeling.html#cb182-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># Set 2x2 canvas</span></span>
-<span id="cb182-2"><a href="linear-modeling.html#cb182-2"></a></span>
-<span id="cb182-3"><a href="linear-modeling.html#cb182-3"></a><span class="kw">plot</span>(my_ols)</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="linear-modeling.html#cb184-1"></a>fit &lt;-<span class="st"> </span><span class="kw">predict</span>(my_ols)</span>
+<span id="cb184-2"><a href="linear-modeling.html#cb184-2"></a>res &lt;-<span class="st"> </span><span class="kw">resid</span>(my_ols)</span>
+<span id="cb184-3"><a href="linear-modeling.html#cb184-3"></a></span>
+<span id="cb184-4"><a href="linear-modeling.html#cb184-4"></a><span class="kw">plot</span>(res <span class="op">~</span><span class="st"> </span>fit)</span>
+<span id="cb184-5"><a href="linear-modeling.html#cb184-5"></a><span class="kw">abline</span>(<span class="kw">lm</span>(res <span class="op">~</span><span class="st"> </span>fit), <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+<p>Alternatively, we can directly plot our model. Make sure to set a 2-by-2 canvas beforehand so that all the plots from <code>plot()</code> will generate simultaneously.</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="linear-modeling.html#cb185-1"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) <span class="co"># Set 2x2 canvas</span></span>
+<span id="cb185-2"><a href="linear-modeling.html#cb185-2"></a></span>
+<span id="cb185-3"><a href="linear-modeling.html#cb185-3"></a><span class="kw">plot</span>(my_ols)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
 </div>
 </div>
 <div id="logistic-regression" class="section level2" number="12.4">
 <h2><span class="header-section-number">12.4</span> Logistic Regression</h2>
 <p>Estimating a logistic regression is similar to estimating a model with OLS; however, we add an additional input in which we set the distribution family–in this case, it is the binomial one.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="linear-modeling.html#cb183-1"></a>my_logit &lt;-<span class="st"> </span><span class="kw">glm</span>(am <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>gear, </span>
-<span id="cb183-2"><a href="linear-modeling.html#cb183-2"></a>                mtcars, </span>
-<span id="cb183-3"><a href="linear-modeling.html#cb183-3"></a>                <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="linear-modeling.html#cb186-1"></a>my_logit &lt;-<span class="st"> </span><span class="kw">glm</span>(am <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>gear, </span>
+<span id="cb186-2"><a href="linear-modeling.html#cb186-2"></a>                mtcars, </span>
+<span id="cb186-3"><a href="linear-modeling.html#cb186-3"></a>                <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&#39;logit&#39;</span>))</span></code></pre></div>
 <pre><code>## Warning: glm.fit: algorithm did not converge</code></pre>
 <pre><code>## Warning: glm.fit: fitted probabilities numerically 0 or 1 occurred</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="linear-modeling.html#cb186-1"></a>my_logit</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="linear-modeling.html#cb189-1"></a>my_logit</span></code></pre></div>
 <pre><code>## 
 ## Call:  glm(formula = am ~ mpg + wt + gear, family = binomial(link = &quot;logit&quot;), 
 ##     data = mtcars)
@@ -541,7 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Degrees of Freedom: 31 Total (i.e. Null);  28 Residual
 ## Null Deviance:       43.23 
 ## Residual Deviance: 2.765e-09     AIC: 8</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="linear-modeling.html#cb188-1"></a><span class="kw">summary</span>(my_logit)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="linear-modeling.html#cb191-1"></a><span class="kw">summary</span>(my_logit)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## glm(formula = am ~ mpg + wt + gear, family = binomial(link = &quot;logit&quot;), 
@@ -570,7 +571,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">12.5</span> Summary</h2>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-95">Table 12.1: </span>Summary of Linear Modeling
+<span id="tab:unnamed-chunk-96">Table 12.1: </span>Summary of Linear Modeling
 </caption>
 <thead>
 <tr>
