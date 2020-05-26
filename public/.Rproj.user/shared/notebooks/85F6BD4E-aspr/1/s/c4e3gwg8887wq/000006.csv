@@ -1,8 +1,0 @@
-"0","# SYNTAX OF switch():"
-"0","## switch(x, old_value = ""new value"")"
-"0","x <- ""a"""
-"0","switch(x, a = 1)"
-"1","[1]"
-"1"," 1"
-"1","
-"

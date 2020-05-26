@@ -320,7 +320,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are three main programming paradigms–or styles–that R uses: Array Programming (AP), Functional Programming, and Object Oriented (OOP). Knowing how these paradigms work is important, as they will help one understand the syntax structure of R.</p>
 <div id="array" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Array</h2>
-<p>The Array Programming (AP) paradigm allows us to access elements in a dataset via a matrix-like syntax.</p>
+<p>The Array Programming (AP) paradigm allows us to access elements in a dataset via a matrix-like syntax. This paradigm can be useful when you want a more granular, so to speak, way of subsetting data, as you are able to specify the numeric positions of the desired rows and columns.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="the-paradigms-of-r.html#cb1-1"></a><span class="co"># Select the 2nd row and 5th column</span></span>
 <span id="cb1-2"><a href="the-paradigms-of-r.html#cb1-2"></a><span class="co">#   from mtcars, which is a pre-loaded dataset.</span></span>
 <span id="cb1-3"><a href="the-paradigms-of-r.html#cb1-3"></a>mtcars[<span class="dv">2</span>, <span class="dv">5</span>]</span></code></pre></div>
@@ -336,34 +336,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="functional" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Functional</h2>
-<p>Much like Excel, R has functions: execution statements with an input and an output–this syntax style is called Functional Programming (FP).</p>
+<p>Much like Excel, R has functions: execution statements with an input and an output–this syntax style is called Functional Programming (FP). The benefit of FP is that we can think more at a “high level”: we simply input some data, and the function processes it without our stating of <em>how</em> we want to execute the information. In other words, we can treat functions as “black boxes” that output our desired result based on our specified inputs.</p>
+<p>Below is an example of using the <code>mean()</code> function to calculate the average miles per gallon from the <code>mtcars</code> dataset.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="the-paradigms-of-r.html#cb5-1"></a><span class="co"># Mean of MPG from the mtcars dataset</span></span>
-<span id="cb5-2"><a href="the-paradigms-of-r.html#cb5-2"></a><span class="kw">mean</span>(mtcars<span class="op">$</span>mpg) <span class="co"># $ accesses MPG from mtcars.</span></span></code></pre></div>
+<span id="cb5-2"><a href="the-paradigms-of-r.html#cb5-2"></a><span class="co"># Input  = mtcars$mpg</span></span>
+<span id="cb5-3"><a href="the-paradigms-of-r.html#cb5-3"></a><span class="co"># OUtput = numeric value</span></span>
+<span id="cb5-4"><a href="the-paradigms-of-r.html#cb5-4"></a></span>
+<span id="cb5-5"><a href="the-paradigms-of-r.html#cb5-5"></a><span class="kw">mean</span>(mtcars<span class="op">$</span>mpg) <span class="co"># $ accesses MPG from mtcars.</span></span></code></pre></div>
 <pre><code>## [1] 20.09062</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-paradigms-of-r.html#cb7-1"></a><span class="co"># Input  = mtcars$mpg</span></span>
-<span id="cb7-2"><a href="the-paradigms-of-r.html#cb7-2"></a><span class="co"># OUtput = numeric value</span></span></code></pre></div>
 <p>Just like in math and Excel, we can compose multiple functions together.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="the-paradigms-of-r.html#cb8-1"></a><span class="co"># Rounding the mean MPG by 2 digits.</span></span>
-<span id="cb8-2"><a href="the-paradigms-of-r.html#cb8-2"></a><span class="kw">round</span>(<span class="kw">mean</span>(mtcars<span class="op">$</span>mpg), <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-paradigms-of-r.html#cb7-1"></a><span class="co"># Rounding the mean MPG by 2 digits.</span></span>
+<span id="cb7-2"><a href="the-paradigms-of-r.html#cb7-2"></a><span class="kw">round</span>(<span class="kw">mean</span>(mtcars<span class="op">$</span>mpg), <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 20.09</code></pre>
 </div>
 <div id="object-oriented" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Object Oriented</h2>
-<p>In R, we can create and access objects, which are a storage of information with attributes: this paradigm is called Object Oriented Programming (OOP). This paradigm is concerned about classes and types–the “foreground” and “background” characteristics of a dataset, so to speak. Classes affect how data look to the user, whereas types are the specific attributes of some data.</p>
+<p>In R, we can create and access objects, which are a storage of information with attributes: this paradigm is called Object Oriented Programming (OOP), which is concerned about classes and types–the “foreground” and “background” characteristics of a dataset, so to speak. Classes affect how data look to the user, whereas types are the specific attributes of some data.</p>
 <p>Classes and types are discussed in the <em>Basics</em> chapter.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="the-paradigms-of-r.html#cb10-1"></a><span class="co"># Access the MPG variable from mtcars</span></span>
-<span id="cb10-2"><a href="the-paradigms-of-r.html#cb10-2"></a><span class="co">#   and save it to an object named &quot;x&quot;</span></span>
-<span id="cb10-3"><a href="the-paradigms-of-r.html#cb10-3"></a>x &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg</span>
-<span id="cb10-4"><a href="the-paradigms-of-r.html#cb10-4"></a></span>
-<span id="cb10-5"><a href="the-paradigms-of-r.html#cb10-5"></a><span class="co"># We can now refer to mtcars$mpg anytime with &quot;x&quot;</span></span>
-<span id="cb10-6"><a href="the-paradigms-of-r.html#cb10-6"></a>x </span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="the-paradigms-of-r.html#cb9-1"></a><span class="co"># Access the MPG variable from mtcars</span></span>
+<span id="cb9-2"><a href="the-paradigms-of-r.html#cb9-2"></a><span class="co">#   and save it to an object named &quot;x&quot;</span></span>
+<span id="cb9-3"><a href="the-paradigms-of-r.html#cb9-3"></a>x &lt;-<span class="st"> </span>mtcars<span class="op">$</span>mpg</span>
+<span id="cb9-4"><a href="the-paradigms-of-r.html#cb9-4"></a></span>
+<span id="cb9-5"><a href="the-paradigms-of-r.html#cb9-5"></a><span class="co"># We can now refer to mtcars$mpg anytime with &quot;x&quot;</span></span>
+<span id="cb9-6"><a href="the-paradigms-of-r.html#cb9-6"></a>x </span></code></pre></div>
 <pre><code>##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2 10.4
 ## [16] 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4 15.8 19.7
 ## [31] 15.0 21.4</code></pre>
 <p>We can check the structure of our data objects to know their attributes.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="the-paradigms-of-r.html#cb12-1"></a><span class="co"># Check the structure of mtcars.</span></span>
-<span id="cb12-2"><a href="the-paradigms-of-r.html#cb12-2"></a><span class="co"># A data frame composed of numeric vectors.</span></span>
-<span id="cb12-3"><a href="the-paradigms-of-r.html#cb12-3"></a><span class="kw">str</span>(mtcars) </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="the-paradigms-of-r.html#cb11-1"></a><span class="co"># Check the structure of mtcars.</span></span>
+<span id="cb11-2"><a href="the-paradigms-of-r.html#cb11-2"></a><span class="co"># A data frame composed of numeric vectors.</span></span>
+<span id="cb11-3"><a href="the-paradigms-of-r.html#cb11-3"></a><span class="kw">str</span>(mtcars) </span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    32 obs. of  11 variables:
 ##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
 ##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...

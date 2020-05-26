@@ -321,30 +321,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="generating-random-numbers" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Generating Random Numbers</h2>
 <p>To calculate random numbers in R based on a normal distribution, we can use the <code>rnorm()</code> function. By default, the mean and sd respectively are 0 and 1; but we can change these parameters as necessary.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="probability-functions.html#cb143-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random numbers</span></span>
-<span id="cb143-2"><a href="probability-functions.html#cb143-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>,       <span class="co"># 100 random numbers</span></span>
-<span id="cb143-3"><a href="probability-functions.html#cb143-3"></a>           <span class="dt">mean =</span> <span class="dv">50</span>, <span class="co"># with a mean of 50</span></span>
-<span id="cb143-4"><a href="probability-functions.html#cb143-4"></a>           <span class="dt">sd =</span> <span class="dv">20</span>)   <span class="co"># and SD of 20.</span></span>
-<span id="cb143-5"><a href="probability-functions.html#cb143-5"></a></span>
-<span id="cb143-6"><a href="probability-functions.html#cb143-6"></a><span class="kw">plot</span>(<span class="kw">density</span>(x),</span>
-<span id="cb143-7"><a href="probability-functions.html#cb143-7"></a>     <span class="dt">main =</span> <span class="st">&#39;100 Random Numbers&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="probability-functions.html#cb156-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random numbers</span></span>
+<span id="cb156-2"><a href="probability-functions.html#cb156-2"></a>x &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">100</span>,       <span class="co"># 100 random numbers</span></span>
+<span id="cb156-3"><a href="probability-functions.html#cb156-3"></a>           <span class="dt">mean =</span> <span class="dv">50</span>, <span class="co"># with a mean of 50</span></span>
+<span id="cb156-4"><a href="probability-functions.html#cb156-4"></a>           <span class="dt">sd =</span> <span class="dv">20</span>)   <span class="co"># and SD of 20.</span></span>
+<span id="cb156-5"><a href="probability-functions.html#cb156-5"></a></span>
+<span id="cb156-6"><a href="probability-functions.html#cb156-6"></a><span class="kw">plot</span>(<span class="kw">density</span>(x),</span>
+<span id="cb156-7"><a href="probability-functions.html#cb156-7"></a>     <span class="dt">main =</span> <span class="st">&#39;100 Random Numbers&#39;</span>)</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 <p>See more on plots in the <em>Graphing</em> chapter.</p>
 </div>
 <div id="sampling" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Sampling</h2>
 <p>We can take a random sampling of a vector with <code>sample()</code>.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="probability-functions.html#cb144-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random values.</span></span>
-<span id="cb144-2"><a href="probability-functions.html#cb144-2"></a></span>
-<span id="cb144-3"><a href="probability-functions.html#cb144-3"></a><span class="co"># 10 random numbers from </span></span>
-<span id="cb144-4"><a href="probability-functions.html#cb144-4"></a><span class="co">#   a vector of 100 values.</span></span>
-<span id="cb144-5"><a href="probability-functions.html#cb144-5"></a><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="probability-functions.html#cb157-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random values.</span></span>
+<span id="cb157-2"><a href="probability-functions.html#cb157-2"></a></span>
+<span id="cb157-3"><a href="probability-functions.html#cb157-3"></a><span class="co"># 10 random numbers from </span></span>
+<span id="cb157-4"><a href="probability-functions.html#cb157-4"></a><span class="co">#   a vector of 100 values.</span></span>
+<span id="cb157-5"><a href="probability-functions.html#cb157-5"></a><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">10</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>##  [1] 68 39  1 34 87 43 14 82 59 51</code></pre>
 <p>For a dataset, we can do the following:</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="probability-functions.html#cb146-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random values.</span></span>
-<span id="cb146-2"><a href="probability-functions.html#cb146-2"></a></span>
-<span id="cb146-3"><a href="probability-functions.html#cb146-3"></a><span class="co"># Random 5 rows</span></span>
-<span id="cb146-4"><a href="probability-functions.html#cb146-4"></a>mtcars[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">NROW</span>(mtcars), <span class="dv">5</span>), ]</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="probability-functions.html#cb159-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random values.</span></span>
+<span id="cb159-2"><a href="probability-functions.html#cb159-2"></a></span>
+<span id="cb159-3"><a href="probability-functions.html#cb159-3"></a><span class="co"># Random 5 rows</span></span>
+<span id="cb159-4"><a href="probability-functions.html#cb159-4"></a>mtcars[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="kw">NROW</span>(mtcars), <span class="dv">5</span>), ]</span></code></pre></div>
 <pre><code>##                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Pontiac Firebird 19.2   8  400 175 3.08 3.845 17.05  0  0    3    2
 ## Hornet 4 Drive   21.4   6  258 110 3.08 3.215 19.44  1  0    3    1

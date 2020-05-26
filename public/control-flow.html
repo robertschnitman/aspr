@@ -321,27 +321,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="if-and-ifelse" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> <code>if</code> and <code>ifelse()</code></h2>
 <p>The <code>if</code> statement controls the flow of <em>your R script</em>, branching out to different possibilities if a condition is not met.</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="control-flow.html#cb98-1"></a>x &lt;-<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb98-2"><a href="control-flow.html#cb98-2"></a></span>
-<span id="cb98-3"><a href="control-flow.html#cb98-3"></a><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">2</span>) {</span>
-<span id="cb98-4"><a href="control-flow.html#cb98-4"></a>  </span>
-<span id="cb98-5"><a href="control-flow.html#cb98-5"></a>  <span class="st">&#39;x is 2!&#39;</span></span>
-<span id="cb98-6"><a href="control-flow.html#cb98-6"></a>  </span>
-<span id="cb98-7"><a href="control-flow.html#cb98-7"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">3</span>) {</span>
-<span id="cb98-8"><a href="control-flow.html#cb98-8"></a>  </span>
-<span id="cb98-9"><a href="control-flow.html#cb98-9"></a>  <span class="st">&#39;x is 3!&#39;</span></span>
-<span id="cb98-10"><a href="control-flow.html#cb98-10"></a>  </span>
-<span id="cb98-11"><a href="control-flow.html#cb98-11"></a>} <span class="cf">else</span> {</span>
-<span id="cb98-12"><a href="control-flow.html#cb98-12"></a>  </span>
-<span id="cb98-13"><a href="control-flow.html#cb98-13"></a>  <span class="st">&#39;x is not 2 nor 3!&#39;</span></span>
-<span id="cb98-14"><a href="control-flow.html#cb98-14"></a>  </span>
-<span id="cb98-15"><a href="control-flow.html#cb98-15"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="control-flow.html#cb109-1"></a>x &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb109-2"><a href="control-flow.html#cb109-2"></a></span>
+<span id="cb109-3"><a href="control-flow.html#cb109-3"></a><span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">2</span>) {</span>
+<span id="cb109-4"><a href="control-flow.html#cb109-4"></a>  </span>
+<span id="cb109-5"><a href="control-flow.html#cb109-5"></a>  <span class="st">&#39;x is 2!&#39;</span></span>
+<span id="cb109-6"><a href="control-flow.html#cb109-6"></a>  </span>
+<span id="cb109-7"><a href="control-flow.html#cb109-7"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="op">==</span><span class="st"> </span><span class="dv">3</span>) {</span>
+<span id="cb109-8"><a href="control-flow.html#cb109-8"></a>  </span>
+<span id="cb109-9"><a href="control-flow.html#cb109-9"></a>  <span class="st">&#39;x is 3!&#39;</span></span>
+<span id="cb109-10"><a href="control-flow.html#cb109-10"></a>  </span>
+<span id="cb109-11"><a href="control-flow.html#cb109-11"></a>} <span class="cf">else</span> {</span>
+<span id="cb109-12"><a href="control-flow.html#cb109-12"></a>  </span>
+<span id="cb109-13"><a href="control-flow.html#cb109-13"></a>  <span class="st">&#39;x is not 2 nor 3!&#39;</span></span>
+<span id="cb109-14"><a href="control-flow.html#cb109-14"></a>  </span>
+<span id="cb109-15"><a href="control-flow.html#cb109-15"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;x is 2!&quot;</code></pre>
 <p>The <code>ifelse()</code> function, on the other hand, controls the flow of <em>your vector</em>.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="control-flow.html#cb100-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span>
-<span id="cb100-2"><a href="control-flow.html#cb100-2"></a></span>
-<span id="cb100-3"><a href="control-flow.html#cb100-3"></a><span class="co"># If x is divisible by 2, then &quot;even&quot;; else, &quot;odd.&quot;</span></span>
-<span id="cb100-4"><a href="control-flow.html#cb100-4"></a><span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="kw">paste0</span>(x, <span class="st">&#39;: even&#39;</span>), <span class="kw">paste0</span>(x, <span class="st">&#39;: odd&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="control-flow.html#cb111-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span>
+<span id="cb111-2"><a href="control-flow.html#cb111-2"></a></span>
+<span id="cb111-3"><a href="control-flow.html#cb111-3"></a><span class="co"># If x is divisible by 2, then &quot;even&quot;; else, &quot;odd.&quot;</span></span>
+<span id="cb111-4"><a href="control-flow.html#cb111-4"></a><span class="kw">ifelse</span>(x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, <span class="kw">paste0</span>(x, <span class="st">&#39;: even&#39;</span>), <span class="kw">paste0</span>(x, <span class="st">&#39;: odd&#39;</span>))</span></code></pre></div>
 <pre><code>##  [1] &quot;1: odd&quot;   &quot;2: even&quot;  &quot;3: odd&quot;   &quot;4: even&quot;  &quot;5: odd&quot;   &quot;6: even&quot; 
 ##  [7] &quot;7: odd&quot;   &quot;8: even&quot;  &quot;9: odd&quot;   &quot;10: even&quot;</code></pre>
 </div>
@@ -351,70 +351,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="for-loop" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> <code>for</code> loop</h3>
 <p>In a <code>for</code> loop, we iterate over data <em>for each</em> data element in a sequence.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="control-flow.html#cb102-1"></a><span class="co"># Structure of a for loop</span></span>
-<span id="cb102-2"><a href="control-flow.html#cb102-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>() <span class="co"># empty vector or list.</span></span>
-<span id="cb102-3"><a href="control-flow.html#cb102-3"></a></span>
-<span id="cb102-4"><a href="control-flow.html#cb102-4"></a><span class="co"># For each data element in some_data...</span></span>
-<span id="cb102-5"><a href="control-flow.html#cb102-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(some_data)) {</span>
-<span id="cb102-6"><a href="control-flow.html#cb102-6"></a>  </span>
-<span id="cb102-7"><a href="control-flow.html#cb102-7"></a>  <span class="kw">do_something</span>(some_data[, i]) </span>
-<span id="cb102-8"><a href="control-flow.html#cb102-8"></a>  <span class="co"># The &quot;i&quot; represents the column position in this case.</span></span>
-<span id="cb102-9"><a href="control-flow.html#cb102-9"></a>  </span>
-<span id="cb102-10"><a href="control-flow.html#cb102-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="control-flow.html#cb113-1"></a><span class="co"># Structure of a for loop</span></span>
+<span id="cb113-2"><a href="control-flow.html#cb113-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>() <span class="co"># empty vector or list.</span></span>
+<span id="cb113-3"><a href="control-flow.html#cb113-3"></a></span>
+<span id="cb113-4"><a href="control-flow.html#cb113-4"></a><span class="co"># For each data element in some_data...</span></span>
+<span id="cb113-5"><a href="control-flow.html#cb113-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(some_data)) {</span>
+<span id="cb113-6"><a href="control-flow.html#cb113-6"></a>  </span>
+<span id="cb113-7"><a href="control-flow.html#cb113-7"></a>  <span class="kw">do_something</span>(some_data[, i]) </span>
+<span id="cb113-8"><a href="control-flow.html#cb113-8"></a>  <span class="co"># The &quot;i&quot; represents the column position in this case.</span></span>
+<span id="cb113-9"><a href="control-flow.html#cb113-9"></a>  </span>
+<span id="cb113-10"><a href="control-flow.html#cb113-10"></a>}</span></code></pre></div>
 <p>Let’s take this example: getting the means for each column in the dataset <code>mtcars</code>, which is pre-loaded into R.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="control-flow.html#cb103-1"></a><span class="co"># Getting the means for each column in mtcars.</span></span>
-<span id="cb103-2"><a href="control-flow.html#cb103-2"></a></span>
-<span id="cb103-3"><a href="control-flow.html#cb103-3"></a><span class="co">## Create an empty vector into which we will</span></span>
-<span id="cb103-4"><a href="control-flow.html#cb103-4"></a><span class="co">##   store means.</span></span>
-<span id="cb103-5"><a href="control-flow.html#cb103-5"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
-<span id="cb103-6"><a href="control-flow.html#cb103-6"></a></span>
-<span id="cb103-7"><a href="control-flow.html#cb103-7"></a><span class="co">## For each variable in mtcars...</span></span>
-<span id="cb103-8"><a href="control-flow.html#cb103-8"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(mtcars)) {</span>
-<span id="cb103-9"><a href="control-flow.html#cb103-9"></a></span>
-<span id="cb103-10"><a href="control-flow.html#cb103-10"></a>  <span class="co">### Store the mean of that variable</span></span>
-<span id="cb103-11"><a href="control-flow.html#cb103-11"></a>  <span class="co">###   into x.</span></span>
-<span id="cb103-12"><a href="control-flow.html#cb103-12"></a>  x[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[, i])</span>
-<span id="cb103-13"><a href="control-flow.html#cb103-13"></a></span>
-<span id="cb103-14"><a href="control-flow.html#cb103-14"></a>}</span>
-<span id="cb103-15"><a href="control-flow.html#cb103-15"></a></span>
-<span id="cb103-16"><a href="control-flow.html#cb103-16"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="control-flow.html#cb114-1"></a><span class="co"># Getting the means for each column in mtcars.</span></span>
+<span id="cb114-2"><a href="control-flow.html#cb114-2"></a></span>
+<span id="cb114-3"><a href="control-flow.html#cb114-3"></a><span class="co">## Create an empty vector into which we will</span></span>
+<span id="cb114-4"><a href="control-flow.html#cb114-4"></a><span class="co">##   store means.</span></span>
+<span id="cb114-5"><a href="control-flow.html#cb114-5"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>()</span>
+<span id="cb114-6"><a href="control-flow.html#cb114-6"></a></span>
+<span id="cb114-7"><a href="control-flow.html#cb114-7"></a><span class="co">## For each variable in mtcars...</span></span>
+<span id="cb114-8"><a href="control-flow.html#cb114-8"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(mtcars)) {</span>
+<span id="cb114-9"><a href="control-flow.html#cb114-9"></a></span>
+<span id="cb114-10"><a href="control-flow.html#cb114-10"></a>  <span class="co">### Store the mean of that variable</span></span>
+<span id="cb114-11"><a href="control-flow.html#cb114-11"></a>  <span class="co">###   into x.</span></span>
+<span id="cb114-12"><a href="control-flow.html#cb114-12"></a>  x[i] &lt;-<span class="st"> </span><span class="kw">mean</span>(mtcars[, i])</span>
+<span id="cb114-13"><a href="control-flow.html#cb114-13"></a></span>
+<span id="cb114-14"><a href="control-flow.html#cb114-14"></a>}</span>
+<span id="cb114-15"><a href="control-flow.html#cb114-15"></a></span>
+<span id="cb114-16"><a href="control-flow.html#cb114-16"></a>x</span></code></pre></div>
 <pre><code>##  [1]  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250
 ##  [7]  17.848750   0.437500   0.406250   3.687500   2.812500</code></pre>
 <p>There is actually a much better way to get the means of all columns in a dataset, which will be discussed in the <em>Functionals</em> chapter. In the meantime, the following is a more complex use-case of a <code>for</code> loop.</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="control-flow.html#cb105-1"></a><span class="co"># set 4x3 canvas</span></span>
-<span id="cb105-2"><a href="control-flow.html#cb105-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)) </span>
-<span id="cb105-3"><a href="control-flow.html#cb105-3"></a></span>
-<span id="cb105-4"><a href="control-flow.html#cb105-4"></a><span class="co"># For each column in the dataset iris...</span></span>
-<span id="cb105-5"><a href="control-flow.html#cb105-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(iris)) {</span>
-<span id="cb105-6"><a href="control-flow.html#cb105-6"></a>  </span>
-<span id="cb105-7"><a href="control-flow.html#cb105-7"></a>  <span class="co"># Plot a histogram.</span></span>
-<span id="cb105-8"><a href="control-flow.html#cb105-8"></a>  <span class="kw">hist</span>(mtcars[, i], <span class="co"># Get column vector.</span></span>
-<span id="cb105-9"><a href="control-flow.html#cb105-9"></a>       <span class="dt">xlab =</span> <span class="kw">names</span>(iris)[i], <span class="co"># Get name of column.</span></span>
-<span id="cb105-10"><a href="control-flow.html#cb105-10"></a>       <span class="dt">ylab =</span> <span class="st">&#39;Frequency&#39;</span>,</span>
-<span id="cb105-11"><a href="control-flow.html#cb105-11"></a>       <span class="dt">col  =</span> <span class="st">&#39;cyan4&#39;</span>,</span>
-<span id="cb105-12"><a href="control-flow.html#cb105-12"></a>       <span class="co"># Set the title to be based on the column name.</span></span>
-<span id="cb105-13"><a href="control-flow.html#cb105-13"></a>       <span class="dt">main =</span> <span class="kw">paste</span>(<span class="kw">names</span>(iris[i]), <span class="st">&#39;Distribution&#39;</span>))</span>
-<span id="cb105-14"><a href="control-flow.html#cb105-14"></a>  </span>
-<span id="cb105-15"><a href="control-flow.html#cb105-15"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="control-flow.html#cb116-1"></a><span class="co"># set 4x3 canvas</span></span>
+<span id="cb116-2"><a href="control-flow.html#cb116-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)) </span>
+<span id="cb116-3"><a href="control-flow.html#cb116-3"></a></span>
+<span id="cb116-4"><a href="control-flow.html#cb116-4"></a><span class="co"># For each column in the dataset iris...</span></span>
+<span id="cb116-5"><a href="control-flow.html#cb116-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(iris)) {</span>
+<span id="cb116-6"><a href="control-flow.html#cb116-6"></a>  </span>
+<span id="cb116-7"><a href="control-flow.html#cb116-7"></a>  <span class="co"># Plot a histogram.</span></span>
+<span id="cb116-8"><a href="control-flow.html#cb116-8"></a>  <span class="kw">hist</span>(mtcars[, i], <span class="co"># Get column vector.</span></span>
+<span id="cb116-9"><a href="control-flow.html#cb116-9"></a>       <span class="dt">xlab =</span> <span class="kw">names</span>(iris)[i], <span class="co"># Get name of column.</span></span>
+<span id="cb116-10"><a href="control-flow.html#cb116-10"></a>       <span class="dt">ylab =</span> <span class="st">&#39;Frequency&#39;</span>,</span>
+<span id="cb116-11"><a href="control-flow.html#cb116-11"></a>       <span class="dt">col  =</span> <span class="st">&#39;cyan4&#39;</span>,</span>
+<span id="cb116-12"><a href="control-flow.html#cb116-12"></a>       <span class="co"># Set the title to be based on the column name.</span></span>
+<span id="cb116-13"><a href="control-flow.html#cb116-13"></a>       <span class="dt">main =</span> <span class="kw">paste</span>(<span class="kw">names</span>(iris[i]), <span class="st">&#39;Distribution&#39;</span>))</span>
+<span id="cb116-14"><a href="control-flow.html#cb116-14"></a>  </span>
+<span id="cb116-15"><a href="control-flow.html#cb116-15"></a>}</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
 <p>For more on graphs, see the <em>Graphing</em> chapter.</p>
 </div>
 <div id="while-loop" class="section level3" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> <code>while</code> loop</h3>
 <p>In contrast to the <code>for</code> loop, the <code>while</code> loop iterates over data until the specified condition breaks (i.e., no longer true).</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="control-flow.html#cb106-1"></a><span class="co"># Set an initial value for the while loop.</span></span>
-<span id="cb106-2"><a href="control-flow.html#cb106-2"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb106-3"><a href="control-flow.html#cb106-3"></a></span>
-<span id="cb106-4"><a href="control-flow.html#cb106-4"></a><span class="co"># While x is less than 10...</span></span>
-<span id="cb106-5"><a href="control-flow.html#cb106-5"></a><span class="cf">while</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {</span>
-<span id="cb106-6"><a href="control-flow.html#cb106-6"></a>  </span>
-<span id="cb106-7"><a href="control-flow.html#cb106-7"></a>  <span class="co"># Add 1 to it...</span></span>
-<span id="cb106-8"><a href="control-flow.html#cb106-8"></a>  x &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb106-9"><a href="control-flow.html#cb106-9"></a>  </span>
-<span id="cb106-10"><a href="control-flow.html#cb106-10"></a>  <span class="co"># And then print it to the console.</span></span>
-<span id="cb106-11"><a href="control-flow.html#cb106-11"></a>  <span class="kw">print</span>(x)</span>
-<span id="cb106-12"><a href="control-flow.html#cb106-12"></a>  </span>
-<span id="cb106-13"><a href="control-flow.html#cb106-13"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="control-flow.html#cb117-1"></a><span class="co"># Set an initial value for the while loop.</span></span>
+<span id="cb117-2"><a href="control-flow.html#cb117-2"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb117-3"><a href="control-flow.html#cb117-3"></a></span>
+<span id="cb117-4"><a href="control-flow.html#cb117-4"></a><span class="co"># While x is less than 10...</span></span>
+<span id="cb117-5"><a href="control-flow.html#cb117-5"></a><span class="cf">while</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span>) {</span>
+<span id="cb117-6"><a href="control-flow.html#cb117-6"></a>  </span>
+<span id="cb117-7"><a href="control-flow.html#cb117-7"></a>  <span class="co"># Add 1 to it...</span></span>
+<span id="cb117-8"><a href="control-flow.html#cb117-8"></a>  x &lt;-<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
+<span id="cb117-9"><a href="control-flow.html#cb117-9"></a>  </span>
+<span id="cb117-10"><a href="control-flow.html#cb117-10"></a>  <span class="co"># And then print it to the console.</span></span>
+<span id="cb117-11"><a href="control-flow.html#cb117-11"></a>  <span class="kw">print</span>(x)</span>
+<span id="cb117-12"><a href="control-flow.html#cb117-12"></a>  </span>
+<span id="cb117-13"><a href="control-flow.html#cb117-13"></a>}</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3

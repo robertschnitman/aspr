@@ -1,5 +1,0 @@
-"0","# Set up basic plot."
-"0","with(mtcars, plot(wt ~ mpg, pch = 1, type = 'n',"
-"0","                  xlab = 'MPG',"
-"0","                  ylab = 'Weight',"
-"0","                  main = 'Weight vs. MPG'))"

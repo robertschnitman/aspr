@@ -321,21 +321,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="univariate-case" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Univariate Case</h2>
 <p>If we wanted to index a variable by its mean, we could simply type <code>x/mean(x)</code>, where <code>x</code> is our vector. However, what if there were a function called <code>index()</code> that makes this process more clear? There is not one inherently in R, but we are able to create it:</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="function-writing.html#cb148-1"></a>index &lt;-<span class="st"> </span><span class="cf">function</span>(x) { <span class="co"># the formals/arguments</span></span>
-<span id="cb148-2"><a href="function-writing.html#cb148-2"></a> </span>
-<span id="cb148-3"><a href="function-writing.html#cb148-3"></a>  x<span class="op">/</span><span class="kw">mean</span>(x) <span class="co"># The body</span></span>
-<span id="cb148-4"><a href="function-writing.html#cb148-4"></a>  </span>
-<span id="cb148-5"><a href="function-writing.html#cb148-5"></a>}</span>
-<span id="cb148-6"><a href="function-writing.html#cb148-6"></a></span>
-<span id="cb148-7"><a href="function-writing.html#cb148-7"></a><span class="kw">index</span>(mtcars<span class="op">$</span>mpg)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="function-writing.html#cb161-1"></a>index &lt;-<span class="st"> </span><span class="cf">function</span>(x) { <span class="co"># the formals/arguments</span></span>
+<span id="cb161-2"><a href="function-writing.html#cb161-2"></a> </span>
+<span id="cb161-3"><a href="function-writing.html#cb161-3"></a>  x<span class="op">/</span><span class="kw">mean</span>(x) <span class="co"># The body</span></span>
+<span id="cb161-4"><a href="function-writing.html#cb161-4"></a>  </span>
+<span id="cb161-5"><a href="function-writing.html#cb161-5"></a>}</span>
+<span id="cb161-6"><a href="function-writing.html#cb161-6"></a></span>
+<span id="cb161-7"><a href="function-writing.html#cb161-7"></a><span class="kw">index</span>(mtcars<span class="op">$</span>mpg)</span></code></pre></div>
 <pre><code>##  [1] 1.0452636 1.0452636 1.1348577 1.0651734 0.9307824 0.9009177 0.7117748
 ##  [8] 1.2144968 1.1348577 0.9556696 0.8859854 0.8163011 0.8610981 0.7565718
 ## [15] 0.5176544 0.5176544 0.7316846 1.6126925 1.5131436 1.6873542 1.0701509
 ## [22] 0.7715041 0.7565718 0.6620003 0.9556696 1.3588427 1.2941359 1.5131436
 ## [29] 0.7864365 0.9805569 0.7466169 1.0651734</code></pre>
 <p>We can cast this new function over all columns in <code>mtcars</code> with <code>sapply()</code>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="function-writing.html#cb150-1"></a><span class="co"># Get only a few rows.</span></span>
-<span id="cb150-2"><a href="function-writing.html#cb150-2"></a><span class="kw">head</span>(<span class="kw">sapply</span>(mtcars, index))</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="function-writing.html#cb163-1"></a><span class="co"># Get only a few rows.</span></span>
+<span id="cb163-2"><a href="function-writing.html#cb163-2"></a><span class="kw">head</span>(<span class="kw">sapply</span>(mtcars, index))</span></code></pre></div>
 <pre><code>##            mpg       cyl      disp        hp      drat        wt      qsec
 ## [1,] 1.0452636 0.9696970 0.6934756 0.7498935 1.0843688 0.8143601 0.9221934
 ## [2,] 1.0452636 0.9696970 0.6934756 0.7498935 1.0843688 0.8936203 0.9535682
@@ -354,17 +354,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="multivariate-case" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Multivariate Case</h2>
 <p>In the univariate case, we indexed a vector by its mean. What if we wanted to use the median instead? We would simply need to replace <code>mean</code> with <code>median</code>. Alternatively, we can add an additional input into our function that specifies what aggregation function to use in the indexing.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="function-writing.html#cb152-1"></a>index2 &lt;-<span class="st"> </span><span class="cf">function</span>(x, f) {</span>
-<span id="cb152-2"><a href="function-writing.html#cb152-2"></a>  </span>
-<span id="cb152-3"><a href="function-writing.html#cb152-3"></a>  x<span class="op">/</span><span class="kw">f</span>(x)</span>
-<span id="cb152-4"><a href="function-writing.html#cb152-4"></a>  </span>
-<span id="cb152-5"><a href="function-writing.html#cb152-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="function-writing.html#cb165-1"></a>index2 &lt;-<span class="st"> </span><span class="cf">function</span>(x, f) {</span>
+<span id="cb165-2"><a href="function-writing.html#cb165-2"></a>  </span>
+<span id="cb165-3"><a href="function-writing.html#cb165-3"></a>  x<span class="op">/</span><span class="kw">f</span>(x)</span>
+<span id="cb165-4"><a href="function-writing.html#cb165-4"></a>  </span>
+<span id="cb165-5"><a href="function-writing.html#cb165-5"></a>}</span></code></pre></div>
 <p>Now we can use any function in the <code>f</code> input.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="function-writing.html#cb153-1"></a><span class="kw">head</span>(<span class="kw">index2</span>(mtcars<span class="op">$</span>mpg, mean)) <span class="co"># show only a few elements</span></span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="function-writing.html#cb166-1"></a><span class="kw">head</span>(<span class="kw">index2</span>(mtcars<span class="op">$</span>mpg, mean)) <span class="co"># show only a few elements</span></span></code></pre></div>
 <pre><code>## [1] 1.0452636 1.0452636 1.1348577 1.0651734 0.9307824 0.9009177</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="function-writing.html#cb155-1"></a><span class="kw">head</span>(<span class="kw">index2</span>(mtcars<span class="op">$</span>mpg, median)) <span class="co"># show only a few elements</span></span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="function-writing.html#cb168-1"></a><span class="kw">head</span>(<span class="kw">index2</span>(mtcars<span class="op">$</span>mpg, median)) <span class="co"># show only a few elements</span></span></code></pre></div>
 <pre><code>## [1] 1.0937500 1.0937500 1.1875000 1.1145833 0.9739583 0.9427083</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="function-writing.html#cb157-1"></a><span class="kw">head</span>(<span class="kw">index2</span>(mtcars<span class="op">$</span>mpg, max)) <span class="co"># show only a few elements</span></span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="function-writing.html#cb170-1"></a><span class="kw">head</span>(<span class="kw">index2</span>(mtcars<span class="op">$</span>mpg, max)) <span class="co"># show only a few elements</span></span></code></pre></div>
 <pre><code>## [1] 0.6194690 0.6194690 0.6725664 0.6312684 0.5516224 0.5339233</code></pre>
 <p>Our <code>index2</code> function is actually special in that it is not only a multivariate function but a <em>functional</em>, which is a function that takes another function as an input–see the <em>Functionals</em> chapter for more details.</p>
 </div>

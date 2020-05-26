@@ -1,5 +1,0 @@
-"0","set.seed(1) # Remember our random numbers."
-"0","x <- density(rnorm(100))"
-"0","plot(x,"
-"0","     main = '100 Random Numbers',"
-"0","     col  = 'salmon')"

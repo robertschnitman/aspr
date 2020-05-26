@@ -321,11 +321,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="replacing-values" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Replacing Values</h2>
 <p>We can replace values with the <code>replace()</code> function.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="data-management.html#cb38-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="co"># 1 through 10.</span></span>
-<span id="cb38-2"><a href="data-management.html#cb38-2"></a></span>
-<span id="cb38-3"><a href="data-management.html#cb38-3"></a><span class="co"># If x equals 2, 5, or 7, replace with 0.</span></span>
-<span id="cb38-4"><a href="data-management.html#cb38-4"></a><span class="co">## replace(vector, condition, replacement value).</span></span>
-<span id="cb38-5"><a href="data-management.html#cb38-5"></a><span class="kw">replace</span>(x, x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>), <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="data-management.html#cb37-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> <span class="co"># 1 through 10.</span></span>
+<span id="cb37-2"><a href="data-management.html#cb37-2"></a></span>
+<span id="cb37-3"><a href="data-management.html#cb37-3"></a><span class="co"># If x equals 2, 5, or 7, replace with 0.</span></span>
+<span id="cb37-4"><a href="data-management.html#cb37-4"></a><span class="co">## replace(vector, condition, replacement value).</span></span>
+<span id="cb37-5"><a href="data-management.html#cb37-5"></a><span class="kw">replace</span>(x, x <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>), <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>##  [1]  1  0  3  4  0  6  0  8  9 10</code></pre>
 </div>
 <div id="switching-values" class="section level2" number="3.2">
@@ -334,47 +334,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="scalar-case" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Scalar Case</h3>
 <p>In the case of a single value, all we need to pass into <code>switch()</code> are (1) the data object and (2) an expression stating what the old value should become (i.e, provide the old value and the replacement value).</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-management.html#cb40-1"></a><span class="co"># SYNTAX OF switch():</span></span>
-<span id="cb40-2"><a href="data-management.html#cb40-2"></a><span class="co">## switch(x, old_value = new_value)</span></span>
-<span id="cb40-3"><a href="data-management.html#cb40-3"></a></span>
-<span id="cb40-4"><a href="data-management.html#cb40-4"></a>x &lt;-<span class="st"> &quot;a&quot;</span></span>
-<span id="cb40-5"><a href="data-management.html#cb40-5"></a></span>
-<span id="cb40-6"><a href="data-management.html#cb40-6"></a>xs &lt;-<span class="st"> </span><span class="cf">switch</span>(x, <span class="dt">a =</span> <span class="dv">1</span>)</span>
-<span id="cb40-7"><a href="data-management.html#cb40-7"></a></span>
-<span id="cb40-8"><a href="data-management.html#cb40-8"></a>xs</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-management.html#cb39-1"></a><span class="co"># SYNTAX OF switch():</span></span>
+<span id="cb39-2"><a href="data-management.html#cb39-2"></a><span class="co">## switch(x, old_value = new_value)</span></span>
+<span id="cb39-3"><a href="data-management.html#cb39-3"></a></span>
+<span id="cb39-4"><a href="data-management.html#cb39-4"></a>x &lt;-<span class="st"> &quot;a&quot;</span></span>
+<span id="cb39-5"><a href="data-management.html#cb39-5"></a></span>
+<span id="cb39-6"><a href="data-management.html#cb39-6"></a>x</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot;</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-management.html#cb41-1"></a>xs &lt;-<span class="st"> </span><span class="cf">switch</span>(x, <span class="dt">a =</span> <span class="dv">1</span>)</span>
+<span id="cb41-2"><a href="data-management.html#cb41-2"></a></span>
+<span id="cb41-3"><a href="data-management.html#cb41-3"></a>xs</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 </div>
 <div id="vector-case" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Vector Case</h3>
 <p>For the case of applying <code>switch()</code> to vectors, we make use of <code>sapply()</code>.</p>
 <p>To take a case in point, let’s first generate some random data of racial groups.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-management.html#cb42-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random sampling</span></span>
-<span id="cb42-2"><a href="data-management.html#cb42-2"></a></span>
-<span id="cb42-3"><a href="data-management.html#cb42-3"></a><span class="co"># Generate vector of unique values.</span></span>
-<span id="cb42-4"><a href="data-management.html#cb42-4"></a>my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Asian&#39;</span>, <span class="st">&#39;African American&#39;</span>, <span class="st">&#39;White&#39;</span>, <span class="st">&#39;Other&#39;</span>)</span>
-<span id="cb42-5"><a href="data-management.html#cb42-5"></a></span>
-<span id="cb42-6"><a href="data-management.html#cb42-6"></a><span class="co"># Conduct repeat sampling of my_vector</span></span>
-<span id="cb42-7"><a href="data-management.html#cb42-7"></a><span class="co">## See the Probability Functions chapter for more details on sample().</span></span>
-<span id="cb42-8"><a href="data-management.html#cb42-8"></a>my_vector2 &lt;-<span class="st"> </span><span class="kw">sample</span>(my_vector, <span class="dv">20</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb42-9"><a href="data-management.html#cb42-9"></a></span>
-<span id="cb42-10"><a href="data-management.html#cb42-10"></a><span class="co"># Print the new vector.</span></span>
-<span id="cb42-11"><a href="data-management.html#cb42-11"></a>my_vector2</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-management.html#cb43-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random sampling</span></span>
+<span id="cb43-2"><a href="data-management.html#cb43-2"></a></span>
+<span id="cb43-3"><a href="data-management.html#cb43-3"></a><span class="co"># Generate vector of unique values.</span></span>
+<span id="cb43-4"><a href="data-management.html#cb43-4"></a>my_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Asian&#39;</span>, <span class="st">&#39;African American&#39;</span>, <span class="st">&#39;White&#39;</span>, <span class="st">&#39;Other&#39;</span>)</span>
+<span id="cb43-5"><a href="data-management.html#cb43-5"></a></span>
+<span id="cb43-6"><a href="data-management.html#cb43-6"></a>my_vector</span></code></pre></div>
+<pre><code>## [1] &quot;Asian&quot;            &quot;African American&quot; &quot;White&quot;            &quot;Other&quot;</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-management.html#cb45-1"></a><span class="co"># Conduct repeat sampling of my_vector</span></span>
+<span id="cb45-2"><a href="data-management.html#cb45-2"></a><span class="co">## See the Probability Functions chapter for more details on sample().</span></span>
+<span id="cb45-3"><a href="data-management.html#cb45-3"></a>my_vector2 &lt;-<span class="st"> </span><span class="kw">sample</span>(my_vector, <span class="dv">20</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb45-4"><a href="data-management.html#cb45-4"></a></span>
+<span id="cb45-5"><a href="data-management.html#cb45-5"></a><span class="co"># Print the new vector.</span></span>
+<span id="cb45-6"><a href="data-management.html#cb45-6"></a>my_vector2</span></code></pre></div>
 <pre><code>##  [1] &quot;Asian&quot;            &quot;Other&quot;            &quot;White&quot;            &quot;Asian&quot;           
 ##  [5] &quot;African American&quot; &quot;Asian&quot;            &quot;White&quot;            &quot;White&quot;           
 ##  [9] &quot;African American&quot; &quot;African American&quot; &quot;White&quot;            &quot;White&quot;           
 ## [13] &quot;Asian&quot;            &quot;Asian&quot;            &quot;Asian&quot;            &quot;African American&quot;
 ## [17] &quot;African American&quot; &quot;African American&quot; &quot;African American&quot; &quot;White&quot;</code></pre>
 <p>Let’s say that we want to recode these values: 0 for <em>White</em>, 1 for <em>African American</em>, 2 for <em>Asian</em>, and 3 for <em>Other</em>. To do so, we first define a function and pass it through <code>sapply()</code>–see the <em>Function Writing</em> and <em>Functionals</em> chapters respectively for more information.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-management.html#cb44-1"></a><span class="co"># First, define a function that recodes the races into integers.</span></span>
-<span id="cb44-2"><a href="data-management.html#cb44-2"></a>my_switch &lt;-<span class="st"> </span><span class="cf">function</span>(v) {</span>
-<span id="cb44-3"><a href="data-management.html#cb44-3"></a>  </span>
-<span id="cb44-4"><a href="data-management.html#cb44-4"></a>  <span class="cf">switch</span>(v, <span class="dt">White =</span> <span class="dv">0</span>, <span class="st">`</span><span class="dt">African American</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>, <span class="dt">Asian =</span> <span class="dv">2</span>, <span class="dt">Other =</span> <span class="dv">3</span>)</span>
-<span id="cb44-5"><a href="data-management.html#cb44-5"></a>  <span class="co"># We use back quotes for &quot;African American&quot; because of the space.</span></span>
-<span id="cb44-6"><a href="data-management.html#cb44-6"></a>  </span>
-<span id="cb44-7"><a href="data-management.html#cb44-7"></a>}</span>
-<span id="cb44-8"><a href="data-management.html#cb44-8"></a></span>
-<span id="cb44-9"><a href="data-management.html#cb44-9"></a><span class="co"># Now we can pass my_switch to sapply() to execute the recoding.</span></span>
-<span id="cb44-10"><a href="data-management.html#cb44-10"></a><span class="kw">sapply</span>(my_vector2, my_switch)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-management.html#cb47-1"></a><span class="co"># First, define a function that recodes the races into integers.</span></span>
+<span id="cb47-2"><a href="data-management.html#cb47-2"></a>my_switch &lt;-<span class="st"> </span><span class="cf">function</span>(v) {</span>
+<span id="cb47-3"><a href="data-management.html#cb47-3"></a>  </span>
+<span id="cb47-4"><a href="data-management.html#cb47-4"></a>  <span class="cf">switch</span>(v, <span class="dt">White =</span> <span class="dv">0</span>, <span class="st">`</span><span class="dt">African American</span><span class="st">`</span> =<span class="st"> </span><span class="dv">1</span>, <span class="dt">Asian =</span> <span class="dv">2</span>, <span class="dt">Other =</span> <span class="dv">3</span>)</span>
+<span id="cb47-5"><a href="data-management.html#cb47-5"></a>  <span class="co"># We use back quotes for &quot;African American&quot; because of the space.</span></span>
+<span id="cb47-6"><a href="data-management.html#cb47-6"></a>  </span>
+<span id="cb47-7"><a href="data-management.html#cb47-7"></a>}</span>
+<span id="cb47-8"><a href="data-management.html#cb47-8"></a></span>
+<span id="cb47-9"><a href="data-management.html#cb47-9"></a><span class="co"># Now we can pass my_switch to sapply() to execute the recoding.</span></span>
+<span id="cb47-10"><a href="data-management.html#cb47-10"></a><span class="kw">sapply</span>(my_vector2, my_switch)</span></code></pre></div>
 <pre><code>##            Asian            Other            White            Asian 
 ##                2                3                0                2 
 ## African American            Asian            White            White 
@@ -390,16 +394,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="importing-data" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Importing Data</h2>
 <p>We can import datasets with <code>read.table()</code>–this method is the most general.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-management.html#cb46-1"></a><span class="co"># Set path to dataset</span></span>
-<span id="cb46-2"><a href="data-management.html#cb46-2"></a><span class="co"># For this example, our data is in the data folder</span></span>
-<span id="cb46-3"><a href="data-management.html#cb46-3"></a><span class="co">#  and our data are separated by commas.</span></span>
-<span id="cb46-4"><a href="data-management.html#cb46-4"></a>my_data &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;data/mtcars.csv&#39;</span>, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb46-5"><a href="data-management.html#cb46-5"></a></span>
-<span id="cb46-6"><a href="data-management.html#cb46-6"></a><span class="co"># Setting stringsAsFactors = FALSE maintains strings as strings.</span></span>
-<span id="cb46-7"><a href="data-management.html#cb46-7"></a><span class="co">## See the Basics chapter for more detail on classes and types.</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-management.html#cb49-1"></a><span class="co"># Set path to dataset</span></span>
+<span id="cb49-2"><a href="data-management.html#cb49-2"></a><span class="co"># For this example, our data is in the data folder</span></span>
+<span id="cb49-3"><a href="data-management.html#cb49-3"></a><span class="co">#  and our data are separated by commas.</span></span>
+<span id="cb49-4"><a href="data-management.html#cb49-4"></a>my_data &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;data/mtcars.csv&#39;</span>, <span class="dt">sep =</span> <span class="st">&#39;,&#39;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb49-5"><a href="data-management.html#cb49-5"></a></span>
+<span id="cb49-6"><a href="data-management.html#cb49-6"></a><span class="co"># Setting stringsAsFactors = FALSE maintains strings as strings.</span></span>
+<span id="cb49-7"><a href="data-management.html#cb49-7"></a><span class="co">## See the Basics chapter for more detail on classes and types.</span></span></code></pre></div>
 <p>In the case of files with comma-separated values, we can use <code>read.csv()</code> to import them more easily.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-management.html#cb47-1"></a><span class="co"># Set path to dataset</span></span>
-<span id="cb47-2"><a href="data-management.html#cb47-2"></a>my_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;data/mtcars.csv&#39;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-management.html#cb50-1"></a><span class="co"># Set path to dataset</span></span>
+<span id="cb50-2"><a href="data-management.html#cb50-2"></a>my_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;data/mtcars.csv&#39;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="combining-data" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Combining Data</h2>
@@ -407,31 +411,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="cbindrbind" class="section level3" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> <code>cbind()</code>/<code>rbind()</code></h3>
 <p>The function <code>cbind()</code> combines vectors or datasets column-wise, while <code>rbind()</code> does so row-wise.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-management.html#cb48-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
-<span id="cb48-2"><a href="data-management.html#cb48-2"></a>y &lt;-<span class="st"> </span><span class="dv">6</span><span class="op">:</span><span class="dv">10</span></span>
-<span id="cb48-3"><a href="data-management.html#cb48-3"></a></span>
-<span id="cb48-4"><a href="data-management.html#cb48-4"></a><span class="kw">cbind</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-management.html#cb51-1"></a><span class="co"># Creating x and y</span></span>
+<span id="cb51-2"><a href="data-management.html#cb51-2"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb51-3"><a href="data-management.html#cb51-3"></a>y &lt;-<span class="st"> </span><span class="dv">6</span><span class="op">:</span><span class="dv">10</span></span>
+<span id="cb51-4"><a href="data-management.html#cb51-4"></a></span>
+<span id="cb51-5"><a href="data-management.html#cb51-5"></a><span class="co"># Seeing x and y separately</span></span>
+<span id="cb51-6"><a href="data-management.html#cb51-6"></a>x</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-management.html#cb53-1"></a>y</span></code></pre></div>
+<pre><code>## [1]  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-management.html#cb55-1"></a><span class="co"># Combining them</span></span>
+<span id="cb55-2"><a href="data-management.html#cb55-2"></a><span class="kw">cbind</span>(x, y)</span></code></pre></div>
 <pre><code>##      x  y
 ## [1,] 1  6
 ## [2,] 2  7
 ## [3,] 3  8
 ## [4,] 4  9
 ## [5,] 5 10</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-management.html#cb50-1"></a><span class="kw">rbind</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-management.html#cb57-1"></a><span class="kw">rbind</span>(x, y)</span></code></pre></div>
 <pre><code>##   [,1] [,2] [,3] [,4] [,5]
 ## x    1    2    3    4    5
 ## y    6    7    8    9   10</code></pre>
 <p>If we have a list of values we want to combine, we can use <code>do.call()</code> and <code>cbind()/rbind()</code> together. The former iteratively calls a function on a list, which can be useful for combining multiple datasets together. <code>do.call()</code> is a special case of a function called a <em>functional</em>, which is a function that takes other functions as inputs–this concept is discussed more in the <em>Functionals</em> chapter.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-management.html#cb52-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> <span class="dv">6</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">z =</span> <span class="dv">11</span><span class="op">:</span><span class="dv">15</span>)</span>
-<span id="cb52-2"><a href="data-management.html#cb52-2"></a></span>
-<span id="cb52-3"><a href="data-management.html#cb52-3"></a><span class="kw">do.call</span>(cbind, my_list)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-management.html#cb59-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">y =</span> <span class="dv">6</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">z =</span> <span class="dv">11</span><span class="op">:</span><span class="dv">15</span>)</span>
+<span id="cb59-2"><a href="data-management.html#cb59-2"></a></span>
+<span id="cb59-3"><a href="data-management.html#cb59-3"></a><span class="kw">do.call</span>(cbind, my_list)</span></code></pre></div>
 <pre><code>##      x  y  z
 ## [1,] 1  6 11
 ## [2,] 2  7 12
 ## [3,] 3  8 13
 ## [4,] 4  9 14
 ## [5,] 5 10 15</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-management.html#cb54-1"></a><span class="kw">do.call</span>(rbind, my_list)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-management.html#cb61-1"></a><span class="kw">do.call</span>(rbind, my_list)</span></code></pre></div>
 <pre><code>##   [,1] [,2] [,3] [,4] [,5]
 ## x    1    2    3    4    5
 ## y    6    7    8    9   10
@@ -440,18 +451,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="merge" class="section level3" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> <code>merge()</code></h3>
 <p>Merging data with <code>merge()</code> (AKA “joining data”) is powerful, as we can combine disparate datasets that have a common linking variable between them.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-management.html#cb56-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># remember our random numbers from rnorm().</span></span>
-<span id="cb56-2"><a href="data-management.html#cb56-2"></a></span>
-<span id="cb56-3"><a href="data-management.html#cb56-3"></a>data1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">survey_id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
-<span id="cb56-4"><a href="data-management.html#cb56-4"></a>                    <span class="dt">wage      =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
-<span id="cb56-5"><a href="data-management.html#cb56-5"></a></span>
-<span id="cb56-6"><a href="data-management.html#cb56-6"></a>data2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">survey_id  =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">1</span>,</span>
-<span id="cb56-7"><a href="data-management.html#cb56-7"></a>                    <span class="dt">experience =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">3</span>))</span>
-<span id="cb56-8"><a href="data-management.html#cb56-8"></a></span>
-<span id="cb56-9"><a href="data-management.html#cb56-9"></a><span class="co"># merge(first data, second data, by = &#39;a common variable&#39;).</span></span>
-<span id="cb56-10"><a href="data-management.html#cb56-10"></a>data_merge &lt;-<span class="st"> </span><span class="kw">merge</span>(data1, data2, <span class="dt">by =</span> <span class="st">&#39;survey_id&#39;</span>)</span>
-<span id="cb56-11"><a href="data-management.html#cb56-11"></a></span>
-<span id="cb56-12"><a href="data-management.html#cb56-12"></a>data_merge <span class="co"># An &quot;inner-join&quot; of datasets</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-management.html#cb63-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># remember our random numbers from rnorm().</span></span>
+<span id="cb63-2"><a href="data-management.html#cb63-2"></a></span>
+<span id="cb63-3"><a href="data-management.html#cb63-3"></a>data1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">survey_id =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, </span>
+<span id="cb63-4"><a href="data-management.html#cb63-4"></a>                    <span class="dt">wage      =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">15</span>, <span class="dt">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb63-5"><a href="data-management.html#cb63-5"></a></span>
+<span id="cb63-6"><a href="data-management.html#cb63-6"></a>data1</span></code></pre></div>
+<pre><code>##   survey_id     wage
+## 1         1 11.86773
+## 2         2 15.91822
+## 3         3 10.82186
+## 4         4 22.97640
+## 5         5 16.64754</code></pre>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-management.html#cb65-1"></a>data2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">survey_id  =</span> <span class="dv">5</span><span class="op">:</span><span class="dv">1</span>,</span>
+<span id="cb65-2"><a href="data-management.html#cb65-2"></a>                    <span class="dt">experience =</span> <span class="kw">rnorm</span>(<span class="dv">5</span>, <span class="dt">mean =</span> <span class="dv">5</span>, <span class="dt">sd =</span> <span class="dv">3</span>))</span>
+<span id="cb65-3"><a href="data-management.html#cb65-3"></a></span>
+<span id="cb65-4"><a href="data-management.html#cb65-4"></a>data2</span></code></pre></div>
+<pre><code>##   survey_id experience
+## 1         5   2.538595
+## 2         4   6.462287
+## 3         3   7.214974
+## 4         2   6.727344
+## 5         1   4.083835</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-management.html#cb67-1"></a><span class="co"># merge(first data, second data, by = &#39;a common variable&#39;).</span></span>
+<span id="cb67-2"><a href="data-management.html#cb67-2"></a>data_merge &lt;-<span class="st"> </span><span class="kw">merge</span>(data1, data2, <span class="dt">by =</span> <span class="st">&#39;survey_id&#39;</span>)</span>
+<span id="cb67-3"><a href="data-management.html#cb67-3"></a></span>
+<span id="cb67-4"><a href="data-management.html#cb67-4"></a>data_merge <span class="co"># An &quot;inner-join&quot; of datasets</span></span></code></pre></div>
 <pre><code>##   survey_id     wage experience
 ## 1         1 11.86773   4.083835
 ## 2         2 15.91822   6.727344
@@ -477,31 +502,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vector-case-1" class="section level3" number="3.5.1">
 <h3><span class="header-section-number">3.5.1</span> Vector Case</h3>
 <p>Suppose we have the following vector:</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-management.html#cb58-1"></a>x &lt;-<span class="st"> </span><span class="dv">-10</span><span class="op">:</span><span class="dv">10</span> <span class="co"># integers from -10 to 10.</span></span>
-<span id="cb58-2"><a href="data-management.html#cb58-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-management.html#cb69-1"></a>x &lt;-<span class="st"> </span><span class="dv">-10</span><span class="op">:</span><span class="dv">10</span> <span class="co"># integers from -10 to 10.</span></span>
+<span id="cb69-2"><a href="data-management.html#cb69-2"></a>x</span></code></pre></div>
 <pre><code>##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1   2   3   4   5   6   7   8
 ## [20]   9  10</code></pre>
 <p>Then we can subset like the following:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-management.html#cb60-1"></a>x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] <span class="co"># same as subset(x, x &lt; 0)</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-management.html#cb71-1"></a>x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] <span class="co"># same as subset(x, x &lt; 0)</span></span></code></pre></div>
 <pre><code>##  [1] -10  -9  -8  -7  -6  -5  -4  -3  -2  -1</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-management.html#cb62-1"></a>x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-management.html#cb73-1"></a>x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>## [1] 3 4</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-management.html#cb64-1"></a><span class="co"># We can use functions inside the brackets.</span></span>
-<span id="cb64-2"><a href="data-management.html#cb64-2"></a><span class="co">## For example, %in% is a matching function:</span></span>
-<span id="cb64-3"><a href="data-management.html#cb64-3"></a><span class="co">##   let&#39;s use it to subset for only 1 through 5.</span></span>
-<span id="cb64-4"><a href="data-management.html#cb64-4"></a>x[x <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] </span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data-management.html#cb75-1"></a><span class="co"># We can use functions inside the brackets.</span></span>
+<span id="cb75-2"><a href="data-management.html#cb75-2"></a><span class="co">## For example, %in% is a matching function:</span></span>
+<span id="cb75-3"><a href="data-management.html#cb75-3"></a><span class="co">##   let&#39;s use it to subset for only 1 through 5.</span></span>
+<span id="cb75-4"><a href="data-management.html#cb75-4"></a>x[x <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>] </span></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 </div>
 <div id="data-frame-case" class="section level3" number="3.5.2">
 <h3><span class="header-section-number">3.5.2</span> Data Frame Case</h3>
 <p>Suppose the dataset <code>mtcars</code>. Then we can subset like the following:</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-management.html#cb66-1"></a><span class="kw">subset</span>(mtcars, mpg <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>) <span class="co"># Same as mtcars[mtcars$mpg &gt; 30, ]</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="data-management.html#cb77-1"></a><span class="kw">subset</span>(mtcars, mpg <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span>) <span class="co"># Same as mtcars[mtcars$mpg &gt; 30, ]</span></span></code></pre></div>
 <pre><code>##                 mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Fiat 128       32.4   4 78.7  66 4.08 2.200 19.47  1  1    4    1
 ## Honda Civic    30.4   4 75.7  52 4.93 1.615 18.52  1  1    4    2
 ## Toyota Corolla 33.9   4 71.1  65 4.22 1.835 19.90  1  1    4    1
 ## Lotus Europa   30.4   4 95.1 113 3.77 1.513 16.90  1  1    5    2</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-management.html#cb68-1"></a><span class="kw">subset</span>(mtcars, mpg <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span> <span class="op">&amp;</span><span class="st"> </span>wt <span class="op">&gt;</span><span class="st"> </span><span class="fl">1.7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="data-management.html#cb79-1"></a><span class="kw">subset</span>(mtcars, mpg <span class="op">&gt;</span><span class="st"> </span><span class="dv">30</span> <span class="op">&amp;</span><span class="st"> </span>wt <span class="op">&gt;</span><span class="st"> </span><span class="fl">1.7</span>)</span></code></pre></div>
 <pre><code>##                 mpg cyl disp hp drat    wt  qsec vs am gear carb
 ## Fiat 128       32.4   4 78.7 66 4.08 2.200 19.47  1  1    4    1
 ## Toyota Corolla 33.9   4 71.1 65 4.22 1.835 19.90  1  1    4    1</code></pre>
@@ -510,7 +535,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="splitting-data" class="section level2" number="3.6">
 <h2><span class="header-section-number">3.6</span> Splitting Data</h2>
 <p>To split data, we pass a data frame and a variable into the <code>split()</code> function.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-management.html#cb70-1"></a><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear) <span class="co"># Splits into 3 subsets.</span></span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="data-management.html#cb81-1"></a><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear) <span class="co"># Splits into 3 subsets.</span></span></code></pre></div>
 <pre><code>## $`3`
 ##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
@@ -552,14 +577,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
 ## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8</code></pre>
 <p>Splitting can be useful when you want to apply a function that’s contingent on subsets of data. For example, we can split the data and perform a regression model on each of them.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-management.html#cb72-1"></a><span class="co"># 1. Split dataset by a splitting variable.</span></span>
-<span id="cb72-2"><a href="data-management.html#cb72-2"></a>my_split &lt;-<span class="st"> </span><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear)</span>
-<span id="cb72-3"><a href="data-management.html#cb72-3"></a></span>
-<span id="cb72-4"><a href="data-management.html#cb72-4"></a><span class="co"># 2. Estimate a regression model based on each subset.</span></span>
-<span id="cb72-5"><a href="data-management.html#cb72-5"></a>my_models &lt;-<span class="st"> </span><span class="kw">lapply</span>(my_split, <span class="cf">function</span>(data) <span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, data))</span>
-<span id="cb72-6"><a href="data-management.html#cb72-6"></a></span>
-<span id="cb72-7"><a href="data-management.html#cb72-7"></a><span class="co"># 3. Print the coefficients in a matrix form.</span></span>
-<span id="cb72-8"><a href="data-management.html#cb72-8"></a><span class="kw">sapply</span>(my_models, coef)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="data-management.html#cb83-1"></a><span class="co"># 1. Split dataset by a splitting variable.</span></span>
+<span id="cb83-2"><a href="data-management.html#cb83-2"></a>my_split &lt;-<span class="st"> </span><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear)</span>
+<span id="cb83-3"><a href="data-management.html#cb83-3"></a></span>
+<span id="cb83-4"><a href="data-management.html#cb83-4"></a><span class="co"># 2. Estimate a regression model based on each subset.</span></span>
+<span id="cb83-5"><a href="data-management.html#cb83-5"></a>my_models &lt;-<span class="st"> </span><span class="kw">lapply</span>(my_split, <span class="cf">function</span>(data) <span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, data))</span>
+<span id="cb83-6"><a href="data-management.html#cb83-6"></a></span>
+<span id="cb83-7"><a href="data-management.html#cb83-7"></a><span class="co"># 3. Print the coefficients in a matrix form.</span></span>
+<span id="cb83-8"><a href="data-management.html#cb83-8"></a><span class="kw">sapply</span>(my_models, coef)</span></code></pre></div>
 <pre><code>##                     3         4         5
 ## (Intercept) 28.395036 42.492769 42.562784
 ## wt          -3.156854 -6.863478 -8.046336</code></pre>

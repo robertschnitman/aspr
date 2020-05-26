@@ -1,6 +1,0 @@
-"0","set.seed(1) # Remember our random numbers"
-"0","x <- rnorm(100,       # 100 random numbers"
-"0","           mean = 50, # with a mean of 50"
-"0","           sd = 20)   # and SD of 20."
-"0","plot(density(x),"
-"0","     main = '100 Random Numbers')"

@@ -1,7 +1,0 @@
-"0","# Mean of all mtcars columns"
-"0","# Type-check whether it is a character vector."
-"0","vapply(mtcars, mean, character(1))"
-"2","Error in vapply(mtcars, mean, character(1)) : 
-  values must be type 'character',
- but FUN(X[[1]]) result is type 'double'
-"

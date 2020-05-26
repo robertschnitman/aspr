@@ -1,4 +1,0 @@
-"0","# Set path to dataset"
-"0","# For this example, our data is in the data folder"
-"0","#  and our data are separated by commas."
-"0","my_data <- read.table('data/mtcars.csv', sep = ',')"
