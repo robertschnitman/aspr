@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.8)  26 MAY 2020 13:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.8)  28 MAY 2020 00:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -608,7 +608,11 @@ l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count292
 \l__pdf_internal_box=\box67
-) (./aspr_print.aux)
+) (./aspr_print.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `aspr_print.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
@@ -772,7 +776,7 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 [5] [6
 
 ]
-<img/cover_image.jpg, id=471, 2055.68pt x 1162.3425pt>
+<img/cover_image.jpg, id=466, 2055.68pt x 1162.3425pt>
 File: img/cover_image.jpg Graphic file (type jpg)
 <use img/cover_image.jpg>
 Package pdftex.def Info: img/cover_image.jpg  used on input line 146.
@@ -1485,7 +1489,7 @@ Overfull \hbox (38.24889pt too wide) in paragraph at lines 1448--1448
  []
 
 [36]
-<aspr_print_files/figure-latex/unnamed-chunk-46-1.pdf, id=673, 469.755pt x 325.
+<aspr_print_files/figure-latex/unnamed-chunk-46-1.pdf, id=668, 469.755pt x 325.
 215pt>
 File: aspr_print_files/figure-latex/unnamed-chunk-46-1.pdf Graphic file (type p
 df)
@@ -1534,12 +1538,9 @@ Overfull \hbox (116.99866pt too wide) in paragraph at lines 1686--1686
 ..: 1 1 1 1 1 1 1 1 1 1 ...[] 
  []
 
-[42]
-Underfull \vbox (badness 3240) has occurred while \output is active []
-
-[43] [44]
-Overfull \hbox (33.51434pt too wide) in paragraph at lines 1889--1889
-[]\T1/lmr/m/n/10 (-20) prop.table(table(mtcars\$gear))|  
+[42] [43] [44]
+Overfull \hbox (28.61435pt too wide) in paragraph at lines 1897--1897
+[]\T1/lmr/m/n/10 (-20) prop.table(table(mtcars$gear))|  
  []
 
 
@@ -1550,16 +1551,16 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1893 ...Functions}\label{probability-functions}}
+l.1901 ...Functions}\label{probability-functions}}
                                                   ]
 Chapter 7.
-<aspr_print_files/figure-latex/unnamed-chunk-59-1.pdf, id=742, 469.755pt x 325.
+<aspr_print_files/figure-latex/unnamed-chunk-61-1.pdf, id=737, 469.755pt x 325.
 215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-59-1.pdf Graphic file (type p
+File: aspr_print_files/figure-latex/unnamed-chunk-61-1.pdf Graphic file (type p
 df)
-<use aspr_print_files/figure-latex/unnamed-chunk-59-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-59-1.pdf  
-used on input line 1914.
+<use aspr_print_files/figure-latex/unnamed-chunk-61-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-61-1.pdf  
+used on input line 1922.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1567,132 +1568,132 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [47
 
 ]
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1955--1955
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1963--1963
 []\T1/lmtt/m/n/10 ##                   mpg cyl disp  hp drat    wt  qsec vs am 
 gear carb[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1955--1955
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1963--1963
 []\T1/lmtt/m/n/10 ## Pontiac Firebird 19.2   8  400 175 3.08 3.845 17.05  0  0 
    3    2[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1955--1955
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1963--1963
 []\T1/lmtt/m/n/10 ## Hornet 4 Drive   21.4   6  258 110 3.08 3.215 19.44  1  0 
    3    1[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1955--1955
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1963--1963
 []\T1/lmtt/m/n/10 ## Duster 360       14.3   8  360 245 3.21 3.570 15.84  0  0 
    3    4[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1955--1955
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1963--1963
 []\T1/lmtt/m/n/10 ## Mazda RX4        21.0   6  160 110 3.90 2.620 16.46  0  1 
    4    4[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 1955--1955
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1963--1963
 []\T1/lmtt/m/n/10 ## Mazda RX4 Wag    21.0   6  160 110 3.90 2.875 17.02  0  1 
    4    4[] 
  []
 
-[48 <./aspr_print_files/figure-latex/unnamed-chunk-59-1.pdf>] [49pdfTeX warning
+[48 <./aspr_print_files/figure-latex/unnamed-chunk-61-1.pdf>] [49pdfTeX warning
  (ext4): destination with the same identifier (name{table.7.1}) has been alread
 y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1983 ...nction Writing}\label{function-writing}}
+l.1991 ...nction Writing}\label{function-writing}}
                                                   ] [50
 
 ]
 Chapter 8.
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2010--2010
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2018--2018
 []\T1/lmtt/m/n/10 ##  [1] 1.0452636 1.0452636 1.1348577 1.0651734 0.9307824 0.9
 009177 0.7117748[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2010--2010
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2018--2018
 []\T1/lmtt/m/n/10 ##  [8] 1.2144968 1.1348577 0.9556696 0.8859854 0.8163011 0.8
 610981 0.7565718[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2010--2010
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2018--2018
 []\T1/lmtt/m/n/10 ## [15] 0.5176544 0.5176544 0.7316846 1.6126925 1.5131436 1.6
 873542 1.0701509[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2010--2010
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2018--2018
 []\T1/lmtt/m/n/10 ## [22] 0.7715041 0.7565718 0.6620003 0.9556696 1.3588427 1.2
 941359 1.5131436[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ##            mpg       cyl      disp        hp      drat    
     wt      qsec[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ## [1,] 1.0452636 0.9696970 0.6934756 0.7498935 1.0843688 0.8
 143601 0.9221934[] 
  []
 
 [51]
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ## [2,] 1.0452636 0.9696970 0.6934756 0.7498935 1.0843688 0.8
 936203 0.9535682[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ## [3,] 1.1348577 0.6464646 0.4680961 0.6340009 1.0704666 0.7
 211128 1.0426500[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ## [4,] 1.0651734 0.9696970 1.1182295 0.7498935 0.8563733 0.9
 993006 1.0891519[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ## [5,] 0.9307824 1.2929293 1.5603202 1.1930124 0.8758363 1.0
 692361 0.9535682[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2036--2036
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 2044--2044
 []\T1/lmtt/m/n/10 ## [6,] 0.9009177 0.9696970 0.9752001 0.7158074 0.7673994 1.0
 754526 1.1328524[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 2063--2063
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2071--2071
 []\T1/lmtt/m/n/10 ## [1] 1.0452636 1.0452636 1.1348577 1.0651734 0.9307824 0.90
 09177[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 2073--2073
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2081--2081
 []\T1/lmtt/m/n/10 ## [1] 1.0937500 1.0937500 1.1875000 1.1145833 0.9739583 0.94
 27083[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 2083--2083
+Overfull \hbox (1.499pt too wide) in paragraph at lines 2091--2091
 []\T1/lmtt/m/n/10 ## [1] 0.6194690 0.6194690 0.6725664 0.6312684 0.5516224 0.53
 39233[] 
  []
@@ -1705,256 +1706,481 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2106 \chapter{Functionals}\label{functionals}}
+l.2114 \chapter{Functionals}\label{functionals}}
                                                 ] [54
 
 ]
 Chapter 9.
 [55]
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2174--2174
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ##                      mpg cyl  disp  hp drat    wt  qsec vs
+ am gear carb[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1
+  0    3    1[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0
+  0    3    2[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1
+  0    3    1[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0
+  0    3    4[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0
+  0    3    3[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0
+  0    3    3[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0
+  0    3    3[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0
+  0    3    4[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0
+  0    3    4[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0
+  0    3    4[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1
+  0    3    1[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0
+  0    3    2[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0
+  0    3    2[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0
+  0    3    4[] 
+ []
+
+[56]
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0
+  0    3    2[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ##                 mpg cyl  disp  hp drat    wt  qsec vs am g
+ear carb[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1  
+  4    4[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1  
+  4    4[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1  
+  4    1[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0  
+  4    2[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0  
+  4    2[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 280       19.2   6 167.6 123 3.92 3.440 18.30  1  0  
+  4    4[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Merc 280C      17.8   6 167.6 123 3.92 3.440 18.90  1  0  
+  4    4[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1  
+  4    1[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1  
+  4    2[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1  
+  4    1[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1  
+  4    1[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1  
+  4    2[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ##                 mpg cyl  disp  hp drat    wt qsec vs am ge
+ar carb[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1   
+ 5    2[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1   
+ 5    2[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1   
+ 5    4[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1   
+ 5    6[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 2222--2222
+[]\T1/lmtt/m/n/10 ## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1   
+ 5    8[] 
+ []
+
+[57] [58]
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2324--2324
 []\T1/lmtt/m/n/10 ##        mpg        cyl       disp         hp       drat    
      wt       qsec[] 
  []
 
 
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2174--2174
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2324--2324
 []\T1/lmtt/m/n/10 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3
 .217250  17.848750[] 
  []
 
-
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2194--2194
+[59]
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2368--2368
 []\T1/lmtt/m/n/10 ##         Mazda RX4     Mazda RX4 Wag        Datsun 710    H
 ornet 4 Drive[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2194--2194
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 2368--2368
 []\T1/lmtt/m/n/10 ##          29.90727          29.98136          23.59818     
      38.73955[] 
  []
 
 
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2208--2208
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2384--2384
 []\T1/lmtt/m/n/10 ##        mpg        cyl       disp         hp       drat    
      wt       qsec[] 
  []
 
 
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2208--2208
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2384--2384
 []\T1/lmtt/m/n/10 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3
 .217250  17.848750[] 
  []
 
-[56]
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2228--2228
+
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2404--2404
 []\T1/lmtt/m/n/10 ##        mpg        cyl       disp         hp       drat    
      wt       qsec[] 
  []
 
 
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2228--2228
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2404--2404
 []\T1/lmtt/m/n/10 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3
 .217250  17.848750[] 
  []
 
 
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 2241--2241
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 2419--2419
 []\T1/lmtt/m/n/10 ## Error in vapply(mtcars, mean, character(1)): values must b
 e type \TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 character\TS1/lmtt/m/n/10 '\T1/lmtt/m/
 n/10 ,[] 
  []
 
-
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2264--2264
+[60]
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2442--2442
 []\T1/lmtt/m/n/10 ##        mpg        cyl       disp         hp       drat    
      wt       qsec[] 
  []
 
 
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 2264--2264
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 2442--2442
 []\T1/lmtt/m/n/10 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3
 .217250  17.848750[] 
  []
 
-[57] [58]
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 2379--2379
+[61] [62]
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 2557--2557
 []\T1/lmtt/m/n/10 ##          mpg          cyl         disp           hp       
   drat           wt[] 
  []
 
 
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 2379--2379
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 2557--2557
 []\T1/lmtt/m/n/10 ##    20.090625     6.187500   230.721875   146.687500     3.
 596563     3.217250[] 
  []
 
 
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 2379--2379
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 2557--2557
 []\T1/lmtt/m/n/10 ##         qsec           vs           am         gear       
   carb         Wind[] 
  []
 
 
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 2379--2379
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 2557--2557
 []\T1/lmtt/m/n/10 ##    17.848750     0.437500     0.406250     3.687500     2.
 812500     9.957516[] 
  []
 
-[59]
-<aspr_print_files/figure-latex/unnamed-chunk-79-1.pdf, id=830, 469.755pt x 325.
-215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-79-1.pdf Graphic file (type p
-df)
-<use aspr_print_files/figure-latex/unnamed-chunk-79-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-79-1.pdf  
-used on input line 2406.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[60 <./aspr_print_files/figure-latex/unnamed-chunk-79-1.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[61] [62pdfTeX warning (ext4): destination with the same identifier (name{table
-.9.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.2463 \chapter{Graphing}\label{graphing}}
-                                          ]
-Chapter 10.
-<aspr_print_files/figure-latex/unnamed-chunk-82-1.pdf, id=853, 469.755pt x 325.
-215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-82-1.pdf Graphic file (type p
-df)
-<use aspr_print_files/figure-latex/unnamed-chunk-82-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-82-1.pdf  
-used on input line 2482.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[63
-
-]
-<aspr_print_files/figure-latex/unnamed-chunk-83-1.pdf, id=859, 469.755pt x 325.
-215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-83-1.pdf Graphic file (type p
-df)
-<use aspr_print_files/figure-latex/unnamed-chunk-83-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-83-1.pdf  
-used on input line 2499.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[64 <./aspr_print_files/figure-latex/unnamed-chunk-82-1.pdf>]
-<aspr_print_files/figure-latex/unnamed-chunk-84-1.pdf, id=871, 469.755pt x 325.
-215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-84-1.pdf Graphic file (type p
-df)
-<use aspr_print_files/figure-latex/unnamed-chunk-84-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-84-1.pdf  
-used on input line 2527.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-
-Underfull \vbox (badness 7344) has occurred while \output is active []
-
-[65 <./aspr_print_files/figure-latex/unnamed-chunk-83-1.pdf>] [66 <./aspr_print
-_files/figure-latex/unnamed-chunk-84-1.pdf>]
-<aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf, id=897, 469.755pt x 325.
+<aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf, id=837, 469.755pt x 325.
 215pt>
 File: aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf Graphic file (type p
 df)
 <use aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf>
 Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf  
-used on input line 2567.
+used on input line 2584.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Overfull \vbox (0.76462pt too high) detected at line 2596
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[67 <./aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf>]
-<aspr_print_files/figure-latex/unnamed-chunk-86-1.pdf, id=911, 469.755pt x 325.
-215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-86-1.pdf Graphic file (type p
-df)
-<use aspr_print_files/figure-latex/unnamed-chunk-86-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-86-1.pdf  
-used on input line 2598.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-<aspr_print_files/figure-latex/unnamed-chunk-87-1.pdf, id=912, 469.755pt x 325.
-215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-87-1.pdf Graphic file (type p
-df)
-<use aspr_print_files/figure-latex/unnamed-chunk-87-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-87-1.pdf  
-used on input line 2621.
-(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[68 <./aspr_print_files/figure-latex/unnamed-chunk-86-1.pdf>]
-<aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf, id=924, 469.755pt x 325.
+[63]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[64 <./aspr_print_files/figure-latex/unnamed-chunk-85-1.pdf>] [65pdfTeX warning
+ (ext4): destination with the same identifier (name{table.9.1}) has been alread
+y used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2641 \chapter{Graphing}\label{graphing}}
+                                          ] [66
+
+]
+Chapter 10.
+<aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf, id=864, 469.755pt x 325.
 215pt>
 File: aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf Graphic file (type p
 df)
 <use aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf>
 Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf  
-used on input line 2639.
+used on input line 2660.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[69 <./aspr_print_files/figure-latex/unnamed-chunk-87-1.pdf>]
-<aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf, id=935, 469.755pt x 325.
+[67]
+<aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf, id=871, 469.755pt x 325.
 215pt>
 File: aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf Graphic file (type p
 df)
 <use aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf>
 Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf  
-used on input line 2663.
+used on input line 2679.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[70 <./aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf>]
-<aspr_print_files/figure-latex/unnamed-chunk-90-1.pdf, id=950, 469.755pt x 325.
+[68 <./aspr_print_files/figure-latex/unnamed-chunk-88-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-90-1.pdf, id=882, 469.755pt x 325.
 215pt>
 File: aspr_print_files/figure-latex/unnamed-chunk-90-1.pdf Graphic file (type p
 df)
 <use aspr_print_files/figure-latex/unnamed-chunk-90-1.pdf>
 Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-90-1.pdf  
-used on input line 2684.
+used on input line 2697.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[71 <./aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf>]
-Overfull \hbox (8.17062pt too wide) in paragraph at lines 2709--2709
+[69 <./aspr_print_files/figure-latex/unnamed-chunk-89-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-91-1.pdf, id=893, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-91-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-91-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-91-1.pdf  
+used on input line 2725.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 7344) has occurred while \output is active []
+
+[70 <./aspr_print_files/figure-latex/unnamed-chunk-90-1.pdf>] [71 <./aspr_print
+_files/figure-latex/unnamed-chunk-91-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-92-1.pdf, id=919, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-92-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-92-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-92-1.pdf  
+used on input line 2765.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Overfull \vbox (0.76462pt too high) detected at line 2794
+ []
+
+[72 <./aspr_print_files/figure-latex/unnamed-chunk-92-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-93-1.pdf, id=932, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-93-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-93-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-93-1.pdf  
+used on input line 2796.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+<aspr_print_files/figure-latex/unnamed-chunk-94-1.pdf, id=933, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-94-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-94-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-94-1.pdf  
+used on input line 2819.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+[73 <./aspr_print_files/figure-latex/unnamed-chunk-93-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-95-1.pdf, id=947, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-95-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-95-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-95-1.pdf  
+used on input line 2837.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[74 <./aspr_print_files/figure-latex/unnamed-chunk-94-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-96-1.pdf, id=958, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-96-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-96-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-96-1.pdf  
+used on input line 2861.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[75 <./aspr_print_files/figure-latex/unnamed-chunk-95-1.pdf>]
+<aspr_print_files/figure-latex/unnamed-chunk-97-1.pdf, id=972, 469.755pt x 325.
+215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-97-1.pdf Graphic file (type p
+df)
+<use aspr_print_files/figure-latex/unnamed-chunk-97-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-97-1.pdf  
+used on input line 2882.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[76 <./aspr_print_files/figure-latex/unnamed-chunk-96-1.pdf>]
+Overfull \hbox (8.17062pt too wide) in paragraph at lines 2907--2907
 []\T1/lmr/m/n/10 (-20) plot(density(rnorm(100)))|  
  []
 
 
-Overfull \hbox (20.99214pt too wide) in paragraph at lines 2709--2709
-[]\T1/lmr/m/n/10 (-20) barplot(table(mtcars\$gear))|  
+Overfull \hbox (16.09215pt too wide) in paragraph at lines 2907--2907
+[]\T1/lmr/m/n/10 (-20) barplot(table(mtcars$gear))|  
  []
 
-[72pdfTeX warning (ext4): destination with the same identifier (name{table.10.1
+[77pdfTeX warning (ext4): destination with the same identifier (name{table.10.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2713 ...esis Testing}\label{hypothesis-testing}}
+l.2911 ...esis Testing}\label{hypothesis-testing}}
                                                    <./aspr_print_files/figure-l
-atex/unnamed-chunk-90-1.pdf>]
-Chapter 11.
-[73
+atex/unnamed-chunk-97-1.pdf>] [78
 
 ]
-Overfull \hbox (17.24895pt too wide) in paragraph at lines 2772--2772
+Chapter 11.
+[79]
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2970--2970
 []\T1/lmtt/m/n/10 ## alternative hypothesis: true difference in means is not eq
 ual to 0[] 
  []
 
 
-Overfull \hbox (59.24883pt too wide) in paragraph at lines 2803--2803
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 3001--3001
 []\T1/lmtt/m/n/10 ## Warning in chisq.test(mytable): Chi-squared approximation 
 may be incorrect[] 
  []
@@ -1962,300 +2188,300 @@ may be incorrect[]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[74] [75pdfTeX warning (ext4): destination with the same identifier (name{table
+[80] [81pdfTeX warning (ext4): destination with the same identifier (name{table
 .11.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2834 ...Linear Modeling}\label{linear-modeling}}
-                                                  ] [76
+l.3032 ...Linear Modeling}\label{linear-modeling}}
+                                                  ] [82
 
 ]
 Chapter 12.
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ##             mpg        cyl       disp         hp        dr
 at         wt[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.681171
 91 -0.8676594[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.699938
 11  0.7824958[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## disp -0.8475514  0.9020329  1.0000000  0.7909486 -0.710213
 93  0.8879799[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## hp   -0.7761684  0.8324475  0.7909486  1.0000000 -0.448759
 12  0.6587479[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## drat  0.6811719 -0.6999381 -0.7102139 -0.4487591  1.000000
 00 -0.7124406[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## wt   -0.8676594  0.7824958  0.8879799  0.6587479 -0.712440
 65  1.0000000[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## qsec  0.4186840 -0.5912421 -0.4336979 -0.7082234  0.091204
 76 -0.1747159[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## vs    0.6640389 -0.8108118 -0.7104159 -0.7230967  0.440278
 46 -0.5549157[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## am    0.5998324 -0.5226070 -0.5912270 -0.2432043  0.712711
 13 -0.6924953[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## gear  0.4802848 -0.4926866 -0.5555692 -0.1257043  0.699610
 13 -0.5832870[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2875--2875
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3073--3073
 []\T1/lmtt/m/n/10 ## carb -0.5509251  0.5269883  0.3949769  0.7498125 -0.090789
 80  0.4276059[] 
  []
 
-[77]
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+[83]
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ##             mpg        cyl       disp         hp        dr
 at         wt[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## mpg   1.0000000 -0.8521620 -0.8475514 -0.7761684  0.681171
 91 -0.8676594[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## cyl  -0.8521620  1.0000000  0.9020329  0.8324475 -0.699938
 11  0.7824958[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## disp -0.8475514  0.9020329  1.0000000  0.7909486 -0.710213
 93  0.8879799[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## hp   -0.7761684  0.8324475  0.7909486  1.0000000 -0.448759
 12  0.6587479[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## drat  0.6811719 -0.6999381 -0.7102139 -0.4487591  1.000000
 00 -0.7124406[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## wt   -0.8676594  0.7824958  0.8879799  0.6587479 -0.712440
 65  1.0000000[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## qsec  0.4186840 -0.5912421 -0.4336979 -0.7082234  0.091204
 76 -0.1747159[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## vs    0.6640389 -0.8108118 -0.7104159 -0.7230967  0.440278
 46 -0.5549157[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## am    0.5998324 -0.5226070 -0.5912270 -0.2432043  0.712711
 13 -0.6924953[] 
  []
 
-[78]
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+[84]
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## gear  0.4802848 -0.4926866 -0.5555692 -0.1257043  0.699610
 13 -0.5832870[] 
  []
 
 
-Overfull \hbox (43.49887pt too wide) in paragraph at lines 2945--2945
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3143--3143
 []\T1/lmtt/m/n/10 ## carb -0.5509251  0.5269883  0.3949769  0.7498125 -0.090789
 80  0.4276059[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ##               mpg          cyl         disp           hp  
        drat[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## mpg            NA 6.112688e-10 9.380328e-10 1.787835e-07 1
 .776240e-05[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## cyl  6.112688e-10           NA 1.803002e-12 3.477861e-09 8
 .244636e-06[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## disp 9.380328e-10 1.803002e-12           NA 7.142679e-08 5
 .282022e-06[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## hp   1.787835e-07 3.477861e-09 7.142679e-08           NA 9
 .988772e-03[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## drat 1.776240e-05 8.244636e-06 5.282022e-06 9.988772e-03  
          NA[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## wt   1.293958e-10 1.217567e-07 1.222311e-11 4.145827e-05 4
 .784260e-06[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## qsec 1.708199e-02 3.660533e-04 1.314404e-02 5.766253e-06 6
 .195826e-01[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## vs   3.415937e-05 1.843018e-08 5.235012e-06 2.940896e-06 1
 .167553e-02[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## am   2.850207e-04 2.151207e-03 3.662114e-04 1.798309e-01 4
 .726790e-06[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## gear 5.400948e-03 4.173297e-03 9.635921e-04 4.930119e-01 8
 .360110e-06[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## carb 1.084446e-03 1.942340e-03 2.526789e-02 7.827810e-07 6
 .211834e-01[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ##                wt         qsec           vs           am  
        gear[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## mpg  1.293958e-10 1.708199e-02 3.415937e-05 2.850207e-04 5
 .400948e-03[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## cyl  1.217567e-07 3.660533e-04 1.843018e-08 2.151207e-03 4
 .173297e-03[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## disp 1.222311e-11 1.314404e-02 5.235012e-06 3.662114e-04 9
 .635921e-04[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## hp   4.145827e-05 5.766253e-06 2.940896e-06 1.798309e-01 4
 .930119e-01[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## drat 4.784260e-06 6.195826e-01 1.167553e-02 4.726790e-06 8
 .360110e-06[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## wt             NA 3.388683e-01 9.798492e-04 1.125440e-05 4
 .586601e-04[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## qsec 3.388683e-01           NA 1.029669e-06 2.056621e-01 2
 .425344e-01[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## vs   9.798492e-04 1.029669e-06           NA 3.570439e-01 2
 .579439e-01[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## am   1.125440e-05 2.056621e-01 3.570439e-01           NA 5
 .834043e-08[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## gear 4.586601e-04 2.425344e-01 2.579439e-01 5.834043e-08  
          NA[] 
  []
 
 
-Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3189--3189
 []\T1/lmtt/m/n/10 ## carb 1.463861e-02 4.536949e-05 6.670496e-04 7.544526e-01 1
 .290291e-01[] 
  []
@@ -2263,68 +2489,68 @@ Overfull \hbox (32.9989pt too wide) in paragraph at lines 2991--2991
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[79]
-Overfull \hbox (6.74898pt too wide) in paragraph at lines 3017--3017
+[85]
+Overfull \hbox (6.74898pt too wide) in paragraph at lines 3215--3215
 []\T1/lmtt/m/n/10 ##    aov(formula = mpg ~ factor(gear) + factor(am), data = m
 tcars)[] 
  []
 
 
-Overfull \hbox (17.24895pt too wide) in paragraph at lines 3057--3057
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 3255--3255
 []\T1/lmtt/m/n/10 ## Fit: aov(formula = mpg ~ factor(gear) + factor(am), data =
  mtcars)[] 
  []
 
-[80]
-Overfull \hbox (1.499pt too wide) in paragraph at lines 3082--3082
+[86]
+Overfull \hbox (1.499pt too wide) in paragraph at lines 3280--3280
 []\T1/lmtt/m/n/10 ## (Intercept)           wt           hp         gear        
    am[] 
  []
 
 
-Overfull \hbox (1.499pt too wide) in paragraph at lines 3082--3082
+Overfull \hbox (1.499pt too wide) in paragraph at lines 3280--3280
 []\T1/lmtt/m/n/10 ##    32.55626     -2.79996     -0.03837      0.40299      1.
 68739[] 
  []
 
-[81]
-<aspr_print_files/figure-latex/unnamed-chunk-103-1.pdf, id=1026, 469.755pt x 32
+[87]
+<aspr_print_files/figure-latex/unnamed-chunk-110-1.pdf, id=1052, 469.755pt x 32
 5.215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-103-1.pdf Graphic file (type 
+File: aspr_print_files/figure-latex/unnamed-chunk-110-1.pdf Graphic file (type 
 pdf)
-<use aspr_print_files/figure-latex/unnamed-chunk-103-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-103-1.pdf 
- used on input line 3146.
+<use aspr_print_files/figure-latex/unnamed-chunk-110-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-110-1.pdf 
+ used on input line 3344.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[82]
-<aspr_print_files/figure-latex/unnamed-chunk-104-1.pdf, id=1033, 469.755pt x 32
+[88]
+<aspr_print_files/figure-latex/unnamed-chunk-111-1.pdf, id=1060, 469.755pt x 32
 5.215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-104-1.pdf Graphic file (type 
+File: aspr_print_files/figure-latex/unnamed-chunk-111-1.pdf Graphic file (type 
 pdf)
-<use aspr_print_files/figure-latex/unnamed-chunk-104-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-104-1.pdf 
- used on input line 3158.
+<use aspr_print_files/figure-latex/unnamed-chunk-111-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-111-1.pdf 
+ used on input line 3356.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[83 <./aspr_print_files/figure-latex/unnamed-chunk-103-1.pdf>]
-Overfull \hbox (17.24895pt too wide) in paragraph at lines 3179--3179
+[89 <./aspr_print_files/figure-latex/unnamed-chunk-110-1.pdf>]
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 3377--3377
 []\T1/lmtt/m/n/10 ## Warning: glm.fit: fitted probabilities numerically 0 or 1 
 occurred[] 
  []
 
 
-Overfull \hbox (74.99878pt too wide) in paragraph at lines 3199--3199
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 3397--3397
 []\T1/lmtt/m/n/10 ## Call:  glm(formula = am ~ mpg + wt + gear, family = binomi
 al(link = "logit"),[] 
  []
 
-[84 <./aspr_print_files/figure-latex/unnamed-chunk-104-1.pdf>]
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 3231--3231
+[90 <./aspr_print_files/figure-latex/unnamed-chunk-111-1.pdf>]
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 3429--3429
 []\T1/lmtt/m/n/10 ## glm(formula = am ~ mpg + wt + gear, family = binomial(link
  = "logit"),[] 
  []
@@ -2332,140 +2558,461 @@ Overfull \hbox (38.24889pt too wide) in paragraph at lines 3231--3231
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[85] [86pdfTeX warning (ext4): destination with the same identifier (name{table
+[91] [92pdfTeX warning (ext4): destination with the same identifier (name{table
 .12.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3261 ...braries}\label{recommended-r-libraries}}
+l.3459 ...braries}\label{recommended-r-libraries}}
                                                   ]
 Chapter 13.
-[87
+[93
 
 ]
-<aspr_print_files/figure-latex/unnamed-chunk-109-1.pdf, id=1078, 469.755pt x 32
+<aspr_print_files/figure-latex/unnamed-chunk-116-1.pdf, id=1104, 469.755pt x 32
 5.215pt>
-File: aspr_print_files/figure-latex/unnamed-chunk-109-1.pdf Graphic file (type 
+File: aspr_print_files/figure-latex/unnamed-chunk-116-1.pdf Graphic file (type 
 pdf)
-<use aspr_print_files/figure-latex/unnamed-chunk-109-1.pdf>
-Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-109-1.pdf 
- used on input line 3306.
+<use aspr_print_files/figure-latex/unnamed-chunk-116-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-116-1.pdf 
+ used on input line 3504.
 (pdftex.def)             Requested size: 344.997pt x 238.84406pt.
-[88 <./aspr_print_files/figure-latex/unnamed-chunk-109-1.pdf>]
+[94 <./aspr_print_files/figure-latex/unnamed-chunk-116-1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[89] [90]
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 3452--3452
+[95] [96]
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 3650--3650
 []\T1/lmtt/m/n/10 ##        mpg        cyl       disp         hp       drat    
      wt       qsec[] 
  []
 
 
-Overfull \hbox (69.7488pt too wide) in paragraph at lines 3452--3452
+Overfull \hbox (69.7488pt too wide) in paragraph at lines 3650--3650
 []\T1/lmtt/m/n/10 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3
 .217250  17.848750[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 3465--3465
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 3663--3663
 []\T1/lmtt/m/n/10 ##     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  g
 ear  carb[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 3465--3465
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 3663--3663
 []\T1/lmtt/m/n/10 ##   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <d
 bl> <dbl>[] 
  []
 
 
-Overfull \hbox (22.49893pt too wide) in paragraph at lines 3465--3465
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 3663--3663
 []\T1/lmtt/m/n/10 ## 1  20.1  6.19  231.  147.  3.60  3.22  17.8 0.438 0.406  3
 .69  2.81[] 
  []
 
 
-Overfull \hbox (143.24858pt too wide) in paragraph at lines 3526--3526
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ##                           mpg        cyl       disp       
+   hp        drat[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Hornet 4 Drive     1.56996818 -1.2353648 -0.7200636 -1.386
+75494 -0.19244960[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Hornet Sportabout  0.76916577  0.4492236  0.3552876 -0.023
+76495  0.06333784[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Valiant            0.59120968 -1.2353648 -1.0679713 -1.491
+60032 -1.36176363[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Duster 360        -0.53584556  0.4492236  0.3552876  1.444
+07041  0.28258422[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 450SE         0.08700076  0.4492236 -0.5324043  0.081
+08043 -0.22899066[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 450SL         0.35393489  0.4492236 -0.5324043  0.081
+08043 -0.22899066[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ##                           wt        qsec         vs  am ge
+ar       carb[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Hornet 4 Drive    -0.8134523  1.29489500  1.9321836 NaN  N
+aN -1.4182716[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Hornet Sportabout -0.5433420 -0.49780861 -0.4830459 NaN  N
+aN -0.5673086[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Valiant           -0.5193322  1.87270856  1.9321836 NaN  N
+aN -1.4182716[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Duster 360        -0.3872782 -1.37193681 -0.4830459 NaN  N
+aN  1.1346173[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 450SE         0.2129670 -0.21630969 -0.4830459 NaN  N
+aN  0.2836543[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 450SL        -0.1951998 -0.06815237 -0.4830459 NaN  N
+aN  0.2836543[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ##                       mpg        cyl       disp         hp
+       drat[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Mazda RX4     -0.66960225  1.3540064  0.9505021  0.7917156
+ -0.4588273[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Mazda RX4 Wag -0.66960225  1.3540064  0.9505021  0.7917156
+ -0.4588273[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Datsun 710    -0.32848412 -0.6770032 -0.3859407  0.1351710
+ -0.6188834[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 240D     -0.02526801 -0.6770032  0.6086811 -1.0620575
+ -1.1310627[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 230      -0.32848412 -0.6770032  0.4570463  0.2124115
+ -0.3948049[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 280      -1.01072038  1.3540064  1.1458283  1.2937791
+ -0.3948049[] 
+ []
+
+[97]
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ##                         wt       qsec         vs         a
+m gear       carb[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Mazda RX4      0.005268687 -1.5521599 -2.1408721  0.677003
+2  NaN  1.2794158[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Mazda RX4 Wag  0.408323233 -1.2051700 -2.1408721  0.677003
+2  NaN  1.2794158[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Datsun 710    -0.468913132 -0.2199668  0.4281744  0.677003
+2  NaN -1.0235326[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 240D      0.906214143  0.6413116  0.4281744 -1.354006
+4  NaN -0.2558832[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 230       0.842989901  2.4382232  0.4281744 -1.354006
+4  NaN -0.2558832[] 
+ []
+
+
+Overfull \hbox (64.49881pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Merc 280       1.301365659 -0.4120504  0.4281744 -1.354006
+4  NaN  1.2794158[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ##                       mpg cyl       disp         hp       
+drat         wt[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Porsche 914-2   0.6938001  -1 -0.7115728 -1.0171748  1.319
+5547 -0.6015200[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Lotus Europa    1.3545620  -1 -0.9297723 -0.8032375 -0.374
+8151 -1.3671575[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Ford Pantera L -0.8379663   1  1.2859917  0.6651507  0.780
+4370  0.6562258[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Ferrari Dino   -0.2522909   0 -0.4977027 -0.2003231 -0.759
+8992  0.1677809[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 3724--3724
+[]\T1/lmtt/m/n/10 ## Maserati Bora  -0.9581049   1  0.8530562  1.3555848 -0.965
+2774  1.1446708[] 
+ []
+
+[98]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ##    Gear        Term      Estimate Std. Error       t value
+   Pr(>|t|)[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 1     3 (Intercept)  2.525720e-16  0.1587713  1.590791e-15
+ 1.00000000[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 2     3          wt -5.713684e-01  0.3115032 -1.834230e+00
+ 0.09378850[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 3     3          hp -4.306828e-01  0.2493851 -1.726979e+00
+ 0.11210723[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 4     3        disp  8.408336e-02  0.3589857  2.342248e-01
+ 0.81911285[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 5     4 (Intercept)  2.970767e-16  0.1187895  2.500866e-15
+ 1.00000000[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 6     4          wt -2.034460e-02  0.3011412 -6.755835e-02
+ 0.94779518[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 7     4          hp -4.342680e-01  0.2117560 -2.050795e+00
+ 0.07441627[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 8     4        disp -5.307267e-01  0.3487121 -1.521962e+00
+ 0.16651485[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 9     5 (Intercept)  3.863715e-17  0.1057642  3.653139e-16
+ 1.00000000[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 10    5          wt -9.831730e-01  0.3021465 -3.253961e+00
+ 0.18981249[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 11    5          hp  1.675696e-01  0.3475996  4.820766e-01
+ 0.71402636[] 
+ []
+
+
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 3788--3788
+[]\T1/lmtt/m/n/10 ## 12    5        disp -1.861314e-01  0.2721580 -6.839094e-01
+ 0.61812678[] 
+ []
+
+
+Underfull \vbox (badness 2717) detected at line 3813
+ []
+
+[99]
+<aspr_print_files/figure-latex/unnamed-chunk-121-1.pdf, id=1148, 469.755pt x 32
+5.215pt>
+File: aspr_print_files/figure-latex/unnamed-chunk-121-1.pdf Graphic file (type 
+pdf)
+<use aspr_print_files/figure-latex/unnamed-chunk-121-1.pdf>
+Package pdftex.def Info: aspr_print_files/figure-latex/unnamed-chunk-121-1.pdf 
+ used on input line 3815.
+(pdftex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \vbox (badness 3503) has occurred while \output is active []
+
+[100 <./aspr_print_files/figure-latex/unnamed-chunk-121-1.pdf>]
+Overfull \hbox (143.24858pt too wide) in paragraph at lines 3876--3876
 []\T1/lmtt/m/n/10 ##  Hlavac, Marek (2018). stargazer: Well-Formatted Regressio
 n and Summary Statistics Tables.[] 
  []
 
-[91]
-Overfull \hbox (38.24889pt too wide) in paragraph at lines 3530--3530
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 3880--3880
 []\T1/lmtt/m/n/10 ##  R package version 5.2.2. https://CRAN.R-project.org/packa
 ge=stargazer[] 
  []
 
-[92]
-Overfull \hbox (4.96632pt too wide) in paragraph at lines 3678--3678
+[101]
+Overfull \hbox (58.27835pt too wide) in paragraph at lines 4001--4032
+ [][] 
+ []
+
+[102] [103pdfTeX warning (ext4): destination with the same identifier (name{tab
+le.13.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.4036 \newpage
+               ] [104pdfTeX warning (ext4): destination with the same identifie
+r (name{table.13.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.4036 \newpage
+               ]
+Overfull \hbox (4.96632pt too wide) in paragraph at lines 4079--4079
 \T1/lmr/m/n/10 (-20) geom_point(alpha 
  []
 
 
-Overfull \hbox (6.13637pt too wide) in paragraph at lines 3678--3678
+Overfull \hbox (6.13637pt too wide) in paragraph at lines 4079--4079
 \T1/lmr/m/n/10 (-20) marise(mean_mpg 
  []
 
 
-Overfull \hbox (6.13637pt too wide) in paragraph at lines 3678--3678
+Overfull \hbox (2.50958pt too wide) in paragraph at lines 4079--4079
+[]\T1/lmr/m/n/10 (-20) pivot_wider(data, 
+ []
+
+
+Overfull \hbox (5.23201pt too wide) in paragraph at lines 4079--4079
+\T1/lmr/m/n/10 (-20) pivot_longer(data, 
+ []
+
+
+Overfull \hbox (6.13637pt too wide) in paragraph at lines 4079--4079
 \T1/lmr/m/n/10 (-20) marise(mean_mpg 
  []
 
 
-Overfull \hbox (13.48178pt too wide) in paragraph at lines 3678--3678
+Overfull \hbox (13.48178pt too wide) in paragraph at lines 4079--4079
 \T1/lmr/m/n/10 (-20) pivot_wider(id_cols 
  []
 
 
-Overfull \hbox (1.55693pt too wide) in paragraph at lines 3678--3678
+Overfull \hbox (1.55693pt too wide) in paragraph at lines 4079--4079
 []\T1/lmr/m/n/10 (-20) stargazer(my_ols, 
  []
 
 
-LaTeX Warning: Float too large for page by 27.81883pt on input line 3679.
+LaTeX Warning: Float too large for page by 27.81883pt on input line 4080.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[93pdfTeX warning (ext4): destination with the same identifier (name{table.13.1
-}) has been already used, duplicate ignored
+[105] [106pdfTeX warning (ext4): destination with the same identifier (name{tab
+le.13.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3682 \chapter{Conclusion}\label{conclusion}}
-                                              ] [94pdfTeX warning (ext4): desti
-nation with the same identifier (name{table.13.2}) has been already used, dupli
-cate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.3682 \chapter{Conclusion}\label{conclusion}}
+l.4083 \chapter{Conclusion}\label{conclusion}}
                                               ]
 Chapter 14.
-[95
+[107
 
-] [96
+] [108
 
-] [97] [98
+] [109] [110
 
-] [99] [100]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3760.
-[101
+] [111] [112]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4161.
+[113
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3760.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4161.
 (./aspr_print.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3760.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3760.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4161.
 
 Package rerunfilecheck Info: File `aspr_print.out' has not changed.
-(rerunfilecheck)             Checksum: 59394BE4D99DB8E7B1B212E03B7B8C87;10097.
+(rerunfilecheck)             Checksum: D106C8BEA9131E732F21BB309DE1AEBA;10071.
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 14829 strings out of 482938
- 224437 string characters out of 5958185
- 504915 words of memory out of 5000000
- 29294 multiletter control sequences out of 15000+600000
+ 14850 strings out of 482938
+ 225182 string characters out of 5958185
+ 507933 words of memory out of 5000000
+ 29302 multiletter control sequences out of 15000+600000
  619024 words of font info for 144 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,15n,42p,809b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2497,10 +3044,10 @@ c/lm/lmtt10.pfb><c:/Users/crispychicken/AppData/Roaming/TinyTeX/texmf-dist/font
 s/type1/public/lm/lmtt8.pfb><c:/Users/crispychicken/AppData/Roaming/TinyTeX/tex
 mf-dist/fonts/type1/public/lm/lmtti10.pfb><c:/Users/crispychicken/AppData/Roami
 ng/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtto10.pfb>
-Output written on aspr_print.pdf (101 pages, 893109 bytes).
+Output written on aspr_print.pdf (113 pages, 920248 bytes).
 PDF statistics:
- 1355 PDF objects out of 1440 (max. 8388607)
- 1190 compressed objects within 12 object streams
- 355 named destinations out of 1000 (max. 500000)
- 19201 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 1420 PDF objects out of 1440 (max. 8388607)
+ 1238 compressed objects within 13 object streams
+ 366 named destinations out of 1000 (max. 500000)
+ 19203 words of extra memory for PDF output out of 20736 (max. 10000000)
 

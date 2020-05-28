@@ -243,22 +243,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
-<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
-<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms-and-density-plots"><i class="fa fa-check"></i><b>10.1</b> Histograms and Density Plots</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.2</b> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
-<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
-<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+<li class="chapter" data-level="10.2.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.2.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.2.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.2.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.2.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.2.3</b> Text Plot</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
-<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
-<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.3</b> Line Plots</a></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.4</b> Box Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.5</b> Bar Plots</a>
 <ul>
-<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
-<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+<li class="chapter" data-level="10.5.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.5.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.5.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.5.2</b> Grouped Mean Comparisons</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
 <ul>
@@ -321,8 +320,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This chapter will demonstrate a select handful of functionals–see <code>?lapply</code> for more information.</p>
 <div id="lapply" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> <code>lapply()</code></h2>
-<p>The <code>lapply()</code> function (“list apply”) casts a function over a dataset and outputs a list.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="functionals.html#cb172-1"></a><span class="kw">lapply</span>(mtcars, mean)</span></code></pre></div>
+<p>The <code>lapply()</code> function (“list apply”) casts a function over an object, such as a dataset or list, and outputs a list. This function is useful when you want to iterate over disparate elements and output similarly disparate results.</p>
+<p>Below is a simple example of calculating the means for each column in the <code>mtcars</code> dataset. Note how the elements are not stored in a one- nor two-dimensional format like a vector or data frame.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="functionals.html#cb172-1"></a><span class="co"># Means for each column in mtcars.</span></span>
+<span id="cb172-2"><a href="functionals.html#cb172-2"></a><span class="kw">lapply</span>(mtcars, mean)</span></code></pre></div>
 <pre><code>## $mpg
 ## [1] 20.09062
 ## 
@@ -355,28 +356,155 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $carb
 ## [1] 2.8125</code></pre>
+<p>For a more complex example, we can use <code>lapply()</code> to estimate several models based on different subsets of the same dataset. First, we’ll use <code>split()</code> to divide mtcars into smaller subsets.</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="functionals.html#cb174-1"></a><span class="co"># Split mtcars by gear</span></span>
+<span id="cb174-2"><a href="functionals.html#cb174-2"></a><span class="co"># i.e. each subset is based on a different number of gears.</span></span>
+<span id="cb174-3"><a href="functionals.html#cb174-3"></a>subset_list &lt;-<span class="st"> </span><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear)</span>
+<span id="cb174-4"><a href="functionals.html#cb174-4"></a></span>
+<span id="cb174-5"><a href="functionals.html#cb174-5"></a>subset_list</span></code></pre></div>
+<pre><code>## $`3`
+##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## 
+## $`4`
+##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230       22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280       19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Merc 280C      17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Fiat 128       32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic    30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Fiat X1-9      27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+## 
+## $`5`
+##                 mpg cyl  disp  hp drat    wt qsec vs am gear carb
+## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
+## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
+## Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
+## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
+## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8</code></pre>
+<p>Then, we will execute <code>lapply()</code> over the subsets to estimate the same model. Unlike before in which we can simply input <code>mean</code> into <code>lapply()</code>, we have to tell R that we want to use a customized function by inputting <code>function(x)</code> instead–in other words, we have to pass in an anonymous function, which is a function that is not named beforehand.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="functionals.html#cb176-1"></a><span class="co"># Estimate models</span></span>
+<span id="cb176-2"><a href="functionals.html#cb176-2"></a>models &lt;-<span class="st"> </span><span class="kw">lapply</span>(subset_list, <span class="cf">function</span>(x) <span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp, x))</span>
+<span id="cb176-3"><a href="functionals.html#cb176-3"></a></span>
+<span id="cb176-4"><a href="functionals.html#cb176-4"></a>models</span></code></pre></div>
+<pre><code>## $`3`
+## 
+## Call:
+## lm(formula = mpg ~ wt + hp + disp, data = x)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         disp  
+##   29.496821    -2.312668    -0.030449     0.002989  
+## 
+## 
+## $`4`
+## 
+## Call:
+## lm(formula = mpg ~ wt + hp + disp, data = x)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         disp  
+##    41.75225     -0.16968     -0.08850     -0.07198  
+## 
+## 
+## $`5`
+## 
+## Call:
+## lm(formula = mpg ~ wt + hp + disp, data = x)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         disp  
+##    42.47699     -7.99454      0.01085     -0.01073</code></pre>
+<p>Note that the <code>x</code> represents each dataset in subset_list. We can easily replace <code>x</code> with <code>y</code> and receive the same results. This is because <code>x</code> is merely a placeholder that represents each list element in <code>subset_list</code>. To demonstrate, below is the same as before but with <code>y</code> as the input for <code>function()</code>.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="functionals.html#cb178-1"></a><span class="co"># Same results as before</span></span>
+<span id="cb178-2"><a href="functionals.html#cb178-2"></a>models &lt;-<span class="st"> </span><span class="kw">lapply</span>(subset_list, <span class="cf">function</span>(y) <span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp, y))</span>
+<span id="cb178-3"><a href="functionals.html#cb178-3"></a></span>
+<span id="cb178-4"><a href="functionals.html#cb178-4"></a>models</span></code></pre></div>
+<pre><code>## $`3`
+## 
+## Call:
+## lm(formula = mpg ~ wt + hp + disp, data = y)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         disp  
+##   29.496821    -2.312668    -0.030449     0.002989  
+## 
+## 
+## $`4`
+## 
+## Call:
+## lm(formula = mpg ~ wt + hp + disp, data = y)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         disp  
+##    41.75225     -0.16968     -0.08850     -0.07198  
+## 
+## 
+## $`5`
+## 
+## Call:
+## lm(formula = mpg ~ wt + hp + disp, data = y)
+## 
+## Coefficients:
+## (Intercept)           wt           hp         disp  
+##    42.47699     -7.99454      0.01085     -0.01073</code></pre>
 </div>
 <div id="sapply" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> <code>sapply()</code></h2>
-<p>The <code>sapply()</code> function (“simplified apply”) casts a function over a dataset and outputs a matrix (or list, depending on the function).</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="functionals.html#cb174-1"></a><span class="kw">sapply</span>(mtcars, mean)</span></code></pre></div>
+<p>The <code>sapply()</code> function (“simplified apply”) casts a function over a dataset and outputs a vector or matrix (or list, depending on the function). This function can be useful when you want a “cleaner” representation of the results (i.e. results in a vector or matrix format).</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="functionals.html#cb180-1"></a><span class="kw">sapply</span>(mtcars, mean)</span></code></pre></div>
 <pre><code>##        mpg        cyl       disp         hp       drat         wt       qsec 
 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
 ##         vs         am       gear       carb 
 ##   0.437500   0.406250   3.687500   2.812500</code></pre>
+<p>As with <code>lapply()</code>, we can estimate several models iteratively with <code>sapply()</code>; however, the difference is that we can store coefficients in a matrix with the latter.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="functionals.html#cb182-1"></a><span class="co"># Split mtcars by gear</span></span>
+<span id="cb182-2"><a href="functionals.html#cb182-2"></a><span class="co"># i.e. each subset is based on a different number of gears.</span></span>
+<span id="cb182-3"><a href="functionals.html#cb182-3"></a>subset_list &lt;-<span class="st"> </span><span class="kw">split</span>(mtcars, mtcars<span class="op">$</span>gear)</span>
+<span id="cb182-4"><a href="functionals.html#cb182-4"></a></span>
+<span id="cb182-5"><a href="functionals.html#cb182-5"></a>coefs &lt;-<span class="st"> </span><span class="kw">sapply</span>(subset_list, <span class="cf">function</span>(x) <span class="kw">coef</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp, x)))</span>
+<span id="cb182-6"><a href="functionals.html#cb182-6"></a></span>
+<span id="cb182-7"><a href="functionals.html#cb182-7"></a>coefs</span></code></pre></div>
+<pre><code>##                        3           4           5
+## (Intercept) 29.496821154 41.75225248 42.47698779
+## wt          -2.312668246 -0.16968386 -7.99453576
+## hp          -0.030449156 -0.08849952  0.01085093
+## disp         0.002988812 -0.07197566 -0.01073200</code></pre>
 </div>
 <div id="apply" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> <code>apply()</code></h2>
-<p>The <code>apply()</code> function can cast a function over a dataset row-wise or column-wise, returning a matrix.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="functionals.html#cb176-1"></a><span class="co"># Row-wise means.</span></span>
-<span id="cb176-2"><a href="functionals.html#cb176-2"></a><span class="co"># show only a few with head().</span></span>
-<span id="cb176-3"><a href="functionals.html#cb176-3"></a><span class="kw">head</span>(<span class="kw">apply</span>(mtcars, <span class="dv">1</span>, mean))</span></code></pre></div>
+<p>The <code>apply()</code> function can cast a function over a dataset row-wise or column-wise, returning a vector or matrix. This function is useful when you want to apply a function over a specific dimension.</p>
+<p>Below is an example of using this function to apply a function row-wise on the <code>mtcars</code> dataset.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="functionals.html#cb184-1"></a><span class="co"># Row-wise means.</span></span>
+<span id="cb184-2"><a href="functionals.html#cb184-2"></a><span class="co"># Show only a few with head().</span></span>
+<span id="cb184-3"><a href="functionals.html#cb184-3"></a><span class="kw">head</span>(<span class="kw">apply</span>(mtcars, <span class="dv">1</span>, mean))</span></code></pre></div>
 <pre><code>##         Mazda RX4     Mazda RX4 Wag        Datsun 710    Hornet 4 Drive 
 ##          29.90727          29.98136          23.59818          38.73955 
 ## Hornet Sportabout           Valiant 
 ##          53.66455          35.04909</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="functionals.html#cb178-1"></a><span class="co"># Column-wise means.</span></span>
-<span id="cb178-2"><a href="functionals.html#cb178-2"></a><span class="kw">apply</span>(mtcars, <span class="dv">2</span>, mean)</span></code></pre></div>
+<p>Again, but applying a function column-wise. Note that the results are similar to <code>sapply(mtcars, mean)</code>.</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="functionals.html#cb186-1"></a><span class="co"># Column-wise means.</span></span>
+<span id="cb186-2"><a href="functionals.html#cb186-2"></a><span class="kw">apply</span>(mtcars, <span class="dv">2</span>, mean)</span></code></pre></div>
 <pre><code>##        mpg        cyl       disp         hp       drat         wt       qsec 
 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
 ##         vs         am       gear       carb 
@@ -385,31 +513,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="vapply" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> <code>vapply()</code></h2>
 <p>The <code>vapply()</code> function (“vectorized apply”) works similarly as <code>sapply()</code>; however, there is a type-checking component to it. In other words, one can set whether the output should be numeric or character, for example, beforehand. If the output does not match the set type, an error will occur. This function is useful for type-checking your results (i.e., making sure the output matches your expectations).</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="functionals.html#cb180-1"></a><span class="co"># Mean of all mtcars columns</span></span>
-<span id="cb180-2"><a href="functionals.html#cb180-2"></a><span class="co"># Type-check whether it is a numeric vector.</span></span>
-<span id="cb180-3"><a href="functionals.html#cb180-3"></a><span class="kw">vapply</span>(mtcars, mean, <span class="kw">numeric</span>(<span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="functionals.html#cb188-1"></a><span class="co"># Mean of all mtcars columns</span></span>
+<span id="cb188-2"><a href="functionals.html#cb188-2"></a><span class="co"># Type-check whether it is a numeric vector.</span></span>
+<span id="cb188-3"><a href="functionals.html#cb188-3"></a><span class="kw">vapply</span>(mtcars, mean, <span class="kw">numeric</span>(<span class="dv">1</span>))</span></code></pre></div>
 <pre><code>##        mpg        cyl       disp         hp       drat         wt       qsec 
 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
 ##         vs         am       gear       carb 
 ##   0.437500   0.406250   3.687500   2.812500</code></pre>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="functionals.html#cb182-1"></a><span class="co"># Mean of all mtcars columns</span></span>
-<span id="cb182-2"><a href="functionals.html#cb182-2"></a><span class="co"># Type-check whether it is a character vector.</span></span>
-<span id="cb182-3"><a href="functionals.html#cb182-3"></a><span class="kw">vapply</span>(mtcars, mean, <span class="kw">character</span>(<span class="dv">1</span>))</span></code></pre></div>
+<p>Below is an example when <code>vapply()</code> throws an error due to an unexpected output type.</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="functionals.html#cb190-1"></a><span class="co"># Mean of all mtcars columns</span></span>
+<span id="cb190-2"><a href="functionals.html#cb190-2"></a><span class="co"># Type-check whether it is a character vector.</span></span>
+<span id="cb190-3"><a href="functionals.html#cb190-3"></a><span class="kw">vapply</span>(mtcars, mean, <span class="kw">character</span>(<span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## Error in vapply(mtcars, mean, character(1)): values must be type &#39;character&#39;,
 ##  but FUN(X[[1]]) result is type &#39;double&#39;</code></pre>
 </div>
 <div id="mapplymap" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> <code>mapply()</code>/<code>Map()</code></h2>
-<p>The functions <code>mapply()</code> and <code>Map()</code> allow us to compute a function iteratively over one or more data inputs.</p>
+<p>The functions <code>mapply()</code> and <code>Map()</code> allow us to compute a function iteratively over one or more data inputs. These functions are useful when we want to iterate over multiple datasets in a pairwise fashion.</p>
 <div id="univariate-case-1" class="section level3" number="9.5.1">
 <h3><span class="header-section-number">9.5.1</span> Univariate Case</h3>
 <p>In the univariate case, <code>mapply()</code>/<code>Map()</code> work similarly as <code>sapply()</code>/<code>lapply()</code>.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="functionals.html#cb184-1"></a><span class="kw">mapply</span>(mean, mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="functionals.html#cb192-1"></a><span class="kw">mapply</span>(mean, mtcars)</span></code></pre></div>
 <pre><code>##        mpg        cyl       disp         hp       drat         wt       qsec 
 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
 ##         vs         am       gear       carb 
 ##   0.437500   0.406250   3.687500   2.812500</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="functionals.html#cb186-1"></a><span class="kw">head</span>(<span class="kw">Map</span>(mean, mtcars)) <span class="co"># Just show a few.</span></span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="functionals.html#cb194-1"></a><span class="kw">head</span>(<span class="kw">Map</span>(mean, mtcars)) <span class="co"># Just show a few.</span></span></code></pre></div>
 <pre><code>## $mpg
 ## [1] 20.09062
 ## 
@@ -431,17 +560,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="multivariate-case-1" class="section level3" number="9.5.2">
 <h3><span class="header-section-number">9.5.2</span> Multivariate Case</h3>
 <p>In the multivariate case, we can have multiple data inputs.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="functionals.html#cb188-1"></a><span class="co"># Row bind mpg and wt from mtcars.</span></span>
-<span id="cb188-2"><a href="functionals.html#cb188-2"></a><span class="co"># Output = matrix</span></span>
-<span id="cb188-3"><a href="functionals.html#cb188-3"></a><span class="co"># Show only a few columns.</span></span>
-<span id="cb188-4"><a href="functionals.html#cb188-4"></a><span class="kw">mapply</span>(rbind, mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>wt)[, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="functionals.html#cb196-1"></a><span class="co"># Row bind mpg and wt from mtcars.</span></span>
+<span id="cb196-2"><a href="functionals.html#cb196-2"></a><span class="co"># Output = matrix</span></span>
+<span id="cb196-3"><a href="functionals.html#cb196-3"></a><span class="co"># Show only a few columns.</span></span>
+<span id="cb196-4"><a href="functionals.html#cb196-4"></a><span class="kw">mapply</span>(rbind, mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>wt)[, <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>##       [,1]   [,2]  [,3]   [,4]  [,5]
 ## [1,] 21.00 21.000 22.80 21.400 18.70
 ## [2,]  2.62  2.875  2.32  3.215  3.44</code></pre>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="functionals.html#cb190-1"></a><span class="co"># Row bind mpg and wt from mtcars.</span></span>
-<span id="cb190-2"><a href="functionals.html#cb190-2"></a><span class="co"># Output = list.</span></span>
-<span id="cb190-3"><a href="functionals.html#cb190-3"></a><span class="co"># Show only a few rows.</span></span>
-<span id="cb190-4"><a href="functionals.html#cb190-4"></a><span class="kw">head</span>(<span class="kw">Map</span>(rbind, mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>wt))</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="functionals.html#cb198-1"></a><span class="co"># Row bind mpg and wt from mtcars.</span></span>
+<span id="cb198-2"><a href="functionals.html#cb198-2"></a><span class="co"># Output = list.</span></span>
+<span id="cb198-3"><a href="functionals.html#cb198-3"></a><span class="co"># Show only a few rows.</span></span>
+<span id="cb198-4"><a href="functionals.html#cb198-4"></a><span class="kw">head</span>(<span class="kw">Map</span>(rbind, mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>wt))</span></code></pre></div>
 <pre><code>## [[1]]
 ##       [,1]
 ## [1,] 21.00
@@ -475,16 +604,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="rapply" class="section level2" number="9.6">
 <h2><span class="header-section-number">9.6</span> <code>rapply()</code></h2>
-<p>The <code>rapply()</code> function allows one to iterate over a list of datasets recursively. In other words, it allows us to compute the means for all datasets in a list simultaneously, for example.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="functionals.html#cb192-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(mtcars, airquality, iris)</span>
-<span id="cb192-2"><a href="functionals.html#cb192-2"></a></span>
-<span id="cb192-3"><a href="functionals.html#cb192-3"></a><span class="kw">rapply</span>(my_list, <span class="co"># For this list...</span></span>
-<span id="cb192-4"><a href="functionals.html#cb192-4"></a>       <span class="co"># Get all means...</span></span>
-<span id="cb192-5"><a href="functionals.html#cb192-5"></a>       mean,    </span>
-<span id="cb192-6"><a href="functionals.html#cb192-6"></a>       <span class="co"># Remove missing values...</span></span>
-<span id="cb192-7"><a href="functionals.html#cb192-7"></a>       <span class="dt">na.rm =</span> <span class="ot">TRUE</span>, </span>
-<span id="cb192-8"><a href="functionals.html#cb192-8"></a>       <span class="co"># Calculate only for numeric columns</span></span>
-<span id="cb192-9"><a href="functionals.html#cb192-9"></a>       <span class="dt">classes =</span> <span class="st">&#39;numeric&#39;</span>) </span></code></pre></div>
+<p>The <code>rapply()</code> function allows one to iterate over a list of datasets recursively. In effect, this function is useful when we want to execute a function over elements nested within other elements. For example, it allows us to compute the means for all columns in several datasets stored in a list simultaneously.</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="functionals.html#cb200-1"></a>my_list &lt;-<span class="st"> </span><span class="kw">list</span>(mtcars, airquality, iris)</span>
+<span id="cb200-2"><a href="functionals.html#cb200-2"></a></span>
+<span id="cb200-3"><a href="functionals.html#cb200-3"></a><span class="kw">rapply</span>(my_list, <span class="co"># For this list...</span></span>
+<span id="cb200-4"><a href="functionals.html#cb200-4"></a>       <span class="co"># Get all means...</span></span>
+<span id="cb200-5"><a href="functionals.html#cb200-5"></a>       mean,    </span>
+<span id="cb200-6"><a href="functionals.html#cb200-6"></a>       <span class="co"># Remove missing values...</span></span>
+<span id="cb200-7"><a href="functionals.html#cb200-7"></a>       <span class="dt">na.rm =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb200-8"><a href="functionals.html#cb200-8"></a>       <span class="co"># Calculate only for numeric columns</span></span>
+<span id="cb200-9"><a href="functionals.html#cb200-9"></a>       <span class="dt">classes =</span> <span class="st">&#39;numeric&#39;</span>) </span></code></pre></div>
 <pre><code>##          mpg          cyl         disp           hp         drat           wt 
 ##    20.090625     6.187500   230.721875   146.687500     3.596563     3.217250 
 ##         qsec           vs           am         gear         carb         Wind 
@@ -495,22 +624,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="tapply" class="section level2" number="9.7">
 <h2><span class="header-section-number">9.7</span> <code>tapply()</code></h2>
 <p>The function <code>tapply()</code> makes group-wise computations, outputting a vector as a result. The output being a vector can be useful when passing to other functions, such as <code>barplot()</code>. As such, you may want to use <code>tapply()</code> when (1) you want your grouped-computation output to be a vector of values and (2) you want to interact the output values with another function.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="functionals.html#cb194-1"></a><span class="co"># Let&#39;s use iris, a pre-loaded dataset in R.</span></span>
-<span id="cb194-2"><a href="functionals.html#cb194-2"></a>means &lt;-<span class="st"> </span><span class="kw">with</span>(iris, <span class="kw">tapply</span>(Sepal.Length, Species, mean))</span>
-<span id="cb194-3"><a href="functionals.html#cb194-3"></a></span>
-<span id="cb194-4"><a href="functionals.html#cb194-4"></a>means</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="functionals.html#cb202-1"></a><span class="co"># Let&#39;s use iris, a pre-loaded dataset in R.</span></span>
+<span id="cb202-2"><a href="functionals.html#cb202-2"></a>means &lt;-<span class="st"> </span><span class="kw">with</span>(iris, <span class="kw">tapply</span>(Sepal.Length, Species, mean))</span>
+<span id="cb202-3"><a href="functionals.html#cb202-3"></a></span>
+<span id="cb202-4"><a href="functionals.html#cb202-4"></a>means</span></code></pre></div>
 <pre><code>##     setosa versicolor  virginica 
 ##      5.006      5.936      6.588</code></pre>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="functionals.html#cb196-1"></a><span class="kw">barplot</span>(means, <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Mean Sepal Length&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;Species&#39;</span>)</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="functionals.html#cb204-1"></a><span class="kw">barplot</span>(means, <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>, <span class="dt">ylab =</span> <span class="st">&#39;Mean Sepal Length&#39;</span>, <span class="dt">xlab =</span> <span class="st">&#39;Species&#39;</span>)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
 </div>
 <div id="aggregate" class="section level2" number="9.8">
 <h2><span class="header-section-number">9.8</span> <code>aggregate()</code></h2>
 <p>Similar to <code>tapply()</code>, the function <code>aggregate()</code> allows you to make group-wise calculations; however, the output is a data frame rather than a vector. Additionally, you can input multiple independent variables (i.e. variables on the right-hand side of the formula syntax, <code>y ~ x</code>). This function may be preferred over <code>tapply()</code> when (1) you want multiple grouping variables and (2) you want your output to be in a 2-dimensional format.</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="functionals.html#cb197-1"></a><span class="co"># Get the mean MPG by gear and am.</span></span>
-<span id="cb197-2"><a href="functionals.html#cb197-2"></a>my_agg &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mpg <span class="op">~</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars, mean)</span>
-<span id="cb197-3"><a href="functionals.html#cb197-3"></a></span>
-<span id="cb197-4"><a href="functionals.html#cb197-4"></a>my_agg</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="functionals.html#cb205-1"></a><span class="co"># Get the mean MPG by gear and am.</span></span>
+<span id="cb205-2"><a href="functionals.html#cb205-2"></a>my_agg &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mpg <span class="op">~</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars, mean)</span>
+<span id="cb205-3"><a href="functionals.html#cb205-3"></a></span>
+<span id="cb205-4"><a href="functionals.html#cb205-4"></a>my_agg</span></code></pre></div>
 <pre><code>##   gear am      mpg
 ## 1    3  0 16.10667
 ## 2    4  0 21.05000
@@ -521,7 +650,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.9</span> Summary</h2>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-81">Table 9.1: </span>Summary of Functionals
+<span id="tab:unnamed-chunk-87">Table 9.1: </span>Summary of Functionals
 </caption>
 <thead>
 <tr>

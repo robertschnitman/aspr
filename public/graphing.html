@@ -243,22 +243,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
-<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
-<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms-and-density-plots"><i class="fa fa-check"></i><b>10.1</b> Histograms and Density Plots</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.2</b> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
-<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
-<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+<li class="chapter" data-level="10.2.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.2.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.2.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.2.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.2.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.2.3</b> Text Plot</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
-<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
-<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.3</b> Line Plots</a></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.4</b> Box Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.5</b> Bar Plots</a>
 <ul>
-<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
-<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+<li class="chapter" data-level="10.5.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.5.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.5.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.5.2</b> Grouped Mean Comparisons</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
 <ul>
@@ -318,166 +317,178 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="graphing" class="section level1" number="10">
 <h1><span class="header-section-number">10</span> Graphing</h1>
 <p>The following subsections show examples of how to create certain types of graphs.</p>
-<div id="histograms" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Histograms</h2>
+<div id="histograms-and-density-plots" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Histograms and Density Plots</h2>
 <p>All we need to make a histogram is to pass a vector into the <code>hist()</code> function.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="graphing.html#cb199-1"></a><span class="kw">hist</span>(mtcars<span class="op">$</span>mpg, </span>
-<span id="cb199-2"><a href="graphing.html#cb199-2"></a>     <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>,</span>
-<span id="cb199-3"><a href="graphing.html#cb199-3"></a>     <span class="dt">xlab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
-<span id="cb199-4"><a href="graphing.html#cb199-4"></a>     <span class="dt">ylab =</span> <span class="st">&#39;Frequency&#39;</span>,</span>
-<span id="cb199-5"><a href="graphing.html#cb199-5"></a>     <span class="dt">main =</span> <span class="st">&#39;MPG Distribution&#39;</span>)</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
-</div>
-<div id="density-plots" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Density Plots</h2>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="graphing.html#cb200-1"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random numbers.</span></span>
-<span id="cb200-2"><a href="graphing.html#cb200-2"></a></span>
-<span id="cb200-3"><a href="graphing.html#cb200-3"></a>x &lt;-<span class="st"> </span><span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100</span>))</span>
-<span id="cb200-4"><a href="graphing.html#cb200-4"></a></span>
-<span id="cb200-5"><a href="graphing.html#cb200-5"></a><span class="kw">plot</span>(x,</span>
-<span id="cb200-6"><a href="graphing.html#cb200-6"></a>     <span class="dt">main =</span> <span class="st">&#39;100 Random Numbers&#39;</span>,</span>
-<span id="cb200-7"><a href="graphing.html#cb200-7"></a>     <span class="dt">col  =</span> <span class="st">&#39;salmon&#39;</span>)</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
-</div>
-<div id="scatter-plots" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Scatter Plots</h2>
-<p>To make a scatter plot, we make use of the <code>plot(formula)</code> function, where <code>formula</code> input is of the syntax <code>y ~ x</code> (y relates to the y-axis and relates to the x-axis).</p>
-<div id="simple-scatter-plot" class="section level3" number="10.3.1">
-<h3><span class="header-section-number">10.3.1</span> Simple Scatter Plot</h3>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="graphing.html#cb201-1"></a><span class="co"># Draw the scatter plot</span></span>
-<span id="cb201-2"><a href="graphing.html#cb201-2"></a><span class="kw">with</span>(mtcars,</span>
-<span id="cb201-3"><a href="graphing.html#cb201-3"></a>     <span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>wt,</span>
-<span id="cb201-4"><a href="graphing.html#cb201-4"></a>          <span class="dt">ylab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
-<span id="cb201-5"><a href="graphing.html#cb201-5"></a>          <span class="dt">xlab =</span> <span class="st">&#39;Weight&#39;</span>,</span>
-<span id="cb201-6"><a href="graphing.html#cb201-6"></a>          <span class="dt">main =</span> <span class="st">&#39;MPG vs. Weight&#39;</span>,</span>
-<span id="cb201-7"><a href="graphing.html#cb201-7"></a>          <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>,</span>
-<span id="cb201-8"><a href="graphing.html#cb201-8"></a>          <span class="dt">pch =</span> <span class="dv">16</span>)) <span class="co"># pch determines point type.</span></span>
-<span id="cb201-9"><a href="graphing.html#cb201-9"></a>     </span>
-<span id="cb201-10"><a href="graphing.html#cb201-10"></a><span class="co"># Draw a trend line over the scatter plot</span></span>
-<span id="cb201-11"><a href="graphing.html#cb201-11"></a><span class="kw">abline</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, mtcars), </span>
-<span id="cb201-12"><a href="graphing.html#cb201-12"></a>       <span class="dt">col =</span> <span class="st">&#39;salmon&#39;</span>,</span>
-<span id="cb201-13"><a href="graphing.html#cb201-13"></a>       <span class="dt">lwd =</span> <span class="dv">2</span>) <span class="co"># line width</span></span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
-</div>
-<div id="multiple-scatter-plots" class="section level3" number="10.3.2">
-<h3><span class="header-section-number">10.3.2</span> Multiple Scatter Plots</h3>
-<p>For a more complex example, let’s make multiple scatter plots via a <code>for</code> loop.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="graphing.html#cb202-1"></a><span class="co"># Set up a 2x2 canvas</span></span>
-<span id="cb202-2"><a href="graphing.html#cb202-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) </span>
-<span id="cb202-3"><a href="graphing.html#cb202-3"></a></span>
-<span id="cb202-4"><a href="graphing.html#cb202-4"></a><span class="co"># Set parameters</span></span>
-<span id="cb202-5"><a href="graphing.html#cb202-5"></a>unique_gears &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">unique</span>(mtcars<span class="op">$</span>gear))</span>
-<span id="cb202-6"><a href="graphing.html#cb202-6"></a></span>
-<span id="cb202-7"><a href="graphing.html#cb202-7"></a>mycolors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;cyan4&#39;</span>, <span class="st">&#39;salmon&#39;</span>,<span class="st">&#39;forestgreen&#39;</span>, <span class="st">&#39;purple&#39;</span>)</span>
-<span id="cb202-8"><a href="graphing.html#cb202-8"></a></span>
-<span id="cb202-9"><a href="graphing.html#cb202-9"></a><span class="co"># Begin plot loop</span></span>
-<span id="cb202-10"><a href="graphing.html#cb202-10"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(unique_gears)) {</span>
-<span id="cb202-11"><a href="graphing.html#cb202-11"></a>  </span>
-<span id="cb202-12"><a href="graphing.html#cb202-12"></a>  <span class="co"># Subset by number of gears</span></span>
-<span id="cb202-13"><a href="graphing.html#cb202-13"></a>  ss &lt;-<span class="st"> </span><span class="kw">subset</span>(mtcars, gear <span class="op">==</span><span class="st"> </span>unique_gears[i])</span>
-<span id="cb202-14"><a href="graphing.html#cb202-14"></a>  </span>
-<span id="cb202-15"><a href="graphing.html#cb202-15"></a>  <span class="co"># Plot a scatter points</span></span>
-<span id="cb202-16"><a href="graphing.html#cb202-16"></a>  <span class="kw">with</span>(ss,</span>
-<span id="cb202-17"><a href="graphing.html#cb202-17"></a>       <span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>wt,</span>
-<span id="cb202-18"><a href="graphing.html#cb202-18"></a>            <span class="dt">col =</span> mycolors[i],</span>
-<span id="cb202-19"><a href="graphing.html#cb202-19"></a>            <span class="dt">ylab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
-<span id="cb202-20"><a href="graphing.html#cb202-20"></a>            <span class="dt">xlab =</span> <span class="st">&#39;Weight&#39;</span>,</span>
-<span id="cb202-21"><a href="graphing.html#cb202-21"></a>            <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&#39;MPG vs. Weight (No. of Gears = &#39;</span>,</span>
-<span id="cb202-22"><a href="graphing.html#cb202-22"></a>                          unique_gears[i],</span>
-<span id="cb202-23"><a href="graphing.html#cb202-23"></a>                          <span class="st">&#39;)&#39;</span>)))</span>
-<span id="cb202-24"><a href="graphing.html#cb202-24"></a>  </span>
-<span id="cb202-25"><a href="graphing.html#cb202-25"></a>  <span class="co"># Generate a trendline for each subset.</span></span>
-<span id="cb202-26"><a href="graphing.html#cb202-26"></a>  <span class="kw">abline</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, ss))</span>
-<span id="cb202-27"><a href="graphing.html#cb202-27"></a>  </span>
-<span id="cb202-28"><a href="graphing.html#cb202-28"></a>}</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
-<p>Notice how “purple” isn’t used in graphs, as there are only three sub-graphs to plot</p>
-</div>
-<div id="text-plot" class="section level3" number="10.3.3">
-<h3><span class="header-section-number">10.3.3</span> Text Plot</h3>
-<p>To make a text plot, we just turn off the points in the <code>plot()</code> function via <code>type = 'n'</code> and then use the <code>text()</code> function to label them on the graph.</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="graphing.html#cb203-1"></a><span class="co"># Set up basic plot.</span></span>
-<span id="cb203-2"><a href="graphing.html#cb203-2"></a><span class="kw">with</span>(mtcars, <span class="kw">plot</span>(wt <span class="op">~</span><span class="st"> </span>mpg, <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&#39;n&#39;</span>,</span>
-<span id="cb203-3"><a href="graphing.html#cb203-3"></a>                  <span class="dt">xlab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
-<span id="cb203-4"><a href="graphing.html#cb203-4"></a>                  <span class="dt">ylab =</span> <span class="st">&#39;Weight&#39;</span>,</span>
-<span id="cb203-5"><a href="graphing.html#cb203-5"></a>                  <span class="dt">main =</span> <span class="st">&#39;Weight vs. MPG&#39;</span>))</span>
-<span id="cb203-6"><a href="graphing.html#cb203-6"></a></span>
-<span id="cb203-7"><a href="graphing.html#cb203-7"></a><span class="co"># Plot the labels on the graph.</span></span>
-<span id="cb203-8"><a href="graphing.html#cb203-8"></a><span class="kw">with</span>(mtcars, <span class="kw">text</span>(mpg, <span class="co"># x coordinate for words</span></span>
-<span id="cb203-9"><a href="graphing.html#cb203-9"></a>                  wt,  <span class="co"># y coordinate for words</span></span>
-<span id="cb203-10"><a href="graphing.html#cb203-10"></a>                  <span class="kw">row.names</span>(mtcars), <span class="co"># Words to use.</span></span>
-<span id="cb203-11"><a href="graphing.html#cb203-11"></a>                  <span class="dt">pos =</span> <span class="dv">3</span>, </span>
-<span id="cb203-12"><a href="graphing.html#cb203-12"></a>                  <span class="dt">cex =</span> <span class="fl">0.0</span>, </span>
-<span id="cb203-13"><a href="graphing.html#cb203-13"></a>                  <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>))</span>
-<span id="cb203-14"><a href="graphing.html#cb203-14"></a></span>
-<span id="cb203-15"><a href="graphing.html#cb203-15"></a><span class="co"># Add some mean lines for flair.</span></span>
-<span id="cb203-16"><a href="graphing.html#cb203-16"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(mtcars<span class="op">$</span>wt), <span class="dt">v =</span> <span class="kw">mean</span>(mtcars<span class="op">$</span>mpg),</span>
-<span id="cb203-17"><a href="graphing.html#cb203-17"></a>       <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
-</div>
-</div>
-<div id="line-plots" class="section level2" number="10.4">
-<h2><span class="header-section-number">10.4</span> Line Plots</h2>
-<p>Making a line plot is similar to making a scatter plot except that we set <code>type = 'l'</code> as an additional input.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="graphing.html#cb204-1"></a><span class="co"># Suppose we had this dataset:</span></span>
-<span id="cb204-2"><a href="graphing.html#cb204-2"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random numbers.</span></span>
-<span id="cb204-3"><a href="graphing.html#cb204-3"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">y =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>),</span>
-<span id="cb204-4"><a href="graphing.html#cb204-4"></a>                 <span class="dt">x =</span> <span class="dv">2000</span><span class="op">:</span><span class="dv">2009</span>)</span>
-<span id="cb204-5"><a href="graphing.html#cb204-5"></a></span>
-<span id="cb204-6"><a href="graphing.html#cb204-6"></a><span class="co"># Plot this dataset</span></span>
-<span id="cb204-7"><a href="graphing.html#cb204-7"></a><span class="kw">with</span>(df, <span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x,</span>
-<span id="cb204-8"><a href="graphing.html#cb204-8"></a>              <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>,</span>
-<span id="cb204-9"><a href="graphing.html#cb204-9"></a>              <span class="dt">col =</span> <span class="st">&#39;salmon&#39;</span>,</span>
-<span id="cb204-10"><a href="graphing.html#cb204-10"></a>              <span class="dt">ylab =</span> <span class="st">&#39;Some Random Numbers&#39;</span>,</span>
-<span id="cb204-11"><a href="graphing.html#cb204-11"></a>              <span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>))</span></code></pre></div>
-<p><img src="aspr_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
-</div>
-<div id="box-plots" class="section level2" number="10.5">
-<h2><span class="header-section-number">10.5</span> Box Plots</h2>
-<p>Constructing a box plot with the <code>boxplot()</code> function is similar to making a scatter plot with <code>plot()</code>: we pass a formula of vectors into it.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="graphing.html#cb205-1"></a><span class="kw">with</span>(mtcars,</span>
-<span id="cb205-2"><a href="graphing.html#cb205-2"></a>     <span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>gear,</span>
-<span id="cb205-3"><a href="graphing.html#cb205-3"></a>             <span class="dt">ylab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
-<span id="cb205-4"><a href="graphing.html#cb205-4"></a>             <span class="dt">xlab =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
-<span id="cb205-5"><a href="graphing.html#cb205-5"></a>             <span class="dt">main =</span> <span class="st">&#39;Box Plot of MPG vs. Number of Gears&#39;</span>,</span>
-<span id="cb205-6"><a href="graphing.html#cb205-6"></a>             <span class="dt">col  =</span> <span class="st">&#39;grey&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="graphing.html#cb207-1"></a><span class="kw">hist</span>(mtcars<span class="op">$</span>mpg, </span>
+<span id="cb207-2"><a href="graphing.html#cb207-2"></a>     <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>,</span>
+<span id="cb207-3"><a href="graphing.html#cb207-3"></a>     <span class="dt">xlab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb207-4"><a href="graphing.html#cb207-4"></a>     <span class="dt">ylab =</span> <span class="st">&#39;Frequency&#39;</span>,</span>
+<span id="cb207-5"><a href="graphing.html#cb207-5"></a>     <span class="dt">main =</span> <span class="st">&#39;MPG Distribution&#39;</span>)</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
-</div>
-<div id="bar-plots" class="section level2" number="10.6">
-<h2><span class="header-section-number">10.6</span> Bar Plots</h2>
-<p>For a bar plot, we pass a vector (usually one of counts) or aggregation to <code>barplot()</code>.</p>
-<div id="frequency-chart" class="section level3" number="10.6.1">
-<h3><span class="header-section-number">10.6.1</span> Frequency Chart</h3>
-<p>For a frequency chart, we have to calculate a table of frequencies with the <code>table()</code> function before passing it to <code>barplot()</code>.</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="graphing.html#cb206-1"></a>my_table &lt;-<span class="st"> </span><span class="kw">table</span>(mtcars<span class="op">$</span>gear)</span>
-<span id="cb206-2"><a href="graphing.html#cb206-2"></a></span>
-<span id="cb206-3"><a href="graphing.html#cb206-3"></a><span class="kw">barplot</span>(my_table,</span>
-<span id="cb206-4"><a href="graphing.html#cb206-4"></a>        <span class="dt">ylab =</span> <span class="st">&#39;Frequency&#39;</span>,</span>
-<span id="cb206-5"><a href="graphing.html#cb206-5"></a>        <span class="dt">xlab =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
-<span id="cb206-6"><a href="graphing.html#cb206-6"></a>        <span class="dt">col  =</span> <span class="st">&#39;lavender&#39;</span>,</span>
-<span id="cb206-7"><a href="graphing.html#cb206-7"></a>        <span class="dt">main =</span> <span class="st">&#39;Frequencies by Number of Gears&#39;</span>)</span></code></pre></div>
+<p>To create a density plot, we apply <code>plot()</code> over a vector of class <code>density</code> via the <code>density()</code> function.</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="graphing.html#cb208-1"></a><span class="co"># Remember our random numbers.</span></span>
+<span id="cb208-2"><a href="graphing.html#cb208-2"></a><span class="kw">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb208-3"><a href="graphing.html#cb208-3"></a></span>
+<span id="cb208-4"><a href="graphing.html#cb208-4"></a><span class="co"># Create our random numbers.</span></span>
+<span id="cb208-5"><a href="graphing.html#cb208-5"></a>x &lt;-<span class="st"> </span><span class="kw">density</span>(<span class="kw">rnorm</span>(<span class="dv">100</span>))</span>
+<span id="cb208-6"><a href="graphing.html#cb208-6"></a></span>
+<span id="cb208-7"><a href="graphing.html#cb208-7"></a><span class="co"># Plot our random numbers.</span></span>
+<span id="cb208-8"><a href="graphing.html#cb208-8"></a><span class="kw">plot</span>(x,</span>
+<span id="cb208-9"><a href="graphing.html#cb208-9"></a>     <span class="dt">main =</span> <span class="st">&#39;100 Random Numbers&#39;</span>,</span>
+<span id="cb208-10"><a href="graphing.html#cb208-10"></a>     <span class="dt">col  =</span> <span class="st">&#39;salmon&#39;</span>)</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
-</div>
-<div id="grouped-mean-comparisons" class="section level3" number="10.6.2">
-<h3><span class="header-section-number">10.6.2</span> Grouped Mean Comparisons</h3>
-<p>For grouped mean comparisons, we have to aggregate data with <code>aggregate()</code> (see the <code>Functionals</code> chapter for more details) before passing it to <code>barplot()</code>.</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="graphing.html#cb207-1"></a>my_agg &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mpg <span class="op">~</span><span class="st"> </span>gear, mtcars, mean)</span>
-<span id="cb207-2"><a href="graphing.html#cb207-2"></a></span>
-<span id="cb207-3"><a href="graphing.html#cb207-3"></a><span class="kw">with</span>(my_agg, </span>
-<span id="cb207-4"><a href="graphing.html#cb207-4"></a>     <span class="kw">barplot</span>(mpg <span class="op">~</span><span class="st"> </span>gear, </span>
-<span id="cb207-5"><a href="graphing.html#cb207-5"></a>             <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="co"># Set to FALSE to stack bars.</span></span>
-<span id="cb207-6"><a href="graphing.html#cb207-6"></a>             <span class="dt">ylab =</span> <span class="st">&#39;Mean MPG&#39;</span>,</span>
-<span id="cb207-7"><a href="graphing.html#cb207-7"></a>             <span class="dt">xlab =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
-<span id="cb207-8"><a href="graphing.html#cb207-8"></a>             <span class="dt">main =</span> <span class="st">&#39;Mean MPG by Number of Gears&#39;</span>,</span>
-<span id="cb207-9"><a href="graphing.html#cb207-9"></a>             <span class="dt">col  =</span> <span class="st">&#39;lavender&#39;</span>))</span></code></pre></div>
+<p>To overlay a density plot on a histogram, we use <code>hist(..., freq = FALSE)</code> followed by <code>lines()</code> on our <code>density</code> vector.</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="graphing.html#cb209-1"></a><span class="kw">hist</span>(mtcars<span class="op">$</span>mpg, </span>
+<span id="cb209-2"><a href="graphing.html#cb209-2"></a>     <span class="dt">col =</span> <span class="st">&#39;salmon&#39;</span>,</span>
+<span id="cb209-3"><a href="graphing.html#cb209-3"></a>     <span class="dt">xlab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb209-4"><a href="graphing.html#cb209-4"></a>     <span class="dt">ylab =</span> <span class="st">&#39;Density&#39;</span>,</span>
+<span id="cb209-5"><a href="graphing.html#cb209-5"></a>     <span class="dt">main =</span> <span class="st">&#39;MPG Distribution&#39;</span>,</span>
+<span id="cb209-6"><a href="graphing.html#cb209-6"></a>     <span class="dt">freq =</span> <span class="ot">FALSE</span>) <span class="co"># Use density on y-axis.</span></span>
+<span id="cb209-7"><a href="graphing.html#cb209-7"></a></span>
+<span id="cb209-8"><a href="graphing.html#cb209-8"></a><span class="kw">lines</span>(<span class="kw">density</span>(mtcars<span class="op">$</span>mpg), </span>
+<span id="cb209-9"><a href="graphing.html#cb209-9"></a>      <span class="dt">lwd =</span> <span class="dv">1</span>) <span class="co"># Line width</span></span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
 </div>
+<div id="scatter-plots" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Scatter Plots</h2>
+<p>To make a scatter plot, we make use of the <code>plot(formula)</code> function, where <code>formula</code> input is of the syntax <code>y ~ x</code> (y relates to the y-axis and relates to the x-axis).</p>
+<div id="simple-scatter-plot" class="section level3" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Simple Scatter Plot</h3>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="graphing.html#cb210-1"></a><span class="co"># Draw the scatter plot</span></span>
+<span id="cb210-2"><a href="graphing.html#cb210-2"></a><span class="kw">with</span>(mtcars,</span>
+<span id="cb210-3"><a href="graphing.html#cb210-3"></a>     <span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>wt,</span>
+<span id="cb210-4"><a href="graphing.html#cb210-4"></a>          <span class="dt">ylab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb210-5"><a href="graphing.html#cb210-5"></a>          <span class="dt">xlab =</span> <span class="st">&#39;Weight&#39;</span>,</span>
+<span id="cb210-6"><a href="graphing.html#cb210-6"></a>          <span class="dt">main =</span> <span class="st">&#39;MPG vs. Weight&#39;</span>,</span>
+<span id="cb210-7"><a href="graphing.html#cb210-7"></a>          <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>,</span>
+<span id="cb210-8"><a href="graphing.html#cb210-8"></a>          <span class="dt">pch =</span> <span class="dv">16</span>)) <span class="co"># pch determines point type.</span></span>
+<span id="cb210-9"><a href="graphing.html#cb210-9"></a>     </span>
+<span id="cb210-10"><a href="graphing.html#cb210-10"></a><span class="co"># Draw a trend line over the scatter plot</span></span>
+<span id="cb210-11"><a href="graphing.html#cb210-11"></a><span class="kw">abline</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, mtcars), </span>
+<span id="cb210-12"><a href="graphing.html#cb210-12"></a>       <span class="dt">col =</span> <span class="st">&#39;salmon&#39;</span>,</span>
+<span id="cb210-13"><a href="graphing.html#cb210-13"></a>       <span class="dt">lwd =</span> <span class="dv">2</span>) <span class="co"># line width</span></span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
 </div>
-<div id="summary-9" class="section level2" number="10.7">
-<h2><span class="header-section-number">10.7</span> Summary</h2>
+<div id="multiple-scatter-plots" class="section level3" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Multiple Scatter Plots</h3>
+<p>For a more complex example, let’s make multiple scatter plots via a <code>for</code> loop.</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="graphing.html#cb211-1"></a><span class="co"># Set up a 2x2 canvas</span></span>
+<span id="cb211-2"><a href="graphing.html#cb211-2"></a><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>)) </span>
+<span id="cb211-3"><a href="graphing.html#cb211-3"></a></span>
+<span id="cb211-4"><a href="graphing.html#cb211-4"></a><span class="co"># Set parameters</span></span>
+<span id="cb211-5"><a href="graphing.html#cb211-5"></a>unique_gears &lt;-<span class="st"> </span><span class="kw">sort</span>(<span class="kw">unique</span>(mtcars<span class="op">$</span>gear))</span>
+<span id="cb211-6"><a href="graphing.html#cb211-6"></a></span>
+<span id="cb211-7"><a href="graphing.html#cb211-7"></a>mycolors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;cyan4&#39;</span>, <span class="st">&#39;salmon&#39;</span>,<span class="st">&#39;forestgreen&#39;</span>, <span class="st">&#39;purple&#39;</span>)</span>
+<span id="cb211-8"><a href="graphing.html#cb211-8"></a></span>
+<span id="cb211-9"><a href="graphing.html#cb211-9"></a><span class="co"># Begin plot loop</span></span>
+<span id="cb211-10"><a href="graphing.html#cb211-10"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(unique_gears)) {</span>
+<span id="cb211-11"><a href="graphing.html#cb211-11"></a>  </span>
+<span id="cb211-12"><a href="graphing.html#cb211-12"></a>  <span class="co"># Subset by number of gears</span></span>
+<span id="cb211-13"><a href="graphing.html#cb211-13"></a>  ss &lt;-<span class="st"> </span><span class="kw">subset</span>(mtcars, gear <span class="op">==</span><span class="st"> </span>unique_gears[i])</span>
+<span id="cb211-14"><a href="graphing.html#cb211-14"></a>  </span>
+<span id="cb211-15"><a href="graphing.html#cb211-15"></a>  <span class="co"># Plot a scatter points</span></span>
+<span id="cb211-16"><a href="graphing.html#cb211-16"></a>  <span class="kw">with</span>(ss,</span>
+<span id="cb211-17"><a href="graphing.html#cb211-17"></a>       <span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>wt,</span>
+<span id="cb211-18"><a href="graphing.html#cb211-18"></a>            <span class="dt">col =</span> mycolors[i],</span>
+<span id="cb211-19"><a href="graphing.html#cb211-19"></a>            <span class="dt">ylab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb211-20"><a href="graphing.html#cb211-20"></a>            <span class="dt">xlab =</span> <span class="st">&#39;Weight&#39;</span>,</span>
+<span id="cb211-21"><a href="graphing.html#cb211-21"></a>            <span class="dt">main =</span> <span class="kw">paste0</span>(<span class="st">&#39;MPG vs. Weight (No. of Gears = &#39;</span>,</span>
+<span id="cb211-22"><a href="graphing.html#cb211-22"></a>                          unique_gears[i],</span>
+<span id="cb211-23"><a href="graphing.html#cb211-23"></a>                          <span class="st">&#39;)&#39;</span>)))</span>
+<span id="cb211-24"><a href="graphing.html#cb211-24"></a>  </span>
+<span id="cb211-25"><a href="graphing.html#cb211-25"></a>  <span class="co"># Generate a trendline for each subset.</span></span>
+<span id="cb211-26"><a href="graphing.html#cb211-26"></a>  <span class="kw">abline</span>(<span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, ss))</span>
+<span id="cb211-27"><a href="graphing.html#cb211-27"></a>  </span>
+<span id="cb211-28"><a href="graphing.html#cb211-28"></a>}</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+<p>Notice how “purple” isn’t used in graphs, as there are only three sub-graphs to plot</p>
+</div>
+<div id="text-plot" class="section level3" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Text Plot</h3>
+<p>To make a text plot, we just turn off the points in the <code>plot()</code> function via <code>type = 'n'</code> and then use the <code>text()</code> function to label them on the graph.</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="graphing.html#cb212-1"></a><span class="co"># Set up basic plot.</span></span>
+<span id="cb212-2"><a href="graphing.html#cb212-2"></a><span class="kw">with</span>(mtcars, <span class="kw">plot</span>(wt <span class="op">~</span><span class="st"> </span>mpg, <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">type =</span> <span class="st">&#39;n&#39;</span>,</span>
+<span id="cb212-3"><a href="graphing.html#cb212-3"></a>                  <span class="dt">xlab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb212-4"><a href="graphing.html#cb212-4"></a>                  <span class="dt">ylab =</span> <span class="st">&#39;Weight&#39;</span>,</span>
+<span id="cb212-5"><a href="graphing.html#cb212-5"></a>                  <span class="dt">main =</span> <span class="st">&#39;Weight vs. MPG&#39;</span>))</span>
+<span id="cb212-6"><a href="graphing.html#cb212-6"></a></span>
+<span id="cb212-7"><a href="graphing.html#cb212-7"></a><span class="co"># Plot the labels on the graph.</span></span>
+<span id="cb212-8"><a href="graphing.html#cb212-8"></a><span class="kw">with</span>(mtcars, <span class="kw">text</span>(mpg, <span class="co"># x coordinate for words</span></span>
+<span id="cb212-9"><a href="graphing.html#cb212-9"></a>                  wt,  <span class="co"># y coordinate for words</span></span>
+<span id="cb212-10"><a href="graphing.html#cb212-10"></a>                  <span class="kw">row.names</span>(mtcars), <span class="co"># Words to use.</span></span>
+<span id="cb212-11"><a href="graphing.html#cb212-11"></a>                  <span class="dt">pos =</span> <span class="dv">3</span>, </span>
+<span id="cb212-12"><a href="graphing.html#cb212-12"></a>                  <span class="dt">cex =</span> <span class="fl">0.0</span>, </span>
+<span id="cb212-13"><a href="graphing.html#cb212-13"></a>                  <span class="dt">col =</span> <span class="st">&#39;cyan4&#39;</span>))</span>
+<span id="cb212-14"><a href="graphing.html#cb212-14"></a></span>
+<span id="cb212-15"><a href="graphing.html#cb212-15"></a><span class="co"># Add some mean lines for flair.</span></span>
+<span id="cb212-16"><a href="graphing.html#cb212-16"></a><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(mtcars<span class="op">$</span>wt), <span class="dt">v =</span> <span class="kw">mean</span>(mtcars<span class="op">$</span>mpg),</span>
+<span id="cb212-17"><a href="graphing.html#cb212-17"></a>       <span class="dt">lty =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
+</div>
+</div>
+<div id="line-plots" class="section level2" number="10.3">
+<h2><span class="header-section-number">10.3</span> Line Plots</h2>
+<p>Making a line plot is similar to making a scatter plot except that we set <code>type = 'l'</code> as an additional input.</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="graphing.html#cb213-1"></a><span class="co"># Suppose we had this dataset:</span></span>
+<span id="cb213-2"><a href="graphing.html#cb213-2"></a><span class="kw">set.seed</span>(<span class="dv">1</span>) <span class="co"># Remember our random numbers.</span></span>
+<span id="cb213-3"><a href="graphing.html#cb213-3"></a>df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">y =</span> <span class="kw">rnorm</span>(<span class="dv">10</span>),</span>
+<span id="cb213-4"><a href="graphing.html#cb213-4"></a>                 <span class="dt">x =</span> <span class="dv">2000</span><span class="op">:</span><span class="dv">2009</span>)</span>
+<span id="cb213-5"><a href="graphing.html#cb213-5"></a></span>
+<span id="cb213-6"><a href="graphing.html#cb213-6"></a><span class="co"># Plot this dataset</span></span>
+<span id="cb213-7"><a href="graphing.html#cb213-7"></a><span class="kw">with</span>(df, <span class="kw">plot</span>(y <span class="op">~</span><span class="st"> </span>x,</span>
+<span id="cb213-8"><a href="graphing.html#cb213-8"></a>              <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>,</span>
+<span id="cb213-9"><a href="graphing.html#cb213-9"></a>              <span class="dt">col =</span> <span class="st">&#39;salmon&#39;</span>,</span>
+<span id="cb213-10"><a href="graphing.html#cb213-10"></a>              <span class="dt">ylab =</span> <span class="st">&#39;Some Random Numbers&#39;</span>,</span>
+<span id="cb213-11"><a href="graphing.html#cb213-11"></a>              <span class="dt">xlab =</span> <span class="st">&#39;Year&#39;</span>))</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
+</div>
+<div id="box-plots" class="section level2" number="10.4">
+<h2><span class="header-section-number">10.4</span> Box Plots</h2>
+<p>Constructing a box plot with the <code>boxplot()</code> function is similar to making a scatter plot with <code>plot()</code>: we pass a formula of vectors into it.</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="graphing.html#cb214-1"></a><span class="kw">with</span>(mtcars,</span>
+<span id="cb214-2"><a href="graphing.html#cb214-2"></a>     <span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>gear,</span>
+<span id="cb214-3"><a href="graphing.html#cb214-3"></a>             <span class="dt">ylab =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb214-4"><a href="graphing.html#cb214-4"></a>             <span class="dt">xlab =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
+<span id="cb214-5"><a href="graphing.html#cb214-5"></a>             <span class="dt">main =</span> <span class="st">&#39;Box Plot of MPG vs. Number of Gears&#39;</span>,</span>
+<span id="cb214-6"><a href="graphing.html#cb214-6"></a>             <span class="dt">col  =</span> <span class="st">&#39;grey&#39;</span>))</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
+</div>
+<div id="bar-plots" class="section level2" number="10.5">
+<h2><span class="header-section-number">10.5</span> Bar Plots</h2>
+<p>For a bar plot, we pass a vector (usually one of counts) or aggregation to <code>barplot()</code>.</p>
+<div id="frequency-chart" class="section level3" number="10.5.1">
+<h3><span class="header-section-number">10.5.1</span> Frequency Chart</h3>
+<p>For a frequency chart, we have to calculate a table of frequencies with the <code>table()</code> function before passing it to <code>barplot()</code>.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="graphing.html#cb215-1"></a>my_table &lt;-<span class="st"> </span><span class="kw">table</span>(mtcars<span class="op">$</span>gear)</span>
+<span id="cb215-2"><a href="graphing.html#cb215-2"></a></span>
+<span id="cb215-3"><a href="graphing.html#cb215-3"></a><span class="kw">barplot</span>(my_table,</span>
+<span id="cb215-4"><a href="graphing.html#cb215-4"></a>        <span class="dt">ylab =</span> <span class="st">&#39;Frequency&#39;</span>,</span>
+<span id="cb215-5"><a href="graphing.html#cb215-5"></a>        <span class="dt">xlab =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
+<span id="cb215-6"><a href="graphing.html#cb215-6"></a>        <span class="dt">col  =</span> <span class="st">&#39;lavender&#39;</span>,</span>
+<span id="cb215-7"><a href="graphing.html#cb215-7"></a>        <span class="dt">main =</span> <span class="st">&#39;Frequencies by Number of Gears&#39;</span>)</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
+</div>
+<div id="grouped-mean-comparisons" class="section level3" number="10.5.2">
+<h3><span class="header-section-number">10.5.2</span> Grouped Mean Comparisons</h3>
+<p>For grouped mean comparisons, we have to aggregate data with <code>aggregate()</code> (see the <code>Functionals</code> chapter for more details) before passing it to <code>barplot()</code>.</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="graphing.html#cb216-1"></a>my_agg &lt;-<span class="st"> </span><span class="kw">aggregate</span>(mpg <span class="op">~</span><span class="st"> </span>gear, mtcars, mean)</span>
+<span id="cb216-2"><a href="graphing.html#cb216-2"></a></span>
+<span id="cb216-3"><a href="graphing.html#cb216-3"></a><span class="kw">with</span>(my_agg, </span>
+<span id="cb216-4"><a href="graphing.html#cb216-4"></a>     <span class="kw">barplot</span>(mpg <span class="op">~</span><span class="st"> </span>gear, </span>
+<span id="cb216-5"><a href="graphing.html#cb216-5"></a>             <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="co"># Set to FALSE to stack bars.</span></span>
+<span id="cb216-6"><a href="graphing.html#cb216-6"></a>             <span class="dt">ylab =</span> <span class="st">&#39;Mean MPG&#39;</span>,</span>
+<span id="cb216-7"><a href="graphing.html#cb216-7"></a>             <span class="dt">xlab =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
+<span id="cb216-8"><a href="graphing.html#cb216-8"></a>             <span class="dt">main =</span> <span class="st">&#39;Mean MPG by Number of Gears&#39;</span>,</span>
+<span id="cb216-9"><a href="graphing.html#cb216-9"></a>             <span class="dt">col  =</span> <span class="st">&#39;lavender&#39;</span>))</span></code></pre></div>
+<p><img src="aspr_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
+</div>
+</div>
+<div id="summary-9" class="section level2" number="10.6">
+<h2><span class="header-section-number">10.6</span> Summary</h2>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-91">Table 10.1: </span>Summary of Graphing Functions
+<span id="tab:unnamed-chunk-98">Table 10.1: </span>Summary of Graphing Functions
 </caption>
 <thead>
 <tr>

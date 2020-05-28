@@ -1,0 +1,2 @@
+"0","lines(density(mtcars$mpg), "
+"0","      lwd = 1) # Line width"

@@ -5,6 +5,14 @@ date: "`r paste0('March 29, 2020 (Last updated: ', format(Sys.Date(), '%B %d, %Y
 site: bookdown::bookdown_site
 url: 'https\://rs-aspr.netlify.app/'
 output: 
+  bookdown::gitbook: 
+    config:
+      toc:
+        collapse: section
+      search: yes
+      fontsettings:
+        theme: sepia
+      download: ["PDF"]
   bookdown::pdf_book: default
 documentclass: book
 biblio-style: apalike
@@ -703,7 +711,6 @@ if (x == 2) {
 }
 ```
 
-
 The `ifelse()` function, on the other hand, controls the flow of *your vector*.
 
 ```{r}
@@ -767,8 +774,8 @@ for (i in seq_along(iris)) {
   # Plot a histogram.
   hist(mtcars[, i], # Get column vector.
        xlab = names(iris)[i], # Get name of column.
-       ylab = 'Frequency',
-       col  = 'cyan4',
+       ylab = 'Frequency', # Set y-axis label.
+       col  = 'cyan4', # Set color of the bars.
        # Set the title to be based on the column name.
        main = paste(names(iris[i]), 'Distribution'))
   
@@ -901,20 +908,33 @@ Note that because `Species` is a factor variable, we obtain counts by category f
 To get counts by groups, we can use the `table()` function, while using `prop.table()` on a `table()` computation produces proportions. The input of `table()` can be one to two columns and the output is a `table` class.
 
 ### Single-variable Case
+
+For the single-variable case, we can simply input our desired column into the `table()` function.
+
 ```{r}
 my_table <- table(iris$Species)
 
 my_table
+```
 
+Additionally, we can apply `prop.table()` on our `my_table` object to obtain proportions.
+
+```{r}
 prop.table(my_table)
 ```
 
 ### Multi-variable Case
+For the case of multiple variables, we simply input the desired columns from a dataset.
+
 ```{r}
 my_table2 <- with(mtcars, table(am, gear))
 
 my_table2
+```
 
+When you input 3 or more variables, R will present the results in a list-like fashion (note that the class is still `table`).
+
+```{r}
 my_table3 <- with(mtcars, table(am, gear, cyl))
 
 my_table3
@@ -1113,33 +1133,80 @@ summ(summ_fun, "Summary of Function Writing")
 
 
 # Functionals
-
 Functionals are functions that take a function as an input and output a value. They are useful for casting a function over all columns in a dataset or elements in a list.
 
 This chapter will demonstrate a select handful of functionals--see `?lapply` for more information.
 
 ## `lapply()`
-The `lapply()` function ("list apply") casts a function over a dataset and outputs a list.
+The `lapply()` function ("list apply") casts a function over an object, such as a dataset or list, and outputs a list. This function is useful when you want to iterate over disparate elements and output similarly disparate results.
+
+Below is a simple example of calculating the means for each column in the `mtcars` dataset. Note how the elements are not stored in a one- nor two-dimensional format like a vector or data frame.
 
 ```{r}
+# Means for each column in mtcars.
 lapply(mtcars, mean)
 ```
 
+For a more complex example, we can use `lapply()` to estimate several models based on different subsets of the same dataset. First, we'll use `split()` to divide mtcars into smaller subsets.
+
+```{r}
+# Split mtcars by gear
+# i.e. each subset is based on a different number of gears.
+subset_list <- split(mtcars, mtcars$gear)
+
+subset_list
+```
+
+Then, we will execute `lapply()` over the subsets to estimate the same model. Unlike before in which we can simply input `mean` into `lapply()`, we have to tell R that we want to use a customized function by inputting `function(x)` instead--in other words, we have to pass in an anonymous function, which is a function that is not named beforehand.
+
+```{r}
+# Estimate models
+models <- lapply(subset_list, function(x) lm(mpg ~ wt + hp + disp, x))
+
+models
+```
+
+Note that the `x` represents each dataset in subset_list. We can easily replace `x` with `y` and receive the same results. This is because `x` is merely a placeholder that represents each list element in `subset_list`. To demonstrate, below is the same as before but with `y` as the input for `function()`.
+
+```{r}
+# Same results as before
+models <- lapply(subset_list, function(y) lm(mpg ~ wt + hp + disp, y))
+
+models
+```
+
 ## `sapply()`
-The `sapply()` function ("simplified apply") casts a function over a dataset and outputs a matrix (or list, depending on the function).
+The `sapply()` function ("simplified apply") casts a function over a dataset and outputs a vector or matrix (or list, depending on the function). This function can be useful when you want a "cleaner" representation of the results (i.e. results in a vector or matrix format).
 
 ```{r}
 sapply(mtcars, mean)
 ```
 
+As with `lapply()`, we can estimate several models iteratively with `sapply()`; however, the difference is that we can store coefficients in a matrix with the latter.
+
+```{r}
+# Split mtcars by gear
+# i.e. each subset is based on a different number of gears.
+subset_list <- split(mtcars, mtcars$gear)
+
+coefs <- sapply(subset_list, function(x) coef(lm(mpg ~ wt + hp + disp, x)))
+
+coefs
+```
+
+
 ## `apply()`
-The `apply()` function can cast a function over a dataset row-wise or column-wise, returning a matrix.
+The `apply()` function can cast a function over a dataset row-wise or column-wise, returning a vector or matrix. This function is useful when you want to apply a function over a specific dimension.
+
+Below is an example of using this function to apply a function row-wise on the `mtcars` dataset.
 
 ```{r}
 # Row-wise means.
-# show only a few with head().
+# Show only a few with head().
 head(apply(mtcars, 1, mean))
 ```
+
+Again, but applying a function column-wise. Note that the results are similar to `sapply(mtcars, mean)`.
 
 ```{r}
 # Column-wise means.
@@ -1155,8 +1222,9 @@ The `vapply()` function ("vectorized apply") works similarly as `sapply()`; howe
 # Mean of all mtcars columns
 # Type-check whether it is a numeric vector.
 vapply(mtcars, mean, numeric(1))
-
 ```
+
+Below is an example when `vapply()` throws an error due to an unexpected output type.
 
 ```{r, error=TRUE}
 # Mean of all mtcars columns
@@ -1166,7 +1234,7 @@ vapply(mtcars, mean, character(1))
 
 ## `mapply()`/`Map()`
 
-The functions `mapply()` and `Map()` allow us to compute a function iteratively over one or more data inputs. 
+The functions `mapply()` and `Map()` allow us to compute a function iteratively over one or more data inputs. These functions are useful when we want to iterate over multiple datasets in a pairwise fashion.
 
 ### Univariate Case
 
@@ -1200,7 +1268,7 @@ head(Map(rbind, mtcars$mpg, mtcars$wt))
 
 ## `rapply()`
 
-The `rapply()` function allows one to iterate over a list of datasets recursively. In other words, it allows us to compute the means for all datasets in a list simultaneously, for example.
+The `rapply()` function allows one to iterate over a list of datasets recursively. In effect, this function is useful when we want to execute a function over elements nested within other elements. For example, it allows us to compute the means for all columns in several datasets stored in a list simultaneously. 
 
 ```{r}
 my_list <- list(mtcars, airquality, iris)
@@ -1283,7 +1351,7 @@ summ_funs
 
 The following subsections show examples of how to create certain types of graphs.
 
-## Histograms
+## Histograms and Density Plots
 
 All we need to make a histogram is to pass a vector into the `hist()` function.
 
@@ -1295,18 +1363,34 @@ hist(mtcars$mpg,
      main = 'MPG Distribution')
 ```
 
-## Density Plots
+To create a density plot, we apply `plot()` over a vector of class `density` via the `density()` function.
 
 ```{r, fig.pos = "H"}
-set.seed(1) # Remember our random numbers.
+# Remember our random numbers.
+set.seed(1)
 
+# Create our random numbers.
 x <- density(rnorm(100))
 
+# Plot our random numbers.
 plot(x,
      main = '100 Random Numbers',
      col  = 'salmon')
 ```
 
+To overlay a density plot on a histogram, we use `hist(..., freq = FALSE)` followed by `lines()` on our `density` vector.
+
+```{r}
+hist(mtcars$mpg, 
+     col = 'salmon',
+     xlab = 'MPG',
+     ylab = 'Density',
+     main = 'MPG Distribution',
+     freq = FALSE) # Use density on y-axis.
+
+lines(density(mtcars$mpg), 
+      lwd = 1) # Line width
+```
 
 ## Scatter Plots
 
@@ -1426,7 +1510,6 @@ with(mtcars,
 
 
 ## Bar Plots
-
 For a bar plot, we pass a vector (usually one of counts) or aggregation to `barplot()`.
 
 ### Frequency Chart
@@ -1781,6 +1864,56 @@ map_dbl(mtcars, mean) # == sapply(mtcars, mean)
 map_df(mtcars, mean) # Maintains data frame class.
 ```
 
+Below is an example of combining `purrr`, `dplyr` and `ggplot2` to compare the scaled coefficients from several models using different subsets of `mtcars`.
+
+```{r}
+# Split the dataset and scale the coefficients.
+scaled <- mtcars %>%
+  split(.$gear) %>%
+  map(~ as.data.frame(scale(.x)))
+
+map(scaled, head) # see 1st few rows for each subset.
+
+# Obtain the coefficients
+coefs <- scaled %>%
+  map(~ lm(mpg ~ wt + hp + disp, .x)) %>%
+  map(~ coef(summary(.x))) 
+
+coefs
+
+# Create columns for the variables and 
+# indicators for the subsets.
+coefs2 <- coefs %>%
+  map(as.data.frame) %>%
+  map(~ mutate(.x, Term = rownames(.x))) %>%
+  map2_df(3:5, ~ mutate(.x, Gear = .y)) %>%
+  select(Gear, Term, everything())
+
+coefs2
+
+# Plot the scaled coefficients.
+## Set the canvas.
+ggplot(coefs2) + 
+## Set the aesthetics.  
+  aes(y = Estimate,
+      x = Term,
+      fill = factor(Gear)) + # Different bars for different gears.
+## Create the bars.  
+  geom_col(position = 'dodge', # Set bars beside each other.
+           alpha = 0.8) + # Set transparency.
+## Color the bars.
+   scale_fill_brewer(palette = 'Blues') +
+## Relabel y-axis and other labels.  
+  labs(y = 'Coefficient (Scaled)',
+       fill = 'Number of Gears',
+       title = 'Scaled Coefficient Comparisons by Number of Gears') + 
+## Customize the background.  
+  theme_light() + 
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+  
+```
+
 
 ## `knitr`
 
@@ -1826,13 +1959,30 @@ stargazer(my_ols, type = 'text')
 
 If you happen to use R Markdown, then set `type = 'html'` for HTML documents and omit `type` for PDF documents.
 
-For more on R Markdown, see [the R Markdown book by Yihui Xie, J. J. Allaire, and Garrett Grolemund](https://bookdown.org/yihui/rmarkdown/).
-
 ```{r, results = 'asis'}
 # If using RMarkdown...
-# stargazer(my_ols, type = 'html') # for html documents.
-stargazer(my_ols) # for PDF documents.
+stargazer(my_ols, 
+          type = 'html', # for html documents.
+          # Set asterisks for each p-value level.
+          notes.append = FALSE,
+          notes = c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01")) 
+
+#stargazer(my_ols) # for PDF documents.
 ```
+
+We can also input several models into `stargazer()`.
+
+```{r, results = 'asis'}
+mtcars %>%
+  split(.$gear) %>%
+  map(~ lm(mpg ~ wt + hp + disp, .x)) %>%
+  stargazer(type = 'html', 
+            column.labels = paste(3:5, 'Gears'),
+            notes.append = FALSE,
+            notes = c("<sup>&sstarf;</sup>p<0.1; <sup>&sstarf;&sstarf;</sup>p<0.05; <sup>&sstarf;&sstarf;&sstarf;</sup>p<0.01"))
+```
+
+For more on R Markdown, see [the R Markdown book by Yihui Xie, J. J. Allaire, and Garrett Grolemund](https://bookdown.org/yihui/rmarkdown/).
 
 ## Summary
 
@@ -1844,8 +1994,8 @@ summ_libs <- data.frame(Library = c('ggplot2',
                                     'knitr',
                                     'stargazer'),
                         Function = c("ggplot(data) + aes(y, x, ...) + geom_point()",
-                                     "select(), group_by(), summarise()",
-                                     "pivot_wider(), pivot_longer()",
+                                     "select(data, ...), group_by(data, data...), summarise(data, ...)",
+                                     "pivot_wider(data, ...), pivot_longer(data, ...)",
                                      "map(.x, .f)",
                                      "kable(x)",
                                      "stargazer(x)"),

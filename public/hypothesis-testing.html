@@ -243,22 +243,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
-<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#density-plots"><i class="fa fa-check"></i><b>10.2</b> Density Plots</a></li>
-<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.3</b> Scatter Plots</a>
+<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms-and-density-plots"><i class="fa fa-check"></i><b>10.1</b> Histograms and Density Plots</a></li>
+<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.2</b> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.3.1</b> Simple Scatter Plot</a></li>
-<li class="chapter" data-level="10.3.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.3.2</b> Multiple Scatter Plots</a></li>
-<li class="chapter" data-level="10.3.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.3.3</b> Text Plot</a></li>
+<li class="chapter" data-level="10.2.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.2.1</b> Simple Scatter Plot</a></li>
+<li class="chapter" data-level="10.2.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.2.2</b> Multiple Scatter Plots</a></li>
+<li class="chapter" data-level="10.2.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.2.3</b> Text Plot</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.4</b> Line Plots</a></li>
-<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.5</b> Box Plots</a></li>
-<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.6</b> Bar Plots</a>
+<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.3</b> Line Plots</a></li>
+<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.4</b> Box Plots</a></li>
+<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.5</b> Bar Plots</a>
 <ul>
-<li class="chapter" data-level="10.6.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.6.1</b> Frequency Chart</a></li>
-<li class="chapter" data-level="10.6.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.6.2</b> Grouped Mean Comparisons</a></li>
+<li class="chapter" data-level="10.5.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.5.1</b> Frequency Chart</a></li>
+<li class="chapter" data-level="10.5.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.5.2</b> Grouped Mean Comparisons</a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.7</b> Summary</a></li>
+<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
 <ul>
@@ -324,8 +323,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="one-sample-t-test" class="section level3" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> One-sample t-test</h3>
 <p>To conduct a 1-sample t-test, we pass a vector and a <code>mu</code> value into the <code>t.test()</code> function. The <code>mu</code> value is the number against which we will compare the vector’s mean to determine whether there is a statistically significant difference.</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="hypothesis-testing.html#cb208-1"></a><span class="co"># Testing whether the mean MPG is statistically equal to 17.</span></span>
-<span id="cb208-2"><a href="hypothesis-testing.html#cb208-2"></a><span class="kw">t.test</span>(mtcars<span class="op">$</span>mpg, <span class="dt">mu =</span> <span class="dv">17</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="hypothesis-testing.html#cb217-1"></a><span class="co"># Testing whether the mean MPG is statistically equal to 17.</span></span>
+<span id="cb217-2"><a href="hypothesis-testing.html#cb217-2"></a><span class="kw">t.test</span>(mtcars<span class="op">$</span>mpg, <span class="dt">mu =</span> <span class="dv">17</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -341,8 +340,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="two-sample-t-test" class="section level3" number="11.1.2">
 <h3><span class="header-section-number">11.1.2</span> Two-sample t-test</h3>
 <p>To conduct a two-sample t-test, we use the formula syntax of <code>y ~ x</code>, where <code>y</code> is our continuous dependent variable and <code>x</code> is our categorical independent variable. Then, we pass this formula into <code>t.test()</code>.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="hypothesis-testing.html#cb210-1"></a><span class="co"># Compare mean MPG by transmission type</span></span>
-<span id="cb210-2"><a href="hypothesis-testing.html#cb210-2"></a><span class="kw">with</span>(mtcars, <span class="kw">t.test</span>(mpg <span class="op">~</span><span class="st"> </span>am))</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="hypothesis-testing.html#cb219-1"></a><span class="co"># Compare mean MPG by transmission type</span></span>
+<span id="cb219-2"><a href="hypothesis-testing.html#cb219-2"></a><span class="kw">with</span>(mtcars, <span class="kw">t.test</span>(mpg <span class="op">~</span><span class="st"> </span>am))</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -359,15 +358,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="chi-square-test" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Chi-square test</h2>
 <p>To conduct a Chi-square test, we pass a two-way <code>table</code> into the <code>chisq.test()</code> function.</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="hypothesis-testing.html#cb212-1"></a>mytable &lt;-<span class="st"> </span><span class="kw">with</span>(mtcars, <span class="kw">table</span>(gear, am))</span>
-<span id="cb212-2"><a href="hypothesis-testing.html#cb212-2"></a></span>
-<span id="cb212-3"><a href="hypothesis-testing.html#cb212-3"></a>mytable</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="hypothesis-testing.html#cb221-1"></a>mytable &lt;-<span class="st"> </span><span class="kw">with</span>(mtcars, <span class="kw">table</span>(gear, am))</span>
+<span id="cb221-2"><a href="hypothesis-testing.html#cb221-2"></a></span>
+<span id="cb221-3"><a href="hypothesis-testing.html#cb221-3"></a>mytable</span></code></pre></div>
 <pre><code>##     am
 ## gear  0  1
 ##    3 15  0
 ##    4  4  8
 ##    5  0  5</code></pre>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="hypothesis-testing.html#cb214-1"></a><span class="kw">chisq.test</span>(mytable)</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="hypothesis-testing.html#cb223-1"></a><span class="kw">chisq.test</span>(mytable)</span></code></pre></div>
 <pre><code>## Warning in chisq.test(mytable): Chi-squared approximation may be incorrect</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
@@ -379,7 +378,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">11.3</span> Summary</h2>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-95">Table 11.1: </span>Summary of Hypothesis Testing
+<span id="tab:unnamed-chunk-102">Table 11.1: </span>Summary of Hypothesis Testing
 </caption>
 <thead>
 <tr>
