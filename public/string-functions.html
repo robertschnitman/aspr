@@ -380,7 +380,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="match-string-patterns" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Match String Patterns</h2>
 <p>We can pattern-match strings with <code>grep()</code> and <code>grepl()</code>. The former outputs the position (or value) of a pattern match, while the latter outputs a Boolean value (i.e. <code>TRUE</code>/<code>FALSE</code>).</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="string-functions.html#cb103-1"></a><span class="co"># Cars that start witih &quot;M&quot;</span></span>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="string-functions.html#cb103-1"></a><span class="co"># Cars that start with &quot;M&quot;</span></span>
 <span id="cb103-2"><a href="string-functions.html#cb103-2"></a><span class="kw">grep</span>(<span class="st">&#39;^M&#39;</span>, <span class="kw">rownames</span>(mtcars), <span class="dt">value =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;Mazda RX4&quot;     &quot;Mazda RX4 Wag&quot; &quot;Merc 240D&quot;     &quot;Merc 230&quot;     
 ##  [5] &quot;Merc 280&quot;      &quot;Merc 280C&quot;     &quot;Merc 450SE&quot;    &quot;Merc 450SL&quot;   

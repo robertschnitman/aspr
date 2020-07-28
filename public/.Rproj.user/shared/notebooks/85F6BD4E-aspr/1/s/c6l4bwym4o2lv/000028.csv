@@ -1,6 +1,0 @@
-"0","hist(mtcars$mpg, "
-"0","     col = 'salmon',"
-"0","     xlab = 'MPG',"
-"0","     ylab = 'Density',"
-"0","     main = 'MPG Distribution',"
-"0","     freq = FALSE) # Use density on y-axis."

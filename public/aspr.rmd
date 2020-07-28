@@ -646,7 +646,7 @@ gsub('sentence', 'drink', x)
 We can pattern-match strings with `grep()` and `grepl()`. The former outputs the position (or value) of a pattern match, while the latter outputs a Boolean value (i.e. `TRUE`/`FALSE`).
 
 ```{r}
-# Cars that start witih "M"
+# Cars that start with "M"
 grep('^M', rownames(mtcars), value = TRUE)
 
 # Which cars start with and do not start with "M"?

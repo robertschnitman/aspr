@@ -1,5 +1,0 @@
-"0","# Load libraries"
-"0","library(knitr)"
-"2","package ‘knitr’ was built under R version 3.6.3"
-"0","library(kableExtra)"
-"2","package ‘kableExtra’ was built under R version 3.6.3"
