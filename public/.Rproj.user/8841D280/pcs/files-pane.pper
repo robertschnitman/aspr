@@ -1,9 +1,9 @@
 {
-    "path" : "~/MEGA/Personal/Scripts/R/Books/aspr/public",
-    "sortOrder" : [
+    "path": "G:/MEGA/Prog/R/aspr",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "columnIndex": 2,
+            "ascending": true
         }
     ]
 }

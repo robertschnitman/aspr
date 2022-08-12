@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Recommended R Libraries | A Short Introduction to Applied Statistical Programming in R</title>
   <meta name="description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
-  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Recommended R Libraries | A Short Introduction to Applied Statistical Programming in R" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://rs-aspr.netlify.app/" />
-  <meta property="og:image" content="https://rs-aspr.netlify.app/img/cover_image.jpg" />
+  <meta property="og:url" content="https://aspr.netlify.app/" />
+  <meta property="og:image" content="https://aspr.netlify.app//img/cover_image.jpg" />
   <meta property="og:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
   <meta name="github-repo" content="robertschnitman/aspr" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="13 Recommended R Libraries | A Short Introduction to Applied Statistical Programming in R" />
   
   <meta name="twitter:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
-  <meta name="twitter:image" content="https://rs-aspr.netlify.app/img/cover_image.jpg" />
+  <meta name="twitter:image" content="https://aspr.netlify.app//img/cover_image.jpg" />
 
 <meta name="author" content="Robert Schnitman" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="linear-modeling.html"/>
 <link rel="next" href="conclusion.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,14 +50,17 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +121,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -129,174 +134,175 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
-<li class="chapter" data-level="1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html"><i class="fa fa-check"></i><b>1</b> The Paradigms of R</a>
+<li><a href="index.html#index" id="toc-index">Introduction</a></li>
+<li><a href="prerequisites.html#prerequisites" id="toc-prerequisites">Prerequisites</a></li>
+<li><a href="the-paradigms-of-r.html#the-paradigms-of-r" id="toc-the-paradigms-of-r"><span class="toc-section-number">1</span> The Paradigms of R</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a></li>
-<li class="chapter" data-level="1.2" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#functional"><i class="fa fa-check"></i><b>1.2</b> Functional</a></li>
-<li class="chapter" data-level="1.3" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#object-oriented"><i class="fa fa-check"></i><b>1.3</b> Object Oriented</a></li>
-<li class="chapter" data-level="1.4" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#summary"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+<li><a href="the-paradigms-of-r.html#array" id="toc-array"><span class="toc-section-number">1.1</span> Array</a></li>
+<li><a href="the-paradigms-of-r.html#functional" id="toc-functional"><span class="toc-section-number">1.2</span> Functional</a></li>
+<li><a href="the-paradigms-of-r.html#object-oriented" id="toc-object-oriented"><span class="toc-section-number">1.3</span> Object Oriented</a></li>
+<li><a href="the-paradigms-of-r.html#summary" id="toc-summary"><span class="toc-section-number">1.4</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a>
+<li><a href="basics.html#basics" id="toc-basics"><span class="toc-section-number">2</span> Basics</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#r-as-a-calculator"><i class="fa fa-check"></i><b>2.1</b> R as a calculator</a>
+<li><a href="basics.html#r-as-a-calculator" id="toc-r-as-a-calculator"><span class="toc-section-number">2.1</span> R as a calculator</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="basics.html"><a href="basics.html#operators"><i class="fa fa-check"></i><b>2.1.1</b> Operators</a></li>
+<li><a href="basics.html#operators" id="toc-operators"><span class="toc-section-number">2.1.1</span> Operators</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#data-types-and-classes"><i class="fa fa-check"></i><b>2.2</b> Data Types and Classes</a>
+<li><a href="basics.html#data-types-and-classes" id="toc-data-types-and-classes"><span class="toc-section-number">2.2</span> Data Types and Classes</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="basics.html"><a href="basics.html#classes"><i class="fa fa-check"></i><b>2.2.1</b> Classes</a></li>
-<li class="chapter" data-level="2.2.2" data-path="basics.html"><a href="basics.html#types"><i class="fa fa-check"></i><b>2.2.2</b> Types</a></li>
+<li><a href="basics.html#classes" id="toc-classes"><span class="toc-section-number">2.2.1</span> Classes</a></li>
+<li><a href="basics.html#types" id="toc-types"><span class="toc-section-number">2.2.2</span> Types</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#assignments"><i class="fa fa-check"></i><b>2.3</b> Assignments</a>
+<li><a href="basics.html#assignments" id="toc-assignments"><span class="toc-section-number">2.3</span> Assignments</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#addingremoving-variables"><i class="fa fa-check"></i><b>2.3.1</b> Adding/Removing Variables</a></li>
+<li><a href="basics.html#addingremoving-variables" id="toc-addingremoving-variables"><span class="toc-section-number">2.3.1</span> Adding/Removing Variables</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#viewing-data"><i class="fa fa-check"></i><b>2.4</b> Viewing Data</a></li>
-<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>2.5</b> Getting Help</a></li>
-<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#summary-1"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+<li><a href="basics.html#viewing-data" id="toc-viewing-data"><span class="toc-section-number">2.4</span> Viewing Data</a></li>
+<li><a href="basics.html#getting-help" id="toc-getting-help"><span class="toc-section-number">2.5</span> Getting Help</a></li>
+<li><a href="basics.html#summary-1" id="toc-summary-1"><span class="toc-section-number">2.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
+<li><a href="data-management.html#data-management" id="toc-data-management"><span class="toc-section-number">3</span> Data Management</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data-management.html"><a href="data-management.html#replacing-values"><i class="fa fa-check"></i><b>3.1</b> Replacing Values</a></li>
-<li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#switching-values"><i class="fa fa-check"></i><b>3.2</b> Switching Values</a>
+<li><a href="data-management.html#replacing-values" id="toc-replacing-values"><span class="toc-section-number">3.1</span> Replacing Values</a></li>
+<li><a href="data-management.html#switching-values" id="toc-switching-values"><span class="toc-section-number">3.2</span> Switching Values</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#scalar-case"><i class="fa fa-check"></i><b>3.2.1</b> Scalar Case</a></li>
-<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#vector-case"><i class="fa fa-check"></i><b>3.2.2</b> Vector Case</a></li>
+<li><a href="data-management.html#scalar-case" id="toc-scalar-case"><span class="toc-section-number">3.2.1</span> Scalar Case</a></li>
+<li><a href="data-management.html#vector-case" id="toc-vector-case"><span class="toc-section-number">3.2.2</span> Vector Case</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#importing-data"><i class="fa fa-check"></i><b>3.3</b> Importing Data</a></li>
-<li class="chapter" data-level="3.4" data-path="data-management.html"><a href="data-management.html#combining-data"><i class="fa fa-check"></i><b>3.4</b> Combining Data</a>
+<li><a href="data-management.html#importing-data" id="toc-importing-data"><span class="toc-section-number">3.3</span> Importing Data</a></li>
+<li><a href="data-management.html#combining-data" id="toc-combining-data"><span class="toc-section-number">3.4</span> Combining Data</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="data-management.html"><a href="data-management.html#cbindrbind"><i class="fa fa-check"></i><b>3.4.1</b> <code>cbind()</code>/<code>rbind()</code></a></li>
-<li class="chapter" data-level="3.4.2" data-path="data-management.html"><a href="data-management.html#merge"><i class="fa fa-check"></i><b>3.4.2</b> <code>merge()</code></a></li>
+<li><a href="data-management.html#cbindrbind" id="toc-cbindrbind"><span class="toc-section-number">3.4.1</span> <code>cbind()</code>/<code>rbind()</code></a></li>
+<li><a href="data-management.html#merge" id="toc-merge"><span class="toc-section-number">3.4.2</span> <code>merge()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="data-management.html"><a href="data-management.html#subsetting-data"><i class="fa fa-check"></i><b>3.5</b> Subsetting Data</a>
+<li><a href="data-management.html#subsetting-data" id="toc-subsetting-data"><span class="toc-section-number">3.5</span> Subsetting Data</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data-management.html"><a href="data-management.html#vector-case-1"><i class="fa fa-check"></i><b>3.5.1</b> Vector Case</a></li>
-<li class="chapter" data-level="3.5.2" data-path="data-management.html"><a href="data-management.html#data-frame-case"><i class="fa fa-check"></i><b>3.5.2</b> Data Frame Case</a></li>
+<li><a href="data-management.html#vector-case-1" id="toc-vector-case-1"><span class="toc-section-number">3.5.1</span> Vector Case</a></li>
+<li><a href="data-management.html#data-frame-case" id="toc-data-frame-case"><span class="toc-section-number">3.5.2</span> Data Frame Case</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-management.html"><a href="data-management.html#splitting-data"><i class="fa fa-check"></i><b>3.6</b> Splitting Data</a></li>
-<li class="chapter" data-level="3.7" data-path="data-management.html"><a href="data-management.html#summary-2"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+<li><a href="data-management.html#splitting-data" id="toc-splitting-data"><span class="toc-section-number">3.6</span> Splitting Data</a></li>
+<li><a href="data-management.html#summary-2" id="toc-summary-2"><span class="toc-section-number">3.7</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="string-functions.html"><a href="string-functions.html"><i class="fa fa-check"></i><b>4</b> String Functions</a>
+<li><a href="string-functions.html#string-functions" id="toc-string-functions"><span class="toc-section-number">4</span> String Functions</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="string-functions.html"><a href="string-functions.html#concatenate-strings"><i class="fa fa-check"></i><b>4.1</b> Concatenate Strings</a></li>
-<li class="chapter" data-level="4.2" data-path="string-functions.html"><a href="string-functions.html#subset-strings"><i class="fa fa-check"></i><b>4.2</b> Subset Strings</a></li>
-<li class="chapter" data-level="4.3" data-path="string-functions.html"><a href="string-functions.html#split-strings"><i class="fa fa-check"></i><b>4.3</b> Split Strings</a></li>
-<li class="chapter" data-level="4.4" data-path="string-functions.html"><a href="string-functions.html#substitute-strings"><i class="fa fa-check"></i><b>4.4</b> Substitute Strings</a></li>
-<li class="chapter" data-level="4.5" data-path="string-functions.html"><a href="string-functions.html#match-string-patterns"><i class="fa fa-check"></i><b>4.5</b> Match String Patterns</a></li>
-<li class="chapter" data-level="4.6" data-path="string-functions.html"><a href="string-functions.html#summary-3"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+<li><a href="string-functions.html#concatenate-strings" id="toc-concatenate-strings"><span class="toc-section-number">4.1</span> Concatenate Strings</a></li>
+<li><a href="string-functions.html#subset-strings" id="toc-subset-strings"><span class="toc-section-number">4.2</span> Subset Strings</a></li>
+<li><a href="string-functions.html#split-strings" id="toc-split-strings"><span class="toc-section-number">4.3</span> Split Strings</a></li>
+<li><a href="string-functions.html#substitute-strings" id="toc-substitute-strings"><span class="toc-section-number">4.4</span> Substitute Strings</a></li>
+<li><a href="string-functions.html#match-string-patterns" id="toc-match-string-patterns"><span class="toc-section-number">4.5</span> Match String Patterns</a></li>
+<li><a href="string-functions.html#summary-3" id="toc-summary-3"><span class="toc-section-number">4.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control Flow</a>
+<li><a href="control-flow.html#control-flow" id="toc-control-flow"><span class="toc-section-number">5</span> Control Flow</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="control-flow.html"><a href="control-flow.html#if-and-ifelse"><i class="fa fa-check"></i><b>5.1</b> <code>if</code> and <code>ifelse()</code></a></li>
-<li class="chapter" data-level="5.2" data-path="control-flow.html"><a href="control-flow.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a>
+<li><a href="control-flow.html#if-and-ifelse" id="toc-if-and-ifelse"><span class="toc-section-number">5.1</span> <code>if</code> and <code>ifelse()</code></a></li>
+<li><a href="control-flow.html#loops" id="toc-loops"><span class="toc-section-number">5.2</span> Loops</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="control-flow.html"><a href="control-flow.html#for-loop"><i class="fa fa-check"></i><b>5.2.1</b> <code>for</code> loop</a></li>
-<li class="chapter" data-level="5.2.2" data-path="control-flow.html"><a href="control-flow.html#while-loop"><i class="fa fa-check"></i><b>5.2.2</b> <code>while</code> loop</a></li>
+<li><a href="control-flow.html#for-loop" id="toc-for-loop"><span class="toc-section-number">5.2.1</span> <code>for</code> loop</a></li>
+<li><a href="control-flow.html#while-loop" id="toc-while-loop"><span class="toc-section-number">5.2.2</span> <code>while</code> loop</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="control-flow.html"><a href="control-flow.html#summary-4"><i class="fa fa-check"></i><b>5.3</b> Summary</a></li>
+<li><a href="control-flow.html#summary-4" id="toc-summary-4"><span class="toc-section-number">5.3</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics</a>
+<li><a href="descriptive-statistics.html#descriptive-statistics" id="toc-descriptive-statistics"><span class="toc-section-number">6</span> Descriptive Statistics</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#centrality-and-spread"><i class="fa fa-check"></i><b>6.1</b> Centrality and Spread</a></li>
-<li class="chapter" data-level="6.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#minimum-and-maximum"><i class="fa fa-check"></i><b>6.2</b> Minimum and Maximum</a></li>
-<li class="chapter" data-level="6.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-dimensions"><i class="fa fa-check"></i><b>6.3</b> Data Dimensions</a></li>
-<li class="chapter" data-level="6.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-summary"><i class="fa fa-check"></i><b>6.4</b> Data Summary</a></li>
-<li class="chapter" data-level="6.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-tables"><i class="fa fa-check"></i><b>6.5</b> Frequency Tables</a>
+<li><a href="descriptive-statistics.html#centrality-and-spread" id="toc-centrality-and-spread"><span class="toc-section-number">6.1</span> Centrality and Spread</a></li>
+<li><a href="descriptive-statistics.html#minimum-and-maximum" id="toc-minimum-and-maximum"><span class="toc-section-number">6.2</span> Minimum and Maximum</a></li>
+<li><a href="descriptive-statistics.html#data-dimensions" id="toc-data-dimensions"><span class="toc-section-number">6.3</span> Data Dimensions</a></li>
+<li><a href="descriptive-statistics.html#data-summary" id="toc-data-summary"><span class="toc-section-number">6.4</span> Data Summary</a></li>
+<li><a href="descriptive-statistics.html#frequency-tables" id="toc-frequency-tables"><span class="toc-section-number">6.5</span> Frequency Tables</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#single-variable-case"><i class="fa fa-check"></i><b>6.5.1</b> Single-variable Case</a></li>
-<li class="chapter" data-level="6.5.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#multi-variable-case"><i class="fa fa-check"></i><b>6.5.2</b> Multi-variable Case</a></li>
-<li class="chapter" data-level="6.5.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#converting-to-a-data-frame"><i class="fa fa-check"></i><b>6.5.3</b> Converting to a Data Frame</a></li>
+<li><a href="descriptive-statistics.html#single-variable-case" id="toc-single-variable-case"><span class="toc-section-number">6.5.1</span> Single-variable Case</a></li>
+<li><a href="descriptive-statistics.html#multi-variable-case" id="toc-multi-variable-case"><span class="toc-section-number">6.5.2</span> Multi-variable Case</a></li>
+<li><a href="descriptive-statistics.html#converting-to-a-data-frame" id="toc-converting-to-a-data-frame"><span class="toc-section-number">6.5.3</span> Converting to a Data Frame</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-5"><i class="fa fa-check"></i><b>6.6</b> Summary</a></li>
+<li><a href="descriptive-statistics.html#summary-5" id="toc-summary-5"><span class="toc-section-number">6.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="probability-functions.html"><a href="probability-functions.html"><i class="fa fa-check"></i><b>7</b> Probability Functions</a>
+<li><a href="probability-functions.html#probability-functions" id="toc-probability-functions"><span class="toc-section-number">7</span> Probability Functions</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="probability-functions.html"><a href="probability-functions.html#generating-random-numbers"><i class="fa fa-check"></i><b>7.1</b> Generating Random Numbers</a></li>
-<li class="chapter" data-level="7.2" data-path="probability-functions.html"><a href="probability-functions.html#sampling"><i class="fa fa-check"></i><b>7.2</b> Sampling</a></li>
-<li class="chapter" data-level="7.3" data-path="probability-functions.html"><a href="probability-functions.html#others"><i class="fa fa-check"></i><b>7.3</b> Others</a></li>
-<li class="chapter" data-level="7.4" data-path="probability-functions.html"><a href="probability-functions.html#summary-6"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+<li><a href="probability-functions.html#generating-random-numbers" id="toc-generating-random-numbers"><span class="toc-section-number">7.1</span> Generating Random Numbers</a></li>
+<li><a href="probability-functions.html#sampling" id="toc-sampling"><span class="toc-section-number">7.2</span> Sampling</a></li>
+<li><a href="probability-functions.html#others" id="toc-others"><span class="toc-section-number">7.3</span> Others</a></li>
+<li><a href="probability-functions.html#summary-6" id="toc-summary-6"><span class="toc-section-number">7.4</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="function-writing.html"><a href="function-writing.html"><i class="fa fa-check"></i><b>8</b> Function Writing</a>
+<li><a href="function-writing.html#function-writing" id="toc-function-writing"><span class="toc-section-number">8</span> Function Writing</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="function-writing.html"><a href="function-writing.html#univariate-case"><i class="fa fa-check"></i><b>8.1</b> Univariate Case</a></li>
-<li class="chapter" data-level="8.2" data-path="function-writing.html"><a href="function-writing.html#multivariate-case"><i class="fa fa-check"></i><b>8.2</b> Multivariate Case</a></li>
-<li class="chapter" data-level="8.3" data-path="function-writing.html"><a href="function-writing.html#summary-7"><i class="fa fa-check"></i><b>8.3</b> Summary</a></li>
+<li><a href="function-writing.html#univariate-case" id="toc-univariate-case"><span class="toc-section-number">8.1</span> Univariate Case</a></li>
+<li><a href="function-writing.html#multivariate-case" id="toc-multivariate-case"><span class="toc-section-number">8.2</span> Multivariate Case</a></li>
+<li><a href="function-writing.html#summary-7" id="toc-summary-7"><span class="toc-section-number">8.3</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<li><a href="functionals.html#functionals" id="toc-functionals"><span class="toc-section-number">9</span> Functionals</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="functionals.html"><a href="functionals.html#lapply"><i class="fa fa-check"></i><b>9.1</b> <code>lapply()</code></a></li>
-<li class="chapter" data-level="9.2" data-path="functionals.html"><a href="functionals.html#sapply"><i class="fa fa-check"></i><b>9.2</b> <code>sapply()</code></a></li>
-<li class="chapter" data-level="9.3" data-path="functionals.html"><a href="functionals.html#apply"><i class="fa fa-check"></i><b>9.3</b> <code>apply()</code></a></li>
-<li class="chapter" data-level="9.4" data-path="functionals.html"><a href="functionals.html#vapply"><i class="fa fa-check"></i><b>9.4</b> <code>vapply()</code></a></li>
-<li class="chapter" data-level="9.5" data-path="functionals.html"><a href="functionals.html#mapplymap"><i class="fa fa-check"></i><b>9.5</b> <code>mapply()</code>/<code>Map()</code></a>
+<li><a href="functionals.html#lapply" id="toc-lapply"><span class="toc-section-number">9.1</span> <code>lapply()</code></a></li>
+<li><a href="functionals.html#sapply" id="toc-sapply"><span class="toc-section-number">9.2</span> <code>sapply()</code></a></li>
+<li><a href="functionals.html#apply" id="toc-apply"><span class="toc-section-number">9.3</span> <code>apply()</code></a></li>
+<li><a href="functionals.html#vapply" id="toc-vapply"><span class="toc-section-number">9.4</span> <code>vapply()</code></a></li>
+<li><a href="functionals.html#mapplymap" id="toc-mapplymap"><span class="toc-section-number">9.5</span> <code>mapply()</code>/<code>Map()</code></a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="functionals.html"><a href="functionals.html#univariate-case-1"><i class="fa fa-check"></i><b>9.5.1</b> Univariate Case</a></li>
-<li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
+<li><a href="functionals.html#univariate-case-1" id="toc-univariate-case-1"><span class="toc-section-number">9.5.1</span> Univariate Case</a></li>
+<li><a href="functionals.html#multivariate-case-1" id="toc-multivariate-case-1"><span class="toc-section-number">9.5.2</span> Multivariate Case</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
-<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#tapply"><i class="fa fa-check"></i><b>9.7</b> <code>tapply()</code></a></li>
-<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.8</b> <code>aggregate()</code></a></li>
-<li class="chapter" data-level="9.9" data-path="functionals.html"><a href="functionals.html#summary-8"><i class="fa fa-check"></i><b>9.9</b> Summary</a></li>
+<li><a href="functionals.html#rapply" id="toc-rapply"><span class="toc-section-number">9.6</span> <code>rapply()</code></a></li>
+<li><a href="functionals.html#tapply" id="toc-tapply"><span class="toc-section-number">9.7</span> <code>tapply()</code></a></li>
+<li><a href="functionals.html#aggregate" id="toc-aggregate"><span class="toc-section-number">9.8</span> <code>aggregate()</code></a></li>
+<li><a href="functionals.html#summary-8" id="toc-summary-8"><span class="toc-section-number">9.9</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
+<li><a href="graphing.html#graphing" id="toc-graphing"><span class="toc-section-number">10</span> Graphing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms-and-density-plots"><i class="fa fa-check"></i><b>10.1</b> Histograms and Density Plots</a></li>
-<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.2</b> Scatter Plots</a>
+<li><a href="graphing.html#histograms-and-density-plots" id="toc-histograms-and-density-plots"><span class="toc-section-number">10.1</span> Histograms and Density Plots</a></li>
+<li><a href="graphing.html#scatter-plots" id="toc-scatter-plots"><span class="toc-section-number">10.2</span> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.2.1</b> Simple Scatter Plot</a></li>
-<li class="chapter" data-level="10.2.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.2.2</b> Multiple Scatter Plots</a></li>
-<li class="chapter" data-level="10.2.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.2.3</b> Text Plot</a></li>
+<li><a href="graphing.html#simple-scatter-plot" id="toc-simple-scatter-plot"><span class="toc-section-number">10.2.1</span> Simple Scatter Plot</a></li>
+<li><a href="graphing.html#multiple-scatter-plots" id="toc-multiple-scatter-plots"><span class="toc-section-number">10.2.2</span> Multiple Scatter Plots</a></li>
+<li><a href="graphing.html#text-plot" id="toc-text-plot"><span class="toc-section-number">10.2.3</span> Text Plot</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.3</b> Line Plots</a></li>
-<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.4</b> Box Plots</a></li>
-<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.5</b> Bar Plots</a>
+<li><a href="graphing.html#line-plots" id="toc-line-plots"><span class="toc-section-number">10.3</span> Line Plots</a></li>
+<li><a href="graphing.html#box-plots" id="toc-box-plots"><span class="toc-section-number">10.4</span> Box Plots</a></li>
+<li><a href="graphing.html#bar-plots" id="toc-bar-plots"><span class="toc-section-number">10.5</span> Bar Plots</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.5.1</b> Frequency Chart</a></li>
-<li class="chapter" data-level="10.5.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.5.2</b> Grouped Mean Comparisons</a></li>
+<li><a href="graphing.html#frequency-chart" id="toc-frequency-chart"><span class="toc-section-number">10.5.1</span> Frequency Chart</a></li>
+<li><a href="graphing.html#grouped-mean-comparisons" id="toc-grouped-mean-comparisons"><span class="toc-section-number">10.5.2</span> Grouped Mean Comparisons</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+<li><a href="graphing.html#summary-9" id="toc-summary-9"><span class="toc-section-number">10.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
+<li><a href="hypothesis-testing.html#hypothesis-testing" id="toc-hypothesis-testing"><span class="toc-section-number">11</span> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>11.1</b> t-test</a>
+<li><a href="hypothesis-testing.html#t-test" id="toc-t-test"><span class="toc-section-number">11.1</span> t-test</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>11.1.1</b> One-sample t-test</a></li>
-<li class="chapter" data-level="11.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-t-test"><i class="fa fa-check"></i><b>11.1.2</b> Two-sample t-test</a></li>
+<li><a href="hypothesis-testing.html#one-sample-t-test" id="toc-one-sample-t-test"><span class="toc-section-number">11.1.1</span> One-sample t-test</a></li>
+<li><a href="hypothesis-testing.html#two-sample-t-test" id="toc-two-sample-t-test"><span class="toc-section-number">11.1.2</span> Two-sample t-test</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>11.2</b> Chi-square test</a></li>
-<li class="chapter" data-level="11.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#summary-10"><i class="fa fa-check"></i><b>11.3</b> Summary</a></li>
+<li><a href="hypothesis-testing.html#chi-square-test" id="toc-chi-square-test"><span class="toc-section-number">11.2</span> Chi-square test</a></li>
+<li><a href="hypothesis-testing.html#summary-10" id="toc-summary-10"><span class="toc-section-number">11.3</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="linear-modeling.html"><a href="linear-modeling.html"><i class="fa fa-check"></i><b>12</b> Linear Modeling</a>
+<li><a href="linear-modeling.html#linear-modeling" id="toc-linear-modeling"><span class="toc-section-number">12</span> Linear Modeling</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="linear-modeling.html"><a href="linear-modeling.html#pearson-correlations"><i class="fa fa-check"></i><b>12.1</b> Pearson Correlations</a></li>
-<li class="chapter" data-level="12.2" data-path="linear-modeling.html"><a href="linear-modeling.html#anova"><i class="fa fa-check"></i><b>12.2</b> ANOVA</a></li>
-<li class="chapter" data-level="12.3" data-path="linear-modeling.html"><a href="linear-modeling.html#ordinary-least-squares"><i class="fa fa-check"></i><b>12.3</b> Ordinary Least Squares</a>
+<li><a href="linear-modeling.html#pearson-correlations" id="toc-pearson-correlations"><span class="toc-section-number">12.1</span> Pearson Correlations</a></li>
+<li><a href="linear-modeling.html#anova" id="toc-anova"><span class="toc-section-number">12.2</span> ANOVA</a></li>
+<li><a href="linear-modeling.html#ordinary-least-squares" id="toc-ordinary-least-squares"><span class="toc-section-number">12.3</span> Ordinary Least Squares</a>
 <ul>
-<li class="chapter" data-level="12.3.1" data-path="linear-modeling.html"><a href="linear-modeling.html#residual-diagnostics-with-ols"><i class="fa fa-check"></i><b>12.3.1</b> Residual diagnostics with OLS</a></li>
+<li><a href="linear-modeling.html#residual-diagnostics-with-ols" id="toc-residual-diagnostics-with-ols"><span class="toc-section-number">12.3.1</span> Residual diagnostics with OLS</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="linear-modeling.html"><a href="linear-modeling.html#logistic-regression"><i class="fa fa-check"></i><b>12.4</b> Logistic Regression</a></li>
-<li class="chapter" data-level="12.5" data-path="linear-modeling.html"><a href="linear-modeling.html#summary-11"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+<li><a href="linear-modeling.html#logistic-regression" id="toc-logistic-regression"><span class="toc-section-number">12.4</span> Logistic Regression</a></li>
+<li><a href="linear-modeling.html#summary-11" id="toc-summary-11"><span class="toc-section-number">12.5</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html"><i class="fa fa-check"></i><b>13</b> Recommended R Libraries</a>
+<li><a href="recommended-r-libraries.html#recommended-r-libraries" id="toc-recommended-r-libraries"><span class="toc-section-number">13</span> Recommended R Libraries</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyverse"><i class="fa fa-check"></i><b>13.1</b> <code>tidyverse</code></a>
+<li><a href="recommended-r-libraries.html#tidyverse" id="toc-tidyverse"><span class="toc-section-number">13.1</span> <code>tidyverse</code></a>
 <ul>
-<li class="chapter" data-level="13.1.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#ggplot2"><i class="fa fa-check"></i><b>13.1.1</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="13.1.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#dplyr"><i class="fa fa-check"></i><b>13.1.2</b> <code>dplyr</code></a></li>
-<li class="chapter" data-level="13.1.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyr"><i class="fa fa-check"></i><b>13.1.3</b> <code>tidyr</code></a></li>
-<li class="chapter" data-level="13.1.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#purrr"><i class="fa fa-check"></i><b>13.1.4</b> <code>purrr</code></a></li>
+<li><a href="recommended-r-libraries.html#ggplot2" id="toc-ggplot2"><span class="toc-section-number">13.1.1</span> <code>ggplot2</code></a></li>
+<li><a href="recommended-r-libraries.html#dplyr" id="toc-dplyr"><span class="toc-section-number">13.1.2</span> <code>dplyr</code></a></li>
+<li><a href="recommended-r-libraries.html#tidyr" id="toc-tidyr"><span class="toc-section-number">13.1.3</span> <code>tidyr</code></a></li>
+<li><a href="recommended-r-libraries.html#purrr" id="toc-purrr"><span class="toc-section-number">13.1.4</span> <code>purrr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#knitr"><i class="fa fa-check"></i><b>13.2</b> <code>knitr</code></a></li>
-<li class="chapter" data-level="13.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#stargazer"><i class="fa fa-check"></i><b>13.3</b> <code>stargazer</code></a></li>
-<li class="chapter" data-level="13.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#summary-12"><i class="fa fa-check"></i><b>13.4</b> Summary</a></li>
+<li><a href="recommended-r-libraries.html#knitr" id="toc-knitr"><span class="toc-section-number">13.2</span> <code>knitr</code></a></li>
+<li><a href="recommended-r-libraries.html#stargazer" id="toc-stargazer"><span class="toc-section-number">13.3</span> <code>stargazer</code></a></li>
+<li><a href="recommended-r-libraries.html#summary-12" id="toc-summary-12"><span class="toc-section-number">13.4</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>14</b> Conclusion</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>Resources</a></li>
-<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li><a href="conclusion.html#conclusion" id="toc-conclusion"><span class="toc-section-number">14</span> Conclusion</a></li>
+<li><a href="about-the-author.html#about-the-author" id="toc-about-the-author">About the Author</a></li>
+<li><a href="resources.html#resources" id="toc-resources">Resources</a></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+<li><a href="footnotes.html#footnotes" id="toc-footnotes">Footnotes</a></li>
 </ul>
 
       </nav>
@@ -321,36 +327,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">13.1</span> <code>tidyverse</code></h2>
 <p>The <code>tidyverse</code> package is a metapackage consisting of other libraries. The most useful ones for a beginner, I believe, are <code>ggplot2</code>, <code>dplyr</code>, <code>tidyr</code>, and <code>purrr</code>.</p>
 <p>For more information, see the <a href="https://www.tidyverse.org/"><code>tidyverse</code> website</a>.</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="recommended-r-libraries.html#cb256-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="recommended-r-libraries.html#cb257-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="recommended-r-libraries.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="recommended-r-libraries.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="ggplot2" class="section level3" number="13.1.1">
 <h3><span class="header-section-number">13.1.1</span> <code>ggplot2</code></h3>
-<p>The library <code>ggplot2</code> offers visualization tools with a modern aesthetic. The following is an example of a small-multiples<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> scatter plot. For more information, see the <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code> website</a>.</p>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="recommended-r-libraries.html#cb258-1"></a><span class="kw">ggplot</span>(mtcars) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb258-2"><a href="recommended-r-libraries.html#cb258-2"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">y =</span> mpg, <span class="dt">x =</span> wt, <span class="dt">col =</span> <span class="kw">factor</span>(am), <span class="dt">size =</span> hp) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb258-3"><a href="recommended-r-libraries.html#cb258-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb258-4"><a href="recommended-r-libraries.html#cb258-4"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y     =</span> <span class="st">&#39;MPG&#39;</span>,</span>
-<span id="cb258-5"><a href="recommended-r-libraries.html#cb258-5"></a>       <span class="dt">x     =</span> <span class="st">&#39;Weight&#39;</span>,</span>
-<span id="cb258-6"><a href="recommended-r-libraries.html#cb258-6"></a>       <span class="dt">col   =</span> <span class="st">&#39;Transmission&#39;</span>,</span>
-<span id="cb258-7"><a href="recommended-r-libraries.html#cb258-7"></a>       <span class="dt">size  =</span> <span class="st">&#39;Horsepower&#39;</span>,</span>
-<span id="cb258-8"><a href="recommended-r-libraries.html#cb258-8"></a>       <span class="dt">title =</span> <span class="st">&#39;MPG vs. Weight&#39;</span>) <span class="op">+</span></span>
-<span id="cb258-9"><a href="recommended-r-libraries.html#cb258-9"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>gear) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb258-10"><a href="recommended-r-libraries.html#cb258-10"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb258-11"><a href="recommended-r-libraries.html#cb258-11"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor   =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb258-12"><a href="recommended-r-libraries.html#cb258-12"></a>        <span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<p>The library <code>ggplot2</code> offers visualization tools with a modern aesthetic. The following is an example of a small-multiples<a href="footnotes.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> scatter plot. For more information, see the <a href="https://ggplot2.tidyverse.org/"><code>ggplot2</code> website</a>.</p>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="recommended-r-libraries.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span> </span>
+<span id="cb258-2"><a href="recommended-r-libraries.html#cb258-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> mpg, <span class="at">x =</span> wt, <span class="at">col =</span> <span class="fu">factor</span>(am), <span class="at">size =</span> hp) <span class="sc">+</span> </span>
+<span id="cb258-3"><a href="recommended-r-libraries.html#cb258-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb258-4"><a href="recommended-r-libraries.html#cb258-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y     =</span> <span class="st">&#39;MPG&#39;</span>,</span>
+<span id="cb258-5"><a href="recommended-r-libraries.html#cb258-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x     =</span> <span class="st">&#39;Weight&#39;</span>,</span>
+<span id="cb258-6"><a href="recommended-r-libraries.html#cb258-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">col   =</span> <span class="st">&#39;Transmission&#39;</span>,</span>
+<span id="cb258-7"><a href="recommended-r-libraries.html#cb258-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">size  =</span> <span class="st">&#39;Horsepower&#39;</span>,</span>
+<span id="cb258-8"><a href="recommended-r-libraries.html#cb258-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;MPG vs. Weight&#39;</span>) <span class="sc">+</span></span>
+<span id="cb258-9"><a href="recommended-r-libraries.html#cb258-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> gear) <span class="sc">+</span> </span>
+<span id="cb258-10"><a href="recommended-r-libraries.html#cb258-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> </span>
+<span id="cb258-11"><a href="recommended-r-libraries.html#cb258-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor   =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb258-12"><a href="recommended-r-libraries.html#cb258-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-116-1.png" width="672" /></p>
 </div>
 <div id="dplyr" class="section level3" number="13.1.2">
 <h3><span class="header-section-number">13.1.2</span> <code>dplyr</code></h3>
 <p>The <code>dplyr</code> library provides aggregation tools for data management. The following is an example of calculating the mean and median MPG by gear.</p>
 <p>For more information, see the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code> website</a>.</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="recommended-r-libraries.html#cb259-1"></a>my_agg &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb259-2"><a href="recommended-r-libraries.html#cb259-2"></a><span class="st">  </span><span class="kw">select</span>(mpg, gear) <span class="op">%&gt;%</span></span>
-<span id="cb259-3"><a href="recommended-r-libraries.html#cb259-3"></a><span class="st">  </span><span class="kw">group_by</span>(gear) <span class="op">%&gt;%</span></span>
-<span id="cb259-4"><a href="recommended-r-libraries.html#cb259-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg),</span>
-<span id="cb259-5"><a href="recommended-r-libraries.html#cb259-5"></a>            <span class="dt">median_mpg =</span> <span class="kw">median</span>(mpg))</span>
-<span id="cb259-6"><a href="recommended-r-libraries.html#cb259-6"></a></span>
-<span id="cb259-7"><a href="recommended-r-libraries.html#cb259-7"></a>my_agg</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="recommended-r-libraries.html#cb259-1" aria-hidden="true" tabindex="-1"></a>my_agg <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb259-2"><a href="recommended-r-libraries.html#cb259-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, gear) <span class="sc">%&gt;%</span></span>
+<span id="cb259-3"><a href="recommended-r-libraries.html#cb259-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gear) <span class="sc">%&gt;%</span></span>
+<span id="cb259-4"><a href="recommended-r-libraries.html#cb259-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb259-5"><a href="recommended-r-libraries.html#cb259-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_mpg =</span> <span class="fu">median</span>(mpg))</span>
+<span id="cb259-6"><a href="recommended-r-libraries.html#cb259-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb259-7"><a href="recommended-r-libraries.html#cb259-7" aria-hidden="true" tabindex="-1"></a>my_agg</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 3
 ##    gear mean_mpg median_mpg
 ##   &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
@@ -362,19 +368,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">13.1.3</span> <code>tidyr</code></h3>
 <p>The <code>tidyr</code> library provides pivoting tools to reshape your dataset. The following are examples of how to reformat an aggregation from <code>dplyr</code>’s functions.</p>
 <p>For more information, see the <a href="https://tidyr.tidyverse.org/"><code>tidyr</code> website</a>.</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="recommended-r-libraries.html#cb261-1"></a><span class="co"># Aggregation</span></span>
-<span id="cb261-2"><a href="recommended-r-libraries.html#cb261-2"></a>my_agg &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb261-3"><a href="recommended-r-libraries.html#cb261-3"></a><span class="st">  </span><span class="kw">select</span>(mpg, gear, am) <span class="op">%&gt;%</span></span>
-<span id="cb261-4"><a href="recommended-r-libraries.html#cb261-4"></a><span class="st">  </span><span class="kw">group_by</span>(gear, am) <span class="op">%&gt;%</span></span>
-<span id="cb261-5"><a href="recommended-r-libraries.html#cb261-5"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean_mpg =</span> <span class="kw">mean</span>(mpg))</span>
-<span id="cb261-6"><a href="recommended-r-libraries.html#cb261-6"></a></span>
-<span id="cb261-7"><a href="recommended-r-libraries.html#cb261-7"></a><span class="co"># Pivot wide</span></span>
-<span id="cb261-8"><a href="recommended-r-libraries.html#cb261-8"></a>my_agg2 &lt;-<span class="st"> </span>my_agg <span class="op">%&gt;%</span></span>
-<span id="cb261-9"><a href="recommended-r-libraries.html#cb261-9"></a><span class="st">  </span><span class="kw">pivot_wider</span>(<span class="dt">id_cols     =</span> gear, <span class="co"># rows</span></span>
-<span id="cb261-10"><a href="recommended-r-libraries.html#cb261-10"></a>              <span class="dt">names_from  =</span> am, <span class="co"># columns</span></span>
-<span id="cb261-11"><a href="recommended-r-libraries.html#cb261-11"></a>              <span class="dt">values_from =</span> mean_mpg) <span class="co"># values</span></span>
-<span id="cb261-12"><a href="recommended-r-libraries.html#cb261-12"></a></span>
-<span id="cb261-13"><a href="recommended-r-libraries.html#cb261-13"></a>my_agg2</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="recommended-r-libraries.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregation</span></span>
+<span id="cb261-2"><a href="recommended-r-libraries.html#cb261-2" aria-hidden="true" tabindex="-1"></a>my_agg <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb261-3"><a href="recommended-r-libraries.html#cb261-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(mpg, gear, am) <span class="sc">%&gt;%</span></span>
+<span id="cb261-4"><a href="recommended-r-libraries.html#cb261-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gear, am) <span class="sc">%&gt;%</span></span>
+<span id="cb261-5"><a href="recommended-r-libraries.html#cb261-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_mpg =</span> <span class="fu">mean</span>(mpg))</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;gear&#39;. You can override using the `.groups` argument.</code></pre>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="recommended-r-libraries.html#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot wide</span></span>
+<span id="cb263-2"><a href="recommended-r-libraries.html#cb263-2" aria-hidden="true" tabindex="-1"></a>my_agg2 <span class="ot">&lt;-</span> my_agg <span class="sc">%&gt;%</span></span>
+<span id="cb263-3"><a href="recommended-r-libraries.html#cb263-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">id_cols     =</span> gear, <span class="co"># rows</span></span>
+<span id="cb263-4"><a href="recommended-r-libraries.html#cb263-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">names_from  =</span> am, <span class="co"># columns</span></span>
+<span id="cb263-5"><a href="recommended-r-libraries.html#cb263-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">values_from =</span> mean_mpg) <span class="co"># values</span></span>
+<span id="cb263-6"><a href="recommended-r-libraries.html#cb263-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-7"><a href="recommended-r-libraries.html#cb263-7" aria-hidden="true" tabindex="-1"></a>my_agg2</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 3
 ## # Groups:   gear [3]
 ##    gear   `0`   `1`
@@ -382,12 +388,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 1     3  16.1  NA  
 ## 2     4  21.0  26.3
 ## 3     5  NA    21.4</code></pre>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="recommended-r-libraries.html#cb263-1"></a><span class="co"># Pivot long</span></span>
-<span id="cb263-2"><a href="recommended-r-libraries.html#cb263-2"></a>my_agg2 <span class="op">%&gt;%</span></span>
-<span id="cb263-3"><a href="recommended-r-libraries.html#cb263-3"></a><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>,</span>
-<span id="cb263-4"><a href="recommended-r-libraries.html#cb263-4"></a>               <span class="dt">names_to  =</span> <span class="st">&#39;am&#39;</span>,</span>
-<span id="cb263-5"><a href="recommended-r-libraries.html#cb263-5"></a>               <span class="dt">values_to =</span> <span class="st">&#39;mpg&#39;</span>,</span>
-<span id="cb263-6"><a href="recommended-r-libraries.html#cb263-6"></a>               <span class="dt">values_drop_na =</span> <span class="ot">TRUE</span>) <span class="co"># drop NA values</span></span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="recommended-r-libraries.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot long</span></span>
+<span id="cb265-2"><a href="recommended-r-libraries.html#cb265-2" aria-hidden="true" tabindex="-1"></a>my_agg2 <span class="sc">%&gt;%</span></span>
+<span id="cb265-3"><a href="recommended-r-libraries.html#cb265-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb265-4"><a href="recommended-r-libraries.html#cb265-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to  =</span> <span class="st">&#39;am&#39;</span>,</span>
+<span id="cb265-5"><a href="recommended-r-libraries.html#cb265-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&#39;mpg&#39;</span>,</span>
+<span id="cb265-6"><a href="recommended-r-libraries.html#cb265-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_drop_na =</span> <span class="cn">TRUE</span>) <span class="co"># drop NA values</span></span></code></pre></div>
 <pre><code>## # A tibble: 4 x 3
 ## # Groups:   gear [3]
 ##    gear am      mpg
@@ -401,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">13.1.4</span> <code>purrr</code></h3>
 <p>The <code>purrr</code> library offers functionals similar to the <code>*apply()</code> functions (the former’s <code>map()</code> operates similarly as the latter’s <code>lapply()</code>); however, the former contains functions that maintain type consistency. For example, there is a function called <code>map_dbl()</code> that throws an error if the output is not a double vector (i.e., a numeric vector), which is useful when you want to catch your program’s errors.</p>
 <p>The following are some examples from <code>purrr</code>. For more information on how to use these and other functions within the library, see the <a href="https://purrr.tidyverse.org/"><code>purrr</code> website</a>.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="recommended-r-libraries.html#cb265-1"></a><span class="kw">map</span>(mtcars, mean) <span class="co"># == lapply(mtcars, mean)</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="recommended-r-libraries.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(mtcars, mean) <span class="co"># == lapply(mtcars, mean)</span></span></code></pre></div>
 <pre><code>## $mpg
 ## [1] 20.09062
 ## 
@@ -434,23 +440,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## $carb
 ## [1] 2.8125</code></pre>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="recommended-r-libraries.html#cb267-1"></a><span class="kw">map_dbl</span>(mtcars, mean) <span class="co"># == sapply(mtcars, mean)</span></span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="recommended-r-libraries.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(mtcars, mean) <span class="co"># == sapply(mtcars, mean)</span></span></code></pre></div>
 <pre><code>##        mpg        cyl       disp         hp       drat         wt       qsec 
 ##  20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
 ##         vs         am       gear       carb 
 ##   0.437500   0.406250   3.687500   2.812500</code></pre>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="recommended-r-libraries.html#cb269-1"></a><span class="kw">map_df</span>(mtcars, mean) <span class="co"># Maintains data frame class.</span></span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="recommended-r-libraries.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_df</span>(mtcars, mean) <span class="co"># Maintains data frame class.</span></span></code></pre></div>
 <pre><code>## # A tibble: 1 x 11
 ##     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1  20.1  6.19  231.  147.  3.60  3.22  17.8 0.438 0.406  3.69  2.81</code></pre>
 <p>Below is an example of combining <code>purrr</code>, <code>dplyr</code> and <code>ggplot2</code> to compare the scaled coefficients from several models using different subsets of <code>mtcars</code>.</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="recommended-r-libraries.html#cb271-1"></a><span class="co"># Split the dataset and scale the coefficients.</span></span>
-<span id="cb271-2"><a href="recommended-r-libraries.html#cb271-2"></a>scaled &lt;-<span class="st"> </span>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb271-3"><a href="recommended-r-libraries.html#cb271-3"></a><span class="st">  </span><span class="kw">split</span>(.<span class="op">$</span>gear) <span class="op">%&gt;%</span></span>
-<span id="cb271-4"><a href="recommended-r-libraries.html#cb271-4"></a><span class="st">  </span><span class="kw">map</span>(<span class="op">~</span><span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">scale</span>(.x)))</span>
-<span id="cb271-5"><a href="recommended-r-libraries.html#cb271-5"></a></span>
-<span id="cb271-6"><a href="recommended-r-libraries.html#cb271-6"></a><span class="kw">map</span>(scaled, head) <span class="co"># see 1st few rows for each subset.</span></span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="recommended-r-libraries.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the dataset and scale the coefficients.</span></span>
+<span id="cb273-2"><a href="recommended-r-libraries.html#cb273-2" aria-hidden="true" tabindex="-1"></a>scaled <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb273-3"><a href="recommended-r-libraries.html#cb273-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">split</span>(.<span class="sc">$</span>gear) <span class="sc">%&gt;%</span></span>
+<span id="cb273-4"><a href="recommended-r-libraries.html#cb273-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">as.data.frame</span>(<span class="fu">scale</span>(.x)))</span>
+<span id="cb273-5"><a href="recommended-r-libraries.html#cb273-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb273-6"><a href="recommended-r-libraries.html#cb273-6" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(scaled, head) <span class="co"># see 1st few rows for each subset.</span></span></code></pre></div>
 <pre><code>## $`3`
 ##                           mpg        cyl       disp          hp        drat
 ## Hornet 4 Drive     1.56996818 -1.2353648 -0.7200636 -1.38675494 -0.19244960
@@ -496,12 +502,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ford Pantera L -1.0084153 -0.4472136 NaN  NaN -0.153393
 ## Ferrari Dino   -0.1238405 -0.4472136 NaN  NaN  0.613572
 ## Maserati Bora  -0.9199578 -0.4472136 NaN  NaN  1.380537</code></pre>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="recommended-r-libraries.html#cb273-1"></a><span class="co"># Obtain the coefficients</span></span>
-<span id="cb273-2"><a href="recommended-r-libraries.html#cb273-2"></a>coefs &lt;-<span class="st"> </span>scaled <span class="op">%&gt;%</span></span>
-<span id="cb273-3"><a href="recommended-r-libraries.html#cb273-3"></a><span class="st">  </span><span class="kw">map</span>(<span class="op">~</span><span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp, .x)) <span class="op">%&gt;%</span></span>
-<span id="cb273-4"><a href="recommended-r-libraries.html#cb273-4"></a><span class="st">  </span><span class="kw">map</span>(<span class="op">~</span><span class="st"> </span><span class="kw">coef</span>(<span class="kw">summary</span>(.x))) </span>
-<span id="cb273-5"><a href="recommended-r-libraries.html#cb273-5"></a></span>
-<span id="cb273-6"><a href="recommended-r-libraries.html#cb273-6"></a>coefs</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="recommended-r-libraries.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain the coefficients</span></span>
+<span id="cb275-2"><a href="recommended-r-libraries.html#cb275-2" aria-hidden="true" tabindex="-1"></a>coefs <span class="ot">&lt;-</span> scaled <span class="sc">%&gt;%</span></span>
+<span id="cb275-3"><a href="recommended-r-libraries.html#cb275-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp <span class="sc">+</span> disp, .x)) <span class="sc">%&gt;%</span></span>
+<span id="cb275-4"><a href="recommended-r-libraries.html#cb275-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">coef</span>(<span class="fu">summary</span>(.x))) </span>
+<span id="cb275-5"><a href="recommended-r-libraries.html#cb275-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb275-6"><a href="recommended-r-libraries.html#cb275-6" aria-hidden="true" tabindex="-1"></a>coefs</span></code></pre></div>
 <pre><code>## $`3`
 ##                  Estimate Std. Error       t value  Pr(&gt;|t|)
 ## (Intercept)  2.525720e-16  0.1587713  1.590791e-15 1.0000000
@@ -522,60 +528,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## wt          -9.831730e-01  0.3021465 -3.253961e+00 0.1898125
 ## hp           1.675696e-01  0.3475996  4.820766e-01 0.7140264
 ## disp        -1.861314e-01  0.2721580 -6.839094e-01 0.6181268</code></pre>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="recommended-r-libraries.html#cb275-1"></a><span class="co"># Create columns for the variables and </span></span>
-<span id="cb275-2"><a href="recommended-r-libraries.html#cb275-2"></a><span class="co"># indicators for the subsets.</span></span>
-<span id="cb275-3"><a href="recommended-r-libraries.html#cb275-3"></a>coefs2 &lt;-<span class="st"> </span>coefs <span class="op">%&gt;%</span></span>
-<span id="cb275-4"><a href="recommended-r-libraries.html#cb275-4"></a><span class="st">  </span><span class="kw">map</span>(as.data.frame) <span class="op">%&gt;%</span></span>
-<span id="cb275-5"><a href="recommended-r-libraries.html#cb275-5"></a><span class="st">  </span><span class="kw">map</span>(<span class="op">~</span><span class="st"> </span><span class="kw">mutate</span>(.x, <span class="dt">Term =</span> <span class="kw">rownames</span>(.x))) <span class="op">%&gt;%</span></span>
-<span id="cb275-6"><a href="recommended-r-libraries.html#cb275-6"></a><span class="st">  </span><span class="kw">map2_df</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="op">~</span><span class="st"> </span><span class="kw">mutate</span>(.x, <span class="dt">Gear =</span> .y)) <span class="op">%&gt;%</span></span>
-<span id="cb275-7"><a href="recommended-r-libraries.html#cb275-7"></a><span class="st">  </span><span class="kw">select</span>(Gear, Term, <span class="kw">everything</span>())</span>
-<span id="cb275-8"><a href="recommended-r-libraries.html#cb275-8"></a></span>
-<span id="cb275-9"><a href="recommended-r-libraries.html#cb275-9"></a>coefs2</span></code></pre></div>
-<pre><code>##    Gear        Term      Estimate Std. Error       t value   Pr(&gt;|t|)
-## 1     3 (Intercept)  2.525720e-16  0.1587713  1.590791e-15 1.00000000
-## 2     3          wt -5.713684e-01  0.3115032 -1.834230e+00 0.09378850
-## 3     3          hp -4.306828e-01  0.2493851 -1.726979e+00 0.11210723
-## 4     3        disp  8.408336e-02  0.3589857  2.342248e-01 0.81911285
-## 5     4 (Intercept)  2.970767e-16  0.1187895  2.500866e-15 1.00000000
-## 6     4          wt -2.034460e-02  0.3011412 -6.755835e-02 0.94779518
-## 7     4          hp -4.342680e-01  0.2117560 -2.050795e+00 0.07441627
-## 8     4        disp -5.307267e-01  0.3487121 -1.521962e+00 0.16651485
-## 9     5 (Intercept)  3.863715e-17  0.1057642  3.653139e-16 1.00000000
-## 10    5          wt -9.831730e-01  0.3021465 -3.253961e+00 0.18981249
-## 11    5          hp  1.675696e-01  0.3475996  4.820766e-01 0.71402636
-## 12    5        disp -1.861314e-01  0.2721580 -6.839094e-01 0.61812678</code></pre>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="recommended-r-libraries.html#cb277-1"></a><span class="co"># Plot the scaled coefficients.</span></span>
-<span id="cb277-2"><a href="recommended-r-libraries.html#cb277-2"></a><span class="co">## Set the canvas.</span></span>
-<span id="cb277-3"><a href="recommended-r-libraries.html#cb277-3"></a><span class="kw">ggplot</span>(coefs2) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb277-4"><a href="recommended-r-libraries.html#cb277-4"></a><span class="co">## Set the aesthetics.  </span></span>
-<span id="cb277-5"><a href="recommended-r-libraries.html#cb277-5"></a><span class="st">  </span><span class="kw">aes</span>(<span class="dt">y =</span> Estimate,</span>
-<span id="cb277-6"><a href="recommended-r-libraries.html#cb277-6"></a>      <span class="dt">x =</span> Term,</span>
-<span id="cb277-7"><a href="recommended-r-libraries.html#cb277-7"></a>      <span class="dt">fill =</span> <span class="kw">factor</span>(Gear)) <span class="op">+</span><span class="st"> </span><span class="co"># Different bars for different gears.</span></span>
-<span id="cb277-8"><a href="recommended-r-libraries.html#cb277-8"></a><span class="co">## Create the bars.  </span></span>
-<span id="cb277-9"><a href="recommended-r-libraries.html#cb277-9"></a><span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>, <span class="co"># Set bars beside each other.</span></span>
-<span id="cb277-10"><a href="recommended-r-libraries.html#cb277-10"></a>           <span class="dt">alpha =</span> <span class="fl">0.8</span>) <span class="op">+</span><span class="st"> </span><span class="co"># Set transparency.</span></span>
-<span id="cb277-11"><a href="recommended-r-libraries.html#cb277-11"></a><span class="co">## Color the bars.</span></span>
-<span id="cb277-12"><a href="recommended-r-libraries.html#cb277-12"></a><span class="st">   </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&#39;Blues&#39;</span>) <span class="op">+</span></span>
-<span id="cb277-13"><a href="recommended-r-libraries.html#cb277-13"></a><span class="co">## Relabel y-axis and other labels.  </span></span>
-<span id="cb277-14"><a href="recommended-r-libraries.html#cb277-14"></a><span class="st">  </span><span class="kw">labs</span>(<span class="dt">y =</span> <span class="st">&#39;Coefficient (Scaled)&#39;</span>,</span>
-<span id="cb277-15"><a href="recommended-r-libraries.html#cb277-15"></a>       <span class="dt">fill =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
-<span id="cb277-16"><a href="recommended-r-libraries.html#cb277-16"></a>       <span class="dt">title =</span> <span class="st">&#39;Scaled Coefficient Comparisons by Number of Gears&#39;</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb277-17"><a href="recommended-r-libraries.html#cb277-17"></a><span class="co">## Customize the background.  </span></span>
-<span id="cb277-18"><a href="recommended-r-libraries.html#cb277-18"></a><span class="st">  </span><span class="kw">theme_light</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb277-19"><a href="recommended-r-libraries.html#cb277-19"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb277-20"><a href="recommended-r-libraries.html#cb277-20"></a>        <span class="dt">panel.grid.major.x =</span> <span class="kw">element_blank</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="recommended-r-libraries.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create columns for the variables and </span></span>
+<span id="cb277-2"><a href="recommended-r-libraries.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="co"># indicators for the subsets.</span></span>
+<span id="cb277-3"><a href="recommended-r-libraries.html#cb277-3" aria-hidden="true" tabindex="-1"></a>coefs2 <span class="ot">&lt;-</span> coefs <span class="sc">%&gt;%</span></span>
+<span id="cb277-4"><a href="recommended-r-libraries.html#cb277-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(as.data.frame) <span class="sc">%&gt;%</span></span>
+<span id="cb277-5"><a href="recommended-r-libraries.html#cb277-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">mutate</span>(.x, <span class="at">Term =</span> <span class="fu">rownames</span>(.x))) <span class="sc">%&gt;%</span></span>
+<span id="cb277-6"><a href="recommended-r-libraries.html#cb277-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map2_df</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="sc">~</span> <span class="fu">mutate</span>(.x, <span class="at">Gear =</span> .y)) <span class="sc">%&gt;%</span></span>
+<span id="cb277-7"><a href="recommended-r-libraries.html#cb277-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Gear, Term, <span class="fu">everything</span>())</span>
+<span id="cb277-8"><a href="recommended-r-libraries.html#cb277-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb277-9"><a href="recommended-r-libraries.html#cb277-9" aria-hidden="true" tabindex="-1"></a>coefs2</span></code></pre></div>
+<pre><code>##                 Gear        Term      Estimate Std. Error       t value
+## (Intercept)...1    3 (Intercept)  2.525720e-16  0.1587713  1.590791e-15
+## wt...2             3          wt -5.713684e-01  0.3115032 -1.834230e+00
+## hp...3             3          hp -4.306828e-01  0.2493851 -1.726979e+00
+## disp...4           3        disp  8.408336e-02  0.3589857  2.342248e-01
+## (Intercept)...5    4 (Intercept)  2.970767e-16  0.1187895  2.500866e-15
+## wt...6             4          wt -2.034460e-02  0.3011412 -6.755835e-02
+## hp...7             4          hp -4.342680e-01  0.2117560 -2.050795e+00
+## disp...8           4        disp -5.307267e-01  0.3487121 -1.521962e+00
+## (Intercept)...9    5 (Intercept)  3.863715e-17  0.1057642  3.653139e-16
+## wt...10            5          wt -9.831730e-01  0.3021465 -3.253961e+00
+## hp...11            5          hp  1.675696e-01  0.3475996  4.820766e-01
+## disp...12          5        disp -1.861314e-01  0.2721580 -6.839094e-01
+##                   Pr(&gt;|t|)
+## (Intercept)...1 1.00000000
+## wt...2          0.09378850
+## hp...3          0.11210723
+## disp...4        0.81911285
+## (Intercept)...5 1.00000000
+## wt...6          0.94779518
+## hp...7          0.07441627
+## disp...8        0.16651485
+## (Intercept)...9 1.00000000
+## wt...10         0.18981249
+## hp...11         0.71402636
+## disp...12       0.61812678</code></pre>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="recommended-r-libraries.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the scaled coefficients.</span></span>
+<span id="cb279-2"><a href="recommended-r-libraries.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the canvas.</span></span>
+<span id="cb279-3"><a href="recommended-r-libraries.html#cb279-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coefs2) <span class="sc">+</span> </span>
+<span id="cb279-4"><a href="recommended-r-libraries.html#cb279-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Set the aesthetics.  </span></span>
+<span id="cb279-5"><a href="recommended-r-libraries.html#cb279-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">y =</span> Estimate,</span>
+<span id="cb279-6"><a href="recommended-r-libraries.html#cb279-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> Term,</span>
+<span id="cb279-7"><a href="recommended-r-libraries.html#cb279-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="fu">factor</span>(Gear)) <span class="sc">+</span> <span class="co"># Different bars for different gears.</span></span>
+<span id="cb279-8"><a href="recommended-r-libraries.html#cb279-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Create the bars.  </span></span>
+<span id="cb279-9"><a href="recommended-r-libraries.html#cb279-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>, <span class="co"># Set bars beside each other.</span></span>
+<span id="cb279-10"><a href="recommended-r-libraries.html#cb279-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="co"># Set transparency.</span></span>
+<span id="cb279-11"><a href="recommended-r-libraries.html#cb279-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Color the bars.</span></span>
+<span id="cb279-12"><a href="recommended-r-libraries.html#cb279-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&#39;Blues&#39;</span>) <span class="sc">+</span></span>
+<span id="cb279-13"><a href="recommended-r-libraries.html#cb279-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Relabel y-axis and other labels.  </span></span>
+<span id="cb279-14"><a href="recommended-r-libraries.html#cb279-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&#39;Coefficient (Scaled)&#39;</span>,</span>
+<span id="cb279-15"><a href="recommended-r-libraries.html#cb279-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&#39;Number of Gears&#39;</span>,</span>
+<span id="cb279-16"><a href="recommended-r-libraries.html#cb279-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&#39;Scaled Coefficient Comparisons by Number of Gears&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb279-17"><a href="recommended-r-libraries.html#cb279-17" aria-hidden="true" tabindex="-1"></a><span class="do">## Customize the background.  </span></span>
+<span id="cb279-18"><a href="recommended-r-libraries.html#cb279-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>() <span class="sc">+</span> </span>
+<span id="cb279-19"><a href="recommended-r-libraries.html#cb279-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb279-20"><a href="recommended-r-libraries.html#cb279-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
 <p><img src="aspr_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 </div>
 </div>
 <div id="knitr" class="section level2" number="13.2">
 <h2><span class="header-section-number">13.2</span> <code>knitr</code></h2>
-<p>The <code>knitr</code> library is an “engine for dynamic report generation,” which allows for better formatted tables and documentation capabilities when using R Markdown.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> The following example demonstrates <code>kable()</code> to format a table.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="recommended-r-libraries.html#cb278-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;knitr&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="recommended-r-libraries.html#cb279-1"></a><span class="kw">library</span>(knitr)</span>
-<span id="cb279-2"><a href="recommended-r-libraries.html#cb279-2"></a></span>
-<span id="cb279-3"><a href="recommended-r-libraries.html#cb279-3"></a>my_table &lt;-<span class="st"> </span><span class="kw">with</span>(mtcars, <span class="kw">table</span>(gear, am))</span>
-<span id="cb279-4"><a href="recommended-r-libraries.html#cb279-4"></a></span>
-<span id="cb279-5"><a href="recommended-r-libraries.html#cb279-5"></a><span class="kw">kable</span>(my_table)</span></code></pre></div>
+<p>The <code>knitr</code> library is an “engine for dynamic report generation,” which allows for better formatted tables and documentation capabilities when using R Markdown.<a href="footnotes.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> The following example demonstrates <code>kable()</code> to format a table.</p>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="recommended-r-libraries.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;knitr&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="recommended-r-libraries.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb281-2"><a href="recommended-r-libraries.html#cb281-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb281-3"><a href="recommended-r-libraries.html#cb281-3" aria-hidden="true" tabindex="-1"></a>my_table <span class="ot">&lt;-</span> <span class="fu">with</span>(mtcars, <span class="fu">table</span>(gear, am))</span>
+<span id="cb281-4"><a href="recommended-r-libraries.html#cb281-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb281-5"><a href="recommended-r-libraries.html#cb281-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(my_table)</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -630,16 +649,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">13.3</span> <code>stargazer</code></h2>
 <p>The <code>stargazer</code> library allows one to format a regression model to be closer to journal-quality guidelines.</p>
 <p>For more information, see <a href="https://CRAN.R-project.org/package=stargazer">its documentation on CRAN</a>.</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="recommended-r-libraries.html#cb280-1"></a><span class="kw">install.packages</span>(<span class="st">&#39;stargazer&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="recommended-r-libraries.html#cb281-1"></a><span class="kw">library</span>(stargazer)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="recommended-r-libraries.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;stargazer&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="recommended-r-libraries.html#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span></code></pre></div>
 <pre><code>## 
 ## Please cite as:</code></pre>
 <pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
 <pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="recommended-r-libraries.html#cb285-1"></a>my_ols &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>gear <span class="op">+</span><span class="st"> </span>am, mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="recommended-r-libraries.html#cb287-1" aria-hidden="true" tabindex="-1"></a>my_ols <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp <span class="sc">+</span> disp <span class="sc">+</span> gear <span class="sc">+</span> am, mtcars)</span></code></pre></div>
 <p>If you are using RGui or R Studio and not R Markdown, I recommend to set <code>type = 'text'</code> so that only textual output will be produced instead of LaTeX or HTML code.</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="recommended-r-libraries.html#cb286-1"></a><span class="co"># If NOT using R Markdown...</span></span>
-<span id="cb286-2"><a href="recommended-r-libraries.html#cb286-2"></a><span class="kw">stargazer</span>(my_ols, <span class="dt">type =</span> <span class="st">&#39;text&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="recommended-r-libraries.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If NOT using R Markdown...</span></span>
+<span id="cb288-2"><a href="recommended-r-libraries.html#cb288-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(my_ols, <span class="at">type =</span> <span class="st">&#39;text&#39;</span>)</span></code></pre></div>
 <pre><code>## 
 ## ===============================================
 ##                         Dependent variable:    
@@ -673,12 +692,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## ===============================================
 ## Note:               *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01</code></pre>
 <p>If you happen to use R Markdown, then set <code>type = 'html'</code> for HTML documents and omit <code>type</code> for PDF documents.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="recommended-r-libraries.html#cb288-1"></a><span class="co"># If using RMarkdown...</span></span>
-<span id="cb288-2"><a href="recommended-r-libraries.html#cb288-2"></a><span class="kw">stargazer</span>(my_ols, </span>
-<span id="cb288-3"><a href="recommended-r-libraries.html#cb288-3"></a>          <span class="dt">type =</span> <span class="st">&#39;html&#39;</span>, <span class="co"># for html documents.</span></span>
-<span id="cb288-4"><a href="recommended-r-libraries.html#cb288-4"></a>          <span class="co"># Set asterisks for each p-value level.</span></span>
-<span id="cb288-5"><a href="recommended-r-libraries.html#cb288-5"></a>          <span class="dt">notes.append =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb288-6"><a href="recommended-r-libraries.html#cb288-6"></a>          <span class="dt">notes =</span> <span class="kw">c</span>(<span class="st">&quot;&lt;sup&gt;&amp;sstarf;&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.01&quot;</span>)) </span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="recommended-r-libraries.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If using RMarkdown...</span></span>
+<span id="cb290-2"><a href="recommended-r-libraries.html#cb290-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(my_ols, </span>
+<span id="cb290-3"><a href="recommended-r-libraries.html#cb290-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">&#39;html&#39;</span>, <span class="co"># for html documents.</span></span>
+<span id="cb290-4"><a href="recommended-r-libraries.html#cb290-4" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Set asterisks for each p-value level.</span></span>
+<span id="cb290-5"><a href="recommended-r-libraries.html#cb290-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes.append =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb290-6"><a href="recommended-r-libraries.html#cb290-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;sup&gt;&amp;sstarf;&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.01&quot;</span>)) </span></code></pre></div>
 <table style="text-align:center">
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -891,15 +910,15 @@ F Statistic
 </td>
 </tr>
 </table>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="recommended-r-libraries.html#cb289-1"></a><span class="co">#stargazer(my_ols) # for PDF documents.</span></span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="recommended-r-libraries.html#cb291-1" aria-hidden="true" tabindex="-1"></a><span class="co">#stargazer(my_ols) # for PDF documents.</span></span></code></pre></div>
 <p>We can also input several models into <code>stargazer()</code>.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="recommended-r-libraries.html#cb290-1"></a>mtcars <span class="op">%&gt;%</span></span>
-<span id="cb290-2"><a href="recommended-r-libraries.html#cb290-2"></a><span class="st">  </span><span class="kw">split</span>(.<span class="op">$</span>gear) <span class="op">%&gt;%</span></span>
-<span id="cb290-3"><a href="recommended-r-libraries.html#cb290-3"></a><span class="st">  </span><span class="kw">map</span>(<span class="op">~</span><span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>disp, .x)) <span class="op">%&gt;%</span></span>
-<span id="cb290-4"><a href="recommended-r-libraries.html#cb290-4"></a><span class="st">  </span><span class="kw">stargazer</span>(<span class="dt">type =</span> <span class="st">&#39;html&#39;</span>, </span>
-<span id="cb290-5"><a href="recommended-r-libraries.html#cb290-5"></a>            <span class="dt">column.labels =</span> <span class="kw">paste</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>, <span class="st">&#39;Gears&#39;</span>),</span>
-<span id="cb290-6"><a href="recommended-r-libraries.html#cb290-6"></a>            <span class="dt">notes.append =</span> <span class="ot">FALSE</span>,</span>
-<span id="cb290-7"><a href="recommended-r-libraries.html#cb290-7"></a>            <span class="dt">notes =</span> <span class="kw">c</span>(<span class="st">&quot;&lt;sup&gt;&amp;sstarf;&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.01&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="recommended-r-libraries.html#cb292-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb292-2"><a href="recommended-r-libraries.html#cb292-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">split</span>(.<span class="sc">$</span>gear) <span class="sc">%&gt;%</span></span>
+<span id="cb292-3"><a href="recommended-r-libraries.html#cb292-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt <span class="sc">+</span> hp <span class="sc">+</span> disp, .x)) <span class="sc">%&gt;%</span></span>
+<span id="cb292-4"><a href="recommended-r-libraries.html#cb292-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stargazer</span>(<span class="at">type =</span> <span class="st">&#39;html&#39;</span>, </span>
+<span id="cb292-5"><a href="recommended-r-libraries.html#cb292-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">column.labels =</span> <span class="fu">paste</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>, <span class="st">&#39;Gears&#39;</span>),</span>
+<span id="cb292-6"><a href="recommended-r-libraries.html#cb292-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">notes.append =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb292-7"><a href="recommended-r-libraries.html#cb292-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">notes =</span> <span class="fu">c</span>(<span class="st">&quot;&lt;sup&gt;&amp;sstarf;&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;&amp;sstarf;&amp;sstarf;&amp;sstarf;&lt;/sup&gt;p&lt;0.01&quot;</span>))</span></code></pre></div>
 <table style="text-align:center">
 <tr>
 <td colspan="4" style="border-bottom: 1px solid black">
@@ -1318,13 +1337,6 @@ stargazer(my_ols, type = ‘text’)
 </table>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="3">
-<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Small_multiple" class="uri">https://en.wikipedia.org/wiki/Small_multiple</a><a href="recommended-r-libraries.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://yihui.org/knitr/" class="uri">https://yihui.org/knitr/</a><a href="recommended-r-libraries.html#fnref4" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
             </section>
 
           </div>
@@ -1335,7 +1347,6 @@ stargazer(my_ols, type = ‘text’)
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1354,6 +1365,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1374,10 +1386,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": false,
 "toc": {
 "collapse": "section"
-},
-"search": false
+}
 });
 });
 </script>

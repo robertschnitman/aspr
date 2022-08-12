@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>References | A Short Introduction to Applied Statistical Programming in R</title>
   <meta name="description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
-  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | A Short Introduction to Applied Statistical Programming in R" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://rs-aspr.netlify.app/" />
-  <meta property="og:image" content="https://rs-aspr.netlify.app/img/cover_image.jpg" />
+  <meta property="og:url" content="https://aspr.netlify.app/" />
+  <meta property="og:image" content="https://aspr.netlify.app//img/cover_image.jpg" />
   <meta property="og:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
   <meta name="github-repo" content="robertschnitman/aspr" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="References | A Short Introduction to Applied Statistical Programming in R" />
   
   <meta name="twitter:description" content="The purpose of this book is to teach students of social science statistics courses how to program in R for data analysis." />
-  <meta name="twitter:image" content="https://rs-aspr.netlify.app/img/cover_image.jpg" />
+  <meta name="twitter:image" content="https://aspr.netlify.app//img/cover_image.jpg" />
 
 <meta name="author" content="Robert Schnitman" />
 
@@ -30,10 +30,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="conclusion.html"/>
-<link rel="next" href="resources.html"/>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="prev" href="resources.html"/>
+<link rel="next" href="footnotes.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,14 +50,17 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -117,6 +121,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -129,174 +134,175 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
-<li class="chapter" data-level="1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html"><i class="fa fa-check"></i><b>1</b> The Paradigms of R</a>
+<li><a href="index.html#index" id="toc-index">Introduction</a></li>
+<li><a href="prerequisites.html#prerequisites" id="toc-prerequisites">Prerequisites</a></li>
+<li><a href="the-paradigms-of-r.html#the-paradigms-of-r" id="toc-the-paradigms-of-r"><span class="toc-section-number">1</span> The Paradigms of R</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#array"><i class="fa fa-check"></i><b>1.1</b> Array</a></li>
-<li class="chapter" data-level="1.2" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#functional"><i class="fa fa-check"></i><b>1.2</b> Functional</a></li>
-<li class="chapter" data-level="1.3" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#object-oriented"><i class="fa fa-check"></i><b>1.3</b> Object Oriented</a></li>
-<li class="chapter" data-level="1.4" data-path="the-paradigms-of-r.html"><a href="the-paradigms-of-r.html#summary"><i class="fa fa-check"></i><b>1.4</b> Summary</a></li>
+<li><a href="the-paradigms-of-r.html#array" id="toc-array"><span class="toc-section-number">1.1</span> Array</a></li>
+<li><a href="the-paradigms-of-r.html#functional" id="toc-functional"><span class="toc-section-number">1.2</span> Functional</a></li>
+<li><a href="the-paradigms-of-r.html#object-oriented" id="toc-object-oriented"><span class="toc-section-number">1.3</span> Object Oriented</a></li>
+<li><a href="the-paradigms-of-r.html#summary" id="toc-summary"><span class="toc-section-number">1.4</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>2</b> Basics</a>
+<li><a href="basics.html#basics" id="toc-basics"><span class="toc-section-number">2</span> Basics</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="basics.html"><a href="basics.html#r-as-a-calculator"><i class="fa fa-check"></i><b>2.1</b> R as a calculator</a>
+<li><a href="basics.html#r-as-a-calculator" id="toc-r-as-a-calculator"><span class="toc-section-number">2.1</span> R as a calculator</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="basics.html"><a href="basics.html#operators"><i class="fa fa-check"></i><b>2.1.1</b> Operators</a></li>
+<li><a href="basics.html#operators" id="toc-operators"><span class="toc-section-number">2.1.1</span> Operators</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="basics.html"><a href="basics.html#data-types-and-classes"><i class="fa fa-check"></i><b>2.2</b> Data Types and Classes</a>
+<li><a href="basics.html#data-types-and-classes" id="toc-data-types-and-classes"><span class="toc-section-number">2.2</span> Data Types and Classes</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="basics.html"><a href="basics.html#classes"><i class="fa fa-check"></i><b>2.2.1</b> Classes</a></li>
-<li class="chapter" data-level="2.2.2" data-path="basics.html"><a href="basics.html#types"><i class="fa fa-check"></i><b>2.2.2</b> Types</a></li>
+<li><a href="basics.html#classes" id="toc-classes"><span class="toc-section-number">2.2.1</span> Classes</a></li>
+<li><a href="basics.html#types" id="toc-types"><span class="toc-section-number">2.2.2</span> Types</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="basics.html"><a href="basics.html#assignments"><i class="fa fa-check"></i><b>2.3</b> Assignments</a>
+<li><a href="basics.html#assignments" id="toc-assignments"><span class="toc-section-number">2.3</span> Assignments</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="basics.html"><a href="basics.html#addingremoving-variables"><i class="fa fa-check"></i><b>2.3.1</b> Adding/Removing Variables</a></li>
+<li><a href="basics.html#addingremoving-variables" id="toc-addingremoving-variables"><span class="toc-section-number">2.3.1</span> Adding/Removing Variables</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="basics.html"><a href="basics.html#viewing-data"><i class="fa fa-check"></i><b>2.4</b> Viewing Data</a></li>
-<li class="chapter" data-level="2.5" data-path="basics.html"><a href="basics.html#getting-help"><i class="fa fa-check"></i><b>2.5</b> Getting Help</a></li>
-<li class="chapter" data-level="2.6" data-path="basics.html"><a href="basics.html#summary-1"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+<li><a href="basics.html#viewing-data" id="toc-viewing-data"><span class="toc-section-number">2.4</span> Viewing Data</a></li>
+<li><a href="basics.html#getting-help" id="toc-getting-help"><span class="toc-section-number">2.5</span> Getting Help</a></li>
+<li><a href="basics.html#summary-1" id="toc-summary-1"><span class="toc-section-number">2.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-management.html"><a href="data-management.html"><i class="fa fa-check"></i><b>3</b> Data Management</a>
+<li><a href="data-management.html#data-management" id="toc-data-management"><span class="toc-section-number">3</span> Data Management</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data-management.html"><a href="data-management.html#replacing-values"><i class="fa fa-check"></i><b>3.1</b> Replacing Values</a></li>
-<li class="chapter" data-level="3.2" data-path="data-management.html"><a href="data-management.html#switching-values"><i class="fa fa-check"></i><b>3.2</b> Switching Values</a>
+<li><a href="data-management.html#replacing-values" id="toc-replacing-values"><span class="toc-section-number">3.1</span> Replacing Values</a></li>
+<li><a href="data-management.html#switching-values" id="toc-switching-values"><span class="toc-section-number">3.2</span> Switching Values</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="data-management.html"><a href="data-management.html#scalar-case"><i class="fa fa-check"></i><b>3.2.1</b> Scalar Case</a></li>
-<li class="chapter" data-level="3.2.2" data-path="data-management.html"><a href="data-management.html#vector-case"><i class="fa fa-check"></i><b>3.2.2</b> Vector Case</a></li>
+<li><a href="data-management.html#scalar-case" id="toc-scalar-case"><span class="toc-section-number">3.2.1</span> Scalar Case</a></li>
+<li><a href="data-management.html#vector-case" id="toc-vector-case"><span class="toc-section-number">3.2.2</span> Vector Case</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="data-management.html"><a href="data-management.html#importing-data"><i class="fa fa-check"></i><b>3.3</b> Importing Data</a></li>
-<li class="chapter" data-level="3.4" data-path="data-management.html"><a href="data-management.html#combining-data"><i class="fa fa-check"></i><b>3.4</b> Combining Data</a>
+<li><a href="data-management.html#importing-data" id="toc-importing-data"><span class="toc-section-number">3.3</span> Importing Data</a></li>
+<li><a href="data-management.html#combining-data" id="toc-combining-data"><span class="toc-section-number">3.4</span> Combining Data</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="data-management.html"><a href="data-management.html#cbindrbind"><i class="fa fa-check"></i><b>3.4.1</b> <code>cbind()</code>/<code>rbind()</code></a></li>
-<li class="chapter" data-level="3.4.2" data-path="data-management.html"><a href="data-management.html#merge"><i class="fa fa-check"></i><b>3.4.2</b> <code>merge()</code></a></li>
+<li><a href="data-management.html#cbindrbind" id="toc-cbindrbind"><span class="toc-section-number">3.4.1</span> <code>cbind()</code>/<code>rbind()</code></a></li>
+<li><a href="data-management.html#merge" id="toc-merge"><span class="toc-section-number">3.4.2</span> <code>merge()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="data-management.html"><a href="data-management.html#subsetting-data"><i class="fa fa-check"></i><b>3.5</b> Subsetting Data</a>
+<li><a href="data-management.html#subsetting-data" id="toc-subsetting-data"><span class="toc-section-number">3.5</span> Subsetting Data</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="data-management.html"><a href="data-management.html#vector-case-1"><i class="fa fa-check"></i><b>3.5.1</b> Vector Case</a></li>
-<li class="chapter" data-level="3.5.2" data-path="data-management.html"><a href="data-management.html#data-frame-case"><i class="fa fa-check"></i><b>3.5.2</b> Data Frame Case</a></li>
+<li><a href="data-management.html#vector-case-1" id="toc-vector-case-1"><span class="toc-section-number">3.5.1</span> Vector Case</a></li>
+<li><a href="data-management.html#data-frame-case" id="toc-data-frame-case"><span class="toc-section-number">3.5.2</span> Data Frame Case</a></li>
 </ul></li>
-<li class="chapter" data-level="3.6" data-path="data-management.html"><a href="data-management.html#splitting-data"><i class="fa fa-check"></i><b>3.6</b> Splitting Data</a></li>
-<li class="chapter" data-level="3.7" data-path="data-management.html"><a href="data-management.html#summary-2"><i class="fa fa-check"></i><b>3.7</b> Summary</a></li>
+<li><a href="data-management.html#splitting-data" id="toc-splitting-data"><span class="toc-section-number">3.6</span> Splitting Data</a></li>
+<li><a href="data-management.html#summary-2" id="toc-summary-2"><span class="toc-section-number">3.7</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="string-functions.html"><a href="string-functions.html"><i class="fa fa-check"></i><b>4</b> String Functions</a>
+<li><a href="string-functions.html#string-functions" id="toc-string-functions"><span class="toc-section-number">4</span> String Functions</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="string-functions.html"><a href="string-functions.html#concatenate-strings"><i class="fa fa-check"></i><b>4.1</b> Concatenate Strings</a></li>
-<li class="chapter" data-level="4.2" data-path="string-functions.html"><a href="string-functions.html#subset-strings"><i class="fa fa-check"></i><b>4.2</b> Subset Strings</a></li>
-<li class="chapter" data-level="4.3" data-path="string-functions.html"><a href="string-functions.html#split-strings"><i class="fa fa-check"></i><b>4.3</b> Split Strings</a></li>
-<li class="chapter" data-level="4.4" data-path="string-functions.html"><a href="string-functions.html#substitute-strings"><i class="fa fa-check"></i><b>4.4</b> Substitute Strings</a></li>
-<li class="chapter" data-level="4.5" data-path="string-functions.html"><a href="string-functions.html#match-string-patterns"><i class="fa fa-check"></i><b>4.5</b> Match String Patterns</a></li>
-<li class="chapter" data-level="4.6" data-path="string-functions.html"><a href="string-functions.html#summary-3"><i class="fa fa-check"></i><b>4.6</b> Summary</a></li>
+<li><a href="string-functions.html#concatenate-strings" id="toc-concatenate-strings"><span class="toc-section-number">4.1</span> Concatenate Strings</a></li>
+<li><a href="string-functions.html#subset-strings" id="toc-subset-strings"><span class="toc-section-number">4.2</span> Subset Strings</a></li>
+<li><a href="string-functions.html#split-strings" id="toc-split-strings"><span class="toc-section-number">4.3</span> Split Strings</a></li>
+<li><a href="string-functions.html#substitute-strings" id="toc-substitute-strings"><span class="toc-section-number">4.4</span> Substitute Strings</a></li>
+<li><a href="string-functions.html#match-string-patterns" id="toc-match-string-patterns"><span class="toc-section-number">4.5</span> Match String Patterns</a></li>
+<li><a href="string-functions.html#summary-3" id="toc-summary-3"><span class="toc-section-number">4.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control Flow</a>
+<li><a href="control-flow.html#control-flow" id="toc-control-flow"><span class="toc-section-number">5</span> Control Flow</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="control-flow.html"><a href="control-flow.html#if-and-ifelse"><i class="fa fa-check"></i><b>5.1</b> <code>if</code> and <code>ifelse()</code></a></li>
-<li class="chapter" data-level="5.2" data-path="control-flow.html"><a href="control-flow.html#loops"><i class="fa fa-check"></i><b>5.2</b> Loops</a>
+<li><a href="control-flow.html#if-and-ifelse" id="toc-if-and-ifelse"><span class="toc-section-number">5.1</span> <code>if</code> and <code>ifelse()</code></a></li>
+<li><a href="control-flow.html#loops" id="toc-loops"><span class="toc-section-number">5.2</span> Loops</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="control-flow.html"><a href="control-flow.html#for-loop"><i class="fa fa-check"></i><b>5.2.1</b> <code>for</code> loop</a></li>
-<li class="chapter" data-level="5.2.2" data-path="control-flow.html"><a href="control-flow.html#while-loop"><i class="fa fa-check"></i><b>5.2.2</b> <code>while</code> loop</a></li>
+<li><a href="control-flow.html#for-loop" id="toc-for-loop"><span class="toc-section-number">5.2.1</span> <code>for</code> loop</a></li>
+<li><a href="control-flow.html#while-loop" id="toc-while-loop"><span class="toc-section-number">5.2.2</span> <code>while</code> loop</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="control-flow.html"><a href="control-flow.html#summary-4"><i class="fa fa-check"></i><b>5.3</b> Summary</a></li>
+<li><a href="control-flow.html#summary-4" id="toc-summary-4"><span class="toc-section-number">5.3</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive Statistics</a>
+<li><a href="descriptive-statistics.html#descriptive-statistics" id="toc-descriptive-statistics"><span class="toc-section-number">6</span> Descriptive Statistics</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#centrality-and-spread"><i class="fa fa-check"></i><b>6.1</b> Centrality and Spread</a></li>
-<li class="chapter" data-level="6.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#minimum-and-maximum"><i class="fa fa-check"></i><b>6.2</b> Minimum and Maximum</a></li>
-<li class="chapter" data-level="6.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-dimensions"><i class="fa fa-check"></i><b>6.3</b> Data Dimensions</a></li>
-<li class="chapter" data-level="6.4" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-summary"><i class="fa fa-check"></i><b>6.4</b> Data Summary</a></li>
-<li class="chapter" data-level="6.5" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#frequency-tables"><i class="fa fa-check"></i><b>6.5</b> Frequency Tables</a>
+<li><a href="descriptive-statistics.html#centrality-and-spread" id="toc-centrality-and-spread"><span class="toc-section-number">6.1</span> Centrality and Spread</a></li>
+<li><a href="descriptive-statistics.html#minimum-and-maximum" id="toc-minimum-and-maximum"><span class="toc-section-number">6.2</span> Minimum and Maximum</a></li>
+<li><a href="descriptive-statistics.html#data-dimensions" id="toc-data-dimensions"><span class="toc-section-number">6.3</span> Data Dimensions</a></li>
+<li><a href="descriptive-statistics.html#data-summary" id="toc-data-summary"><span class="toc-section-number">6.4</span> Data Summary</a></li>
+<li><a href="descriptive-statistics.html#frequency-tables" id="toc-frequency-tables"><span class="toc-section-number">6.5</span> Frequency Tables</a>
 <ul>
-<li class="chapter" data-level="6.5.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#single-variable-case"><i class="fa fa-check"></i><b>6.5.1</b> Single-variable Case</a></li>
-<li class="chapter" data-level="6.5.2" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#multi-variable-case"><i class="fa fa-check"></i><b>6.5.2</b> Multi-variable Case</a></li>
-<li class="chapter" data-level="6.5.3" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#converting-to-a-data-frame"><i class="fa fa-check"></i><b>6.5.3</b> Converting to a Data Frame</a></li>
+<li><a href="descriptive-statistics.html#single-variable-case" id="toc-single-variable-case"><span class="toc-section-number">6.5.1</span> Single-variable Case</a></li>
+<li><a href="descriptive-statistics.html#multi-variable-case" id="toc-multi-variable-case"><span class="toc-section-number">6.5.2</span> Multi-variable Case</a></li>
+<li><a href="descriptive-statistics.html#converting-to-a-data-frame" id="toc-converting-to-a-data-frame"><span class="toc-section-number">6.5.3</span> Converting to a Data Frame</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#summary-5"><i class="fa fa-check"></i><b>6.6</b> Summary</a></li>
+<li><a href="descriptive-statistics.html#summary-5" id="toc-summary-5"><span class="toc-section-number">6.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="probability-functions.html"><a href="probability-functions.html"><i class="fa fa-check"></i><b>7</b> Probability Functions</a>
+<li><a href="probability-functions.html#probability-functions" id="toc-probability-functions"><span class="toc-section-number">7</span> Probability Functions</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="probability-functions.html"><a href="probability-functions.html#generating-random-numbers"><i class="fa fa-check"></i><b>7.1</b> Generating Random Numbers</a></li>
-<li class="chapter" data-level="7.2" data-path="probability-functions.html"><a href="probability-functions.html#sampling"><i class="fa fa-check"></i><b>7.2</b> Sampling</a></li>
-<li class="chapter" data-level="7.3" data-path="probability-functions.html"><a href="probability-functions.html#others"><i class="fa fa-check"></i><b>7.3</b> Others</a></li>
-<li class="chapter" data-level="7.4" data-path="probability-functions.html"><a href="probability-functions.html#summary-6"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+<li><a href="probability-functions.html#generating-random-numbers" id="toc-generating-random-numbers"><span class="toc-section-number">7.1</span> Generating Random Numbers</a></li>
+<li><a href="probability-functions.html#sampling" id="toc-sampling"><span class="toc-section-number">7.2</span> Sampling</a></li>
+<li><a href="probability-functions.html#others" id="toc-others"><span class="toc-section-number">7.3</span> Others</a></li>
+<li><a href="probability-functions.html#summary-6" id="toc-summary-6"><span class="toc-section-number">7.4</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="function-writing.html"><a href="function-writing.html"><i class="fa fa-check"></i><b>8</b> Function Writing</a>
+<li><a href="function-writing.html#function-writing" id="toc-function-writing"><span class="toc-section-number">8</span> Function Writing</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="function-writing.html"><a href="function-writing.html#univariate-case"><i class="fa fa-check"></i><b>8.1</b> Univariate Case</a></li>
-<li class="chapter" data-level="8.2" data-path="function-writing.html"><a href="function-writing.html#multivariate-case"><i class="fa fa-check"></i><b>8.2</b> Multivariate Case</a></li>
-<li class="chapter" data-level="8.3" data-path="function-writing.html"><a href="function-writing.html#summary-7"><i class="fa fa-check"></i><b>8.3</b> Summary</a></li>
+<li><a href="function-writing.html#univariate-case" id="toc-univariate-case"><span class="toc-section-number">8.1</span> Univariate Case</a></li>
+<li><a href="function-writing.html#multivariate-case" id="toc-multivariate-case"><span class="toc-section-number">8.2</span> Multivariate Case</a></li>
+<li><a href="function-writing.html#summary-7" id="toc-summary-7"><span class="toc-section-number">8.3</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<li><a href="functionals.html#functionals" id="toc-functionals"><span class="toc-section-number">9</span> Functionals</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="functionals.html"><a href="functionals.html#lapply"><i class="fa fa-check"></i><b>9.1</b> <code>lapply()</code></a></li>
-<li class="chapter" data-level="9.2" data-path="functionals.html"><a href="functionals.html#sapply"><i class="fa fa-check"></i><b>9.2</b> <code>sapply()</code></a></li>
-<li class="chapter" data-level="9.3" data-path="functionals.html"><a href="functionals.html#apply"><i class="fa fa-check"></i><b>9.3</b> <code>apply()</code></a></li>
-<li class="chapter" data-level="9.4" data-path="functionals.html"><a href="functionals.html#vapply"><i class="fa fa-check"></i><b>9.4</b> <code>vapply()</code></a></li>
-<li class="chapter" data-level="9.5" data-path="functionals.html"><a href="functionals.html#mapplymap"><i class="fa fa-check"></i><b>9.5</b> <code>mapply()</code>/<code>Map()</code></a>
+<li><a href="functionals.html#lapply" id="toc-lapply"><span class="toc-section-number">9.1</span> <code>lapply()</code></a></li>
+<li><a href="functionals.html#sapply" id="toc-sapply"><span class="toc-section-number">9.2</span> <code>sapply()</code></a></li>
+<li><a href="functionals.html#apply" id="toc-apply"><span class="toc-section-number">9.3</span> <code>apply()</code></a></li>
+<li><a href="functionals.html#vapply" id="toc-vapply"><span class="toc-section-number">9.4</span> <code>vapply()</code></a></li>
+<li><a href="functionals.html#mapplymap" id="toc-mapplymap"><span class="toc-section-number">9.5</span> <code>mapply()</code>/<code>Map()</code></a>
 <ul>
-<li class="chapter" data-level="9.5.1" data-path="functionals.html"><a href="functionals.html#univariate-case-1"><i class="fa fa-check"></i><b>9.5.1</b> Univariate Case</a></li>
-<li class="chapter" data-level="9.5.2" data-path="functionals.html"><a href="functionals.html#multivariate-case-1"><i class="fa fa-check"></i><b>9.5.2</b> Multivariate Case</a></li>
+<li><a href="functionals.html#univariate-case-1" id="toc-univariate-case-1"><span class="toc-section-number">9.5.1</span> Univariate Case</a></li>
+<li><a href="functionals.html#multivariate-case-1" id="toc-multivariate-case-1"><span class="toc-section-number">9.5.2</span> Multivariate Case</a></li>
 </ul></li>
-<li class="chapter" data-level="9.6" data-path="functionals.html"><a href="functionals.html#rapply"><i class="fa fa-check"></i><b>9.6</b> <code>rapply()</code></a></li>
-<li class="chapter" data-level="9.7" data-path="functionals.html"><a href="functionals.html#tapply"><i class="fa fa-check"></i><b>9.7</b> <code>tapply()</code></a></li>
-<li class="chapter" data-level="9.8" data-path="functionals.html"><a href="functionals.html#aggregate"><i class="fa fa-check"></i><b>9.8</b> <code>aggregate()</code></a></li>
-<li class="chapter" data-level="9.9" data-path="functionals.html"><a href="functionals.html#summary-8"><i class="fa fa-check"></i><b>9.9</b> Summary</a></li>
+<li><a href="functionals.html#rapply" id="toc-rapply"><span class="toc-section-number">9.6</span> <code>rapply()</code></a></li>
+<li><a href="functionals.html#tapply" id="toc-tapply"><span class="toc-section-number">9.7</span> <code>tapply()</code></a></li>
+<li><a href="functionals.html#aggregate" id="toc-aggregate"><span class="toc-section-number">9.8</span> <code>aggregate()</code></a></li>
+<li><a href="functionals.html#summary-8" id="toc-summary-8"><span class="toc-section-number">9.9</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="graphing.html"><a href="graphing.html"><i class="fa fa-check"></i><b>10</b> Graphing</a>
+<li><a href="graphing.html#graphing" id="toc-graphing"><span class="toc-section-number">10</span> Graphing</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="graphing.html"><a href="graphing.html#histograms-and-density-plots"><i class="fa fa-check"></i><b>10.1</b> Histograms and Density Plots</a></li>
-<li class="chapter" data-level="10.2" data-path="graphing.html"><a href="graphing.html#scatter-plots"><i class="fa fa-check"></i><b>10.2</b> Scatter Plots</a>
+<li><a href="graphing.html#histograms-and-density-plots" id="toc-histograms-and-density-plots"><span class="toc-section-number">10.1</span> Histograms and Density Plots</a></li>
+<li><a href="graphing.html#scatter-plots" id="toc-scatter-plots"><span class="toc-section-number">10.2</span> Scatter Plots</a>
 <ul>
-<li class="chapter" data-level="10.2.1" data-path="graphing.html"><a href="graphing.html#simple-scatter-plot"><i class="fa fa-check"></i><b>10.2.1</b> Simple Scatter Plot</a></li>
-<li class="chapter" data-level="10.2.2" data-path="graphing.html"><a href="graphing.html#multiple-scatter-plots"><i class="fa fa-check"></i><b>10.2.2</b> Multiple Scatter Plots</a></li>
-<li class="chapter" data-level="10.2.3" data-path="graphing.html"><a href="graphing.html#text-plot"><i class="fa fa-check"></i><b>10.2.3</b> Text Plot</a></li>
+<li><a href="graphing.html#simple-scatter-plot" id="toc-simple-scatter-plot"><span class="toc-section-number">10.2.1</span> Simple Scatter Plot</a></li>
+<li><a href="graphing.html#multiple-scatter-plots" id="toc-multiple-scatter-plots"><span class="toc-section-number">10.2.2</span> Multiple Scatter Plots</a></li>
+<li><a href="graphing.html#text-plot" id="toc-text-plot"><span class="toc-section-number">10.2.3</span> Text Plot</a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path="graphing.html"><a href="graphing.html#line-plots"><i class="fa fa-check"></i><b>10.3</b> Line Plots</a></li>
-<li class="chapter" data-level="10.4" data-path="graphing.html"><a href="graphing.html#box-plots"><i class="fa fa-check"></i><b>10.4</b> Box Plots</a></li>
-<li class="chapter" data-level="10.5" data-path="graphing.html"><a href="graphing.html#bar-plots"><i class="fa fa-check"></i><b>10.5</b> Bar Plots</a>
+<li><a href="graphing.html#line-plots" id="toc-line-plots"><span class="toc-section-number">10.3</span> Line Plots</a></li>
+<li><a href="graphing.html#box-plots" id="toc-box-plots"><span class="toc-section-number">10.4</span> Box Plots</a></li>
+<li><a href="graphing.html#bar-plots" id="toc-bar-plots"><span class="toc-section-number">10.5</span> Bar Plots</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="graphing.html"><a href="graphing.html#frequency-chart"><i class="fa fa-check"></i><b>10.5.1</b> Frequency Chart</a></li>
-<li class="chapter" data-level="10.5.2" data-path="graphing.html"><a href="graphing.html#grouped-mean-comparisons"><i class="fa fa-check"></i><b>10.5.2</b> Grouped Mean Comparisons</a></li>
+<li><a href="graphing.html#frequency-chart" id="toc-frequency-chart"><span class="toc-section-number">10.5.1</span> Frequency Chart</a></li>
+<li><a href="graphing.html#grouped-mean-comparisons" id="toc-grouped-mean-comparisons"><span class="toc-section-number">10.5.2</span> Grouped Mean Comparisons</a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path="graphing.html"><a href="graphing.html#summary-9"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+<li><a href="graphing.html#summary-9" id="toc-summary-9"><span class="toc-section-number">10.6</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>11</b> Hypothesis Testing</a>
+<li><a href="hypothesis-testing.html#hypothesis-testing" id="toc-hypothesis-testing"><span class="toc-section-number">11</span> Hypothesis Testing</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#t-test"><i class="fa fa-check"></i><b>11.1</b> t-test</a>
+<li><a href="hypothesis-testing.html#t-test" id="toc-t-test"><span class="toc-section-number">11.1</span> t-test</a>
 <ul>
-<li class="chapter" data-level="11.1.1" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#one-sample-t-test"><i class="fa fa-check"></i><b>11.1.1</b> One-sample t-test</a></li>
-<li class="chapter" data-level="11.1.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#two-sample-t-test"><i class="fa fa-check"></i><b>11.1.2</b> Two-sample t-test</a></li>
+<li><a href="hypothesis-testing.html#one-sample-t-test" id="toc-one-sample-t-test"><span class="toc-section-number">11.1.1</span> One-sample t-test</a></li>
+<li><a href="hypothesis-testing.html#two-sample-t-test" id="toc-two-sample-t-test"><span class="toc-section-number">11.1.2</span> Two-sample t-test</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#chi-square-test"><i class="fa fa-check"></i><b>11.2</b> Chi-square test</a></li>
-<li class="chapter" data-level="11.3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#summary-10"><i class="fa fa-check"></i><b>11.3</b> Summary</a></li>
+<li><a href="hypothesis-testing.html#chi-square-test" id="toc-chi-square-test"><span class="toc-section-number">11.2</span> Chi-square test</a></li>
+<li><a href="hypothesis-testing.html#summary-10" id="toc-summary-10"><span class="toc-section-number">11.3</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="linear-modeling.html"><a href="linear-modeling.html"><i class="fa fa-check"></i><b>12</b> Linear Modeling</a>
+<li><a href="linear-modeling.html#linear-modeling" id="toc-linear-modeling"><span class="toc-section-number">12</span> Linear Modeling</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="linear-modeling.html"><a href="linear-modeling.html#pearson-correlations"><i class="fa fa-check"></i><b>12.1</b> Pearson Correlations</a></li>
-<li class="chapter" data-level="12.2" data-path="linear-modeling.html"><a href="linear-modeling.html#anova"><i class="fa fa-check"></i><b>12.2</b> ANOVA</a></li>
-<li class="chapter" data-level="12.3" data-path="linear-modeling.html"><a href="linear-modeling.html#ordinary-least-squares"><i class="fa fa-check"></i><b>12.3</b> Ordinary Least Squares</a>
+<li><a href="linear-modeling.html#pearson-correlations" id="toc-pearson-correlations"><span class="toc-section-number">12.1</span> Pearson Correlations</a></li>
+<li><a href="linear-modeling.html#anova" id="toc-anova"><span class="toc-section-number">12.2</span> ANOVA</a></li>
+<li><a href="linear-modeling.html#ordinary-least-squares" id="toc-ordinary-least-squares"><span class="toc-section-number">12.3</span> Ordinary Least Squares</a>
 <ul>
-<li class="chapter" data-level="12.3.1" data-path="linear-modeling.html"><a href="linear-modeling.html#residual-diagnostics-with-ols"><i class="fa fa-check"></i><b>12.3.1</b> Residual diagnostics with OLS</a></li>
+<li><a href="linear-modeling.html#residual-diagnostics-with-ols" id="toc-residual-diagnostics-with-ols"><span class="toc-section-number">12.3.1</span> Residual diagnostics with OLS</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="linear-modeling.html"><a href="linear-modeling.html#logistic-regression"><i class="fa fa-check"></i><b>12.4</b> Logistic Regression</a></li>
-<li class="chapter" data-level="12.5" data-path="linear-modeling.html"><a href="linear-modeling.html#summary-11"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+<li><a href="linear-modeling.html#logistic-regression" id="toc-logistic-regression"><span class="toc-section-number">12.4</span> Logistic Regression</a></li>
+<li><a href="linear-modeling.html#summary-11" id="toc-summary-11"><span class="toc-section-number">12.5</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html"><i class="fa fa-check"></i><b>13</b> Recommended R Libraries</a>
+<li><a href="recommended-r-libraries.html#recommended-r-libraries" id="toc-recommended-r-libraries"><span class="toc-section-number">13</span> Recommended R Libraries</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyverse"><i class="fa fa-check"></i><b>13.1</b> <code>tidyverse</code></a>
+<li><a href="recommended-r-libraries.html#tidyverse" id="toc-tidyverse"><span class="toc-section-number">13.1</span> <code>tidyverse</code></a>
 <ul>
-<li class="chapter" data-level="13.1.1" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#ggplot2"><i class="fa fa-check"></i><b>13.1.1</b> <code>ggplot2</code></a></li>
-<li class="chapter" data-level="13.1.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#dplyr"><i class="fa fa-check"></i><b>13.1.2</b> <code>dplyr</code></a></li>
-<li class="chapter" data-level="13.1.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#tidyr"><i class="fa fa-check"></i><b>13.1.3</b> <code>tidyr</code></a></li>
-<li class="chapter" data-level="13.1.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#purrr"><i class="fa fa-check"></i><b>13.1.4</b> <code>purrr</code></a></li>
+<li><a href="recommended-r-libraries.html#ggplot2" id="toc-ggplot2"><span class="toc-section-number">13.1.1</span> <code>ggplot2</code></a></li>
+<li><a href="recommended-r-libraries.html#dplyr" id="toc-dplyr"><span class="toc-section-number">13.1.2</span> <code>dplyr</code></a></li>
+<li><a href="recommended-r-libraries.html#tidyr" id="toc-tidyr"><span class="toc-section-number">13.1.3</span> <code>tidyr</code></a></li>
+<li><a href="recommended-r-libraries.html#purrr" id="toc-purrr"><span class="toc-section-number">13.1.4</span> <code>purrr</code></a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#knitr"><i class="fa fa-check"></i><b>13.2</b> <code>knitr</code></a></li>
-<li class="chapter" data-level="13.3" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#stargazer"><i class="fa fa-check"></i><b>13.3</b> <code>stargazer</code></a></li>
-<li class="chapter" data-level="13.4" data-path="recommended-r-libraries.html"><a href="recommended-r-libraries.html#summary-12"><i class="fa fa-check"></i><b>13.4</b> Summary</a></li>
+<li><a href="recommended-r-libraries.html#knitr" id="toc-knitr"><span class="toc-section-number">13.2</span> <code>knitr</code></a></li>
+<li><a href="recommended-r-libraries.html#stargazer" id="toc-stargazer"><span class="toc-section-number">13.3</span> <code>stargazer</code></a></li>
+<li><a href="recommended-r-libraries.html#summary-12" id="toc-summary-12"><span class="toc-section-number">13.4</span> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>14</b> Conclusion</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i>Resources</a></li>
-<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li><a href="conclusion.html#conclusion" id="toc-conclusion"><span class="toc-section-number">14</span> Conclusion</a></li>
+<li><a href="about-the-author.html#about-the-author" id="toc-about-the-author">About the Author</a></li>
+<li><a href="resources.html#resources" id="toc-resources">Resources</a></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+<li><a href="footnotes.html#footnotes" id="toc-footnotes">Footnotes</a></li>
 </ul>
 
       </nav>
@@ -314,7 +320,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered" number="">
+<div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <p><code>dplyr</code>. <a href="https://dplyr.tidyverse.org/" class="uri">https://dplyr.tidyverse.org/</a></p>
 <p><code>ggplot2</code>. <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></p>
@@ -336,12 +342,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="resources.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="footnotes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -360,6 +365,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -380,10 +386,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": false,
 "toc": {
 "collapse": "section"
-},
-"search": false
+}
 });
 });
 </script>
